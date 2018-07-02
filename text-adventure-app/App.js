@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import createReactClass from 'create-react-class';
-import TypeWriter from 'react-native-typewriter';
+import PropTypes from 'prop-types';
 
 
 //App is the visual display object. Its initial function, render, displays the homepage. 
@@ -9,9 +9,11 @@ export default class App extends React.Component {
   render() {
     return (
 		<View style={styles.container}>
-			{this.homepageContinue()}
-			{this.homepageNew()}
-			{this.homepageLoad()}
+			<TypeWriter>
+				{this.homepageContinue()}
+				{this.homepageNew()}
+				{this.homepageLoad()}
+			</TypeWriter>
 		</View>
     );
   }
@@ -23,12 +25,7 @@ export default class App extends React.Component {
   homepageContinue(){
 	  //TODO
 	  if(true){
-		var showText = 'Continue\n\n\n';
-		return (
-			<React.Fragment>
-				<DefaultText>{showText}</DefaultText>
-			</React.Fragment>
-		);
+		return (<DefaultText text='Continue\n\n\n'></DefaultText>);
 	  }
 	  
 	  else{
@@ -41,8 +38,7 @@ export default class App extends React.Component {
   homepageNew(){
 	  //TODO
 	  if(true){
-		  var showText = 'New';
-		  return (<DefaultText>{showText}</DefaultText>);
+		  return (<DefaultText text='New'></DefaultText>);
 	  }
   }
   
@@ -53,12 +49,7 @@ export default class App extends React.Component {
   homepageLoad(){
 	  //TODO
 	  if(true){
-		var showText = '\n\nLoad';
-		return (
-			<React.Fragment>
-				<DefaultText>{showText}</DefaultText>
-			</React.Fragment>
-		);
+		return (<DefaultText text='\n\nLoad'></DefaultText>);
 	  }
 	  
 	  else{
@@ -79,41 +70,6 @@ var gameData = {};
 
 
 
-//the default text class 
-var DefaultText = createReactClass({
-  propTypes: {
-    style: Text.propTypes.style
-  },
-  render() {
-    return (
-      <TypeWriter maxDelay={40} typing={1} style={[styles.defaultText, this.props.style]} delayMap={typingDelayDegression}>{this.props.children}</TypeWriter>
-    );
-  }
-});
-
-const typingDelayDegression= [
-  // first 20 characters are slow
-  { at: 0, delay: 100 },
-  { at: 1, delay: 100 },
-  { at: 2, delay: 100 },
-  { at: 3, delay: 100 },
-  { at: 4, delay: 100 },
-  { at: 5, delay: 100 },
-  { at: 6, delay: 100 },
-  { at: 7, delay: 100 },
-  { at: 8, delay: 100 },
-  { at: 9, delay: 100 },
-  { at: 10, delay: 100 },
-  { at: 11, delay: 100 },
-  { at: 12, delay: 100 },
-  { at: 13, delay: 100 },
-  { at: 14, delay: 100 },
-  { at: 15, delay: 100 },
-  { at: 16, delay: 100 },
-  { at: 17, delay: 100 },
-  { at: 18, delay: 100 },
-  { at: 19, delay: 100 }
-];
 
 
 const styles = StyleSheet.create({
@@ -132,3 +88,116 @@ const styles = StyleSheet.create({
 	color: '#fff'
   }
 });
+
+
+//the default text class 
+class DefaultText extends React.Component {
+	
+  constructor(props){
+	super(props);
+	this.setState({ text: "" });  
+  }
+  render() {
+    return (<Text style={styles.defaultText}>{this.state.text}</Text>);
+  }
+  
+  
+  componentWillReceiveProps(nextProps) {
+	this.setState({ text: nextProps.text });  
+  }
+  
+}
+DefaultText.propTypes = {
+  text: PropTypes.string.isRequired,
+}
+	  
+
+
+
+
+
+
+
+
+
+class TypeWriter extends React.Component {
+	
+	constructor(props) {
+		super(props);
+		this.extractText();
+	}
+	
+	//for every DefaultText (child), copy its text onto the end of our completeText array
+	//then, make its text empty
+	extractText(){
+		this.completeText = [];
+		for(i=0; i<this.props.children.length; i++){
+			console.log("test"+i);
+			console.log(this.props.children[i].props.text);
+			this.props.children[i].setState("hello");
+			//this if statement just says that we have at least 1 child with at least some text 
+			if(!this.continueTyping && this.props.children[i].props.text.length > 0){
+				this.continueTyping = true;
+			}
+			this.completeText.push((' ' + this.props.children[i].props.text).slice(1));
+			
+		}
+	}
+	
+	componentWillUnmount() {
+		this.clearTimeout();
+	}
+	
+	componentDidMount() {
+		this.startTyping();
+	}
+	
+	//render displays the children, now matter how much or little text there is inside them
+	render(){
+		return (<React.Fragment>{this.props.children}</React.Fragment>);
+	}
+	
+	//every 20 milliseconds, add a letter to the children rendered in this view 
+	startTyping(){
+		this.clearTimeout();
+		if(this.continueTyping){
+			this.timeoutId = setTimeout(this.addLetter, 20);
+		}
+	}
+	
+	//clean up any lingering listeners
+	clearTimeout() {
+		if (this.timeoutId) {
+			clearTimeout(this.timeoutId);
+		}
+	}
+	
+
+	
+	//move a letter from the completeText list to our childrens' texts
+	//any node that is empty in our completeText list will serve as an indicator that that child is completely displayed, and we can progress
+	//if any node is non-empty, continue typing
+	addLetter(){
+	/*	this.continueTyping = false;
+		for (i=0;i<this.completeText.length;i++){
+			if(this.completeText[i].length < 1){
+				continue;
+			}
+			else{
+				//the current child needs a letter added from the current completeText node. It should come from the beginning of the node and appended to the end of the child
+				this.props.children[i].props.text += this.completeText[i][0];
+				//then cut that letter off the front of the node
+				this.completeText[i] = this.completeText[i].slice(1);
+				this.continueTyping = true;
+				//we only type 1 letter at a time
+				break;
+			}
+		}
+		//even if we stop typing, we visit this function to cleanup
+		this.startTyping();*/
+	}
+
+  }
+	
+	
+
