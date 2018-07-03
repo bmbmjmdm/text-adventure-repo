@@ -1,6 +1,7 @@
 import React from 'react';
 import {View}  from 'react-native';
 import {ClickText, DefaultText, styles} from './StylesEtc.js'
+import {HomePage} from './homepage.js'
 
 
 //App is the visual display object, in charge of animating the text on screen and allowing the user to click through to change it
@@ -214,52 +215,9 @@ export default class App extends React.Component {
 	  super(props);
 	  //console.disableYellowBox = true
 	  this.state = {displayedText: [], toShowText: [], allowClicks: false};  
-	  this.createHomePage();
+	  HomePage.createHomePage(this);
   }
   
-  createHomePage(){
-	  this.homepageContinue();
-	  this.homepageNew();
-	  this.homepageLoad();
-  }
-  
-  //determines if there is a game to continue- ie an unfinished game in the user's save files which was the last one the user played
-  //if so returns the appropriate, clickable text
-  //if not returns nothing
-  //note if the user finished the last game they played, however has other unfinished games, load will be clickable but continue will not be
-  homepageContinue(){
-	  //TODO
-	  if(false){
-		
-	  }
-	  
-	  else{
-		  this.state.toShowText.push({text:"Continue\n\n\n", clickable:false});
-	  }
-  }
-  
-
-  //new will always display, so we put the <br>s in the other 2 functions for the sake of centering the text properly
-  homepageNew(){
-	  //TODO make click functionality
-	  this.state.toShowText.push({text:"New", clickable:true});
-  }
-  
-  
-  //determines if there is a game to load- ie an unfinished game in the user's save files
-  //if so returns the appropriate, clickable text
-  //if not returns nothing
-  //note if the user finished the last game they played, however has other unfinished games, load will be clickable but continue will not be
-  homepageLoad(){
-	  //TODO
-	  if(false){
-		
-	  }
-	  
-	  else{
-		  this.state.toShowText.push({text:"\n\nLoad", clickable:false});
-	  }
-  }
 
   
 }
