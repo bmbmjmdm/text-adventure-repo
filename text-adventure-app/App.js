@@ -1,29 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import createReactClass from 'create-react-class';
-import PropTypes from 'prop-types';
+import {View}  from 'react-native';
+import {ClickText, DefaultText, styles} from './StylesEtc.js'
 
 
-//App is the visual display object. Its initial constructor assembles the homepage. 
+//App is the visual display object, in charge of animating the text on screen and allowing the user to click through to change it
+//App does not know what it is displaying. All that logic is elsewhere. The only exception is the initial state:
+//Its initial constructor assembles the homepage. 
 export default class App extends React.Component {
-	
 	
 
   
   //render works like a typewriter, constructing each Text element based on the state variable displayedText
   render() {
-	var displayedText = this.state.displayedText;
 	var displayElements=[];
-	for(i=0;i<displayedText.length;i++){
+		
+	this.state.displayedText.map((dtNode,i) =>{
 		//clickable text needs to be blue and attach a touch listener to its corresponding function
 		//TODO add click functionality
-		if(displayedText[i].clickable){
-			displayElements.push((<ClickText>{displayedText[i].text}</ClickText>));
+		if(dtNode.clickable){
+			displayElements.push((<ClickText key={i} onPress={() => {this.handleClick(dtNode.clickObject, this)}}>{dtNode.text}</ClickText>));
 		}
 		else{
-			displayElements.push((<DefaultText>{displayedText[i].text}</DefaultText>));
+			displayElements.push((<DefaultText key={i}>{dtNode.text}</DefaultText>));
 		}
-	}
+	});
 	return (
 		<View style={styles.container}>
 			{displayElements}
@@ -44,7 +44,11 @@ export default class App extends React.Component {
 	typeAnimation(){
 		this.clearTimeout();
 		if(this.state.toShowText.length > 0){
+			this.allowClicks = false;
 			this.timeoutId = setTimeout(() => {this.addLetter(this)}, 20);
+		}
+		else{
+			this.allowClicks = true;
 		}
 	}
 	
@@ -79,6 +83,7 @@ export default class App extends React.Component {
 			if(toShowText2.length == index){
 				//the only text in the list is an empty one, don't bother, clean list, get out
 				toShowText2 = [];
+				that.allowClicks = true; 
 			}
 			
 			else{
@@ -90,20 +95,18 @@ export default class App extends React.Component {
 				toShowText2[index].text = ''+toShowText2[index].text.slice(1);
 				
 				var canClick = toShowText2[index].clickable;
-				if(canClick){
-					//TODO add function stuff
-				}
+				var hasObj = toShowText2[index].clickObject;
 				
 				if(removeLastText){
 					//start a new text!
-					displayedText2.push({text:firstCharacter, clickable:canClick});
+					displayedText2.push({text:firstCharacter, clickable:canClick, clickObject:hasObj});
 					
 					//get rid of the empty text from the list
 					toShowText2.shift();
 				}
 				else if (displayedText2.length==0){
 					//no text displayed so far, start a new text!
-					displayedText2.push({text:firstCharacter, clickable:canClick});
+					displayedText2.push({text:firstCharacter, clickable:canClick, clickObject:hasObj});
 					
 				}
 				else{
@@ -120,11 +123,86 @@ export default class App extends React.Component {
 
 
 		}
+		
+		//we're done displaying
+		else{
+			that.allowClicks = true; 
+		}
 	}
   
   
   
   
+  
+  handleClick(clickObj, that){
+	  //can we click?
+	  if(that.allowClicks){
+		  
+		  that.allowClicks = false;
+		  //first, erase the screen
+		  that.fadeAnimation();
+		  
+		  //TODO
+	  }
+  }
+  
+  
+  	//every 20 milliseconds, remove a letter at random in this view 
+	//if there are no more letters to remove, stop
+	fadeAnimation(){
+		this.clearTimeout();
+		if(this.state.displayedText.length > 0){
+			this.timeoutId = setTimeout(() => {this.fadeLetter(this)}, 20);
+		}
+	}
+  
+  
+	//randomly remove a letter from the screen
+	//when there are no letters in a given text, remove it from the list
+	//when there are no texts left, we're done
+  	fadeLetter(that){
+		var displayedText2 = Object.assign([], that.state.displayedText);
+		
+		//skip this function if there's nothing to remove
+		if(displayedText2.length > 0) {
+			
+			var removeLastText = false;
+			var index = Math.floor(Math.random() * displayedText2.length);
+			
+			while(displayedText2.length > 0 && displayedText2[index].text.length < 1 ){
+				//the randomly selected text already has all its letters removed. remove it from the display list and start a new text
+				displayedText2.splice( index, 1 );
+				index = Math.floor(Math.random() * displayedText2.length);
+			}
+			
+			if(displayedText2.length == 0){
+				//no more texts, finish
+				that.allowClicks = true; 
+			}
+			
+			else{
+				//time to start modifying our texts
+				//randomly take a letter from the text
+				var textToMod = displayedText2[index].text;
+				var letterIndex = Math.floor(Math.random() * textToMod.length);
+				textToMod = textToMod.slice(0, letterIndex) + textToMod.slice(letterIndex+1);
+				displayedText2[index].text = textToMod;
+				
+				//we keep trying to type since we didn't hit an end
+				that.fadeAnimation(that);
+			}
+			
+			
+			that.setState({displayedText: displayedText2});
+
+
+		}
+		
+		//we're done displaying
+		else{
+			that.allowClicks = true; 
+		}
+	}
   
   
   
@@ -135,7 +213,7 @@ export default class App extends React.Component {
   constructor(props){
 	  super(props);
 	  //console.disableYellowBox = true
-	  this.state = {displayedText: [], toShowText: []};  
+	  this.state = {displayedText: [], toShowText: [], allowClicks: false};  
 	  this.createHomePage();
   }
   
@@ -189,58 +267,8 @@ export default class App extends React.Component {
 
 //game data records decisions in a single game as well as the current state (paragraph) the user is in 
 var gameData = {};
-
-
-
-
-
-
-
-
-const styles = StyleSheet.create({
-	
-  //black, centered container. the default for the whole app
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   
-  //default size and color of text- medium, white
-  defaultText: {
-	fontSize: 25,
-	color: '#fff'
-  },
-  
-  //size and color of click text- medium, red
-  clickText: {
-	fontSize: 25,
-	color: '#f00'
-  }
-});
 
-
-//the default text class 
-//CANNOT HAVE LENGTH 0 TEXT
-class DefaultText extends React.Component {
-	
-  render() {
-    return (<Text style={styles.defaultText}>{this.props.children}</Text>);
-  }
-  
-}
-
-
-//the clickable text class 
-//CANNOT HAVE LENGTH 0 TEXT
-class ClickText extends React.Component {
-	
-  render() {
-    return (<Text style={styles.clickText}>{this.props.children}</Text>);
-  }
-  
-}
 	
 	
 
