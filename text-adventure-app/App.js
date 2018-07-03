@@ -4,18 +4,145 @@ import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 
-//App is the visual display object. Its initial function, render, displays the homepage. 
+//App is the visual display object. Its initial constructor assembles the homepage. 
 export default class App extends React.Component {
+	
+	
+
+  
+  //render works like a typewriter, constructing each Text element based on the state variable displayedText
   render() {
-    return (
+	var displayedText = this.state.displayedText;
+	var displayElements=[];
+	for(i=0;i<displayedText.length;i++){
+		//clickable text needs to be blue and attach a touch listener to its corresponding function
+		//TODO add click functionality
+		if(displayedText[i].clickable){
+			displayElements.push((<ClickText>{displayedText[i].text}</ClickText>));
+		}
+		else{
+			displayElements.push((<DefaultText>{displayedText[i].text}</DefaultText>));
+		}
+	}
+	return (
 		<View style={styles.container}>
-			<TypeWriter>
-				{this.homepageContinue()}
-				{this.homepageNew()}
-				{this.homepageLoad()}
-			</TypeWriter>
+			{displayElements}
 		</View>
     );
+  }
+  
+    componentWillUnmount() {
+		this.clearTimeout();
+	}
+	
+  	componentDidMount() {
+		this.typeAnimation();
+	}
+	
+	//every 20 milliseconds, add a letter to the children rendered in this view 
+	//if there are no more letters to type, stop 
+	typeAnimation(){
+		this.clearTimeout();
+		if(this.state.toShowText.length > 0){
+			this.timeoutId = setTimeout(() => {this.addLetter(this)}, 20);
+		}
+	}
+	
+	//clean up any lingering listeners
+	clearTimeout() {
+		if (this.timeoutId) {
+			clearTimeout(this.timeoutId);
+		}
+	}
+	
+
+	
+	//move a letter from the toShowText list to displayedText list
+	//any node that is empty in toShowText list will serve as an indicator that that text element is completely displayed, and we can progress to the next
+	addLetter(that){
+		var displayedText2 = Object.assign([], that.state.displayedText);
+		var toShowText2 = Object.assign([], that.state.toShowText);
+		
+		//skip this function if there's nothing to show
+		if(toShowText2.length > 0) {
+			
+			var removeLastText = false;
+			var index = 0;
+			
+			if(toShowText2[index].text.length < 1){
+				//the last text we added a letter to finished that text. remove it from the display list and start a new text
+				removeLastText = true;
+				index++;
+				
+			}
+			
+			if(toShowText2.length == index){
+				//the only text in the list is an empty one, don't bother, clean list, get out
+				toShowText2 = [];
+			}
+			
+			else{
+				//time to start modifying our texts
+				//we always peel off the first letter of the toShowText, preparing it to append to the displayedText
+				
+	
+				var firstCharacter = toShowText2[index].text.charAt(0);
+				toShowText2[index].text = ''+toShowText2[index].text.slice(1);
+				
+				var canClick = toShowText2[index].clickable;
+				if(canClick){
+					//TODO add function stuff
+				}
+				
+				if(removeLastText){
+					//start a new text!
+					displayedText2.push({text:firstCharacter, clickable:canClick});
+					
+					//get rid of the empty text from the list
+					toShowText2.shift();
+				}
+				else if (displayedText2.length==0){
+					//no text displayed so far, start a new text!
+					displayedText2.push({text:firstCharacter, clickable:canClick});
+					
+				}
+				else{
+					//append the last text in our list					
+					displayedText2[displayedText2.length-1].text += firstCharacter;
+				}
+				
+				//we keep trying to type since we didn't hit an end
+				that.typeAnimation();
+			}
+			
+			
+			that.setState({toShowText: toShowText2, displayedText: displayedText2});
+
+
+		}
+	}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  constructor(props){
+	  super(props);
+	  //console.disableYellowBox = true
+	  this.state = {displayedText: [], toShowText: []};  
+	  this.createHomePage();
+  }
+  
+  createHomePage(){
+	  this.homepageContinue();
+	  this.homepageNew();
+	  this.homepageLoad();
   }
   
   //determines if there is a game to continue- ie an unfinished game in the user's save files which was the last one the user played
@@ -24,23 +151,22 @@ export default class App extends React.Component {
   //note if the user finished the last game they played, however has other unfinished games, load will be clickable but continue will not be
   homepageContinue(){
 	  //TODO
-	  if(true){
-		return (<DefaultText text='Continue\n\n\n'></DefaultText>);
+	  if(false){
+		
 	  }
 	  
 	  else{
-		  return ;
+		  this.state.toShowText.push({text:"Continue\n\n\n", clickable:false});
 	  }
   }
   
 
   //new will always display, so we put the <br>s in the other 2 functions for the sake of centering the text properly
   homepageNew(){
-	  //TODO
-	  if(true){
-		  return (<DefaultText text='New'></DefaultText>);
-	  }
+	  //TODO make click functionality
+	  this.state.toShowText.push({text:"New", clickable:true});
   }
+  
   
   //determines if there is a game to load- ie an unfinished game in the user's save files
   //if so returns the appropriate, clickable text
@@ -48,16 +174,15 @@ export default class App extends React.Component {
   //note if the user finished the last game they played, however has other unfinished games, load will be clickable but continue will not be
   homepageLoad(){
 	  //TODO
-	  if(true){
-		return (<DefaultText text='\n\nLoad'></DefaultText>);
+	  if(false){
+		
 	  }
 	  
 	  else{
-		  return;
+		  this.state.toShowText.push({text:"\n\nLoad", clickable:false});
 	  }
   }
 
-  
   
 }
 
@@ -86,118 +211,36 @@ const styles = StyleSheet.create({
   defaultText: {
 	fontSize: 25,
 	color: '#fff'
+  },
+  
+  //size and color of click text- medium, red
+  clickText: {
+	fontSize: 25,
+	color: '#f00'
   }
 });
 
 
 //the default text class 
+//CANNOT HAVE LENGTH 0 TEXT
 class DefaultText extends React.Component {
 	
-  constructor(props){
-	super(props);
-	this.setState({ text: "" });  
-  }
   render() {
-    return (<Text style={styles.defaultText}>{this.state.text}</Text>);
-  }
-  
-  
-  componentWillReceiveProps(nextProps) {
-	this.setState({ text: nextProps.text });  
+    return (<Text style={styles.defaultText}>{this.props.children}</Text>);
   }
   
 }
-DefaultText.propTypes = {
-  text: PropTypes.string.isRequired,
-}
-	  
 
 
-
-
-
-
-
-
-
-class TypeWriter extends React.Component {
+//the clickable text class 
+//CANNOT HAVE LENGTH 0 TEXT
+class ClickText extends React.Component {
 	
-	constructor(props) {
-		super(props);
-		this.extractText();
-	}
-	
-	//for every DefaultText (child), copy its text onto the end of our completeText array
-	//then, make its text empty
-	extractText(){
-		this.completeText = [];
-		for(i=0; i<this.props.children.length; i++){
-			console.log("test"+i);
-			console.log(this.props.children[i].props.text);
-			this.props.children[i].setState("hello");
-			//this if statement just says that we have at least 1 child with at least some text 
-			if(!this.continueTyping && this.props.children[i].props.text.length > 0){
-				this.continueTyping = true;
-			}
-			this.completeText.push((' ' + this.props.children[i].props.text).slice(1));
-			
-		}
-	}
-	
-	componentWillUnmount() {
-		this.clearTimeout();
-	}
-	
-	componentDidMount() {
-		this.startTyping();
-	}
-	
-	//render displays the children, now matter how much or little text there is inside them
-	render(){
-		return (<React.Fragment>{this.props.children}</React.Fragment>);
-	}
-	
-	//every 20 milliseconds, add a letter to the children rendered in this view 
-	startTyping(){
-		this.clearTimeout();
-		if(this.continueTyping){
-			this.timeoutId = setTimeout(this.addLetter, 20);
-		}
-	}
-	
-	//clean up any lingering listeners
-	clearTimeout() {
-		if (this.timeoutId) {
-			clearTimeout(this.timeoutId);
-		}
-	}
-	
-
-	
-	//move a letter from the completeText list to our childrens' texts
-	//any node that is empty in our completeText list will serve as an indicator that that child is completely displayed, and we can progress
-	//if any node is non-empty, continue typing
-	addLetter(){
-	/*	this.continueTyping = false;
-		for (i=0;i<this.completeText.length;i++){
-			if(this.completeText[i].length < 1){
-				continue;
-			}
-			else{
-				//the current child needs a letter added from the current completeText node. It should come from the beginning of the node and appended to the end of the child
-				this.props.children[i].props.text += this.completeText[i][0];
-				//then cut that letter off the front of the node
-				this.completeText[i] = this.completeText[i].slice(1);
-				this.continueTyping = true;
-				//we only type 1 letter at a time
-				break;
-			}
-		}
-		//even if we stop typing, we visit this function to cleanup
-		this.startTyping();*/
-	}
-
+  render() {
+    return (<Text style={styles.clickText}>{this.props.children}</Text>);
   }
+  
+}
 	
 	
 
