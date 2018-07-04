@@ -38,11 +38,13 @@ export default class App extends React.Component {
 	
 	//every 20 milliseconds, add a letter to the children rendered in this view 
 	//if there are no more letters to type, stop 
-	typeAnimation(delay = 20){
+	//scale starts negative to give the beginning a nice easing
+	typeAnimation(scale = -80){
 		this.clearTimeout();
 		if(this.state.toShowText.length > 0){
+			scale+=2;
 			this.allowClicks = false;
-			this.timeoutId = setTimeout(() => {this.addLetter(this, delay)}, delay);
+			this.timeoutId = setTimeout(() => {this.addLetter(this, scale)}, 20);
 		}
 		else{
 			this.allowClicks = true;
@@ -60,7 +62,7 @@ export default class App extends React.Component {
 	
 	//move a letter from the toShowText list to displayedText list
 	//any node that is empty in toShowText list will serve as an indicator that that text element is completely displayed, and we can progress to the next
-	addLetter(that, delay){
+	addLetter(that, scale){
 		//deep clone the arrays
 		var displayedText2 = Object.assign([], that.state.displayedText);
 		var toShowText2 = Object.assign([], that.state.toShowText);
@@ -68,6 +70,11 @@ export default class App extends React.Component {
 		//skip this function if there's nothing to show
 		if(toShowText2.length > 0) {
 			
+			var keepTyping = true;
+			
+			//the more times addLetter is called for a given toShowText list, the more letters it adds with a single call
+			for(i=0;i<Math.max(1, scale);i+=10){
+				
 			var removeLastText = false;
 			var index = 0;
 			
@@ -80,8 +87,7 @@ export default class App extends React.Component {
 			
 			if(toShowText2.length == index){
 				//the only text in the list is an empty one, don't bother, clean list, get out
-				toShowText2 = [];
-				that.allowClicks = true; 
+				keepTyping = false;
 			}
 			
 			else{
@@ -112,10 +118,18 @@ export default class App extends React.Component {
 					displayedText2[displayedText2.length-1].text += firstCharacter;
 				}
 				
-				//we keep trying to type since we didn't hit an end
-				that.typeAnimation(Math.max(0, delay-1));
+			}
 			}
 			
+			if(keepTyping){
+				//we keep trying to type since we didn't hit an end
+				that.typeAnimation(scale);
+			}
+			else{
+				//the only text in the list is an empty one, don't bother, clean list, get out
+				toShowText2 = [];
+				that.allowClicks = true; 
+			}
 			
 			that.setState({toShowText: toShowText2, displayedText: displayedText2});
 
@@ -137,8 +151,16 @@ export default class App extends React.Component {
 	  if(that.allowClicks){
 		  
 		  that.allowClicks = false;
-		  //first, erase the screen
-		  that.fadeAnimation(nextPage);
+		  
+		  //figure out how fast we want to erase the screen based on how much content is on it 
+		  var letters = 0;
+		  for (i=0; i< that.state.displayedText.length; i++){
+			  letters += that.state.displayedText[i].text.length;
+		  }
+		  var scale = Math.ceil(letters/20);
+		  
+		  //now, erase the screen
+		  that.fadeAnimation(nextPage, scale);
 		  //when that finishes, it will continue with handleClickAfterFade(nextPage)
 		  
 	  }
@@ -152,10 +174,10 @@ export default class App extends React.Component {
   
   	//every 20 milliseconds, remove a letter at random in this view 
 	//if there are no more letters to remove, stop
-	fadeAnimation(callbackPage,delay=20){
+	fadeAnimation(callbackPage, scale=1){
 		this.clearTimeout();
 		if(this.state.displayedText.length > 0){
-			this.timeoutId = setTimeout(() => {this.fadeLetter(this, callbackPage, delay)}, delay);
+			this.timeoutId = setTimeout(() => {this.fadeLetter(this, callbackPage, scale)}, 20);
 		}
 	}
   
@@ -163,13 +185,16 @@ export default class App extends React.Component {
 	//randomly remove a letter from the screen
 	//when there are no letters in a given text, remove it from the list
 	//when there are no texts left, we're done
-  	fadeLetter(that, callbackPage, delay){
+  	fadeLetter(that, callbackPage, scale){
 		//deep clone the array
 		var displayedText2 = Object.assign([], that.state.displayedText);
 		
 		//skip this function if there's nothing to remove
 		if(displayedText2.length > 0) {
 			
+			//the more letters in the starting displayedText list, the more letters it takes off with a single call
+			for(i = 0; i<scale; i++){
+				
 			var index = Math.floor(Math.random() * displayedText2.length);
 			var finished = false;
 			
@@ -191,16 +216,18 @@ export default class App extends React.Component {
 				var letterIndex = Math.floor(Math.random() * textToMod.length);
 				textToMod = textToMod.slice(0, letterIndex) + textToMod.slice(letterIndex+1);
 				displayedText2[index].text = textToMod;
-				
-				//we keep trying to type since we didn't hit an end
-				that.fadeAnimation(callbackPage, Math.max(0. delay-1,));
-			}
 			
+			}
+			}
 			
 			that.setState({displayedText: displayedText2});
 			
-			//we've cleared all the text, now move to the next state
-			if (finished){
+			if (!finished){
+				//we keep trying to type since we didn't hit an end
+				that.fadeAnimation(callbackPage, scale);
+			}
+			else{
+				//we've cleared all the text, now move to the next state
 				that.handleClickAfterFade(callbackPage);
 			}
 
@@ -229,6 +256,7 @@ export default class App extends React.Component {
 		this.clearTimeout();
 	}
 
+	
   
 }
 

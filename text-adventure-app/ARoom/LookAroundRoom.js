@@ -24,7 +24,7 @@ export class LookAroundRoom {
 			that.state.toShowText.push({text:"It's dark in here, barely lit by a ", clickable:false});
 			that.state.toShowText.push({text:"lantern ", clickable:true, nextPage:LookAtLantern});
 			that.state.toShowText.push({text:"sitting on a wooden", clickable:false});
-			that.state.toShowText.push({text:" table ", clickable:true, LookAtTable});
+			that.state.toShowText.push({text:" table ", clickable:true, nextPage:LookAtTable});
 			that.state.toShowText.push({text:"to your left. The floor is cool and also made of wood, worn from many years. Your legs feel numb from its dull embrace.\nThere's a loose line of ", clickable:false});
 			that.state.toShowText.push({text:" rope  ", clickable:true, nextPage:LookAtRope});
 			that.state.toShowText.push({text:"on the floor in front of you, and just past that you can faintly see the outline of a ", clickable:false});
