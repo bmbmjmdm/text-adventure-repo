@@ -41,6 +41,7 @@ export default class App extends React.Component {
 	
 	//every 20 milliseconds, add a letter to the children rendered in this view 
 	//if there are no more letters to type, stop 
+	typeAnimationActual(scale = 1){
 		this.clearTimeout();
 		
 		if(this.state.toShowText.length > 0){
@@ -63,6 +64,7 @@ export default class App extends React.Component {
 			scale = 10;
 		}
 		else{
+			this.visitedTextMap[textHash] = true;
 		}
 		
 		this.typeAnimationActual(scale);
