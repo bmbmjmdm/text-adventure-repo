@@ -23,7 +23,7 @@ export class LookAtBindings {
 		else{
 			that.state.toShowText.push({text:"You wriggle and writhe, twist and grind teeth. Your hands are bound with some kind of rope.\nMaybe you can find something in this ", clickable:false});
 			that.state.toShowText.push({text:"room ", clickable:true, nextPage:LookAroundRoom});
-			that.state.toShowText.push({text:" to free yourself.", clickable:false});
+			that.state.toShowText.push({text:"to free yourself.", clickable:false});
 		}
 		that.typeAnimation();
 	}

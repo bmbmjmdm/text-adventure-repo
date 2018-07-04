@@ -16,7 +16,7 @@ export class LookAtWindow {
 		else if(ARoomData.CutBindings){
 			that.state.toShowText.push({text:"With all this extra light (thanks, ", clickable:false});
 			that.state.toShowText.push({text:"fire", clickable:true, nextPage:LookAtFire});
-			that.state.toShowText.push({text:") you can easily see the small, glassless window. Too bad it's out of reach and this ", clickable:false});
+			that.state.toShowText.push({text:") you can easily see a small, glassless window above the door. Too bad it's out of reach and this ", clickable:false});
 			that.state.toShowText.push({text:"room ", clickable:true, nextPage:LookAroundRoom});
 			that.state.toShowText.push({text:"has a surprisingly high cieling, so jumping won't work.", clickable:false});
 		}
