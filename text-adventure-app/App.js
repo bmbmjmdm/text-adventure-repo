@@ -38,19 +38,35 @@ export default class App extends React.Component {
   }
   
 	
+	
 	//every 20 milliseconds, add a letter to the children rendered in this view 
 	//if there are no more letters to type, stop 
-	//scale starts negative to give the beginning a nice easing
-	typeAnimation(scale = -80){
 		this.clearTimeout();
+		
 		if(this.state.toShowText.length > 0){
-			scale+=2;
 			this.allowClicks = false;
+			
 			this.timeoutId = setTimeout(() => {this.addLetter(this, scale)}, 20);
 		}
 		else{
 			this.allowClicks = true;
 		}
+		
+	}
+	
+	//this is called by outside classes, where some setup is done prior to actually calling the typeAnimation function aka typeAnimationActual
+	typeAnimation(){
+		//default speed is 1 letter at a time
+		var scale = 1;
+		var textHash = JSON.stringify( this.state.toShowText );
+		if(this.visitedTextMap[textHash] == true){
+			scale = 10;
+		}
+		else{
+		}
+		
+		this.typeAnimationActual(scale);
+		
 	}
 	
 	//clean up any lingering listeners
@@ -75,7 +91,7 @@ export default class App extends React.Component {
 			var keepTyping = true;
 			
 			//the more times addLetter is called for a given toShowText list, the more letters it adds with a single call
-			for(i=0;i<Math.max(1, scale);i+=10){
+			for(i=0;i<Math.max(1, scale);i++){
 				
 			var removeLastText = false;
 			var index = 0;
@@ -125,7 +141,7 @@ export default class App extends React.Component {
 			
 			if(keepTyping){
 				//we keep trying to type since we didn't hit an end
-				that.typeAnimation(scale);
+				that.typeAnimationActual(scale);
 			}
 			else{
 				//the only text in the list is an empty one, don't bother, clean list, get out
@@ -248,6 +264,7 @@ export default class App extends React.Component {
 	  super(props);
 	  //console.disableYellowBox = true
 	  this.state = {displayedText: [], toShowText: [], allowClicks: false};  
+	  this.visitedTextMap = {};
   }
   
     componentDidMount() {
