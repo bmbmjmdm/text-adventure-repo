@@ -1,12 +1,12 @@
 import React from 'react';
-import {View}  from 'react-native';
+import {View, Text}  from 'react-native';
 import {ClickText, DefaultText, styles} from './StylesEtc.js'
-import {HomePage} from './homepage.js'
+import {HomePage} from './HomePage.js'
 
 
 //App is the visual display object, in charge of animating the text on screen and allowing the user to click through to change it
 //App does not know what it is displaying. All that logic is elsewhere. The only exception is the initial state:
-//Its initial constructor assembles the homepage. 
+//Its initial mounting function assembles the homepage. 
 export default class App extends React.Component {
 	
 
@@ -19,34 +19,30 @@ export default class App extends React.Component {
 		//clickable text needs to be blue and attach a touch listener to its corresponding function
 		//TODO add click functionality
 		if(dtNode.clickable){
-			displayElements.push((<ClickText key={i} onPress={() => {this.handleClick(dtNode.clickObject, this)}}>{dtNode.text}</ClickText>));
+			displayElements.push((<ClickText key={i} onPress={() => {this.handleClick(dtNode.nextPage, this)}}>{dtNode.text}</ClickText>));
 		}
 		else{
 			displayElements.push((<DefaultText key={i}>{dtNode.text}</DefaultText>));
 		}
 	});
 	return (
+		
 		<View style={styles.container}>
-			{displayElements}
+			<Text>
+				{displayElements}
+			</Text>
 		</View>
     );
   }
   
-    componentWillUnmount() {
-		this.clearTimeout();
-	}
-	
-  	componentDidMount() {
-		this.typeAnimation();
-	}
 	
 	//every 20 milliseconds, add a letter to the children rendered in this view 
 	//if there are no more letters to type, stop 
-	typeAnimation(){
+	typeAnimation(delay = 20){
 		this.clearTimeout();
 		if(this.state.toShowText.length > 0){
 			this.allowClicks = false;
-			this.timeoutId = setTimeout(() => {this.addLetter(this)}, 20);
+			this.timeoutId = setTimeout(() => {this.addLetter(this, delay)}, delay);
 		}
 		else{
 			this.allowClicks = true;
@@ -64,7 +60,8 @@ export default class App extends React.Component {
 	
 	//move a letter from the toShowText list to displayedText list
 	//any node that is empty in toShowText list will serve as an indicator that that text element is completely displayed, and we can progress to the next
-	addLetter(that){
+	addLetter(that, delay){
+		//deep clone the arrays
 		var displayedText2 = Object.assign([], that.state.displayedText);
 		var toShowText2 = Object.assign([], that.state.toShowText);
 		
@@ -96,18 +93,18 @@ export default class App extends React.Component {
 				toShowText2[index].text = ''+toShowText2[index].text.slice(1);
 				
 				var canClick = toShowText2[index].clickable;
-				var hasObj = toShowText2[index].clickObject;
+				var hasPage = toShowText2[index].nextPage;
 				
 				if(removeLastText){
 					//start a new text!
-					displayedText2.push({text:firstCharacter, clickable:canClick, clickObject:hasObj});
+					displayedText2.push({text:firstCharacter, clickable:canClick, nextPage:hasPage});
 					
 					//get rid of the empty text from the list
 					toShowText2.shift();
 				}
 				else if (displayedText2.length==0){
 					//no text displayed so far, start a new text!
-					displayedText2.push({text:firstCharacter, clickable:canClick, clickObject:hasObj});
+					displayedText2.push({text:firstCharacter, clickable:canClick, nextPage:hasPage});
 					
 				}
 				else{
@@ -116,7 +113,7 @@ export default class App extends React.Component {
 				}
 				
 				//we keep trying to type since we didn't hit an end
-				that.typeAnimation();
+				that.typeAnimation(Math.max(0, delay-1));
 			}
 			
 			
@@ -135,25 +132,30 @@ export default class App extends React.Component {
   
   
   
-  handleClick(clickObj, that){
+  handleClick(nextPage, that){
 	  //can we click?
 	  if(that.allowClicks){
 		  
 		  that.allowClicks = false;
 		  //first, erase the screen
-		  that.fadeAnimation();
+		  that.fadeAnimation(nextPage);
+		  //when that finishes, it will continue with handleClickAfterFade(nextPage)
 		  
-		  //TODO
 	  }
+  }
+  
+  handleClickAfterFade(nextPage){
+	  //nextPage are classes that implement createPage, which populates toShowText and calls typeAnimation
+	  nextPage.createPage(this);
   }
   
   
   	//every 20 milliseconds, remove a letter at random in this view 
 	//if there are no more letters to remove, stop
-	fadeAnimation(){
+	fadeAnimation(callbackPage,delay=20){
 		this.clearTimeout();
 		if(this.state.displayedText.length > 0){
-			this.timeoutId = setTimeout(() => {this.fadeLetter(this)}, 20);
+			this.timeoutId = setTimeout(() => {this.fadeLetter(this, callbackPage, delay)}, delay);
 		}
 	}
   
@@ -161,14 +163,15 @@ export default class App extends React.Component {
 	//randomly remove a letter from the screen
 	//when there are no letters in a given text, remove it from the list
 	//when there are no texts left, we're done
-  	fadeLetter(that){
+  	fadeLetter(that, callbackPage, delay){
+		//deep clone the array
 		var displayedText2 = Object.assign([], that.state.displayedText);
 		
 		//skip this function if there's nothing to remove
 		if(displayedText2.length > 0) {
 			
-			var removeLastText = false;
 			var index = Math.floor(Math.random() * displayedText2.length);
+			var finished = false;
 			
 			while(displayedText2.length > 0 && displayedText2[index].text.length < 1 ){
 				//the randomly selected text already has all its letters removed. remove it from the display list and start a new text
@@ -178,7 +181,7 @@ export default class App extends React.Component {
 			
 			if(displayedText2.length == 0){
 				//no more texts, finish
-				that.allowClicks = true; 
+				finished = true;
 			}
 			
 			else{
@@ -190,19 +193,20 @@ export default class App extends React.Component {
 				displayedText2[index].text = textToMod;
 				
 				//we keep trying to type since we didn't hit an end
-				that.fadeAnimation(that);
+				that.fadeAnimation(callbackPage, Math.max(0. delay-1,));
 			}
 			
 			
 			that.setState({displayedText: displayedText2});
+			
+			//we've cleared all the text, now move to the next state
+			if (finished){
+				that.handleClickAfterFade(callbackPage);
+			}
 
 
 		}
 		
-		//we're done displaying
-		else{
-			that.allowClicks = true; 
-		}
 	}
   
   
@@ -215,17 +219,20 @@ export default class App extends React.Component {
 	  super(props);
 	  //console.disableYellowBox = true
 	  this.state = {displayedText: [], toShowText: [], allowClicks: false};  
-	  HomePage.createHomePage(this);
   }
   
+    componentDidMount() {
+		HomePage.createPage(this);
+	}
+  
+    componentWillUnmount() {
+		this.clearTimeout();
+	}
 
   
 }
 
 
-//game data records decisions in a single game as well as the current state (paragraph) the user is in 
-var gameData = {};
-  
 
 	
 	
