@@ -13,8 +13,10 @@ export class LookAtBindings {
 			that.state.toShowText.push({text:"Too bad the flames are closing the gap on their own. You jerk up and down with your wrists, pressing them against the glass until eventually- you're free! Now, quick, get out of this ", clickable:false});
 			that.state.toShowText.push({text:"god-forsaken room. ", clickable:true, nextPage:LookAroundRoom});
 		}
-		else if(ARoomData.BrokeLanter){
-			that.state.toShowText.push({text:"You squirm and kick your feet, pushing you back against the wall in a panic. Your hands won't budge. You look at the slowly growing flame and the pool of", clickable:false});
+		else if(ARoomData.BrokeLantern){
+			that.state.toShowText.push({text:"You squirm and kick your feet, pushing you back against the wall in a panic. Your hands won't budge. You look at the slowly growing", clickable:false});
+			that.state.toShowText.push({text:" flame ", clickable:true, nextPage:LookAtFire});
+			that.state.toShowText.push({text:"and the pool of", clickable:false});
 			that.state.toShowText.push({text:" glass ", clickable:true, nextPage:TakeGlass});
 			that.state.toShowText.push({text:"around it.", clickable:false});
 		}

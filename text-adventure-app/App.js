@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text}  from 'react-native';
+import {View, Text, ScrollView}  from 'react-native';
 import {ClickText, DefaultText, styles} from './StylesEtc.js'
 import {HomePage} from './HomePage.js'
 
@@ -28,9 +28,11 @@ export default class App extends React.Component {
 	return (
 		
 		<View style={styles.container}>
+		<ScrollView contentContainerStyle={styles.scroll}>
 			<Text>
 				{displayElements}
 			</Text>
+			</ScrollView>
 		</View>
     );
   }

@@ -6,7 +6,7 @@ import {ARoomData} from '../GameData.js';
 export class ReallyKickTable {
 
 	static createPage(that){
-		that.state.toShowText.push({text:"Ok, psycho. You lean to your right and jab your foot out, knocking the table leg. It's still standing. You kick again, and again, and keep thrashing until something happens. The lantern tips and turns and tumbles off the table, smashing on the ground next to you and spilling oil and ", clickable:false});
+		that.state.toShowText.push({text:"Ok, psycho. You lean to your right and jab your foot out, knocking the table leg. It's still standing. You kick again, and again, and keep thrashing until something happens. The leg cracks and the lantern tips, turns and tumbles off the table, smashing on the ground next to you and spilling oil and ", clickable:false});
 		that.state.toShowText.push({text:"glass ", clickable:true, nextPage:TakeGlass});
 		that.state.toShowText.push({text:"everywhere. Soon the flickering bud of a flame catches on the oil, and a ", clickable:false});
 		that.state.toShowText.push({text:"fire ", clickable:true, nextPage:LookAtFire});

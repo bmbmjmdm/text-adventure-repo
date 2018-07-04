@@ -9,9 +9,13 @@ export const styles = StyleSheet.create({
 	flex: 1,
 	flexDirection: 'column',
     backgroundColor: '#000',
-    alignItems: 'center',
 	flexWrap: 'wrap',
-	overflow:'scroll',
+	overflow:'hidden',
+  },
+  
+  scroll: {
+	flexGrow: 1,
+    alignItems: 'center',
     justifyContent: 'center',
   },
   
