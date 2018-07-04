@@ -1,10 +1,12 @@
+import {Levels} from './Levels.js'
 
-  export class HomePage{
+export class HomePage{
   
-  static createHomePage(that){
+  static createPage(that){
 	  this.homepageContinue(that);
 	  this.homepageNew(that);
 	  this.homepageLoad(that);
+	  that.typeAnimation();
   }
   
   //determines if there is a game to continue- ie an unfinished game in the user's save files which was the last one the user played
@@ -18,7 +20,7 @@
 	  }
 	  
 	  else{
-		  that.state.toShowText.push({text:"Continue\n\n\n", clickable:false});
+		  that.state.toShowText.push({text:"Continue\n\n", clickable:false});
 	  }
   }
   
@@ -26,7 +28,7 @@
   //new will always display, so we put the <br>s in the other 2 functions for the sake of centering the text properly
   static homepageNew(that){
 	  //TODO make click functionality
-	  that.state.toShowText.push({text:"New", clickable:true});
+	  that.state.toShowText.push({text:"\nNew\n", clickable:true, nextPage:Levels});
   }
   
   
@@ -44,4 +46,4 @@
 		  that.state.toShowText.push({text:"\n\nLoad", clickable:false});
 	  }
   }
-  }
+ }

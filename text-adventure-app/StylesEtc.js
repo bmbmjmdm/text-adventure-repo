@@ -6,9 +6,12 @@ export const styles = StyleSheet.create({
 	
   //black, centered container. the default for the whole app
   container: {
-    flex: 1,
+	flex: 1,
+	flexDirection: 'column',
     backgroundColor: '#000',
     alignItems: 'center',
+	flexWrap: 'wrap',
+	overflow:'scroll',
     justifyContent: 'center',
   },
   
