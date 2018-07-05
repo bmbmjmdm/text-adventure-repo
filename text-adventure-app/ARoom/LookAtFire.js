@@ -5,7 +5,7 @@ export class LookAtFire {
 
 	static createPage(that){
 		if(ARoomData.HasRope){
-			that.state.toShowText.push({text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH!", clickable:true, nextPage:LookAroundRoom});
+			that.state.toShowText.push({text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH FIRE!", clickable:true, nextPage:LookAroundRoom});
 		}
 		else if(ARoomData.CutBindings){
 			that.state.toShowText.push({text:"The fire is out of control! You won't last much longer in ", clickable:false});

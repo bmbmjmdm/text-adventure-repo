@@ -15,9 +15,9 @@ export default class App extends React.Component {
   render() {
 	var displayElements=[];
 		
+	//for every block of text we want to display, we create a DOM element for it 
 	this.state.displayedText.map((dtNode,i) =>{
-		//clickable text needs to be blue and attach a touch listener to its corresponding function
-		//TODO add click functionality
+		//clickable text needs to be red and attach a touch listener to its corresponding nextPage function
 		if(dtNode.clickable){
 			displayElements.push((<ClickText key={i} onPress={() => {this.handleClick(dtNode.nextPage, this)}}>{dtNode.text}</ClickText>));
 		}
@@ -25,10 +25,16 @@ export default class App extends React.Component {
 			displayElements.push((<DefaultText key={i}>{dtNode.text}</DefaultText>));
 		}
 	});
+
+	//View is the full-screen, black background container
+	//ScrollView is fixed to be full-screen (no larger), though understands that its content could be larger than itself. every render it calculates this difference and scrolls to the bottom automatically (the user can then scroll back up if they wish)
+	//Text is here to display our ClickText and DefaultText elements in a Text-style layout rather than a FlexView-style layout (concatting them rather than every text being in its own "box")
 	return (
-		
 		<View style={styles.container}>
-		<ScrollView contentContainerStyle={styles.scroll}>
+		<ScrollView ref='scrollView'
+					onContentSizeChange={(w, h) => {this.contentHeight = h;  this.scrollToBottom(true);}}
+					onLayout={ev => this.scrollViewHeight = ev.nativeEvent.layout.height}
+					contentContainerStyle={styles.scroll}>
 			<Text>
 				{displayElements}
 			</Text>
@@ -267,6 +273,8 @@ export default class App extends React.Component {
 	  //console.disableYellowBox = true
 	  this.state = {displayedText: [], toShowText: [], allowClicks: false};  
 	  this.visitedTextMap = {};
+	  this.contentHeight = 0;
+	  this.scrollViewHeight= 0;
   }
   
     componentDidMount() {
@@ -276,6 +284,19 @@ export default class App extends React.Component {
     componentWillUnmount() {
 		this.clearTimeout();
 	}
+	
+	
+
+  scrollToBottom(animated = true) {
+	  console.log("contentHeight="+this.contentHeight);
+	  console.log("scrollViewHeight="+this.scrollViewHeight);
+    const scrollHeight = this.contentHeight - this.scrollViewHeight;
+    if (scrollHeight > 0) {
+      const scrollResponder = this.refs.scrollView.getScrollResponder();
+      scrollResponder.scrollResponderScrollTo({x: 0, y: scrollHeight, animated});
+    }
+  }
+  
 
 	
   
