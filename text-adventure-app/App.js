@@ -286,10 +286,8 @@ export default class App extends React.Component {
 	}
 	
 	
-
+	//utility function for moving the ScrollView down as text is rendered
   scrollToBottom(animated = true) {
-	  console.log("contentHeight="+this.contentHeight);
-	  console.log("scrollViewHeight="+this.scrollViewHeight);
     const scrollHeight = this.contentHeight - this.scrollViewHeight;
     if (scrollHeight > 0) {
       const scrollResponder = this.refs.scrollView.getScrollResponder();

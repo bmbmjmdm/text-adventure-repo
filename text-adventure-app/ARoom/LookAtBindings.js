@@ -1,12 +1,12 @@
 import {LookAroundRoom} from './LookAroundRoom.js';
-import {TakeGlass} from './TakeGlass.js';
+import {LookAtGlass} from './LookAtGlass.js';
 import {LookAtFire} from './LookAtFire.js';
 import {ARoomData} from '../GameData.js';
 
 export class LookAtBindings {
 
 	static createPage(that){
-		if(ARoomData.HasGlass){
+		if(ARoomData.DraggedGlass){
 			ARoomData.CutBindings = true;
 			that.state.toShowText.push({text:"Shifting your body around the sparce glass, you're careful not to get too close to the ", clickable:false});
 			that.state.toShowText.push({text:"fire. ", clickable:true, nextPage:LookAtFire});
@@ -17,7 +17,7 @@ export class LookAtBindings {
 			that.state.toShowText.push({text:"You squirm and kick your feet, pushing you back against the wall in a panic. Your hands won't budge. You look at the slowly growing", clickable:false});
 			that.state.toShowText.push({text:" flame ", clickable:true, nextPage:LookAtFire});
 			that.state.toShowText.push({text:"and the pool of", clickable:false});
-			that.state.toShowText.push({text:" glass ", clickable:true, nextPage:TakeGlass});
+			that.state.toShowText.push({text:" glass ", clickable:true, nextPage:LookAtGlass});
 			that.state.toShowText.push({text:"around it.", clickable:false});
 		}
 		else{
