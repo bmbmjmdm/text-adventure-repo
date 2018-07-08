@@ -4,6 +4,14 @@ export var GlobalData = {Story2Unlocked:false, Story3Unlocked:false};
 
 
 export var ARoomData = {Health: 10, BrokeLantern: false, DraggedGlass:false, CutBindings:false, GlassSafe: false, ThrewGlass:false, ThrewBlanket:false, ThrewRope:false, BurntBlanket: false, WrappedHandsFeet:false, RefusedDeal:false, MadeDeal:false, MadeBetterDeal:false};
+export var TheWayData = {};
+
+
 export function ResetARoomData(){
 	ARoomData = {Health: 10, BrokeLantern: false, DraggedGlass:false, CutBindings:false, GlassSafe: false, FullGlass:false, ThrewGlass:false, ThrewBlanket:false, ThrewRope:false, BurntBlanket: false, WrappedHandsFeet:false, RefusedDeal:false, MadeDeal:false, MadeBetterDeal:false};
+	ResetTheWayData();
+}
+
+export function ResetTheWayData(){
+	TheWayData = {};
 }

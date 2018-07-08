@@ -264,6 +264,17 @@ export default class App extends React.Component {
   
   
   
+  preparePage(textSegment, pageChangeOnClick=null){
+	  if(pageChangeOnClick == null){
+		  this.state.toShowText.push({text:textSegment, clickable:false});
+	  }
+	  
+	  else{
+		  this.state.toShowText.push({text:textSegment, clickable:true, nextPage:pageChangeOnClick});		  
+	  }
+  }
+  
+  
   
   
   

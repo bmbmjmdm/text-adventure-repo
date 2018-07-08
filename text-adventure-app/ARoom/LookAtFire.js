@@ -6,20 +6,20 @@ export class LookAtFire {
 
 	static createPage(that){
 		if(ARoomData.ThrewRope && ARoomData.ThrewGlass && (ARoomData.ThrewBlanket || ARoomData.BurntBlanket || ARoomData.WrappedHandsFeet)){
-			that.state.toShowText.push({text:"AAAAAAAAAAAAAAAAAAAH!", clickable:true, nextPage:Scream});
+			that.preparePage("AAAAAAAAAAAAAAAAAAAH!", Scream);
 		}
 		else if(ARoomData.CutBindings){
-			that.state.toShowText.push({text:"The fire is out of control! You won't last much longer in ", clickable:false});
-			that.state.toShowText.push({text:"here.", clickable:true, nextPage:LookAroundRoom});
-			that.state.toShowText.push({text:" You better do something quick. Keep calm and come up with a plan. Maybe ", clickable:false});
-			that.state.toShowText.push({text:"screaming", clickable:true, nextPage:Scream});
-			that.state.toShowText.push({text:" will help?", clickable:false});
+			that.preparePage("The fire is out of control! You won't last much longer in ");
+			that.preparePage("here.", LookAroundRoom);
+			that.preparePage(" You better do something quick. Keep calm and come up with a plan. Maybe ");
+			that.preparePage("screaming", Scream);
+			that.preparePage(" will help?");
 		}
 		else{
-			that.state.toShowText.push({text:"The fire is slowly devouring the table, and the floor looks to be next. The ", clickable:false});
-			that.state.toShowText.push({text:"room ", clickable:true, nextPage:LookAroundRoom});
-			that.state.toShowText.push({text:"is slowly filling with smoke. Oh shit. Panic. ", clickable:false});
-			that.state.toShowText.push({text:"Scream.", clickable:true, nextPage:Scream});
+			that.preparePage("The fire is slowly devouring the table, and the floor looks to be next. The ");
+			that.preparePage("room ", LookAroundRoom);
+			that.preparePage("is slowly filling with smoke. Oh shit. Panic. ");
+			that.preparePage("Scream.", Scream);
 		}
 		
 		that.typeAnimation();
