@@ -20,7 +20,7 @@ export class HomePage{
 	  }
 	  
 	  else{
-		  that.state.toShowText.push({text:"Continue\n\n", clickable:false});
+		  that.preparePage("Continue\n\n");
 	  }
   }
   
@@ -28,7 +28,7 @@ export class HomePage{
   //new will always display, so we put the <br>s in the other 2 functions for the sake of centering the text properly
   static homepageNew(that){
 	  //TODO make click functionality
-	  that.state.toShowText.push({text:"\nNew\n", clickable:true, nextPage:Levels});
+	  that.preparePage("\nNew\n", Levels);
   }
   
   
@@ -43,7 +43,7 @@ export class HomePage{
 	  }
 	  
 	  else{
-		  that.state.toShowText.push({text:"\n\nLoad", clickable:false});
+		  that.preparePage("\n\nLoad");
 	  }
   }
  }

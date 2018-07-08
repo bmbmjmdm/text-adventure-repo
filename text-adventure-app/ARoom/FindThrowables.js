@@ -9,30 +9,30 @@ export class FindThrowables {
 
 	static createPage(that){
 		
-		that.preparePage("You look around the ", clickable:false});
-		that.preparePage("room", clickable:true, nextPage:LookAroundRoom});
-		that.preparePage(" for something you can throw through the window. ", clickable:false});
+		that.preparePage("You look around the ");
+		that.preparePage("room", LookAroundRoom);
+		that.preparePage(" for something you can throw through the window. ");
 		
 				
 		if(!ARoomData.HasRope){
-			that.preparePage("You see the loose ", clickable:false});
-			that.preparePage("rope ", clickable:true, nextPage:LookAtRope});
-			that.preparePage("on the floor, nearby the ", clickable:false});
-			that.preparePage("fire.", clickable:true, nextPage:LookAtFire});
-			that.preparePage(" It's pretty close but you can probably reach it with only minor burns. ", clickable:false});
+			that.preparePage("You see the loose ");
+			that.preparePage("rope ", LookAtRope);
+			that.preparePage("on the floor, nearby the ");
+			that.preparePage("fire.", LookAtFire);
+			that.preparePage(" It's pretty close but you can probably reach it with only minor burns. ");
 		}
 		if(!ARoomData.ThrewGlass){
-			that.preparePage("There's the chunk of ", clickable:false});
-			that.preparePage("glass ", clickable:true, nextPage:LookAtGlass});
-			that.preparePage("you used to cut your bindings. That might be useful, or dangerous.", clickable:false});
+			that.preparePage("There's the chunk of ");
+			that.preparePage("glass ", LookAtGlass);
+			that.preparePage("you used to cut your bindings. That might be useful, or dangerous.");
 	
 		}
 		if(!ARoomData.ThrewBlanket && !ARoomData.WrappedHandsFeet && !ARoomData.BurntBlanket){
-			that.preparePage("The ", clickable:false});
-			that.preparePage("blanket ", clickable:true, nextPage:LookAtBlanket});
-			that.preparePage("is still lying peacefully in a corner of the room opposite the ", clickable:false});
-			that.preparePage("fire.", clickable:true, nextPage:LookAtFire});
-			that.preparePage(" It might be small enough to fit through the window...or big enough to extinguish the flame.", clickable:false});
+			that.preparePage("The ");
+			that.preparePage("blanket ", LookAtBlanket);
+			that.preparePage("is still lying peacefully in a corner of the room opposite the ");
+			that.preparePage("fire.", LookAtFire);
+			that.preparePage(" It might be small enough to fit through the window...or big enough to extinguish the flame.");
 		}
 		
 		
