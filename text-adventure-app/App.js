@@ -264,6 +264,7 @@ export default class App extends React.Component {
   
   
   
+  //used by Pages to add text objects to the state 
   preparePage(textSegment, pageChangeOnClick=null){
 	  if(pageChangeOnClick == null){
 		  this.state.toShowText.push({text:textSegment, clickable:false});
