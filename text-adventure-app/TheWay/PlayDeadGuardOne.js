@@ -1,4 +1,4 @@
-import {PassGuardOne} from './PassGuardOne.js';
+import {Node1B} from './Node1B.js';
 import {AttackGuardOne} from './AttackGuardOne.js';
 import {TheWayData} from '../GameData.js';
 
@@ -29,8 +29,9 @@ export class PlayDeadGuardOne {
 		
 		//passive
 		else {
+			TheWayData.GuardOne.Neutralized = true;
 			that.preparePage("As you hear her talking to herself about the fire, rummaging around some buckets and pales in the hallway, you slink away on the floor. Eventually, you think it's safe to stand, and make your ");
-			that.preparePage("escape.", PassGuardOne); 
+			that.preparePage("escape.", Node1B); 
 		}
 	}
 

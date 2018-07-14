@@ -1,4 +1,4 @@
-import {PassGuardOne} from './PassGuardOne.js';
+import {Node1B} from './Node1B.js';
 import {AttackGuardOne} from './AttackGuardOne.js';
 import {TheWayData} from '../GameData.js';
 
@@ -30,8 +30,9 @@ export class ClingyGuardOne {
 		
 		//passive
 		else {
+			TheWayData.GuardOne.Neutralized = true;
 			that.preparePage("She says, \"Stay out of way. Back! Back!\" You obey quietly, retreating far enough away that you may ");
-			that.preparePage("escape.", PassGuardOne);
+			that.preparePage("escape.", Node1B);
 		}
 		
 	}

@@ -1,4 +1,4 @@
-import {PassGuardOne} from './PassGuardOne.js';
+import {Node1B} from './Node1B.js';
 import {AttackGuardOne} from './AttackGuardOne.js';
 import {TheWayData} from '../GameData.js';
 
@@ -29,8 +29,9 @@ export class BrainMeltGuardOne {
 		
 		//passive
 		else {
+			TheWayData.GuardOne.Neutralized = true;
 			that.preparePage("The guard looks confused, opening her mouth to say something but is left speechless by what she's seeing. She lets out a satisfied humph, believing you got what you deserved, and turns her attention to the fire. On the ground you crawl away slowly, then get up and decide ");
-			that.preparePage("what to do next.", PassGuardOne);
+			that.preparePage("what to do next.", Node1B);
 		}
 		
 		

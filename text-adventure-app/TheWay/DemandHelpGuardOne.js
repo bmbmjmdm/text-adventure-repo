@@ -1,5 +1,5 @@
 
-import {PassGuardOne} from './PassGuardOne.js';
+import {Node1B} from './Node1B.js';
 import {AttackGuardOne} from './AttackGuardOne.js';
 import {TheWayData} from '../GameData.js';
 
@@ -31,8 +31,9 @@ export class DemandHelpGuardOne {
 		
 		//passive
 		else {
+			TheWayData.GuardOne.Neutralized = true;
 			that.preparePage("\"Leave me alone.\" The guard turns her attention to the fire as you do just that. You slowly step back, and back, until you're far enough away to ");
-			that.preparePage("escape.", PassGuardOne);
+			that.preparePage("escape.", Node1B);
 		}
 	}
 
