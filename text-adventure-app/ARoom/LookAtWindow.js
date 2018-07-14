@@ -33,7 +33,7 @@ export class LookAtWindow {
 			that.preparePage("Unfortunately none of this matters with your hands still ");
 			that.preparePage("tied up.", LookAtBindings);
 		}
-		that.typeAnimation();
+		
 	}
 
 

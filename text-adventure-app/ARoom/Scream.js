@@ -31,7 +31,7 @@ export class Scream {
 			that.preparePage("room?", LookAroundRoom);
 		}
 		
-		that.typeAnimation();
+		
 	}
 
 

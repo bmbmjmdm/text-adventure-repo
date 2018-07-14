@@ -36,7 +36,7 @@ export class FindThrowables {
 		}
 		
 		
-		that.typeAnimation();
+		
 	}
 
 

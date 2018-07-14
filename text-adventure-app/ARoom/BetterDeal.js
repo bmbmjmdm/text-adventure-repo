@@ -9,7 +9,7 @@ export class BetterDeal {
 		that.preparePage("room", LookAroundRoom);
 		that.preparePage(" and help me escape! I mean us.\"");
 		
-		that.typeAnimation();
+		
 	}
 
 

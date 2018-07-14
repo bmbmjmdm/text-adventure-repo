@@ -3,8 +3,8 @@
 export var GlobalData = {Story2Unlocked:false, Story3Unlocked:false};
 
 
-export var ARoomData = {Health: 10, BrokeLantern: false, DraggedGlass:false, CutBindings:false, GlassSafe: false, ThrewGlass:false, ThrewBlanket:false, ThrewRope:false, BurntBlanket: false, WrappedHandsFeet:false, RefusedDeal:false, MadeDeal:false, MadeBetterDeal:false};
-export var TheWayData = {};
+export var ARoomData;
+export var TheWayData;
 
 
 export function ResetARoomData(){
@@ -12,6 +12,8 @@ export function ResetARoomData(){
 	ResetTheWayData();
 }
 
+//hostility determines if a guard will attack after diplomacy. positive numbers are hostile, negative are passive, and 0 is random
+//neutralized means they are either dead or have been talked to. if you want specifics, check health 
 export function ResetTheWayData(){
-	TheWayData = {};
+	TheWayData = {Health: ARoomData.Health, GuardOne:{Health:5, Hostility:-2, Armed:true, Neutralized:false}, Gold:0, GlassJammed:false, GlassSnapped:false, FullGlass:ARoomData.FullGlass, HasWeapon:{Glass:false, Sword: false, Shield:false, Bandages:ARoomData.CutBindings}, PrisonerFree: false, HasKeys:false};
 }

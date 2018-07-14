@@ -19,7 +19,7 @@ export class Levels {
 		else{
 			that.state.toShowText.push({text:"Story 3", clickable:false});
 		}
-		that.typeAnimation();
+		
 	}
 
 

@@ -101,7 +101,7 @@ export class LookAroundRoom {
 			that.preparePage(" in a dark, dank corner.");
 		}
 		
-		that.typeAnimation();
+		
 	}
 
 

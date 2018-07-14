@@ -25,7 +25,7 @@ export class LookAtBindings {
 			that.preparePage("room ", LookAroundRoom);
 			that.preparePage("to free yourself.");
 		}
-		that.typeAnimation();
+		
 	}
 
 

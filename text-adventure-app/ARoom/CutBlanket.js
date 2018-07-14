@@ -23,7 +23,7 @@ export class CutBlanket {
 		
 		ARoomData.WrappedHandsFeet = true;
 		
-		that.typeAnimation();
+		
 	}
 
 

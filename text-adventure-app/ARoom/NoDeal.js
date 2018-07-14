@@ -11,7 +11,7 @@ export class NoDeal {
 		that.preparePage("leave me in here to die!", RefuseDeal);
 		that.preparePage("\"");
 		
-		that.typeAnimation();
+		
 	}
 
 

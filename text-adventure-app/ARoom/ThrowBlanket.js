@@ -19,7 +19,7 @@ export class ThrowBlanket {
 		}
 		
 		
-		that.typeAnimation();
+		
 	}
 
 

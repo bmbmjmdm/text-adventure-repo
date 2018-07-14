@@ -14,7 +14,7 @@ export class CurlUpInBlanket {
 			that.preparePage("room.", LookAroundRoom);
 		}
 		
-		that.typeAnimation();
+		
 	}
 
 

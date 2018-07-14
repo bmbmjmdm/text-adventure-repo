@@ -10,7 +10,7 @@ export class ARoom {
 		that.preparePage("room. ", LookAroundRoom);
 		that.preparePage("Your hands are ");
 		that.preparePage("bound.", LookAtBindings);
-		that.typeAnimation();
+		
 	}
 
 

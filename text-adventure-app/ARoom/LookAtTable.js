@@ -10,7 +10,7 @@ export class LookAtTable {
 		that.preparePage(" patient ", LookAroundRoom);
 		that.preparePage("person, right?");
 		
-		that.typeAnimation();
+		
 	}
 
 

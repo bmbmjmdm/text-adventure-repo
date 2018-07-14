@@ -195,6 +195,7 @@ export default class App extends React.Component {
   handleClickAfterFade(nextPage){
 	  //nextPage are classes that implement createPage, which populates toShowText and calls typeAnimation
 	  nextPage.createPage(this);
+	  this.typeAnimation();
   }
   
   
@@ -291,6 +292,7 @@ export default class App extends React.Component {
   
     componentDidMount() {
 		HomePage.createPage(this);
+		this.typeAnimation();
 	}
   
     componentWillUnmount() {

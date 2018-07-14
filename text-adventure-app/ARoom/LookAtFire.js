@@ -22,7 +22,7 @@ export class LookAtFire {
 			that.preparePage("Scream.", Scream);
 		}
 		
-		that.typeAnimation();
+		
 	}
 
 

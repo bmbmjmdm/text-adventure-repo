@@ -9,7 +9,7 @@ export class KickTable {
 		that.preparePage("and not ");
 		that.preparePage("make a mess.", ReallyKickTable);
 		
-		that.typeAnimation();
+		
 	}
 
 

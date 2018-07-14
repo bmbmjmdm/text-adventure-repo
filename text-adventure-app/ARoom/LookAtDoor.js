@@ -41,7 +41,7 @@ export class LookAtDoor {
 			that.preparePage("You can't make out much detail, it's too dark with that pitiful ");
 			that.preparePage("lantern.", LookAtLantern);
 		}
-		that.typeAnimation();
+		
 	}
 
 

@@ -22,7 +22,7 @@ export class ThrowGlass {
 		that.preparePage(" and you're no closer to getting out alive.");
 		ARoomData.ThrewGlass = true;
 		
-		that.typeAnimation();
+		
 	}
 
 

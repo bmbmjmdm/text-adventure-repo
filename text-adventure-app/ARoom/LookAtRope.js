@@ -36,7 +36,7 @@ export class LookAtRope {
 			that.preparePage("you up right now. Why was it left here? Should you be expecting company in this already crampt ");
 			that.preparePage("room?", LookAroundRoom);
 		}
-		that.typeAnimation();
+		
 	}
 
 

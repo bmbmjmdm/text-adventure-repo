@@ -48,7 +48,7 @@ export class ClimbRope {
 
 		GlobalData.Story2Unlocked = true;
 		
-		that.typeAnimation();
+		
 	}
 
 

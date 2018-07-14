@@ -11,7 +11,7 @@ export class CutRope {
 		that.preparePage("not", LookAroundRoom);
 		that.preparePage(" i guess.");
 		
-		that.typeAnimation();
+		
 	}
 
 

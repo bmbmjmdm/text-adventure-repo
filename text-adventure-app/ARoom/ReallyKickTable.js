@@ -14,7 +14,7 @@ export class ReallyKickTable {
 		that.preparePage("room ", LookAroundRoom);
 		that.preparePage("becomes well lit (lit with light, not fire, for now).");
 		ARoomData.BrokeLantern = true;
-		that.typeAnimation();
+		
 	}
 
 

@@ -9,7 +9,7 @@ export class RefuseDeal {
 		that.preparePage("room", LookAroundRoom);
 		that.preparePage(" doesn't kill you, I SURE AS HELL WILL!\"");
 		
-		that.typeAnimation();
+		
 	}
 
 

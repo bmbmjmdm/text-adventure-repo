@@ -6,7 +6,7 @@ export class HomePage{
 	  this.homepageContinue(that);
 	  this.homepageNew(that);
 	  this.homepageLoad(that);
-	  that.typeAnimation();
+	  
   }
   
   //determines if there is a game to continue- ie an unfinished game in the user's save files which was the last one the user played
