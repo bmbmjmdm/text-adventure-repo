@@ -1,7 +1,6 @@
 import {JamGlass} from './JamGlass.js';
 import {SpeakGuardOne} from './SpeakGuardOne.js';
 import {ExtortPrisonerOne} from './ExtortPrisonerOne.js';
-import {ARoomData} from '../GameData.js';
 import {TheWayData} from '../GameData.js';
 
 export class FreePrisonerOne {
@@ -18,7 +17,7 @@ export class FreePrisonerOne {
 		that.preparePage("You rattle the bar a bit and can tell it won't come open without using something on it. What do you do now? The guard is almost here. Are you going to ");
 		that.preparePage("act like you weren't doing anything and talk to the guard? ", SpeakGuardOne); 
 		
-		if(ARoomData.BetterDeal){
+		if(TheWayData.BetterDeal){
 			that.preparePage("The only other option is to maybe ");
 			that.preparePage("extort your new comrade. ", ExtortPrisonerOne);
 			that.preparePage("He mentioned something about gold, and the slits in these bars should be big enough...");

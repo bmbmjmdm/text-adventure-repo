@@ -28,7 +28,7 @@ export class AmbushGuardOne {
 		}
 		else{
 			damage = 2; 
-			this.preparePage("You grab the guard by her head and drive it into the hot, metal bars of the door. She lets out a scream and pushes you off her, new scars adorning her face. She takes 2 damage and looks pretty well done. ");
+			this.preparePage("You grab the guard by her head and drive her into the hot, metal bars of the door. She lets out a scream and pushes you off her, new scars adorning her face. She takes 2 damage and looks pretty well done. ");
 		}
 		
 		this.preparePage("There's no turning back now.", AttackGuardOne);

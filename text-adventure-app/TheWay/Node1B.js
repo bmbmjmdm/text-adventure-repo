@@ -4,9 +4,10 @@ import {Node2C} from './Node2C.js';
 import {TalkPrisoner1B} from './TalkPrisoner1B.js';
 import {AttackGuardOne} from './AttackGuardOne.js';
 import {DiplomacyGuardOne} from './DiplomacyGuardOne.js';
+import {PickPocketGuardOne} from './PickPocketGuardOne.js';
 import {TheWayData} from '../GameData.js';
 
-//
+//Node1B, where the player starts outside their burning cell. contains the prisoner the player can free and a guard they might encounter
 export class Node1B {
 
 	static createPage(that){
@@ -37,47 +38,69 @@ export class Node1B {
 		}
 		
 		else if(TheWayData.LastNode == '2B'){
-			TODO
+			that.preparePage("You see your burning cell just ahead, and continue towards it. ");
 		}
 		
 		else if(TheWayData.LastNode == '2C'){
-			TODO
+			that.preparePage("You open the door and continue into the flickering hallway, then turn around a corner and soon see your burning cell just ahead. You continue towards it. ");
 		}
 		
 		//the guard is taken care of, now set a universal direction and give options
 		if(TheWayData.GuardOne.Neutralized || TheWayData.GuardOne.Health <= 0){
 			
-			//the player isn't coming from deplomacy or combat, so redescribe scene
+			//the player isn't coming from deplomacy or combat or talking to prisoner, so redescribe scene
 			if(TheWayData.LastNode != '1B'){
+				//guard was defeated by diplomacy
 				if(TheWayData.GuardOne.Neutralized ){
 					that.preparePage("You see the guard barely keeping the fire contained. The door to your old cell is open and you can see her throwing meager amounts of water in. As you quietly get closer you can tell the fire is neither getting bigger nor smaller. ");
+					//the player hasn't tried to pickpocket her yet
+					if(!TheWayData.GuardOne.Pickpocket){
+						that.preparePage("She's awfully distracted. You might be able to ");
+						that.preparePage("pickpocket", PickPocketGuardOne);
+						that.preparepage("her. ");
+					}
 				}
-			
+				//guard has been killed
 				else if (TheWayData.GuardOne.Health <= 0){
 				
 					that.preparePage("You see flames leaking out around the sides of your former cell. The fire is still small compared to the size of this building. ");
-					that.preparePage("");
-					TODO death description
+					that.preparePage("You glance at the guard's bloody corpse left on the floor beside the cell, then quickly look away. ");
 				
 				}
 			}
 			
+			//they are coming from diplomacy or combat or talking to prisoner, so give brief option to rob guard
+			else{
+				//the guard was defeated by diplomacy
+				if(TheWayData.GuardOne.Neutralized ){
+					//the player hasn't tried to pickpocket her yet
+					if(!TheWayData.GuardOne.Pickpocket){
+						//the player has something to steal
+						if(!TheWayData.HasKeys){
+							that.preparePage("The guard is awfully distracted by the fire, going to and fro with splashes of water. You might be able to ");
+							that.preparePage("pickpocket", PickPocketGuardOne);
+							that.preparepage("her. ");
+						}
+					}
+				}
 				
+			}
+			
 			//optional free prisoner choice
 			if(!TheWayData.Prisoner1BFree){
-				that.preparePage("The prisoner in the cell next to yours yells out, \"Hey man! ");
+				that.preparePage("The prisoner in the cell next to yours then yells out, \"Hey kid! ");
 				that.preparePage("Help", TalkPrisoner1B);
 				that.preparePage(" me, please!\" as you look around. ");
 			}
 			
 			//this is where the real room options are
-			that.preparePage("The tattered wooden hallways echo with whimpers and clangs as you look away from your cell, directly across from it. If you ");
-			that.preparePage("go right,", Node2C);
-			that.preparePage(" you can see the hallway turns left up ahead. There's a few strips of light on the floor as well. If instead of going right you ");
-			that.preparePage("go straight,", Node2B);
-			that.preparePage(" you can see the hallway extends pretty far, made visible by similar thin strips of light on the floor down at the end. Or you can "); 
-			that.preparePage("turn left,", Node2A);
-			that.preparePage(" into a darkened corner which turns right into blackness.");
+			that.preparePage("The tattered wooden hallways echo with whimpers and clangs as you look away from your cell, Northways. If you go ");
+			that.preparePage("North,", Node2C);
+			that.preparePage(" you can see the hallway extends pretty far, with a few different turns. Looking down the  ");
+			that.preparePage("East,", Node2B);
+			that.preparePage(" hallway you can tell it turns left pretty soon. There's a few strips of light on the floor as well. You can also go"); 
+			that.preparePage("West", Node2A);
+			that.preparePage(" into a darkened corner which...kinda looks like it turns right.");
 		}
 		
 		TheWayData.LastNode = '1B';

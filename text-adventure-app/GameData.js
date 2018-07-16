@@ -32,13 +32,19 @@ export function ResetARoomData(){
 export function ResetTheWayData(){
 	TheWayData = {
 		Health: ARoomData.Health, 
-		GuardOne:{Health:5, Hostility:-2, Armed:true, Neutralized:false}, 
+		GuardOne:{Health:5, Hostility:-2, Armed:true, Neutralized:false, Pickpocket:false}, 
 		Gold:0, 
 		GlassJammed:false, 
 		GlassSnapped:false, 
 		FullGlass:ARoomData.FullGlass, 
 		HasWeapon:{Glass:ARoomData.ThrewGlass, Sword: false, Shield:false, Bandages:ARoomData.CutBindings}, 
 		Prisoner1BFree: false, 
-		HasKeys:false
-		LastNode: '1B'};
+		Prisoner3AFree: false, 
+		PrisonersFreed: 0,
+		RefusedDeal = ARoomData.RefusedDeal,
+		MadeBetterDeal = ARoomData.MadeBetterDeal,
+		Extorted = false,
+		HasKeys:false,
+		LastNode: '1B',
+		2AHasGold: true};
 }
