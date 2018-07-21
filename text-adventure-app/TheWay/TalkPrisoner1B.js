@@ -39,7 +39,7 @@ export class TalkPrisoner1B {
 					TheWayData.Gold++;
 				}
 				
-				that.preparePage("Now... I know a way outa here. I dunno if it's the best, but it sure is the fastis. If you start here, go East, then North until ya can't anymore, then West until ya can't anymore, then North until ya can't anymore, and then allll the way East.  I know it's a bit complicated, but I believe in ya, kid. \" With that, that man creeps away from his cell and disappears to the East. You start to ");
+				that.preparePage("Now... I know a way outa here. I dunno if it's the best, but it sure is the fastis. Jus always follow the light. And if the light's comin from a room wit banners, go that way! I know it don't make no sense to ya now, but I believe in ya, kid. \" With that, that man creeps away from his cell and disappears to the East. You start to ");
 				that.preparePage("head back.", Node1B);
 				
 			}

@@ -47,7 +47,7 @@ export class Node2A {
 		
 		//coming from prisoner cell, we know they have keys
 		else if(TheWayData.LastNode == '3A'){
-			that.preparePage("You exit the cell and cross a short hallway, where you find another locked door. It opens with ease. ");
+			that.preparePage("You exit the cell and cross a short hallway, where you find another door in the darkness. It opens with ease. ");
 		}
 		
 		//setup actual room

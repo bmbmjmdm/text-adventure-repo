@@ -6,7 +6,7 @@ import {TheWayData} from '../GameData.js';
 export class BribeGuardOne {
 
 	static createPage(that){
-		TheWayData.GuardOne.Hostility -= 3;
+		TheWayData.GuardOne.Hostility -= 2;
 		that.preparePage("You rifle through your pocketless-pants and pull out a solid gold coin. The guard sees you out of the corner of her eye as she watches the fire, and turns. You immediately hold it out, enthralling and confusing her. \"B-but-\" You say it's for her, and give a coy smile. She looks around. Quickly she plucks it out of your hand and tucks it under her armor. ");
 		
 		

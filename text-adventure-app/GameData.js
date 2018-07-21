@@ -32,7 +32,8 @@ export function ResetARoomData(){
 export function ResetTheWayData(){
 	TheWayData = {
 		Health: ARoomData.Health, 
-		GuardOne:{Health:5, Hostility:-2, Armed:true, Neutralized:false, Pickpocket:false}, 
+		GuardOne:{Health:5, Hostility:-2, Neutralized:false, Pickpocket:false}, 
+		GuardTwo:{Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		Gold:0, 
 		GlassJammed:false, 
 		GlassSnapped:false, 
@@ -46,5 +47,8 @@ export function ResetTheWayData(){
 		Extorted = false,
 		HasKeys:false,
 		LastNode: '1B',
-		2AHasGold: true};
+		2AHasGold: true,
+		SwordFightExplained: false,
+		SwordFight:{Target: {}, After: {}, LastChoice:-1}
+		};
 }
