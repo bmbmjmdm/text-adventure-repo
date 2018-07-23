@@ -17,14 +17,14 @@ export class ThirdDisarmGuardOne {
 			}
 			else{
 				TheWayData.Health -= 2;
-				that.preparePage("goes to press it into your wrist. You maneuver the glass in the way to block her, which works, but ends up pressing the glass into your wrist. You take 2 damage and have "+TheWayData.Health+" health. "
+				that.preparePage("goes to press it into your wrist. You maneuver the glass in the way to block her, which works, but ends up pressing the glass into your wrist. You take 2 damage and have "+TheWayData.Health+" health. ");
 				
 			}
 		}
 		
 		else{
 			TheWayData.Health -= 3;
-			that.preparePage("presses your wrist back with it, digging in deep and dealing 3 damage. You're left with "+TheWayData.Health+" health. "			
+			that.preparePage("presses your wrist back with it, digging in deep and dealing 3 damage. You're left with "+TheWayData.Health+" health. ");		
 		}
 		
 		//player has been killed
@@ -36,7 +36,7 @@ export class ThirdDisarmGuardOne {
 		//player lives
 		else{
 			that.preparePage("As blood trickles down your wrist you try to find a way out. There's a panic behind her eyes, one you can relate to. This is out of hand. Maybe you should just ");
-			that.preparePage("make peace," MakePeaceGuardOne);
+			that.preparePage("make peace,", MakePeaceGuardOne);
 			that.preparePage(" convince her the two of you go seperate ways and not look back. You don't want to die, and neither does she. You see an opening though, too. Her neck. Maybe you can ");
 			that.preparePage("bite it...", BiteGuardOne);
 			that.preparePage(" by sticking your own neck out.");

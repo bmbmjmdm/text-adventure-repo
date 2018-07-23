@@ -7,9 +7,6 @@ import {SwordFightGrapple} from './SwordFightGrapple.js';
 //combat will work like rock-paper-scizzors. you can strike-parry-grapple, where strike beats grapple, parry beats strike, and grapple is like grappling beats parry. 
 //CONTINUED the way it should work is like this: a description is given about how the guard "looks". This will give some veiled insight into what theyre choosing. the user then chooses. then they are calculated and results given, with the same kind of situation again. this could be generalized, with a random stance chosen with a corresponding set of texts. then when they clash a default class determines result and gives a random text description from collection.
 
-//for text, set by processRound
-var damage = 0;
-
 //attacks are represented by integers: 
 //0 is Parry
 //1 is Strike
@@ -34,6 +31,7 @@ export function processRound(playerAttack, that){
 					
 				//player parry, guard grapple
 				case 2:
+					updateTexts();
 					TheWayData.Health -= 1;
 					that.preparePage(randomSelect(ParryVGrapple));
 					break;
@@ -48,6 +46,7 @@ export function processRound(playerAttack, that){
 				
 				//player strike, guard parry
 				case 0:
+					updateTexts();
 					TheWayData.Health -= 2;
 					that.preparePage(randomSelect(StrikeVParry));
 					break;
@@ -82,6 +81,7 @@ export function processRound(playerAttack, that){
 					
 				//player grapple, guard strike
 				case 1:
+					updateTexts();
 					TheWayData.Health -= 2;
 					that.preparePage(randomSelect(GrappleVStrike));
 					break;
@@ -189,11 +189,7 @@ var GrappleVParry = [
 "As the guard steadies his sword, you feint left, and he takes the bait. His other side is exposed and you grab the front of his chestplate, pulling him towards you and headbutting him. He takes 1 damage and stumble back. "];
 
 
-var GrappleVStrike = [
-"You reach in to grab the guard's sword as he suddenly stabs it forward, right across your hand. You take 2 damage as fresh blood is spilt, leaving you with "+ TheWayData.Health+" health. ",
-"As you step between the guard's legs and get ready to launch him, he holds his sword steady and low, leading you right into it. You feel the blade slice your armpit for 2 damage. You then have "+ TheWayData.Health+" health. ",
-"The guard swings his sword across your chest, which you try to pivot around to get closer to him. Your movements are too direct to avoid his attack, leaving you with a fresh, dripping wound and 2 damage. You have "+ TheWayData.Health+" health. "];
-
+var GrappleVStrike = []; // look down at function updateTexts
 
 var GrappleVGrapple = [
 "You and the guard launch forward simultaniously, your swords clash at the hilt and your free hands grasp the others'. You lock for a moment and read your foe's face through sweat and grinding teeth. As your arms get tired, you push off hard and the two of you seperate. ",
@@ -213,17 +209,9 @@ var ParryVStrike = [
 "The guard swings his sword up, which you step back to avoid and stab forward to knock it back. As he struggles to hold onto his weapon, you slash downwards, cutting across his thighs for 2 damage. "];
 
 
-var ParryVGrapple = [
-"As you hold your sword out in wait, the guard gets close, past it, and grabs you by your throat. His meaty hand clenches and you feel a twinge in your neck as you take 1 damage. You bring your sword in, forcing him to step back, and look yourself over at " + TheWayData.Health+" health. ",
-"The guard grabs your sword's hilt and holds it back as his shoulder comes forward, knocking the wind out of you and throwing you back into a wall. You take 1 damage and try to collect yourself, now with " + TheWayData.Health+" health. ",
-"The guard kicks one of your feet aside, knocking you off balance. He brings a hand up and grabs grabs the side of your head, throwing you further. You trip over a bench and take 1 damage falling down, leaving you with "+ TheWayData.health+ " health as you try to stand back up. "];
+var ParryVGrapple = []; // look down at function updateTexts
 
-
-var StrikeVParry = [
-"You stab your sword forward, which the guard catches in a calculated parry. He swings it out of the way and then carves into your chest, making a squiggle worth 2 damage. Blood seeps out and you have "+TheWayData.Health+" health left. ",
-"The guard presses his sword against yours and brings his hilt up, carries your sword to the side and then readies his again. He stabs forward with you open, dealing 2 damage and leaving you with "+ TheWayData.Health" health. ",
-"Your sword is caught by the guard's waiting stance, then carried out of the way for his rebuttal. He slices into you for 2 damage, and you wonder if you'll make. You have "+TheWayData.Health+" health remaining. "];
-
+var StrikeVParry = []; // look down at function updateTexts
 
 var StrikeVStrike = [
 "Your swords clash in spark-filled frenzy. They bang and clang and bounce off the other as you go blow for blow, nobody gaining an inch but the sands of time. When the sparks settle you and he are still squaring off, now breathing heavy. ",
@@ -250,3 +238,21 @@ var Kill = [
 "You follow up with a heavy kick to the guard's chest, knocking him back and over a stone bench. He falls with feet up in the air, which you quickly make stubs of. As he struggles and screams in a pool of his own making, you close your eyes and try not to listen. When all is silent, you open them back up, and avoiding him completely, look around the ",
 "The guard falls to his knees and tries to keep hold of his sword. His hands are trembling as you stand before him. He looks up to meet your eyes and for a moment you're not sure what to do. As the guard tries to lift his sword again, you see his arm spasm and it drops. He screams in agony, \"DO IT! DO IT ALREADY!\" And he caughs up blood on your rags. With a silent, steady incision, you drop the guard limp to the floor. A million thoughts crowd the room silently judging you. You avoid them: guilt an enemy and truth its sword. Instead, you clear your mind and look about the "];
 
+
+//this function is called every time the player takes damage to update the health-based texts
+function updateTexts(){
+	GrappleVStrike = [
+	"You reach in to grab the guard's sword as he suddenly stabs it forward, right across your hand. You take 2 damage as fresh blood is spilt, leaving you with "+ TheWayData.Health+" health. ",
+	"As you step between the guard's legs and get ready to launch him, he holds his sword steady and low, leading you right into it. You feel the blade slice your armpit for 2 damage. You then have "+ TheWayData.Health+" health. ",
+	"The guard swings his sword across your chest, which you try to pivot around to get closer to him. Your movements are too direct to avoid his attack, leaving you with a fresh, dripping wound and 2 damage. You have "+ TheWayData.Health+" health. "];
+
+	ParryVGrapple = [
+	"As you hold your sword out in wait, the guard gets close, past it, and grabs you by your throat. His meaty hand clenches and you feel a twinge in your neck as you take 1 damage. You bring your sword in, forcing him to step back, and look yourself over at " + TheWayData.Health+" health. ",
+	"The guard grabs your sword's hilt and holds it back as his shoulder comes forward, knocking the wind out of you and throwing you back into a wall. You take 1 damage and try to collect yourself, now with " + TheWayData.Health+" health. ",
+	"The guard kicks one of your feet aside, knocking you off balance. He brings a hand up and grabs grabs the side of your head, throwing you further. You trip over a bench and take 1 damage falling down, leaving you with "+ TheWayData.health+ " health as you try to stand back up. "];
+
+	StrikeVParry = [
+	"You stab your sword forward, which the guard catches in a calculated parry. He swings it out of the way and then carves into your chest, making a squiggle worth 2 damage. Blood seeps out and you have "+TheWayData.Health+" health left. ",
+	"The guard presses his sword against yours and brings his hilt up, carries your sword to the side and then readies his again. He stabs forward with you open, dealing 2 damage and leaving you with "+ TheWayData.Health+" health. ",
+	"Your sword is caught by the guard's waiting stance, then carried out of the way for his rebuttal. He slices into you for 2 damage, and you wonder if you'll make. You have "+TheWayData.Health+" health remaining. "];
+}

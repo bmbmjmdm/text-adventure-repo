@@ -16,7 +16,7 @@ export class HarmSelfGuardOne {
 		}
 		else{
 			TheWayData.Health--;
-			that.preparePage("Your bare hand grasps hot metal and you immediately pull it back, letting out a shreek of pain. You take 1 damage, and now have "+TheWayData.Health+" health. " 
+			that.preparePage("Your bare hand grasps hot metal and you immediately pull it back, letting out a shreek of pain. You take 1 damage, and now have "+TheWayData.Health+" health. " );
 		}
 		
 		that.preparePage("The guard pulls you back, \"Idiot! Get away there!\" She's lost almost all respect for you, good job! Now to finish her off, but how? You could maybe get rid of her by ");

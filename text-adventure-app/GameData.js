@@ -6,6 +6,8 @@ export var GlobalData = {Story2Unlocked:false, Story3Unlocked:false};
 export var ARoomData;
 export var TheWayData;
 
+//hack to start at level 2
+{GlobalData.Story2Unlocked = true; ResetARoomData(); ARoomData.Health = 8; ThrewGlass = true;}
 
 export function ResetARoomData(){
 	ARoomData = {
@@ -32,7 +34,7 @@ export function ResetARoomData(){
 export function ResetTheWayData(){
 	TheWayData = {
 		Health: ARoomData.Health, 
-		GuardOne:{Health:5, Hostility:-2, Neutralized:false, Pickpocket:false}, 
+		GuardOne:{Health:5, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardTwo:{Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		Gold:0, 
 		GlassJammed:false, 
@@ -41,14 +43,17 @@ export function ResetTheWayData(){
 		HasWeapon:{Glass:ARoomData.ThrewGlass, Sword: false, Shield:false, Bandages:ARoomData.CutBindings}, 
 		Prisoner1BFree: false, 
 		Prisoner3AFree: false, 
+		Prisoner5CFree: false, 
+		Prisoner6BFree: false, 
 		PrisonersFreed: 0,
-		RefusedDeal = ARoomData.RefusedDeal,
-		MadeBetterDeal = ARoomData.MadeBetterDeal,
-		Extorted = false,
+		RefusedDeal : ARoomData.RefusedDeal,
+		MadeBetterDeal : ARoomData.MadeBetterDeal,
+		Extorted : false,
 		HasKeys:false,
 		LastNode: '1B',
-		2AHasGold: true,
 		SwordFightExplained: false,
-		SwordFight:{Target: {}, After: {}, LastChoice:-1}
+		SwordFight:{Target: {}, After: {}, LastChoice:-1},
+		//list of all nodes searched in the form of '2A':true
+		Searched: {}
 		};
 }

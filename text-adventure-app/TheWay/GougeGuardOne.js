@@ -22,7 +22,7 @@ export class GougeGuardOne {
 		//guard still alive
 		else{
 			that.preparePage("As the woman cries bloody murder, you get spooked. This is out of hand. Maybe you should ");
-			that.preparePage("make peace," MakePeaceGuardOne);
+			that.preparePage("make peace,", MakePeaceGuardOne);
 			that.preparePage(" walk away from her as she tries to recover some sanity. You don't want to die, and neither does she. You see an opening though, too. Her neck. Maybe you can ");
 			that.preparePage("bite it...", BiteGuardOne);
 			that.preparePage(" by sticking your own neck out.");

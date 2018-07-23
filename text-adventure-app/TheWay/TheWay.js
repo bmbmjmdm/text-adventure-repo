@@ -5,10 +5,12 @@ import {FreePrisonerOne} from './FreePrisonerOne.js';
 import {ResetTheWayData} from '../GameData.js';
 import {TheWayData} from '../GameData.js';
 
+//the second level
 export class TheWay {
 
 	static createPage(that){
 		ResetTheWayData();
+		
 		that.preparePage("As you dust soot off yourself, the crackling fire behind you illuminates part of the hallway. You're standing at an intersection, a long hallway extends in front of you and the one you're currently in continues both to your right and left. A figure is walking towards you down the long hallway. ");
 		if(TheWayData.RefusedDeal){
 			that.preparePage("A man behind bars to your left screams out into the hallway, \"Down here! Down here! A prisoner's escaping!\" The figure in the distance yells out, \"You there! Wait where you are.\" And continues running towards you. ");
@@ -28,7 +30,7 @@ export class TheWay {
 		that.preparePage("Confront the guard. ", SpeakGuardOne);
 		that.preparePage("They seem to be getting pretty close anyway and maybe they'll be reasonable. Or maybe you can take them. On the other hand there's always ");
 		that.preparePage("run", RunGuardOne);
-		that.preparePage("ning, a favorite among the faster. "
+		that.preparePage("ning, a favorite among the faster. ");
 		
 		if(TheWayData.RefusedDeal){
 			that.preparePage("Unfortunately due to your friend's whooping and hollering, it doesn't look like you can do much else. The guard is already running and you have a split second to decide.");

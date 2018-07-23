@@ -13,10 +13,6 @@ export class LogicalGuardOne {
 		that.preparePage("hoping to confuse or annoy her into submission. Another option is to ");
 		that.preparePage("harm yourself ", HarmSelfGuardOne);
 		that.preparePage("in an attempt to see, less threatening.");
-		if(TheWayData.Gold > 0){
-			that.preparePage(" You still have your gold, too, which could be used to ");
-			that.preparePage("bribe her.", BribeGuardOne);
-		}
 		
 	}
 

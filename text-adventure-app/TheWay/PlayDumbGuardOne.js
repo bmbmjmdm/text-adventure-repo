@@ -12,11 +12,6 @@ export class PlayDumbGuardOne {
 		that.preparePage("try talking to her? ", AnnoyGuardOne);
 		that.preparePage("You could suggest you move away to safety. Or you could show her this would be a good idea, by ");
 		that.preparePage("burning yourself.", HarmSelfGuardOne);
-		if(TheWayData.Gold > 0){
-			that.preparePage(" Of course, ");
-			that.preparePage("bribery", BribeGuardOne);
-			that.preparePage(" is always an option.");
-		}
 		
 		
 	}

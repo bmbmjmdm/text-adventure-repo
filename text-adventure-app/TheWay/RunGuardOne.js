@@ -11,7 +11,7 @@ export class RunGuardOne {
 		that.preparePage("Left ", Node2A);
 		that.preparePage("past the prisoner beckoning for help? Or ");
 		that.preparePage("right ", Node2C);
-		that.preparePage("towards some thin, flickering light on the ground".)
+		that.preparePage("towards some thin, flickering light on the ground.")
 		
 		
 	}

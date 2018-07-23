@@ -17,12 +17,12 @@ export class StrikeThighGuardOne {
 				damage = 2;
 			}
 			
-			that.preparePage("You jam your glass shiv into the guard's thigh, past raggedy pants and into flesh. She lets out a scream as she takes " + damage+" damage. "
+			that.preparePage("You jam your glass shiv into the guard's thigh, past raggedy pants and into flesh. She lets out a scream as she takes " + damage+" damage. ");
 		}
 		
 		//otherwise their strike attempt does nothing
 		else{
-			that.preparePage("You attempt to hammer her thigh with your fist but she simply steps back. "
+			that.preparePage("You attempt to hammer her thigh with your fist but she simply steps back. ");
 		}
 		
 		//player kills guard

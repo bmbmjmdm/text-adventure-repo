@@ -11,9 +11,14 @@ import {TheWayData} from '../GameData.js';
 export class Node1B {
 
 	static createPage(that){
-		
+		//used for denoting the way the player came
+		var came2A = "";
+		var came2B = "";
+		var came2C = "";
+			
 		//coming from node 2A
 		if(TheWayData.LastNode == '2A'){
+			came2A = " (the way you came)";
 			
 			//was inside the room
 			if(TheWayData.HasKeys){
@@ -39,10 +44,12 @@ export class Node1B {
 		
 		else if(TheWayData.LastNode == '2B'){
 			that.preparePage("You see your burning cell just ahead, and continue towards it. ");
+			came2B = " (the way you came)";
 		}
 		
 		else if(TheWayData.LastNode == '2C'){
 			that.preparePage("You open the door and continue into the flickering hallway, then turn around a corner and soon see your burning cell just ahead. You continue towards it. ");
+			came2C = " (the way you came)";
 		}
 		
 		//the guard is taken care of, now set a universal direction and give options
@@ -95,11 +102,11 @@ export class Node1B {
 			
 			//this is where the real room options are
 			that.preparePage("The tattered wooden hallways echo with whimpers and clangs as you look away from your cell, Northways. If you go ");
-			that.preparePage("North,", Node2C);
+			that.preparePage("North"+came2C+",", Node2C);
 			that.preparePage(" you can see the hallway extends pretty far, with a few different turns. Looking down the  ");
-			that.preparePage("East,", Node2B);
+			that.preparePage("East"+came2B+",", Node2B);
 			that.preparePage(" hallway you can tell it turns left pretty soon. There's a few strips of light on the floor as well. You can also go"); 
-			that.preparePage("West", Node2A);
+			that.preparePage("West"+came2A, Node2A);
 			that.preparePage(" into a darkened corner which...kinda looks like it turns right.");
 		}
 		
