@@ -63,16 +63,25 @@ export default class App extends React.Component {
 	
 	//this is called by outside classes, where some setup is done prior to actually calling the typeAnimation function aka typeAnimationActual
 	typeAnimation(){
-		//default speed is 1 letter at a time
-		var scale = 1;
-		var textHash = JSON.stringify( this.state.toShowText );
-		if(this.visitedTextMap[textHash] == true){
-			scale = 10;
-		}
-		else{
-			this.visitedTextMap[textHash] = true;
+		//by default we assume we've shown this text before and set the speed to 10 letters per display
+		var scale = 10;
+		
+		//we check each piece of text to see if we've shown it previously. if ALL text has been displayed before, go fast. if ANY text hasn't, go slow
+		for(nextText in this.state.toShowText){
+			var textHash = JSON.stringify(nextText);
+			
+			if(this.visitedTextMap[textHash] == true){
+				//so far so good
+			}
+			else{
+				//uh oh we haven't shown this text before. set the speed to 1 letter per display 
+				scale = 1;
+				this.visitedTextMap[textHash] = true;
+			}
 		}
 		
+		
+		//do the actual typing
 		this.typeAnimationActual(scale);
 		
 	}

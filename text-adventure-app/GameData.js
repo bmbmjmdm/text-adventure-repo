@@ -36,6 +36,7 @@ export function ResetTheWayData(){
 		Health: ARoomData.Health, 
 		GuardOne:{Health:5, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardTwo:{Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
+		GuardThree:{Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		Gold:0, 
 		GlassJammed:false, 
 		GlassSnapped:false, 
@@ -53,7 +54,7 @@ export function ResetTheWayData(){
 		LastNode: '1B',
 		SwordFightExplained: false,
 		SwordFight:{Target: {}, After: {}, LastChoice:-1},
-		//list of all nodes searched in the form of '2A':true
+		//list of all nodes searched in the form of 'Node2A':true
 		Searched: {}
 		};
 }

@@ -4,7 +4,7 @@ import {Node1B} from './Node1B.js';
 import {Search2A} from './Search2A.js';
 import {TheWayData} from '../GameData.js';
 
-//a locked room with 2 gold
+//a locked room with 1 gold
 export class Node2A {
 
 	static createPage(that){

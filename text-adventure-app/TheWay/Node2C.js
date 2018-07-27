@@ -6,6 +6,7 @@ import {AttackGuardTwo} from './AttackGuardTwo.js';
 import {DiplomacyGuardTwo} from './DiplomacyGuardTwo.js';
 import {DistractGuardTwo} from './DistractGuardTwo.js';
 import {LiftGuardTwo} from './LiftGuardTwo.js';
+import {Search2C} from './Search2C.js';
 import {TheWayData} from '../GameData.js';
 
 //make prisoner stop player from running right if they're on bad terms and the guard is there 

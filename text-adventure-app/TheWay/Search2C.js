@@ -2,7 +2,7 @@
 import {Node2C} from './Node2C';
 import {TheWayData} from '../GameData.js';
 
-//searches node 2C for the nothing it has
+//searches node 2C for the healthpack it has
 export class Search2C {
 
 	static createPage(that){
