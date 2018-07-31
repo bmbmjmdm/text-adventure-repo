@@ -166,7 +166,7 @@ var GuardAttacks = [
 "The guard lays a palm on his sword and holds it out flat in front of himself. The face of it is reflective; you can see yourself ragged and armed. ",
 "The guard rises his sword near your own, staring deep into your eyes, silent. ",
 "The guard begins slowly walking around you, pacing his steps, and watching closely. The room watches in turn, as does the universe. ",
-"The guard takes his sword in two hands, tilts it forwrd, and takes a deep, calm breath. "], 
+"The guard takes his sword in two hands, tilts it forward, and takes a deep, calm breath. "], 
 
 //Strike
 ["The guard holds his sword steady with two hands, crouches, and twists at the waste. He's so wound up. ",
@@ -180,7 +180,7 @@ var GuardAttacks = [
 "The guard leans in close, his eyes on your sword as his own wanders. The room feels smaller all of the sudden. ",
 "The guard ducks and pivots around you, coming in close. You share a breath. ",
 "The guard steps a foot forward between your own, but you don't think he wants to dance. ",
-"The guard tilts his sword downward, towards the floor, and takes a step forward. He looks like a man with nothing to lose, battle chizzling him jaded all these years. "]
+"The guard tilts his sword downward, towards the floor, and takes a step forward. He looks like a man with nothing to lose, battle chizzling him jaded. "]
 ]; 
 
 
@@ -198,7 +198,7 @@ var GrappleVStrike = []; // look down at function updateTexts
 
 var GrappleVGrapple = [
 "You and the guard launch forward simultaniously, your swords clash at the hilt and your free hands grasp the others'. You lock for a moment and read your foe's face through sweat and grinding teeth. As your arms get tired, you push off hard and the two of you seperate. ",
-"The guard raises a hand to grasp your collar while your sword is off to the side. You grab his wrist as it makes contact and the two of you share a pulling of wills. The guard turns his sword in on you and you do the same, before each of you let go and step back, unharmed. ",
+"The guard raises a hand to grasp your collar while your sword is off to the side. You grab his wrist as it makes contact and the two of you share a pulling of wills. The guard turns his sword in and you do the same, before each of you let go and step back, unharmed. ",
 "You pivot, the guard follows; you raise a hand to grasb his neck and the guard does the same. You cross your hand with the sword to knock him in the wrist and, as he mimics, the butts of your two swords clash, letting out a sharp, reverberating ring. You both back up in the confusion before slowly re-approaching. "];
 
 
@@ -254,7 +254,7 @@ function updateTexts(){
 	ParryVGrapple = [
 	"As you hold your sword out in wait, the guard gets close, past it, and grabs you by your throat. His meaty hand clenches and you feel a twinge in your neck as you take 1 damage. You bring your sword in, forcing him to step back, and look yourself over at " + TheWayData.Health+" health. ",
 	"The guard grabs your sword's hilt and holds it back as his shoulder comes forward, knocking the wind out of you and throwing you back into a wall. You take 1 damage and try to collect yourself, now with " + TheWayData.Health+" health. ",
-	"The guard kicks one of your feet aside, knocking you off balance. He brings a hand up and grabs grabs the side of your head, throwing you further. You trip over a bench and take 1 damage falling down, leaving you with "+ TheWayData.health+ " health as you try to stand back up. "];
+	"The guard kicks one of your feet aside, knocking you off balance. He brings a hand up and grabs the side of your head, throwing you further. You trip over a bench and take 1 damage falling down, leaving you with "+ TheWayData.Health+ " health as you try to stand back up. "];
 
 	StrikeVParry = [
 	"You stab your sword forward, which the guard catches in a calculated parry. He swings it out of the way and then carves into your chest, making a squiggle worth 2 damage. Blood seeps out and you have "+TheWayData.Health+" health left. ",

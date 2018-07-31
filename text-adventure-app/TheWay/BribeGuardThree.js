@@ -32,7 +32,7 @@ export class BribeGuardThree {
 		//passive
 		else{
 			TheWayData.GuardThree.Neutralized = true; 
-			that.preparePage("The young man is speechless, stepping to the side so you can get further into the room as he circles around you and towards the gold. He gathers it, then goes about his business and tries to forget you're there, leaving you to do what you will in this ");
+			that.preparePage("The young man is speechless, holding his sword towards you as he bends down to pick up the gold. He examines it, then you. Eyes wide, the young man puts his sword away and goes about his business, and trying to forget you're there. This leaves you to do what you will in this ");
 			that.preparePage("room.", Node6A);
 		}
 	}

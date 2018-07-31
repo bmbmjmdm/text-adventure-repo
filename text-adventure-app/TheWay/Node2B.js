@@ -43,7 +43,7 @@ export class Node2B {
 		that.preparePage("North"+came3A, Node3A);
 		that.preparePage(" is a corner making a left-hand turn, lights flickering on its floor. To the ");
 		that.preparePage("East"+came2C, Node2C);
-		that.preparePage(" is a door with a window just overhead also letting out light. The walls beside it have red and green banners. Going");
+		that.preparePage(" is a door with a window just overhead also letting out light. The walls beside it have red and green banners. Going ");
 		that.preparePage("South"+came1B, Node1B);
 		//guard is seen if still alive
 		if(TheWayData.GuardOne.Health > 0 ){

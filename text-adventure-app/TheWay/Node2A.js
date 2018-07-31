@@ -63,7 +63,7 @@ export class Node2A {
 		}
 		
 		//is coming from any other node other than 2A
-		else{
+		else if (TheWayData.HasKeys){
 			that.preparePage("You enter the pitch-black room. A moist and moldy mist fills the air. Your throat cringes as you blindly fumble around, bumping into this and that. ");
 			//search the room for gold if they havent already
 			if(TheWayData.Searched.Node2A){

@@ -68,7 +68,7 @@ export default class App extends React.Component {
 		
 		//we check each piece of text to see if we've shown it previously. if ALL text has been displayed before, go fast. if ANY text hasn't, go slow
 		for(nextText in this.state.toShowText){
-			var textHash = JSON.stringify(nextText);
+			var textHash = JSON.stringify(this.state.toShowText[nextText]);
 			
 			if(this.visitedTextMap[textHash] == true){
 				//so far so good

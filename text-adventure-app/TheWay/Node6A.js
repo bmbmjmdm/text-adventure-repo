@@ -36,7 +36,7 @@ export class Node6A {
 			//The third guard is there and ready to fight 
 			if(TheWayData.GuardThree.Health > 0 && !TheWayData.GuardThree.Neutralized){
 				
-				that.preparePage("You open the staunch door, step inside, and are met by a young man in patchy metalwork armor. He's reciting somethign, trying to memorize it it seems. You only catch a glimpse before he notices you, \"...unto our devotion thy cast thine- h-hey!\" He draws his sword, \"W-what are you doing here?\" He takes a deep breath, \"Explain thyself!\" The young guard is waiting for your reply, a look of fear washing his face though his sword steady. Do you answer him with ");
+				that.preparePage("You open the staunch door, step inside, and are met by a young man in patchy metalwork armor. He's reciting something, trying to memorize it it seems. You only catch a glimpse before he notices you, \"...unto our devotion thy cast thine- h-hey!\" He draws his sword, \"W-what are you doing here?\" He takes a deep breath, \"Explain thyself!\" The young guard is waiting for your reply, a look of fear washing his face though his sword steady. Do you answer him with ");
 				that.preparePage("words? ", DiplomacyGuardThree);
 				that.preparePage("He might be unpredictable. Answering with your ");
 				that.preparePage("sword", AttackGuardThree);

@@ -22,7 +22,8 @@ export class Node3A {
 				that.preparePage("As you walk up to it, you notice it's another cell. Inside is a what looks to be a young woman, crying on the floor. ");
 				that.preparePage("Do you ");
 				that.preparePage("let her out", Node3A);
-				that.preparePage(" using your keys?" );
+				that.preparePage(" using your keys? Or" );
+				that.preparePage("turn around?", Node2A);
 				
 			}
 			
@@ -39,7 +40,8 @@ export class Node3A {
 				if(TheWayData.HasKeys){
 					that.preparePage("Do you ");
 					that.preparePage("let her out", Node3A);
-					that.preparePage(" using your keys?" );
+					that.preparePage(" using your keys? Or" );
+					that.preparePage("turn around?", Node2B);
 				}
 			
 				else{
@@ -79,7 +81,7 @@ export class Node3A {
 			else{
 				that.preparePage(", but maybe you can ");
 				that.preparePage("search", Search3A);
-				that.preparePage(" it anyway. ");
+				that.preparePage(" here anyway. ");
 			}
 		}
 		

@@ -23,7 +23,8 @@ export class Node5C {
 				if(TheWayData.HasKeys){
 					that.preparePage("Do you ");
 					that.preparePage("let him out", Node5C);
-					that.preparePage(" using your keys?" );
+					that.preparePage(" using your keys or do you " );
+					that.preparePage("turn around?", Node5B);
 				}
 			
 				else{
@@ -51,7 +52,8 @@ export class Node5C {
 				if(TheWayData.HasKeys){
 					that.preparePage("Do you ");
 					that.preparePage("let him out", Node5C);
-					that.preparePage(" using your keys?" );
+					that.preparePage(" using your keys or do you " );
+					that.preparePage("turn around?", Node4C);
 				}
 			
 				else{

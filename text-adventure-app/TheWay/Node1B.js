@@ -64,7 +64,7 @@ export class Node1B {
 					if(!TheWayData.GuardOne.Pickpocket){
 						that.preparePage("She's awfully distracted. You might be able to ");
 						that.preparePage("pickpocket", PickPocketGuardOne);
-						that.preparepage("her. ");
+						that.preparePage("her. ");
 					}
 				}
 				//guard has been killed
@@ -86,7 +86,7 @@ export class Node1B {
 						if(!TheWayData.HasKeys){
 							that.preparePage("The guard is awfully distracted by the fire, going to and fro with splashes of water. You might be able to ");
 							that.preparePage("pickpocket", PickPocketGuardOne);
-							that.preparepage("her. ");
+							that.preparePage(" her. ");
 						}
 					}
 				}
@@ -95,17 +95,17 @@ export class Node1B {
 			
 			//optional free prisoner choice
 			if(!TheWayData.Prisoner1BFree){
-				that.preparePage("The prisoner in the cell next to yours then yells out, \"Hey kid! ");
+				that.preparePage("The prisoner in the cell next to yours then whispers out, \"Hey kid! ");
 				that.preparePage("Help", TalkPrisoner1B);
-				that.preparePage(" me, please!\" as you look around. ");
+				that.preparePage(" me, please,\" as you look around. ");
 			}
 			
 			//this is where the real room options are
 			that.preparePage("The tattered wooden hallways echo with whimpers and clangs as you look away from your cell, Northways. If you go ");
-			that.preparePage("North"+came2C+",", Node2C);
-			that.preparePage(" you can see the hallway extends pretty far, with a few different turns. Looking down the  ");
-			that.preparePage("East"+came2B+",", Node2B);
-			that.preparePage(" hallway you can tell it turns left pretty soon. There's a few strips of light on the floor as well. You can also go"); 
+			that.preparePage("North"+came2B+",", Node2B);
+			that.preparePage(" you can see the hallway extends pretty far, with a few different turns. Looking down the ");
+			that.preparePage("East"+came2C, Node2C);
+			that.preparePage(" hallway you can tell it turns left pretty soon. There's a few strips of light on the floor as well. You can also go "); 
 			that.preparePage("West"+came2A, Node2A);
 			that.preparePage(" into a darkened corner which...kinda looks like it turns right.");
 		}

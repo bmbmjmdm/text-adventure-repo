@@ -17,36 +17,36 @@ export class Node5B {
 		
 		//coming from intersection
 		if(TheWayData.LastNode == '4B'){
-			that.preparepage("You run North towards the light, coming up to an intersection quickly. ");
+			that.preparePage("You run North towards the light, coming up to an intersection quickly. ");
 			came4B = " (the way you came)";
 		}
 		
 		//coming from prisoner cell
 		else if(TheWayData.LastNode == '6B'){
 			if(TheWayData.Prisoner6BFree){
-				that.preparepage("You leave the quiet cell and pitter down the hallway until you come to an intersection. ");
+				that.preparePage("You leave the quiet cell and pitter down the hallway until you come to an intersection. ");
 			}
 			//not free prisoner means they came from 6B before
 			else{
-				that.preparepage("Stinks to be them. You turn around and return to the intersection. ");
+				that.preparePage("Stinks to be them. You turn around and return to the intersection. ");
 			}
 			came6B = " (the way you came)";
 		}
 		
 		//coming from intersection
 		else if(TheWayData.LastNode == '5A'){
-			that.preparepage("You head towards the distant light, though come up to an intersection first. ");
+			that.preparePage("You head towards the distant light, though come up to an intersection first. ");
 			came5A = " (the way you came)";
 		}
 		
 		//coming from prisoner cell
 		else if(TheWayData.LastNode == '5C'){
 			if(TheWayData.Prisoner5CFree){
-				that.preparepage("You evacuate the biohazardous room and fall into the hallway, gasping for breath. While walking away down the hall, you come across an intersection. ");
+				that.preparePage("You evacuate the biohazardous room and fall into the hallway, gasping for breath. While walking away down the hall, you come across an intersection. ");
 			}
 			//not free prisoner means they came from 5B before
 			else{
-				that.preparepage("Too bad for them I guess. You turn around and return to the intersection. ");
+				that.preparePage("Too bad for them I guess. You turn around and return to the intersection. ");
 			}
 			came5C = " (the way you came)";
 		}

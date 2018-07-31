@@ -44,7 +44,7 @@ export class Node4A {
 		
 		//coming from searching the room
 		if(TheWayData.LastNode == '4A'){
-			that.preparePage("You try to wipe the blood off as best you can, but these hands will never be clean! The room feels like its closing in, and for all you know it could be. Vertigo tosses you aside to a nearby wall. ");
+			that.preparePage("You try to wipe the blood off as best you can, but those hands will never be clean! The room feels like its closing in, and for all you know it could be. Vertigo tosses you aside to a nearby wall. ");
 		}
 		
 		//is coming from any other node other than 2A

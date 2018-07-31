@@ -9,7 +9,7 @@ export class ComfortGuardThree {
 	static createPage(that){
 		TheWayData.GuardThree.Hostility -= 2;
 		
-		that.preparePage("You try to console the guard and tell him everything's fine. He looks at you confused, though takes a deep breath and steadies his hands. \"I-I don't know.\" The young man is looking around the room, hoping for an answer in the walls. You're the voice in his ear: do you want to try and get him to run away by ");
+		that.preparePage("You try to console the guard and tell him everything's fine. He looks at you confused, though takes a deep breath and steadies his hands. \"I-I don't know.\" The young man is looking around the room, hoping for an answer on the walls. You're the voice in his ear: do you want to try and get him to run away by ");
 		that.preparePage("telling him you have rabies", RabiesGuardThree);
 		that.preparePage(" or ");
 		that.preparePage(" command him to return to his post?", CommandGuardThree);

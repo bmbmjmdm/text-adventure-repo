@@ -56,7 +56,7 @@ export class Node2C {
 			//The second guard is there and ready to fight 
 			if(TheWayData.GuardTwo.Health > 0 && !TheWayData.GuardTwo.Neutralized){
 				
-				that.preparePage("As you enter the room, the first thing you notice is the furnishing. There's stone benches facing wooden frames on the walls. The frames are lined with swords of all lengths, reflecting the central lantern hanging from the ceiling. This room looks significantly cleaner than the others, and enjoying this ambience is a guard in the center. The man is wearing half plate armor, thin sheets of metal dispersed amongst leather padding. He turns to see you and draws his sword at once. With a grim, scraped voice he asks, \"Who goes there?\" Do you want to ");
+				that.preparePage("As you enter the room, the first thing you notice is the furnishing. There's stone benches facing wooden frames on the walls. The frames are lined with swords of all lengths, reflecting the central lantern hanging from the ceiling. This room looks significantly cleaner than the others, and enjoying this ambience is a guard in the center. The man is wearing half plate armor, thin sheets of metal dispersed amongst leather padding. He turns to see you and draws his sword at once, quick despite his age. With a grim, scraped voice he asks, \"Who goes there?\" Do you want to ");
 				that.preparePage("respond", DiplomacyGuardTwo);
 				that.preparePage(" to him? Or ");
 				if(TheWayData.HasWeapon.Sword){
@@ -74,7 +74,7 @@ export class Node2C {
 			else{
 				
 				//enter the room
-				if(!TheWayData.LastNode == '2C'){
+				if(TheWayData.LastNode != '2C'){
 					that.preparePage("You enter the room of stone-carved benches and wooden frames. There's more swords hung up but you don't feel a need for two. ");
 				}
 				
@@ -85,7 +85,12 @@ export class Node2C {
 				
 				//guard neutral, describe
 				else {
-					that.preparePage("The guard is sitting on a stone bench, lost in thought. He looks over his shoulder as he hears the door close but returns to himself without even fully seeing you. ");
+					that.preparePage("The guard is sitting on a stone bench, mumbling to himself contentedly. ");
+					
+					//have to add this to "enter the room" text since guard's alive
+					if(TheWayData.LastNode != '2C'){
+						that.preparePage("He looks over his shoulder as he hears the door close but returns to himself without even fully seeing you. ");
+					}
 					
 					//optionally take the guard's keys
 					if(!TheWayData.GuardTwo.Pickpocket && !TheWayData.HasKeys){

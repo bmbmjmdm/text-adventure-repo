@@ -8,7 +8,7 @@ export class SweepGuardOne {
 
 	static createPage(that){
 		TheWayData.GuardOne.Health -= 2; 
-		that.preparePage("You quickly sweep a foot out, knocking the guard's front foot out of place and her off balance. She stumbles back and falls, and you quickly leap on top of her, dealing 2 damage. ");
+		that.preparePage("You quickly sweep, knocking the guard's front foot out of place and her off balance. She stumbles back and falls, and you follow up by leaping on top of her, dealing 2 damage. ");
 		
 		if(TheWayData.GuardOne.Health <= 0){
 			TheWayData.HasWeapon.Sword = true;

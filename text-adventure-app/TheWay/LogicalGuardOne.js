@@ -12,7 +12,7 @@ export class LogicalGuardOne {
 		that.preparePage("intellectual approach, ", DoubleLogicalGuardOne);
 		that.preparePage("hoping to confuse or annoy her into submission. Another option is to ");
 		that.preparePage("harm yourself ", HarmSelfGuardOne);
-		that.preparePage("in an attempt to see, less threatening.");
+		that.preparePage("in an attempt to seem less threatening.");
 		
 	}
 
