@@ -1,4 +1,4 @@
-//import {Node7C} from './Node7C.js';
+import {Node7C} from './Node7C.js';
 import {Node6A} from './Node6A.js';
 import {Node8B} from './Node8B.js';
 import {TheWayData} from '../GameData.js';
@@ -35,7 +35,7 @@ export class Node7B {
 		that.preparePage("North"+came8B, Node8B);
 		that.preparePage(" towards a darkened hallway and door. There's some kind of symbol on the door but you can't tell what. ");
 		that.preparePage("East", Node7C);
-		that.preparePage(" leads to a room with light coming out from above it. There's banners on the sides of a grandiose door, silver etchings around its sides. You hear people talking on the other side. Going");
+		that.preparePage(" leads to a room with light coming out from above it. There's banners on the sides of a grandiose door, silver etchings around its sides. You hear people talking just beyond it... Going");
 		that.preparePage("West"+came6A, Node6A);
 		that.preparePage(" leads down a dim hallway, towards where you encountered that guard.");
 	

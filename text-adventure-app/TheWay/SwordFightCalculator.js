@@ -31,8 +31,8 @@ export function processRound(playerAttack, that){
 					
 				//player parry, guard grapple
 				case 2:
-					updateTexts();
 					TheWayData.Health -= 1;
+					updateTexts();
 					that.preparePage(randomSelect(ParryVGrapple));
 					break;
 			} 
@@ -46,8 +46,8 @@ export function processRound(playerAttack, that){
 				
 				//player strike, guard parry
 				case 0:
-					updateTexts();
 					TheWayData.Health -= 2;
+					updateTexts();
 					that.preparePage(randomSelect(StrikeVParry));
 					break;
 					
@@ -81,8 +81,8 @@ export function processRound(playerAttack, that){
 					
 				//player grapple, guard strike
 				case 1:
-					updateTexts();
 					TheWayData.Health -= 2;
+					updateTexts();
 					that.preparePage(randomSelect(GrappleVStrike));
 					break;
 					

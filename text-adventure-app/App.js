@@ -50,6 +50,10 @@ export default class App extends React.Component {
 	typeAnimationActual(scale = 1){
 		this.clearTimeout();
 		
+		if(globalScaleUp > scale){
+			scale = globalScaleUp
+		}
+		
 		if(this.state.toShowText.length > 0){
 			this.allowClicks = false;
 			
@@ -61,8 +65,14 @@ export default class App extends React.Component {
 		
 	}
 	
-	//this is called by outside classes, where some setup is done prior to actually calling the typeAnimation function aka typeAnimationActual
+	//allows user to speed up typing by touching screen
+	var globalScaleUp = 1;
+	
+	//some setup is done prior to actually calling the typeAnimation function aka typeAnimationActual
 	typeAnimation(){
+		//reset so it doesn't override scaling speed prematurely 
+		globalScaleUp = 1;
+		
 		//by default we assume we've shown this text before and set the speed to 10 letters per display
 		var scale = 10;
 		
@@ -107,7 +117,7 @@ export default class App extends React.Component {
 			
 			var keepTyping = true;
 			
-			//the more times addLetter is called for a given toShowText list, the more letters it adds with a single call
+			//the higher the scale, the more letters are displayed with a single call 
 			for(i=0;i<Math.max(1, scale);i++){
 				
 			var removeLastText = false;
@@ -198,6 +208,11 @@ export default class App extends React.Component {
 		  that.fadeAnimation(nextPage, scale);
 		  //when that finishes, it will continue with handleClickAfterFade(nextPage)
 		  
+	  }
+	  
+	  //we are in the middle of typing. while we cannot allow the user to click a word, we do allow them to speed up typing
+	  else{
+		  globalScaleUp = 10;		  
 	  }
   }
   

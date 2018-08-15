@@ -5,19 +5,20 @@ import {TheWay} from './TheWay/TheWay.js';
 export class Levels {
 
 	static createPage(that){
-		that.state.toShowText.push({text:"A Room\n\n", clickable:true, nextPage:ARoom});
+		that.preparePage("A Room\n\n", ARoom);
+		
 		if(GlobalData.Story2Unlocked){
-			that.state.toShowText.push({text:"The Way\n\n", clickable:true, nextPage:TheWay});
+			that.preparePage("The Way\n\n", TheWay);
 		}
 		else{
-			that.state.toShowText.push({text:"The Way\n\n", clickable:false});
+			that.preparePage("The Way\n\n");
 		}
 		
 		if(GlobalData.Story3Unlocked){
-			that.state.toShowText.push({text:"Story 3", clickable:true});
+			that.preparePage("Your World\n\n");
 		}
 		else{
-			that.state.toShowText.push({text:"Story 3", clickable:false});
+			that.preparePage("Your World\n\n");
 		}
 		
 	}

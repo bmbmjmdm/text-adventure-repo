@@ -7,7 +7,7 @@ export var ARoomData;
 export var TheWayData;
 
 //hack to start at level 2
-{GlobalData.Story2Unlocked = true; ResetARoomData(); ARoomData.Health = 8; ARoomData.ThrewGlass = true;}
+//{GlobalData.Story2Unlocked = true; ResetARoomData(); ARoomData.Health = 8; ARoomData.ThrewGlass = true;}
 
 export function ResetARoomData(){
 	ARoomData = {
@@ -57,7 +57,7 @@ export function ResetTheWayData(){
 		GuardOne:{Health:5, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardTwo:{Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardThree:{Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
-		GuardFour:{Health:16, Hostility:0, Neutralized:false, Pickpocket:false}, 
+		GuardFour:{Health:14, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		//gold is used for bribing guards and the next level
 		Gold:0, 
 		//glass can be used to try and free prisoner at 1b, but will fail and can get stuck inside the lock
@@ -65,7 +65,7 @@ export function ResetTheWayData(){
 		GlassSnapped:false, 
 		FullGlass:ARoomData.FullGlass, 
 		//the user gets a sword from killing GuardOne or visiting node 2C
-		HasWeapon:{Glass:ARoomData.ThrewGlass, Sword: false, Bandages:ARoomData.CutBindings}, 
+		HasWeapon:{Glass:ARoomData.ThrewGlass, Sword: false, Bandages:ARoomData.CutBindings, Axe: false}, 
 		//indicates if the prisoner is free at the given cell, changing the options there
 		Prisoner1BFree: false, 
 		Prisoner3AFree: false, 
