@@ -19,7 +19,7 @@ export class Search2C {
 		}
 		that.preparePage("You find a cloth-wrapped package of some kind. Inside is a small glass bottle with a rubber top. You smell the fluid which stings your nose: alcohol. ");
 		//heal
-		if(TheWayData.Health < 8){
+		if(TheWayData.Health < 13){
 			TheWayData.Health += 2;
 			that.preparePage("You dab it on some cloth and tend to your wounds. It stings, but not as much as the thought of what might happen otherwise. Or what might happen in general. Fighting your way out of here might be the last thing you do. You gain 2 health, bringing it up to "+TheWayData.Health+". Use it wisely. ");
 		}		

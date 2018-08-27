@@ -1,4 +1,4 @@
-import {TheWayData} from '../GameData.js';
+import {GlobalData} from '../GameData.js';
 import {Levels} from '../Levels.js';
 
 //End the level

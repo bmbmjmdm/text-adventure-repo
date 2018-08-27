@@ -5,6 +5,7 @@ export var GlobalData = {Story2Unlocked:false, Story3Unlocked:false};
 
 export var ARoomData;
 export var TheWayData;
+export var YourWorldData;
 
 //hack to start at level 2
 //{GlobalData.Story2Unlocked = true; ResetARoomData(); ARoomData.Health = 8; ARoomData.ThrewGlass = true;}
@@ -12,7 +13,7 @@ export var TheWayData;
 export function ResetARoomData(){
 	ARoomData = {
 		//When health reaches 0 or less, game over
-		Health: 10, 
+		Health: 15, 
 		//the first step required in ARoom is to break the lantern
 		BrokeLantern: false, 
 		//the second step required in ARoom is to drag a broken piece of lantern glass 
@@ -87,6 +88,78 @@ export function ResetTheWayData(){
 		//meta data for sword fighting, target is the guard object (GuardOne, GuardTwo, etc), After is the node they end in (Node2C, etc), LastChoice is the guard's last decision (parry, strike, grapple, see SwordFightCalculator)
 		SwordFight:{Target: {}, After: {}, LastChoice:-1},
 		//list of all nodes searched in the form of 'Node2A':true
-		Searched: {}
+		Searched: {},
+		//prisoners escaped at the end
+		PrisonersEscaped: 0
 		};
+		
+	//restarting level 2 must reset level 3 for continuity
+	ResetYourWorldData();
+}
+
+export function ResetYourWorldData(){
+	YourWorldData = {
+		//health carries over
+		Health: TheWayData.Health, 
+		//axe can be used to cut wood as well as attack
+		HasAxe: TheWayData.HasWeapon.Axe,
+		//gold is used for ?
+		Gold: TheWayData.Gold,
+		//number of allies with the player, can die off 
+		Allies: TheWayData.PrisonersEscaped,
+		//the individual allies the player has
+		Mother: TheWayData.PrisonersEscaped>0,
+		Son: TheWayData.PrisonersEscaped>0,
+		OldGuy: TheWayData.Prisoner1BFree,
+		SadGal: TheWayData.Prisoner3AFree,
+		FoulGuy: TheWayData.Prisoner5CFree,
+		BadassGal: TheWayData.Prisoner6BFree,
+		//kindling found which will make fire. 10 energy on its own, 20 with flint, 50 with wood 
+		Kindling: 0,
+		//berries found which can be eaten at camp for 10 energy each
+		Berries: 0,       
+		//water found which can be drunk at camp for 10 energy each
+		Water: 0,
+		//meat and wood can only be aquired when setting up camp
+		//meat found which can be eaten at camp, 20 energy each or 30 if cooked
+		Meat: 0,
+		//wood found which will help make fire. Cannot use without kindling and flint 
+		Wood: 0,
+		//sharp rocks found which will allow party to help fight
+		SharpRocks: 0,
+		//flint found which will help make fire. Cannot use without kindling 
+		Flint: 0,
+		//vines found which will help with tasks like climbing 
+		Vines: 0,
+		//energy which is required/depletes for tasks and regenerates with fire or food or water (base 10 restored when resting) 
+		//tasks can be done at 0 energy but run a % chance of killing a party member, hurting player, or losing supplies 
+		Energy: 50 + 10*(TheWayData.PrisonersEscaped-2),
+		//Almost every section can be searched, keep track of all of them here
+		SearchedPrison: false,
+		//Searched the RockyPath area
+		SearchedRockyPath: false,
+		//Hunted and foraged RockyFlat
+		HuntedRockyFlat = false,
+		ForagedRockyFlat = false,
+		//used for after camping 
+		CampContinue = {},
+		//indicates if a campfire has been started or not
+		Campfire = false,
+		//indicates what the player is eating on the given "feedX" 
+		//can be "berries", "meat", or "water"
+		Eating = "",
+		//can be "eat" or "drink"
+		EatDrink = "",
+		//true if player used a vine on the climbing wall
+		ClimbVine = false,
+		//needs 2 correct choices out of 3 in order to pass 
+		ClimbCorrect = 0,
+		//checked bush while climbing
+		SearchedClimb = false,
+		//did they try to shimmy across the ledge at the rocky flats
+		TriedLedge = false,
+		
+		
+		
+	}
 }

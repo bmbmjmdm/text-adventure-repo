@@ -26,6 +26,7 @@ export class Parry3GuardFour {
 			that.preparePage("strike", Strike4GuardFour);
 			that.preparePage(" or ");
 			that.preparePage("grapple?", Grapple4GuardFour);
+		}
 	}
 	
 }

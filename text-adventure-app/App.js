@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ScrollView}  from 'react-native';
+import {TouchableWithoutFeedback, View, Text, ScrollView}  from 'react-native';
 import {ClickText, DefaultText, styles} from './StylesEtc.js'
 import {HomePage} from './HomePage.js'
 
@@ -22,24 +22,27 @@ export default class App extends React.Component {
 			displayElements.push((<ClickText key={i} onPress={() => {this.handleClick(dtNode.nextPage, this)}}>{dtNode.text}</ClickText>));
 		}
 		else{
-			displayElements.push((<DefaultText key={i}>{dtNode.text}</DefaultText>));
+			displayElements.push((<DefaultText key={i} >{dtNode.text}</DefaultText>));
 		}
 	});
 
+	//TouchableWithoutFeedback is here to do stuff like speed up text typing when screen is clicked and swipe back to navigate
 	//View is the full-screen, black background container
 	//ScrollView is fixed to be full-screen (no larger), though understands that its content could be larger than itself. every render it calculates this difference and scrolls to the bottom automatically (the user can then scroll back up if they wish)
 	//Text is here to display our ClickText and DefaultText elements in a Text-style layout rather than a FlexView-style layout (concatting them rather than every text being in its own "box")
 	return (
-		<View style={styles.container}>
-		<ScrollView ref='scrollView'
-					onContentSizeChange={(w, h) => {this.contentHeight = h;  this.scrollToBottom(true);}}
-					onLayout={ev => this.scrollViewHeight = ev.nativeEvent.layout.height}
-					contentContainerStyle={styles.scroll}>
-			<Text>
-				{displayElements}
-			</Text>
-			</ScrollView>
-		</View>
+		<TouchableWithoutFeedback onPress={this.speedUp}  onPressIn={this.speedUp} >
+			<View style={styles.container} >
+				<ScrollView ref='scrollView'
+							onContentSizeChange={(w, h) => {this.contentHeight = h;  this.scrollToBottom(true);}}
+							onLayout={ev => this.scrollViewHeight = ev.nativeEvent.layout.height}
+							contentContainerStyle={styles.scroll}>
+					<Text>
+						{displayElements}
+					</Text>
+				</ScrollView>
+			</View>
+		</TouchableWithoutFeedback>
     );
   }
   
@@ -66,7 +69,7 @@ export default class App extends React.Component {
 	}
 	
 	//allows user to speed up typing by touching screen
-	var globalScaleUp = 1;
+	globalScaleUp = 1;
 	
 	//some setup is done prior to actually calling the typeAnimation function aka typeAnimationActual
 	typeAnimation(){
@@ -190,6 +193,11 @@ export default class App extends React.Component {
   
   
   
+  
+  //speed up animation when user clicks screen while text is typing 
+  speedUp(){
+	globalScaleUp = 10;	
+  }
   
   handleClick(nextPage, that){
 	  //can we click?

@@ -37,6 +37,7 @@ export class Parry4GuardFour {
 				that.preparePage("The guards caugh up blood and you can tell their bodies can't take the stress. ");
 				DieGuardFour.createPage(that);
 			}	
+		}
 	}
 	
 }

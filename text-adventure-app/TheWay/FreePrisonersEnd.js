@@ -26,8 +26,9 @@ export class FreePrisonersEnd {
 		
 		//guards are dead
 		else{
-			that.preparePage("A woman looks up at you with a sparkle of hope in her eyes. As you finish cutting her free, she helps tare away at the rope of the small boy next to her. You continue cutting rope until everyone's free. It looks like only a few people can walk out of here though. Those that can are overjoyed, crying, thanking you with words broken and chewed with excitement. You tell them not to thank you yet as you eye the large, metal gate. With a few new companions by your side, all of you bloody but none of you scared, it's time to find out ");
+			that.preparePage("A woman looks up at you with a sparkle of hope in her eyes. As you finish cutting her free, she helps tare away at the rope of the small boy next to her. You continue cutting rope until everyone's free, some overjoyed and some...silent, breaths shallow. It looks like only a few people can walk out of here. Those that can are crying, thanking you with words broken and chewed with excitement. You tell them not to thank you yet as you eye the large, metal gate. With a few new companions by your side, all of you bloody but none of you scared, it's time to find out ");
 			that.preparePage("what's on the other side.", Leave);
+			TheWayData.PrisonersEscaped = 2 + PrisonersFreed;
 		}
 	}
 	

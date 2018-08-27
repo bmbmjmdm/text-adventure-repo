@@ -1,6 +1,7 @@
 import {ARoom} from './ARoom/ARoom.js';
 import {GlobalData} from './GameData.js';
 import {TheWay} from './TheWay/TheWay.js';
+import {YourWorld} from './YourWorld/YourWorld.js';
 
 export class Levels {
 
@@ -15,7 +16,7 @@ export class Levels {
 		}
 		
 		if(GlobalData.Story3Unlocked){
-			that.preparePage("Your World\n\n");
+			that.preparePage("Your World\n\n", YourWorld);
 		}
 		else{
 			that.preparePage("Your World\n\n");

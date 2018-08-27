@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text  } from 'react-native';
 import PropTypes from 'prop-types';
 
 export const styles = StyleSheet.create({
@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
 export class DefaultText extends React.Component {
 	
   render() {
-    return (<Text style={styles.defaultText}>{this.props.children}</Text>);
+    return (<Text style={styles.defaultText} onPress={this.props.onPress}>{this.props.children}</Text>);
   }
   
 }
