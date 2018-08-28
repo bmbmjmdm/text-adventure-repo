@@ -158,6 +158,11 @@ export function ResetYourWorldData(){
 		SearchedClimb = false,
 		//did they try to shimmy across the ledge at the rocky flats
 		TriedLedge = false,
+		//searched forest path area
+		SearchedForestPath = false,
+		HuntedForestClearing = false,
+		ChoppedForestClearing = false,
+		BearHealth = 10,
 		
 		
 		
