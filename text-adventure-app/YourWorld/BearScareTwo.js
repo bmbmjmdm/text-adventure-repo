@@ -1,4 +1,4 @@
-import {BearSwipe} from './BearSwipe.js';
+import {BearSwing} from './BearSwing.js';
 import {BearBlock} from './BearBlock.js';
 import {YourWorldData} from '../GameData.js';
 
@@ -14,12 +14,12 @@ export class BearScareTwo {
 		that.preparePage("You swing your "+weapon+" around in the air and yell at the top of your lungs. ");
 		
 		//alies help player scream
-		that.preparePage(YourWorldData.Allies > 0){
+		if(YourWorldData.Allies > 0){
 			if(YourWorldData.Allies > 1){
 				that.preparePage("Voices call out ");
 			}
 			else{
-			that.preparePage("A voice calls out 
+				that.preparePage("A voice calls out ");
 			}
 			
 			that.preparePage("behind you, warding off the bear with feverous barks. ");
@@ -29,7 +29,7 @@ export class BearScareTwo {
 		
 		that.preparePage("block", BearBlock);
 		that.preparePage(" its assault or ");
-		that.preparePage("swipe back?", BearSwipe);
+		that.preparePage("swipe back?", BearSwing);
 		
 		
 		

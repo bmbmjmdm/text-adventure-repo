@@ -16,10 +16,10 @@ export class Levels {
 		}
 		
 		if(GlobalData.Story3Unlocked){
-			that.preparePage("Your World\n\n", YourWorld);
+			that.preparePage("Your World", YourWorld);
 		}
 		else{
-			that.preparePage("Your World\n\n");
+			that.preparePage("Your World");
 		}
 		
 	}

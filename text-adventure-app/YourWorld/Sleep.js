@@ -15,7 +15,7 @@ export class Sleep {
 			if(YourWorldData.Allies > 0){
 					that.preparePage("It seems everyone in your party has. ");
 			}
-			that.preparePage("It's a deadly thing to do, you know? And now as you struggle to make it through the night, you can only hope your will is enough, or else... "
+			that.preparePage("It's a deadly thing to do, you know? And now as you struggle to make it through the night, you can only hope your will is enough, or else... ");
 			
 			var chance = Math.random();
 			//death

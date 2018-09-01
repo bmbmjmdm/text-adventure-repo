@@ -7,8 +7,34 @@ export var ARoomData;
 export var TheWayData;
 export var YourWorldData;
 
+export function setARoomData(data){
+	ARoomData = data;
+}
+export function setTheWayData(data){
+	TheWayData = data;
+}
+export function setYourWorldData(data){
+	YourWorldData = data;
+}
+
+
+
 //hack to start at level 2
-//{GlobalData.Story2Unlocked = true; ResetARoomData(); ARoomData.Health = 8; ARoomData.ThrewGlass = true;}
+//{GlobalData.Story2Unlocked = true; ResetARoomData(); ARoomData.Health = 13; ARoomData.ThrewGlass = true;}
+
+//hack to start at level 3
+{GlobalData.Story3Unlocked = true; 
+ResetARoomData(); 
+ResetTheWayData(); 
+TheWayData.PrisonersEscaped = 5; 
+TheWayData.Health = 6; 
+TheWayData.Prisoner1BFree =true, 
+TheWayData.Prisoner3AFree = true,
+TheWayData.Prisoner5CFree = true,
+TheWayData.Prisoner6BFree = true,
+TheWayData.HasWeapon.Axe = true
+}
+
 
 export function ResetARoomData(){
 	ARoomData = {
@@ -110,10 +136,10 @@ export function ResetYourWorldData(){
 		//the individual allies the player has
 		Mother: TheWayData.PrisonersEscaped>0,
 		Son: TheWayData.PrisonersEscaped>0,
-		OldGuy: TheWayData.Prisoner1BFree,
-		SadGal: TheWayData.Prisoner3AFree,
-		FoulGuy: TheWayData.Prisoner5CFree,
-		BadassGal: TheWayData.Prisoner6BFree,
+		OldGuy: TheWayData.Prisoner1BFree && TheWayData.PrisonersEscaped>0,
+		SadGal: TheWayData.Prisoner3AFree && TheWayData.PrisonersEscaped>0,
+		FoulGuy: TheWayData.Prisoner5CFree && TheWayData.PrisonersEscaped>0,
+		BadassGal: TheWayData.Prisoner6BFree && TheWayData.PrisonersEscaped>0,
 		//kindling found which will make fire. 10 energy on its own, 20 with flint, 50 with wood 
 		Kindling: 0,
 		//berries found which can be eaten at camp for 10 energy each
@@ -139,32 +165,32 @@ export function ResetYourWorldData(){
 		//Searched the RockyPath area
 		SearchedRockyPath: false,
 		//Hunted and foraged RockyFlat
-		HuntedRockyFlat = false,
-		ForagedRockyFlat = false,
+		HuntedRockyFlat: false,
+		ForagedRockyFlat: false,
 		//used for after camping 
-		CampContinue = {},
+		CampContinue: {},
 		//indicates if a campfire has been started or not
-		Campfire = false,
+		Campfire: false,
 		//indicates what the player is eating on the given "feedX" 
 		//can be "berries", "meat", or "water"
-		Eating = "",
+		Eating: "",
 		//can be "eat" or "drink"
-		EatDrink = "",
+		EatDrink: "",
 		//true if player used a vine on the climbing wall
-		ClimbVine = false,
+		ClimbVine: false,
 		//needs 2 correct choices out of 3 in order to pass 
-		ClimbCorrect = 0,
+		ClimbCorrect: 0,
 		//checked bush while climbing
-		SearchedClimb = false,
+		SearchedClimb: false,
 		//did they try to shimmy across the ledge at the rocky flats
-		TriedLedge = false,
+		TriedLedge: false,
 		//searched forest path area
-		SearchedForestPath = false,
-		HuntedForestClearing = false,
-		ChoppedForestClearing = false,
-		BearHealth = 10,
-		
-		
-		
+		SearchedForestPath: false,
+		HuntedForestClearing: false,
+		ChoppedForestClearing: false,
+		BearHealth: 10,
+		SearchedGrassyLedge: false,
+		CaveTorch: false,
 	}
+	
 }

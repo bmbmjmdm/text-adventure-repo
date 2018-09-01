@@ -5,7 +5,7 @@ import {YourWorldData} from '../GameData.js';
 export class FeedBadass {
 
 	static createPage(that){
-		that.preparePage("You hand over the "+YourWorldData.Eating+" to the older woman, who gently takes your offering and smiles. \"You're awfully giving, you know? First you free me, then feed me, hell, you're guiding us out of the middle of nowhere. I see myself in you, you know.\" ";
+		that.preparePage("You hand over the "+YourWorldData.Eating+" to the older woman, who gently takes your offering and smiles. \"You're awfully giving, you know? First you free me, then feed me, hell, you're guiding us out of the middle of nowhere. I see myself in you, you know.\" ");
 
 		if(YourWorldData.Eating == "meat"){
 			YourWorldData.Energy += 10;

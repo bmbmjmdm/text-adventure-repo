@@ -2,6 +2,7 @@ import React from 'react';
 import {TouchableWithoutFeedback, View, Text, ScrollView}  from 'react-native';
 import {ClickText, DefaultText, styles} from './StylesEtc.js'
 import {HomePage} from './HomePage.js'
+import {FileManager} from './FileManager/FileManager.js'
 
 
 //App is the visual display object, in charge of animating the text on screen and allowing the user to click through to change it
@@ -22,17 +23,19 @@ export default class App extends React.Component {
 			displayElements.push((<ClickText key={i} onPress={() => {this.handleClick(dtNode.nextPage, this)}}>{dtNode.text}</ClickText>));
 		}
 		else{
-			displayElements.push((<DefaultText key={i} >{dtNode.text}</DefaultText>));
+			displayElements.push((<DefaultText key={i} onPress={() => {this.speedUp()}}>{dtNode.text}</DefaultText>));
 		}
 	});
 
-	//TouchableWithoutFeedback is here to do stuff like speed up text typing when screen is clicked and swipe back to navigate
-	//View is the full-screen, black background container
+	//the first View is for responding to a swipe to go back
+	//TouchableWithoutFeedback is here to speed up text typing when screen is clicked
+	//the second View is the full-screen, black background container
 	//ScrollView is fixed to be full-screen (no larger), though understands that its content could be larger than itself. every render it calculates this difference and scrolls to the bottom automatically (the user can then scroll back up if they wish)
 	//Text is here to display our ClickText and DefaultText elements in a Text-style layout rather than a FlexView-style layout (concatting them rather than every text being in its own "box")
 	return (
+		<View style={styles.container} onMoveShouldSetResponder={this.didSwipe} onResponderMove={()=>{this.handleSwipe(this)}}>
 		<TouchableWithoutFeedback onPress={this.speedUp}  onPressIn={this.speedUp} >
-			<View style={styles.container} >
+			<View style={styles.container} onStartShouldSetResponder={() => true} >
 				<ScrollView ref='scrollView'
 							onContentSizeChange={(w, h) => {this.contentHeight = h;  this.scrollToBottom(true);}}
 							onLayout={ev => this.scrollViewHeight = ev.nativeEvent.layout.height}
@@ -43,10 +46,12 @@ export default class App extends React.Component {
 				</ScrollView>
 			</View>
 		</TouchableWithoutFeedback>
+		</View>
     );
   }
   
-	
+
+
 	
 	//every 20 milliseconds, add a letter to the children rendered in this view 
 	//if there are no more letters to type, stop 
@@ -73,11 +78,12 @@ export default class App extends React.Component {
 	
 	//some setup is done prior to actually calling the typeAnimation function aka typeAnimationActual
 	typeAnimation(){
-		//reset so it doesn't override scaling speed prematurely 
-		globalScaleUp = 1;
+		//preserve a copy of all the text we're about to display incase we need to save
+		this.saveCopy();
 		
 		//by default we assume we've shown this text before and set the speed to 10 letters per display
 		var scale = 10;
+		globalScaleUp = 10;
 		
 		//we check each piece of text to see if we've shown it previously. if ALL text has been displayed before, go fast. if ANY text hasn't, go slow
 		for(nextText in this.state.toShowText){
@@ -89,6 +95,7 @@ export default class App extends React.Component {
 			else{
 				//uh oh we haven't shown this text before. set the speed to 1 letter per display 
 				scale = 1;
+				globalScaleUp = 1;
 				this.visitedTextMap[textHash] = true;
 			}
 		}
@@ -193,10 +200,135 @@ export default class App extends React.Component {
   
   
   
+	savableCopy = "";
+	//this holds a copy of the screens current text so that we can save it to file if needed
+	//we need to use a special case for the "nextPage" values, via saving their class as just a name so we can specifically load it later in FileManager
+	saveCopy(){
+		this.savableCopy = JSON.stringify(this.state.toShowText, 
+		(key, value)=>{
+			if (typeof value === 'function') {	
+				return value.name;
+			} 
+			else {
+				return value;
+			}
+		});
+	}
+	
+	
+  startX = 0;
+  startY = 0;
+  direction= 0;
+  timestamp = 0;
+  
+  //check to see if user swiped left or right 
+  didSwipe(evt){  	  
+	  var curX = evt.nativeEvent.locationX;
+	  var curY = evt.nativeEvent.locationY;
+	  
+	  //too much time has passed since the swipe started, reset 
+	  if(evt.nativeEvent.timestamp > this.timestamp+250){
+		  this.timestamp = evt.nativeEvent.timestamp;
+		  this.resetSwipe()
+		  return false;
+	  }
+	  
+	  //continue 
+	  else{
+		  this.timestamp = evt.nativeEvent.timestamp;
+	  }
+	  
+	  //we're on a new swipe
+	  if(this.startX == 0){
+		  this.startY = curY;
+		  this.startX = curX;
+		  return false;
+	  }
+	  
+	  //we're on the second reading of a new swipe
+	  if(this.direction == 0){
+		  if(curX == this.startX){
+			  return false;
+		  }
+		  //set the direction of X to either positive (right) or negative (left) 
+		  this.direction = (curX-this.startX)/Math.abs(curX-this.startX)
+
+	  }
+	  
+	  
+	  //Y has changed too much, reset
+	  if(curY > this.startY + 200 || curY < this.startY - 200){
+		  this.resetSwipe();
+		  return false;
+	  }
+	  
+	  //looks good so far
+	  else{
+	  
+		//positive direction, we're swiping right
+		if(this.direction > 0){
+			//we've completed a swipe!
+			if(curX > this.startX + 150){
+				this.resetSwipe();
+				return true;
+			}
+			  
+			//we're not there yet
+			else{
+				return false;
+			}
+		  
+		}
+	  
+		//negative direction, we're swiping left
+		else{
+			
+			//we've completed a swipe!
+			if(curX < this.startX - 150){
+				this.resetSwipe();
+				return true;
+			}
+			  
+			//we're not there yet
+			else{
+				return false;
+			}
+		}
+	  
+	  }
+  }
+  
+  //reset the swipe-detection numbers
+  resetSwipe(){  
+	this.direction = 0;
+	this.startX = 0;
+	this.startY = 0;
+  }
+  
+  saving = false;
+  //we're swiping, go back to homescreen and possibly save 
+	handleSwipe(that){
+		if(!this.saving){
+			this.saving = true;
+			
+			if(FileManager.canSave()){
+				FileManager.SaveGame(that);
+			}
+			
+			that.canClick = true;
+			that.handleClick(HomePage, that);
+		}
+	  
+	}
   
   //speed up animation when user clicks screen while text is typing 
   speedUp(){
-	globalScaleUp = 10;	
+	if(globalScaleUp < 10){
+		globalScaleUp = 10;	
+	}
+	else{
+		globalScaleUp++;
+	}
   }
   
   handleClick(nextPage, that){
@@ -220,14 +352,21 @@ export default class App extends React.Component {
 	  
 	  //we are in the middle of typing. while we cannot allow the user to click a word, we do allow them to speed up typing
 	  else{
-		  globalScaleUp = 10;		  
+		  this.speedUp();		  
 	  }
   }
   
   handleClickAfterFade(nextPage){
-	  //nextPage are classes that implement createPage, which populates toShowText and calls typeAnimation
-	  nextPage.createPage(this);
-	  this.typeAnimation();
+	  //nextPage are classes that implement createPage, which populates toShowText so we can call typeAnimation
+	  var newContent = nextPage.createPage(this);
+	  
+	  //we check for a "then" function as a hack to see if createPage returned a promise (some of our pages use async functions). if it did, we wait for the promise to resolve before typing
+	  if(newContent != undefined && (typeof newContent.then == 'function')){
+		newContent.then((value)=>{this.typeAnimation();});
+	  }
+	  else{
+		this.typeAnimation();
+	  }
   }
   
   
@@ -320,11 +459,13 @@ export default class App extends React.Component {
 	  this.visitedTextMap = {};
 	  this.contentHeight = 0;
 	  this.scrollViewHeight= 0;
+	  this.resetSwipe = this.resetSwipe.bind(this);
+	  this.didSwipe = this.didSwipe.bind(this);
+	  
   }
   
     componentDidMount() {
-		HomePage.createPage(this);
-		this.typeAnimation();
+		HomePage.createPage(this).then((value)=>{this.typeAnimation();});
 	}
   
     componentWillUnmount() {

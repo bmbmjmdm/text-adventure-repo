@@ -13,7 +13,7 @@ export class BearScare {
 		
 		that.preparePage("You wave your " + weapon + " in the air and make yourself look big. "); 
 		
-		that(YourWorldData.FoulGuy){
+		if(YourWorldData.FoulGuy){
 			that.preparePage("You see the pudgy, foul man standing tall out of the corner of your eye. He... doesn't look very serious. That's wierd. ");
 		}
 		

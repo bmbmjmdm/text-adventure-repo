@@ -10,7 +10,7 @@ export class FeedSad {
 			that.preparePage("The girl then burps and holds her stomach. \"Maybe we should have cooked that first.\" ");
 		}
 		
-		preparePage("What else...", Camping);
+		that.preparePage("What else...", Camping);
 		
 		
 	}

@@ -1,22 +1,30 @@
-import {Levels} from './Levels.js'
+import {Levels} from './Levels.js';
+import {Load} from './Load.js';
+import {Continue} from './Continue.js';
+import {FileManager} from './FileManager/FileManager.js';
 
 export class HomePage{
   
-  static createPage(that){
-	  this.homepageContinue(that);
+  static async createPage(that){
+	  return await this.promisePage(that);
+  }
+  
+  static async promisePage(that){
+	  var loadableFiles = await FileManager.GetFileNames();
+	  this.homepageContinue(that, loadableFiles.length > 0);
 	  this.homepageNew(that);
-	  this.homepageLoad(that);
-	  
+	  this.homepageLoad(that, loadableFiles.length > 0);
+	  that.saving = false;
   }
   
   //determines if there is a game to continue- ie an unfinished game in the user's save files which was the last one the user played
   //if so returns the appropriate, clickable text
   //if not returns nothing
   //note if the user finished the last game they played, however has other unfinished games, load will be clickable but continue will not be
-  static homepageContinue(that){
+  static homepageContinue(that, trueFalse){
 	  //TODO
-	  if(false){
-		
+	  if(trueFalse){
+		  that.preparePage("Continue\n\n", Continue);
 	  }
 	  
 	  else{
@@ -36,10 +44,9 @@ export class HomePage{
   //if so returns the appropriate, clickable text
   //if not returns nothing
   //note if the user finished the last game they played, however has other unfinished games, load will be clickable but continue will not be
-  static homepageLoad(that){
-	  //TODO
-	  if(false){
-		
+  static homepageLoad(that, trueFalse){
+	  if(trueFalse){
+		  that.preparePage("\n\nLoad", Load);
 	  }
 	  
 	  else{

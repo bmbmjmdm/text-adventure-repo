@@ -10,7 +10,7 @@ export class FeedOld {
 			that.preparePage("After finishing the meat he holds his stomach and shakes his head. \"Oooh boy. Shoulda cooked that a bit.\" ");
 		}
 		
-		preparePage("Moving on.", Camping);
+		that.preparePage("Moving on.", Camping);
 		
 		
 	}

@@ -97,7 +97,7 @@ export class Camping {
 				if(YourWorldData.Allies>0){
 					that.preparePage(" and your companions");
 				}
-				that.preparePage(", a warm embrace might be do you good. Should you make a ");
+				that.preparePage(", a warm embrace might do you some good. Should you make a ");
 				that.preparePage("fire? ", Fire);
 			}
 			

@@ -36,7 +36,7 @@ export class BearLure {
 		else{
 			YourWorldData.Flint++;
 			that.preparePage("nothing. Maybe you can find some berries or something nearby? You begin searching, but the surrounding area isn't very lively. It looks like something plowed through this earth, a landslide or something. The best you can find is some broken off flint by a boulder. That won't do. You add it to your bag and reconsider ");
-			that.preparePage("confronting the bear", BearConfront):
+			that.preparePage("confronting the bear", BearConfront);
 			that.preparePage(" or ");
 			that.preparePage("backtracking.", TurnAroundForest);
 		}

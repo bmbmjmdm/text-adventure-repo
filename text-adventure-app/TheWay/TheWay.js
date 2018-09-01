@@ -4,12 +4,15 @@ import {AmbushGuardOne} from './AmbushGuardOne.js';
 import {FreePrisonerOne} from './FreePrisonerOne.js';
 import {ResetTheWayData} from '../GameData.js';
 import {TheWayData} from '../GameData.js';
+import {TheWayFile} from '../FileManager/TheWayFile.js';
+import {FileManager} from '../FileManager/FileManager.js';
 
 //the second level
 export class TheWay {
 
 	static createPage(that){
 		ResetTheWayData();
+		FileManager.setLevelFile(new TheWayFile());
 		
 		that.preparePage("As you dust soot off yourself, the crackling fire behind you illuminates part of the hallway. You're standing at an intersection, a long hallway extends in front of you while two shorter ones are on your right and left. A figure is walking down the long hallway towards you. ");
 		if(TheWayData.RefusedDeal){

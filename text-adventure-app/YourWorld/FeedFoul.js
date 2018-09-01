@@ -5,7 +5,7 @@ import {YourWorldData} from '../GameData.js';
 export class FeedFoul {
 
 	static createPage(that){
-		that.preparePage("You give the rank man your "+YourWorldData.Eating+". He flashes a devlish grin, winks and laughs, then begins "+YourWorldData.EatDrink+"ing. ";
+		that.preparePage("You give the rank man your "+YourWorldData.Eating+". He flashes a devlish grin, winks and laughs, then begins "+YourWorldData.EatDrink+"ing. ");
 
 		if(YourWorldData.Eating == "meat" && !YourWorldData.Campfire){
 			that.preparePage("After he finishes, he lets out a burp more foul than you could've imagined. You can't imagine that's normal for him, maybe it was the uncooked meat? ");
@@ -15,7 +15,7 @@ export class FeedFoul {
 			YourWorldData.Energy += 10;
 		}
 		
-		preparePage("Time to get away.", Camping);
+		that.preparePage("Time to get away.", Camping);
 		
 		
 	}

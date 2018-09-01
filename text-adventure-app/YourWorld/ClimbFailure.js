@@ -38,7 +38,7 @@ export class ClimbFailure {
 			that.preparePage("What comes next is hopefully easier, but somehow you don't expect it to be. You look around and find yourself in the same place you started. There's a wall to ");
 			that.preparePage("climb", ClimbWall);
 			that.preparePage(" and the way ");
-			that.preparePage("back to the bottom," TurnAroundRocky);
+			that.preparePage("back to the bottom,", TurnAroundRocky);
 			that.preparePage(" to the forest.");
 			
 			if(!YourWorldData.TriedLedge){

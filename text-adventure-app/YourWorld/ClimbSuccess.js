@@ -14,7 +14,14 @@ export class ClimbSuccess {
 			}
 		}
 		
-		that.preparePage("You sit at the top now and gather your strength, look around at the (hopefully) paradise you fought so hard to reach. You have "+YourWorldData.Energy+" energy.");
+		that.preparePage("You sit at the top now and gather your strength, look around at the (hopefully) paradise you fought so hard to reach. You have "+YourWorldData.Energy+" energy");
+		if(YourWorldData.ClimbVine){
+			that.preparePage(" and it looks like that vine you used is about to break, better leave it behind. ");
+		}
+		else{
+			that.preparePage(". ");
+		}
+		
 		GrassyLedge.createPage(that);
 		
 		

@@ -5,7 +5,7 @@ import {YourWorldData} from '../GameData.js';
 export class FeedMother {
 
 	static createPage(that){
-		that.preparePage("You hand the mother your "+YourWorldData.Eating+" and she looks up to you and nods. \"Th-thank you\" ";
+		that.preparePage("You hand the mother your "+YourWorldData.Eating+" and she looks up to you and nods. \"Th-thank you\" ");
 		if(YourWorldData.Son){
 			that.preparePage("She splits it with her son and they enjoy their morsal together. They look happy, not with what they have, but who they get to share it with. ");
 		}
@@ -20,7 +20,7 @@ export class FeedMother {
 			YourWorldData.Energy += 10;
 		}
 		
-		preparePage("What's next...", Camping);
+		that.preparePage("What's next...", Camping);
 		
 		
 	}
