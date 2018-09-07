@@ -1,7 +1,7 @@
+import {ARoomData} from '../GameData.js';
+import {Escape} from './Escape.js';
 
-import {ARoomData, GlobalData} from '../GameData.js';
-import {Levels} from '../HomePage/Levels.js';
-
+//the player has thrown the rope through the window and is now climbing out, they escape and finish the level
 export class ClimbRope {
 
 	static createPage(that){
@@ -35,18 +35,16 @@ export class ClimbRope {
 
 		if(ARoomData.MadeDeal || ARoomData.MadeBetterDeal){
 			that.preparePage(" A voice comes not from them, but from your left. It's the same one you heard before, \"Hey! Hey let me out of here! Quick! We had a deal!\" You see a door next to your own, where the voice is clearly coming from. At the same time, you can see the figure in the distance approaching. ");
-			that.preparePage("You don't have much time.", Levels);
+			that.preparePage("You don't have much time.", Escape);
 		}
 		else if (ARoomData.RefusedDeal){
 			that.preparePage(" A familiar voice begins yelling from the left of you, \"Guards! Guards! Down here! Someone's escaping!\" The other prisoner must not be happy about the deal you refused. The figure in the distance starts running; ");
-			that.preparePage("You don't have much time.", Levels);
+			that.preparePage("You don't have much time.", Escape);
 		}
 		else{
 			that.preparePage(" A voice comes not from them, but from your left. \"Hey! Hey let me out of here! Quick! Come on, you can't just leave me here!\" You see a door next to your own, where the voice is clearly coming from. It must be another prisoner. At the same time, you can see the figure in the distance approaching. ");
-			that.preparePage("You don't have much time.", Levels);
+			that.preparePage("You don't have much time.", Escape);
 		}
-
-		GlobalData.Story2Unlocked = true;
 		
 		
 	}

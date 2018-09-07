@@ -1,6 +1,12 @@
 
-//game data records decisions in a single game as well as the current state (paragraph) the user is in 
-export var GlobalData = {Story2Unlocked:false, Story3Unlocked:false};
+//globaldata DOES NOT contain classes and functions, unlike specific level data
+//it does in fact recieve a copy of specific level data when a level is completed, but NONE of the properties relied on should be classes or functions
+export var GlobalData = 
+{Story2Unlocked:false, 
+Story3Unlocked:false,
+LastARoomData:{},
+LastTheWayData:{}
+};
 
 
 export var ARoomData;
@@ -17,23 +23,33 @@ export function setYourWorldData(data){
 	YourWorldData = data;
 }
 
+export function setGlobalData(data){
+	GlobalData = data;
+}
+
 
 
 //hack to start at level 2
-//{GlobalData.Story2Unlocked = true; ResetARoomData(); ARoomData.Health = 13; ARoomData.ThrewGlass = true;}
+/*{GlobalData.Story2Unlocked = true; 
+ResetARoomData(); 
+GlobalData.LastARoomData = ARoomData;
+GlobalData.LastARoomData.Health = 13; 
+GlobalData.LastARoomData.ThrewGlass = true;}*/
 
 //hack to start at level 3
-{GlobalData.Story3Unlocked = true; 
+/*{GlobalData.Story3Unlocked = true; 
 ResetARoomData(); 
+GlobalData.LastARoomData = ARoomData;
 ResetTheWayData(); 
-TheWayData.PrisonersEscaped = 5; 
-TheWayData.Health = 6; 
-TheWayData.Prisoner1BFree =true, 
-TheWayData.Prisoner3AFree = true,
-TheWayData.Prisoner5CFree = true,
-TheWayData.Prisoner6BFree = true,
-TheWayData.HasWeapon.Axe = true
-}
+GlobalData.LastTheWayData = TheWayData;
+GlobalData.LastTheWayData.PrisonersEscaped = 5; 
+GlobalData.LastTheWayData.Health = 6; 
+GlobalData.LastTheWayData.Prisoner1BFree =true, 
+GlobalData.LastTheWayData.Prisoner3AFree = true,
+GlobalData.LastTheWayData.Prisoner5CFree = true,
+GlobalData.LastTheWayData.Prisoner6BFree = true,
+GlobalData.LastTheWayData.HasWeapon.Axe = true
+}*/
 
 
 export function ResetARoomData(){
@@ -66,9 +82,6 @@ export function ResetARoomData(){
 		MadeDeal:false, 
 		//the user found out their cellmate has gold they can offer in exchange for help
 		MadeBetterDeal:false};
-	
-	//if they start at level 1, level 2 must be reset for continuity
-	ResetTheWayData();
 }
 
 
@@ -76,7 +89,7 @@ export function ResetARoomData(){
 export function ResetTheWayData(){
 	TheWayData = {
 		//health carries over
-		Health: ARoomData.Health, 
+		Health: GlobalData.LastARoomData.Health, 
 		//hostility determines if a guard will attack after diplomacy. positive numbers are hostile, negative are passive, and 0 is random
 		//neutralized means they were talked down with diplomacy
 		//0 or less health means they were killed
@@ -90,9 +103,9 @@ export function ResetTheWayData(){
 		//glass can be used to try and free prisoner at 1b, but will fail and can get stuck inside the lock
 		GlassJammed:false, 
 		GlassSnapped:false, 
-		FullGlass:ARoomData.FullGlass, 
+		FullGlass:GlobalData.LastARoomData.FullGlass, 
 		//the user gets a sword from killing GuardOne or visiting node 2C
-		HasWeapon:{Glass:ARoomData.ThrewGlass, Sword: false, Bandages:ARoomData.CutBindings, Axe: false}, 
+		HasWeapon:{Glass:GlobalData.LastARoomData.ThrewGlass, Sword: false, Bandages:GlobalData.LastARoomData.CutBindings, Axe: false}, 
 		//indicates if the prisoner is free at the given cell, changing the options there
 		Prisoner1BFree: false, 
 		Prisoner3AFree: false, 
@@ -101,8 +114,8 @@ export function ResetTheWayData(){
 		//used at the end of the level to modify the health of GuardFour 
 		PrisonersFreed: 0,
 		//carried over to determine prisoner 1B's attitude 
-		RefusedDeal : ARoomData.RefusedDeal,
-		MadeBetterDeal : ARoomData.MadeBetterDeal,
+		RefusedDeal : GlobalData.LastARoomData.RefusedDeal,
+		MadeBetterDeal : GlobalData.LastARoomData.MadeBetterDeal,
 		//prisoner 1B can be extorted to bribe GuardOne if the user knows about the gold
 		Extorted : false,
 		//once the user kills or pickpockets a guard, they will have keys to open a variety of doors
@@ -118,28 +131,25 @@ export function ResetTheWayData(){
 		//prisoners escaped at the end
 		PrisonersEscaped: 0
 		};
-		
-	//restarting level 2 must reset level 3 for continuity
-	ResetYourWorldData();
 }
 
 export function ResetYourWorldData(){
 	YourWorldData = {
 		//health carries over
-		Health: TheWayData.Health, 
+		Health: GlobalData.LastTheWayData.Health, 
 		//axe can be used to cut wood as well as attack
-		HasAxe: TheWayData.HasWeapon.Axe,
+		HasAxe: GlobalData.LastTheWayData.HasWeapon.Axe,
 		//gold is used for ?
-		Gold: TheWayData.Gold,
+		Gold: GlobalData.LastTheWayData.Gold,
 		//number of allies with the player, can die off 
-		Allies: TheWayData.PrisonersEscaped,
+		Allies: GlobalData.LastTheWayData.PrisonersEscaped,
 		//the individual allies the player has
-		Mother: TheWayData.PrisonersEscaped>0,
-		Son: TheWayData.PrisonersEscaped>0,
-		OldGuy: TheWayData.Prisoner1BFree && TheWayData.PrisonersEscaped>0,
-		SadGal: TheWayData.Prisoner3AFree && TheWayData.PrisonersEscaped>0,
-		FoulGuy: TheWayData.Prisoner5CFree && TheWayData.PrisonersEscaped>0,
-		BadassGal: TheWayData.Prisoner6BFree && TheWayData.PrisonersEscaped>0,
+		Mother: GlobalData.LastTheWayData.PrisonersEscaped>0,
+		Son: GlobalData.LastTheWayData.PrisonersEscaped>0,
+		OldGuy: GlobalData.LastTheWayData.Prisoner1BFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
+		SadGal: GlobalData.LastTheWayData.Prisoner3AFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
+		FoulGuy: GlobalData.LastTheWayData.Prisoner5CFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
+		BadassGal: GlobalData.LastTheWayData.Prisoner6BFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
 		//kindling found which will make fire. 10 energy on its own, 20 with flint, 50 with wood 
 		Kindling: 0,
 		//berries found which can be eaten at camp for 10 energy each
@@ -159,7 +169,7 @@ export function ResetYourWorldData(){
 		Vines: 0,
 		//energy which is required/depletes for tasks and regenerates with fire or food or water (base 10 restored when resting) 
 		//tasks can be done at 0 energy but run a % chance of killing a party member, hurting player, or losing supplies 
-		Energy: 50 + 10*(TheWayData.PrisonersEscaped-2),
+		Energy: 50 + 10*(GlobalData.LastTheWayData.PrisonersEscaped-2),
 		//Almost every section can be searched, keep track of all of them here
 		SearchedPrison: false,
 		//Searched the RockyPath area

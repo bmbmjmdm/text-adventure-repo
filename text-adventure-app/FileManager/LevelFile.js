@@ -11,6 +11,7 @@ export class LevelFile{
 	//folder name where this level's files are held, will also check top level by default
 	nameSpace = "";
 	
+	//this MUST BE UNIQUE 
 	getName(){
 		return "";
 	}

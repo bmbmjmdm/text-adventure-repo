@@ -71,12 +71,7 @@ export class LookAroundRoom {
 			that.preparePage("on the floor near the ");
 			that.preparePage("fire.", LookAtFire);
 			that.preparePage(" That lantern really held a lot of oil and ");
-			if(ARoomData.DraggedGlass){
-				that.preparePage("glass,");
-			}
-			else{
-				that.preparePage("glass,", LookAtGlass);
-			}
+			that.preparePage("glass,", LookAtGlass);
 			that.preparePage(" it's only a matter of time before the whole room burns down, including you. Too bad you're ");
 			that.preparePage("tied ", LookAtBindings);
 			that.preparePage("up with nowhere to go. Oh wait, what's that? With all this light you notice there's a small ");

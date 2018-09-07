@@ -15,7 +15,7 @@ export class DisarmGuardOne {
 		}
 		else{
 			TheWayData.Health--;
-			that.preparePage("The sword grazes your shoulder, unable to take purchase at this distance.  You take 1 damage and have "+TheWayData.Health+" health." );
+			that.preparePage("The sword grazes your shoulder, unable to take purchase at this distance.  You take 1 damage and have "+TheWayData.Health+" health. " );
 		}
 		
 		that.preparePage("Standing this close you think you can ");

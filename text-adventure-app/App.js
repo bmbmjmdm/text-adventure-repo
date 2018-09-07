@@ -297,14 +297,15 @@ export default class App extends React.Component {
 	this.startY = 0;
   }
   
-  saving = false;
+  
+  swipeHandled = false;
   //we're swiping, go back to homescreen and possibly save 
 	handleSwipe(that){
-		if(!this.saving){
-			this.saving = true;
+		if(!that.swipeHandled){
+			this.swipeHandled = true;
 			
 			if(FileManager.canSave()){
-				FileManager.SaveGame(that);
+				FileManager.SaveGame(that, true);
 			}
 			
 			that.canClick = true;
@@ -447,6 +448,9 @@ export default class App extends React.Component {
   constructor(props){
 	  super(props);
 	  //console.disableYellowBox = true
+	  //note this ignores a warning caused by our "save periodically" timer
+	  //react native does not have an optimized long-term timer at the moment, so everyone suggests suppressing the warning 
+	  console.ignoredYellowBox = ['Setting a timer'];
 	  this.state = {displayedText: [], toShowText: [], allowClicks: false};  
 	  this.visitedTextMap = {};
 	  this.contentHeight = 0;
@@ -459,6 +463,7 @@ export default class App extends React.Component {
   
     componentDidMount() {
 		HomePage.createPage(this).then((value)=>{this.typeAnimation();});
+		setTimeout(() => {this.periodicSave(this)}, 300000);
 	}
   
     componentWillUnmount() {
@@ -474,6 +479,16 @@ export default class App extends React.Component {
       scrollResponder.scrollResponderScrollTo({x: 0, y: scrollHeight, animated});
     }
   }
+  
+  
+	//save game every 5 minutes
+	periodicSave(that){
+		if(FileManager.canSave()){				
+			FileManager.SaveGame(that, false);
+		}
+		
+		setTimeout(() => {that.periodicSave(that)}, 300000);
+	}
   
 
 	

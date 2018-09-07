@@ -14,7 +14,7 @@ export class HomePage{
 	  this.homepageContinue(that, loadableFiles.length > 0);
 	  this.homepageNew(that);
 	  this.homepageLoad(that, loadableFiles.length > 0);
-	  that.saving = false;
+		that.swipeHandled = false;
   }
   
   //determines if there is a game to continue- ie an unfinished game in the user's save files which was the last one the user played
