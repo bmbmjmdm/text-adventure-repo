@@ -7,6 +7,7 @@ export class Leave {
 
 	static async createPage(that){
 		GlobalData.Story3Unlocked = true;
+		await FileManager.finishLevel(that, "TheWay");
 		Levels.createPage(that);
 	}
 	
