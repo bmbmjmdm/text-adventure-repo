@@ -1,5 +1,5 @@
 import {TheWayData} from '../GameData.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 
 //died while fighting guard four 
 export class DieGuardFour {

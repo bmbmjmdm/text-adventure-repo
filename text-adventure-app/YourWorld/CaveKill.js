@@ -1,6 +1,6 @@
 import {CaveFindPit} from './CaveFindPit.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 
 //kill a bat, resulting in a bunch of them going crazy and possibly harming the player
 export class CaveKill {

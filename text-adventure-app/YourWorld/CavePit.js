@@ -1,6 +1,6 @@
 import {CaveExit} from './CaveExit.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 
 //if the player has vision, they'll climb into the pit using vines if they have them, the badass woman if she's there, or just jumping 
 //if they jump, they're trapped, game over 

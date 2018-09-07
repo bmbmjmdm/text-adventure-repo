@@ -1,5 +1,5 @@
 import {TheWayData} from '../GameData.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 import {SwordFightParry} from './SwordFightParry.js';
 import {SwordFightStrike} from './SwordFightStrike.js';
 import {SwordFightGrapple} from './SwordFightGrapple.js';

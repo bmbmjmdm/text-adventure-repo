@@ -1,6 +1,6 @@
 import {Node1B} from './Node1B';
 import {TheWayData} from '../GameData.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 
 //fail to pickpocket guard one, 1 damage and cant try again
 export class FailPickPocketGuardOne {

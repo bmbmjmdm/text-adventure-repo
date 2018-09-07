@@ -1,7 +1,7 @@
 import {Node2C} from './Node2C.js';
 import {SwordFightStart} from './SwordFightStart.js';
 import {TheWayData} from '../GameData.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 
 //the player attacks guard two, arming themselves with a sword if they dont have one and initiating the sword fight sequence
 export class AttackGuardTwo {

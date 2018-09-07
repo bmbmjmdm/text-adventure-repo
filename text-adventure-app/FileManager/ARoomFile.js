@@ -1,6 +1,7 @@
 import {LevelFile} from './LevelFile.js';
 import {ARoomData} from '../GameData.js';
 import {setARoomData} from '../GameData.js';
+import {FileManager} from './FileManager.js';
 
 export class ARoomFile extends LevelFile{
 	
@@ -9,7 +10,7 @@ export class ARoomFile extends LevelFile{
 	}
 	
 	saveData(that){
-		this.data = JSON.stringify(ARoomData);
+		this.data = FileManager.jsonWriter(ARoomData);
 		this.loadFunction = "setARoomData";
 		this.nameSpace = "ARoom"
 		this.saveState(that);

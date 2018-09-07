@@ -1,5 +1,5 @@
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 
 //go to sleep after camping, decide if anyone dies in their sleep, then continue 
 export class Sleep {

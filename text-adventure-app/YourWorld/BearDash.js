@@ -1,7 +1,7 @@
 import {BearKills} from './BearKills.js';
 import {BearDies} from './BearDies.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 
 //Try to get out of the way of the bear trying to tackle, 3/4 fail 
 export class BearDash {

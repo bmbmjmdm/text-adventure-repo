@@ -1,5 +1,5 @@
 import {GlobalData} from '../GameData.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 
 //End the level
 export class Leave {

@@ -1,6 +1,6 @@
 import {GougeGuardOne} from './GougeGuardOne.js';
 import {ThirdDisarmGuardOne} from './ThirdDisarmGuardOne.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 import {TheWayData} from '../GameData.js';
 
 //player tries to disarm guard either a first or second time. either way they fail and take medium damage

@@ -1,7 +1,7 @@
 import {Levels} from './Levels.js';
 import {Load} from './Load.js';
 import {Continue} from './Continue.js';
-import {FileManager} from './FileManager/FileManager.js';
+import {FileManager} from '../FileManager/FileManager.js';
 
 export class HomePage{
   

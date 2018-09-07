@@ -1,0 +1,4 @@
+remove space in "main" property in package.json for babel-plugin-require-all
+
+in index.js add a null check for v.init (v.init != null) at line 61
+

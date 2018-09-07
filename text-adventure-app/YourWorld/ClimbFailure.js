@@ -2,7 +2,7 @@ import {ClimbWall} from './ClimbWall.js';
 import {ShimmyLedge} from './ShimmyLedge.js';
 import {TurnAroundRocky} from './TurnAroundRocky.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 
 //fail the climbing challenge and fall to the bottom, taking damage and starting over if they choose 
 export class ClimbFailure {

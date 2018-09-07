@@ -1,7 +1,7 @@
 import {GougeGuardOne} from './GougeGuardOne.js';
 import {ThirdDisarmGuardOne} from './ThirdDisarmGuardOne.js';
 import {Node1B} from './Node1B.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 import {TheWayData} from '../GameData.js';
 
 //player tries to hit guard's thigh before sweeping, but ends up failing and getting sweeped

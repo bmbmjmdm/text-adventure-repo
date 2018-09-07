@@ -1,7 +1,7 @@
-import {ARoom} from './ARoom/ARoom.js';
-import {GlobalData} from './GameData.js';
-import {TheWay} from './TheWay/TheWay.js';
-import {YourWorld} from './YourWorld/YourWorld.js';
+import {ARoom} from '../ARoom/ARoom.js';
+import {GlobalData} from '../GameData.js';
+import {TheWay} from '../TheWay/TheWay.js';
+import {YourWorld} from '../YourWorld/YourWorld.js';
 
 export class Levels {
 

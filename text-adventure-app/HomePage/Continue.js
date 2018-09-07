@@ -1,4 +1,4 @@
-import {FileManager} from './FileManager/FileManager.js';
+import {FileManager} from '../FileManager/FileManager.js';
 
 //start a game from the most recently saved file 
 export class Continue{

@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableWithoutFeedback, View, Text, ScrollView}  from 'react-native';
 import {ClickText, DefaultText, styles} from './StylesEtc.js'
-import {HomePage} from './HomePage.js'
+import {HomePage} from './HomePage/HomePage.js'
 import {FileManager} from './FileManager/FileManager.js'
 
 
@@ -204,15 +204,7 @@ export default class App extends React.Component {
 	//this holds a copy of the screens current text so that we can save it to file if needed
 	//we need to use a special case for the "nextPage" values, via saving their class as just a name so we can specifically load it later in FileManager
 	saveCopy(){
-		this.savableCopy = JSON.stringify(this.state.toShowText, 
-		(key, value)=>{
-			if (typeof value === 'function') {	
-				return value.name;
-			} 
-			else {
-				return value;
-			}
-		});
+		this.savableCopy = FileManager.jsonWriter(this.state.toShowText);
 	}
 	
 	
@@ -461,6 +453,7 @@ export default class App extends React.Component {
 	  this.scrollViewHeight= 0;
 	  this.resetSwipe = this.resetSwipe.bind(this);
 	  this.didSwipe = this.didSwipe.bind(this);
+	  FileManager.onStartUp();
 	  
   }
   

@@ -1,6 +1,6 @@
 
 import {Node1B} from './Node1B.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 import {TheWayData} from '../GameData.js';
 
 //successfully bite guard, probably killing her

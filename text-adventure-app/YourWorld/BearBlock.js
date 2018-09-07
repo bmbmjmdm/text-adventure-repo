@@ -1,7 +1,7 @@
 import {BearHead} from './BearHead.js';
 import {BearLegs} from './BearLegs.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Levels.js';
+import {Levels} from '../HomePage/Levels.js';
 
 //block most of attack from bear 
 export class BearBlock {
