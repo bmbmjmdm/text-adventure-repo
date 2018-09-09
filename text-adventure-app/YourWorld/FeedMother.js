@@ -22,6 +22,7 @@ export class FeedMother {
 		
 		that.preparePage("What's next...", Camping);
 		
+		YourWorldData.Safe.push("Mother");
 		
 	}
 

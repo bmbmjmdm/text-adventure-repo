@@ -23,18 +23,10 @@ export class BiteGuardOne {
 		//guard still alive
 		else{
 			
-			//randomly decide who lives. whoever has more health gets 20% better odds per point
-			//lower is better for the player
-			var modifier = TheWayData.GuardOne.Health - TheWayData.Health; 
-			
-			modifier = modifier/10;
-			
-			var random = Math.random();
-			
-			random = random + modifier;
+			//whoever has more health wins. tie goes to player 
 			
 			//player dies
-			if(random >= 0.5){
+			if(TheWayData.Health < TheWayData.GuardOne.Health){
 				that.preparePage("The guard kicks and pushes you away, grasping her neck and scurrying back. She's bleeding profusely, just like you. The two of you stare at each other as the blood drains, seconds tick, until eventually the room begins to fade. You don't know what's happening until, soon, ");
 				that.preparePage("darkness.", Levels);
 			}

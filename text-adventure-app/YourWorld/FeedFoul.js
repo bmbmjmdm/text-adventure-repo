@@ -17,6 +17,7 @@ export class FeedFoul {
 		
 		that.preparePage("Time to get away.", Camping);
 		
+		YourWorldData.Safe.push("FoulGuy");
 		
 	}
 

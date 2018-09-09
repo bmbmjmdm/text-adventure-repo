@@ -81,6 +81,8 @@ export default class App extends React.Component {
 		//preserve a copy of all the text we're about to display incase we need to save
 		this.saveCopy();
 		
+		FileManager.writing = false; 
+		
 		//by default we assume we've shown this text before and set the speed to 10 letters per display
 		var scale = 10;
 		globalScaleUp = 10;
@@ -350,6 +352,12 @@ export default class App extends React.Component {
   }
   
   handleClickAfterFade(nextPage){
+	  FileManager.writing = true;
+	  while(FileManager.saving){
+		  //just incase, we dont wanna change anything while its saving 
+	  }
+	  FileManager.needsSave = true;
+	  
 	  //nextPage are classes that implement createPage, which populates toShowText so we can call typeAnimation
 	  var newContent = nextPage.createPage(this);
 	  
@@ -451,12 +459,17 @@ export default class App extends React.Component {
 	  //note this ignores a warning caused by our "save periodically" timer
 	  //react native does not have an optimized long-term timer at the moment, so everyone suggests suppressing the warning 
 	  console.ignoredYellowBox = ['Setting a timer'];
+	  //the state is clean to start, ready to be typed into 
 	  this.state = {displayedText: [], toShowText: [], allowClicks: false};  
+	  //all text displays at the slow rate to start
 	  this.visitedTextMap = {};
+	  //our primary view(s) should adapt to text being added 
 	  this.contentHeight = 0;
 	  this.scrollViewHeight= 0;
+	  //bind context for swiping 
 	  this.resetSwipe = this.resetSwipe.bind(this);
 	  this.didSwipe = this.didSwipe.bind(this);
+	  //a number of file-related work that needs to be done before anything else 
 	  FileManager.onStartUp();
 	  
   }
@@ -483,7 +496,7 @@ export default class App extends React.Component {
   
 	//save game every 5 minutes
 	periodicSave(that){
-		if(FileManager.canSave()){				
+		if(FileManager.canSave()){	
 			FileManager.SaveGame(that, false);
 		}
 		

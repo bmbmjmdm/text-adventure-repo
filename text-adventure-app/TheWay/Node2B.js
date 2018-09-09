@@ -26,7 +26,7 @@ export class Node2B {
 		}
 		
 		else if(TheWayData.LastNode == '3A'){
-			if(Prisoner3AFree){
+			if(TheWayData.Prisoner3AFree){
 				that.preparePage("You let yourself out of the cell: a surreal feeling. ");
 			}
 			that.preparePage("After taking a right turn at the corner, you come to an intersection in the hallway. ");

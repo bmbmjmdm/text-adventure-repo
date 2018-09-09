@@ -37,18 +37,10 @@ export class MakePeaceGuardOne {
 		//player lives
 		else{
 						
-			//randomly decide who lives. whoever has more health gets 20% better odds per point
-			//lower is better for the player
-			var modifier = TheWayData.GuardOne.Health - TheWayData.Health; 
-			
-			modifier = modifier/10;
-			
-			var random = Math.random();
-			
-			random = random + modifier;
+			//whoever has more health wins, tie going to player
 			
 			//player dies
-			if(random >= 0.5){
+			if(TheWayData.Health < TheWayData.GuardOne.Health){
 				that.preparePage("The guard drives the blade deeper into the wound, blood gushing and slowly draining the last of your health away. Eventually it's too much, there's nothing left in you, and before you know it, ");
 				that.preparePage("darkness.", Levels);
 			}

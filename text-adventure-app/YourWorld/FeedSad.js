@@ -12,6 +12,7 @@ export class FeedSad {
 		
 		that.preparePage("What else...", Camping);
 		
+		YourWorldData.Safe.push("SadGal");
 		
 	}
 

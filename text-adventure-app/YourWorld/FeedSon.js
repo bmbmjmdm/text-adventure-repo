@@ -22,6 +22,8 @@ export class FeedSon {
 		
 		that.preparePage("The night waits, watches.", Camping);
 		
+		YourWorldData.Safe.push("Son");
+		
 		
 	}
 

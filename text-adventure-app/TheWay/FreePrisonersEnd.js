@@ -12,7 +12,6 @@ export class FreePrisonersEnd {
 		
 		that.preparePage("You approach the prisoners carefully, then look them over. Most of them are badly injured from their fight against the guards, but some of them will live. Being a prisoner yourself, you can't help but empathize. ");
 		
-		
 		//guards are around
 		if(TheWayData.GuardFour.Health >0){
 			that.preparePage("You try and quietly, casualy cut through some rope with your sword. A woman tied up looks to you with hope in her eyes, though suddenly concern. \"Ey! 'Ere I thought y'maybe could b'good. An' 'ere I stand, a fool. P'ter!\" You turn around to see the guard wielding his axe staring dead in your eye, as the other one gets up from the bench to join him. The walk over to you slowly, surrounding you in the process. Their weapons are drawn and it looks like you just changed their mind. ");

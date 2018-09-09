@@ -11,23 +11,17 @@ export class Grapple4GuardFour {
 		
 		that.preparePage("As the guards get close, you prepare to grab their arms and pull them towards each other, maybe cause some friendly fire and avoid the hits yourself. Unfortunately their blows are too heavy and push past your attempt, slashing and goring you for 4 damage. You have " + TheWayData.Health+" health, but the blood's draining. ");
 		
+		//player dies
 		if(TheWayData.Health <= 0){
 			DieGuardFour.createPage(that);
 		}
 		
+		//player lives
 		else{
-			//randomly decide who lives. whoever has more health gets 10% better odds per point
-			//lower is better for the player
-			var modifier = TheWayData.GuardFour.Health - TheWayData.Health; 
-			
-			modifier = modifier/20;
-			
-			var random = Math.random();
-			
-			random = random + modifier;
+			//whoever has more health wins, tie going to player
 			
 			//player dies
-			if(random >= 0.5){
+			if(TheWayData.GuardFour.Health > TheWayData.Health){
 				that.preparePage("You feel your wounds cringe from the stress and start hemorrhaging. ");
 				DieGuardFour.createPage(that);
 			}

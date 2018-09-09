@@ -23,17 +23,45 @@ export class Sleep {
 				
 				//kill a random ally
 				if(YourWorldData.Allies > 0){
-					YourWorldData.Allies--;
 					that.preparePage("You're waken from sleep by a violent caughing, a hack and gasp and grasping for some kind of God to make it stop... and then it does. ");
+					
+					var motherSafe = false;
+					var sonSafe = false;
+					var sadSafe = false;
+					var foulSafe = false;
+					var oldSafe = false;
+					var badassSafe = false;
+					//everyone who was fed is safe, unless everyone was fed, in which case noone is safe lol
+					if(YourWorldData.Safe.length != YourWorldData.Allies){
+						if(YourWorldData.Safe.includes("Mother")){
+							motherSafe = true;
+						}
+						if(YourWorldData.Safe.includes("Son")){
+							sonSafe = true;
+						}
+						if(YourWorldData.Safe.includes("SadGal")){
+							sadSafe = true;
+						}
+						if(YourWorldData.Safe.includes("FoulGuy")){
+							foulSafe = true;
+						}
+						if(YourWorldData.Safe.includes("OldGuy")){
+							oldSafe = true;
+						}
+						if(YourWorldData.Safe.includes("BadassGal")){
+							badassSafe = true;
+						}
+					}
+					
 					
 					var killed = false;
 					
-					//keep trying to kill someone until we get someone in our party
+					//keep trying to kill someone until we get someone in our party who isn't safe 
 					while(!killed){
 						var random = Math.random();
 						
 						if(random < 0.17){
-							if(YourWorldData.Mother){
+							if(YourWorldData.Mother && !motherSafe){
 								YourWorldData.Mother = false;
 								killed = true;
 								that.preparePage("You look to see the mother, the kind soul you knew only a short time, lay still in her sleep. You put your hands above her mouth and feel nothing, no air, no life. ");
@@ -47,7 +75,7 @@ export class Sleep {
 						}
 						
 						else if (random >= 0.17 < 0.34){
-							if(YourWorldData.Son){
+							if(YourWorldData.Son && !sonSafe){
 								YourWorldData.Son = false;
 								killed = true;
 								that.preparePage("You look up to see the small boy lie motionless. You curse the world, yourself, as you slowly approach him and feel his cold skin. ");
@@ -62,7 +90,7 @@ export class Sleep {
 						}
 						
 						else if (random >= 0.34 < 0.51){
-							if(YourWorldData.SadGal){
+							if(YourWorldData.SadGal && !sadSafe){
 								YourWorldData.SadGal = false;
 								killed = true;
 								that.preparePage("You look up to find the girl, curled on her side, breathing siezed. She looks to have been crying in her sleep, about what you're not sure but... you hope she finds some rest now. You go back to bed with a lump in your throat, wishing you could have helped her. ");
@@ -70,7 +98,7 @@ export class Sleep {
 						}
 						
 						else if (random >= 0.51 < 0.68){
-							if(YourWorldData.OldGuy){
+							if(YourWorldData.OldGuy && !oldSafe){
 								YourWorldData.OldGuy = false;
 								killed = true;
 								that.preparePage("You look up to see the old man had crawled from where he was sleeping, but only got so far. He's face down, hands clutching dirt. Perhaps that's all he was meant to have in this life, but you wish things were different. ");
@@ -78,7 +106,7 @@ export class Sleep {
 						}
 						
 						else if (random >= 0.68 < 0.85){
-							if(YourWorldData.FoulGuy){
+							if(YourWorldData.FoulGuy && !foulSafe){
 								YourWorldData.FoulGuy = false;
 								killed = true;
 								that.preparePage("You look around and find the foul-smelling man with clothes ripped in what looks like a rage...but now, still. Part of you is happy he won't be joining you further, another part of you despising yourself for such thoughts. Your dreams are tainted by his clueless, though pleasent demeanor. ");
@@ -86,14 +114,18 @@ export class Sleep {
 						}
 						
 						else if (random >= 0.85){
-							if(YourWorldData.BadassGal){
+							if(YourWorldData.BadassGal && !badassSafe){
 								YourWorldData.BadassGal = false;
 								killed = true;
 								that.preparePage("You look around and find the older woman face down in the dirt. She looks to have been trying to stand up but failed again and again. She was perhaps the strongest among you and not even she made it... your journey is cursed, you're cursed, and your dreams remind you of it again and again. ");
 							}
 						}
 					}
+					
+					// ):
+					YourWorldData.Allies--;
 				}
+				
 				//kill player
 				else{
 					that.preparePage("You're waken from your sleep by a lump in your throat. You try to cough, wheeze, gasp, anything! Alas, it won't budge. You struggling to stand by your body is tired, bones weak and muscles bruised. You grasp for air, dear life, but soon the night ");

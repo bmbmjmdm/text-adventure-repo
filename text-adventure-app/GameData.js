@@ -129,7 +129,8 @@ export function ResetTheWayData(){
 		//list of all nodes searched in the form of 'Node2A':true
 		Searched: {},
 		//prisoners escaped at the end
-		PrisonersEscaped: 0
+		PrisonersEscaped: 0,
+		SwordFightRandomness: {}
 		};
 }
 
@@ -201,6 +202,7 @@ export function ResetYourWorldData(){
 		BearHealth: 10,
 		SearchedGrassyLedge: false,
 		CaveTorch: false,
+		Safe: [],
 	}
 	
 }

@@ -10,13 +10,20 @@ export class FileManager {
 	static levelFile = undefined;
 	static saving = false;
 	static clearLevelFileLater = false;
+	
+	//used so we dont have multiple saves at the same place  
+	static needsSave = false;
+	
+	//writing is set by App when the current game data and screen state are being written. during this time, no saving can be done because things are in flux 
+	static writing = false;
 
 	static setLevelFile(file){
 		this.levelFile = file;
 	}
 	
+	//must be checked prior to saving, user cannot save if they are already saving (clearLevelFileLater is related to that in special cases)
 	static canSave(){
-		if(this.clearLevelFileLater || this.saving){
+		if(this.clearLevelFileLater || this.saving || this.writing || !this.needsSave){
 			return false;
 		}
 		
@@ -25,6 +32,7 @@ export class FileManager {
 		}
 	}
 	
+	//makes sure the level file is cleared ASAP without interrupting any current saves occuring 
 	static clearLevelFile(){
 		if (this.saving){
 			this.clearLevelFileLater = true;
@@ -37,7 +45,11 @@ export class FileManager {
 	
 	//save the current game in progress
 	static SaveGame(that, remove){
+		while(this.writing){
+			//wait so we dont save something currently being changed 
+		}
 		this.saving = true;
+		this.needsSave = false;
 		this.levelFile.saveData(that);
 		var stringFile = JSON.stringify(this.levelFile);
 		
@@ -53,7 +65,7 @@ export class FileManager {
 		_storeData = async () => {
 			try {
 				await AsyncStorage.setItem(name, stringFile);
-				if(remove || clearLevelFileLater){
+				if(remove || this.clearLevelFileLater){
 					this.levelFile = undefined;
 				}
 				this.clearLevelFileLater = false;
@@ -73,7 +85,6 @@ export class FileManager {
 	//load a game from file 
 	//this is called on click, so once the data is loaded we don't need to do anymore as the typing animation will take over
 	static LoadGame(that, name){
-		console.log("Loading "+name);
 		//load data using async
 		_retrieveData = async () => {
 			try {
@@ -104,7 +115,7 @@ export class FileManager {
 	
 	//save the current GlobalData object in GameData
 	static saveGlobalData(){
-		//NOTE this DOES NOT preserve any functions or classes held in GlobalData
+		//NOTE this DOES NOT preserve any functions or classes held in GlobalData. There shouldn't be any 
 		var stringFile = JSON.stringify(GameData.GlobalData);
 		
 		//save data using async 
@@ -140,6 +151,8 @@ export class FileManager {
 							returnMe.push(value[fileNumber]);
 						}
 					}
+					
+					returnMe.sort(this.sortFileNames);
 				}
 				return returnMe;
 				
@@ -150,6 +163,58 @@ export class FileManager {
 		}
 		 
 		 return _retrieveKeys();
+	}
+	
+	
+	//used to sort files for loading 
+	static sortFileNames(a, b){
+		//splitting by space gets us the words of the name of the file, the month/day, and the hour/minuteA
+		//since we dont know how many words there are, we go from the end of the array 
+		//a and b are of the format "Some Name 1/5 13:03"
+		var dateTimeA = a.split(" ");
+		var dateA = dateTimeA[dateTimeA.length-2].split("/");
+		var timeA = dateTimeA[dateTimeA.length-1].split(":");
+		var monthA = parseInt(dateA[0]);
+		var dayA = parseInt(dateA[1]);
+		var hourA = parseInt(timeA[0]);
+		var minuteA = parseInt(timeA[1]);
+		
+		var dateTimeB = b.split(" ");
+		var dateB = dateTimeB[dateTimeB.length-2].split("/");
+		var timeB = dateTimeB[dateTimeB.length-1].split(":");
+		var monthB = parseInt(dateB[0]);
+		var dayB = parseInt(dateB[1]);
+		var hourB = parseInt(timeB[0]);
+		var minuteB = parseInt(timeB[1]);
+		
+		if(monthA > monthB){
+			return -1;
+		}
+		else if (monthB > monthA){
+			return 1;
+		}
+		else if (dayA > dayB){
+			return -1;
+		}
+		else if (dayB > dayA){
+			return 1;
+		}
+		else if (hourA > hourB){
+			return -1;
+		}
+		else if (hourB > hourA){
+			return 1;
+		}
+		else if (minuteA > minuteB){
+			return -1;
+		}
+		else if (minuteB > minuteA){
+			return 1;
+		}
+		
+		return 0;
+		
+		
 	}
 	
 	
@@ -232,6 +297,7 @@ export class FileManager {
 	
 	
 	
+	//used to retrieve GlobalData from save file at startup
 	static async initGlobalData(){
 		var fileNames = await this.GetFileNames();
 		

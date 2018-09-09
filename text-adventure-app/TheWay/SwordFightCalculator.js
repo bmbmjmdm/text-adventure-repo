@@ -20,20 +20,20 @@ export function processRound(playerAttack, that){
 				
 				//player parry, guard parry
 				case 0:
-					that.preparePage(randomSelect(ParryVParry));
+					that.preparePage(randomSelect(ParryVParry, "PvP"));
 					break;
 					
 				//player parry, guard strike
 				case 1:
 					TheWayData.SwordFight.Target.Health -= 2;
-					that.preparePage(randomSelect(ParryVStrike));
+					that.preparePage(randomSelect(ParryVStrike, "PvS"));
 					break;
 					
 				//player parry, guard grapple
 				case 2:
 					TheWayData.Health -= 1;
 					updateTexts();
-					that.preparePage(randomSelect(ParryVGrapple));
+					that.preparePage(randomSelect(ParryVGrapple, "PvG"));
 					break;
 			} 
 			break;
@@ -48,20 +48,20 @@ export function processRound(playerAttack, that){
 				case 0:
 					TheWayData.Health -= 2;
 					updateTexts();
-					that.preparePage(randomSelect(StrikeVParry));
+					that.preparePage(randomSelect(StrikeVParry, "SvP"));
 					break;
 					
 					
 				//player strike, guard strike
 				case 1:
-					that.preparePage(randomSelect(StrikeVStrike));
+					that.preparePage(randomSelect(StrikeVStrike, "SvS"));
 					break;
 					
 					
 				//player strike, guard grapple
 				case 2:
 					TheWayData.SwordFight.Target.Health -= 2;
-					that.preparePage(randomSelect(StrikeVGrapple));
+					that.preparePage(randomSelect(StrikeVGrapple, "SvG"));
 					break;
 			} 
 			break;
@@ -76,19 +76,19 @@ export function processRound(playerAttack, that){
 				//player grapple, guard parry
 				case 0:
 					TheWayData.SwordFight.Target.Health -= 1;
-					that.preparePage(randomSelect(GrappleVParry));
+					that.preparePage(randomSelect(GrappleVParry, "GvP"));
 					break;
 					
 				//player grapple, guard strike
 				case 1:
 					TheWayData.Health -= 2;
 					updateTexts();
-					that.preparePage(randomSelect(GrappleVStrike));
+					that.preparePage(randomSelect(GrappleVStrike, "GvS"));
 					break;
 					
 				//player grapple, guard grapple
 				case 2:
-					that.preparePage(randomSelect(GrappleVGrapple));
+					that.preparePage(randomSelect(GrappleVGrapple, "GvG"));
 					break;
 			} 
 			break;
@@ -129,7 +129,7 @@ export function continueFight(that){
 		//describe the guard's next attack
 		var newAttack = random3();
 		TheWayData.SwordFight.LastChoice = newAttack;
-		that.preparePage(randomSelect(GuardAttacks[newAttack]));
+		that.preparePage(randomSelect(GuardAttacks[newAttack], "A-"+newAttack));
 		
 		//provide options
 		that.preparePage("Do you ");
@@ -150,9 +150,29 @@ function random3(){
 	return Math.floor(Math.random()*3); 
 }
 
-//randomly selects a member of the given array and returns it
-function randomSelect(array){
-	return array[Math.floor(Math.random()*array.length)]; 
+//selects a member of the given array and returns it
+//always try to select a member the user hasn't seen before via traversing the array 
+function randomSelect(array, codeName){
+	//look up in our data past uses of this array (via the codename)
+	var value = TheWayData.SwordFightRandomness[codeName];
+	
+	//no uses means we start from the beginning of the array
+	if(value == null || value == undefined){
+		value = 0; 
+	}
+	//otherwise move on to the next member of the array
+	else{
+		value++;
+	}
+	//if we go off the end of the array, wrap around to the beginning
+	if(value >= array.length){
+		value = 0;
+	}
+	
+	//store this value so we can continue from where we left off
+	TheWayData.SwordFightRandomness[codeName] = value;
+	
+	return array[value]; 
 }
 
 

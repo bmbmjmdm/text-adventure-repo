@@ -12,6 +12,7 @@ export class FeedOld {
 		
 		that.preparePage("Moving on.", Camping);
 		
+		YourWorldData.Safe.push("OldGuy");
 		
 	}
 
