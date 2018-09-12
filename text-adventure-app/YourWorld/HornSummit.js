@@ -22,7 +22,7 @@ export class HornSummit{
 		}
 		
 		if(YourWorldData.FoulGuy){
-			that.preparePage("The pudgy, foul man sits on a stone before you, rubbing his bare feet and breathing on himself. \"The forest looks to be in one piece, guess my friends are still alive! I'll be seeing them, mystics and fairies and who's a what's it. I can show you the way but," he looks you over, "you may wanna clean up first." );
+			that.preparePage("The pudgy, foul man sits on a stone before you, rubbing his bare feet and breathing on himself. \"The forest looks to be in one piece, guess my friends are still alive! I'll be seeing them, mystics and fairies and who's a what's it. I can show you the way but,\" he looks you over, \"you may wanna clean up first.\" " );
 		}
 		
 		if(YourWorldData.SadGal){

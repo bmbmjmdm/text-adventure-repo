@@ -43,6 +43,17 @@ export class FileManager {
 	}
 	
 	
+	//used to tell if we are in a menu or level
+	static inLevel(){
+		if(this.clearLevelFileLater){
+			return false;
+		}
+		else{
+			return this.levelFile != undefined;
+		}
+	}
+	
+	
 	//save the current game in progress
 	static SaveGame(that, remove){
 		while(this.writing){

@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableWithoutFeedback, View, Text, ScrollView}  from 'react-native';
+import {TouchableWithoutFeedback, View, Text, ScrollView, AppState}  from 'react-native';
 import {ClickText, DefaultText, styles} from './StylesEtc.js'
 import {HomePage} from './HomePage/HomePage.js'
 import {FileManager} from './FileManager/FileManager.js'
@@ -26,6 +26,12 @@ export default class App extends React.Component {
 			displayElements.push((<DefaultText key={i} onPress={() => {this.speedUp()}}>{dtNode.text}</DefaultText>));
 		}
 	});
+	
+	//when we're in a menu, text is centered. when in a level, its left aligned 
+	var textCenter = 'center';
+	if(FileManager.inLevel()){
+		textCenter = 'left';
+	}
 
 	//the first View is for responding to a swipe to go back
 	//TouchableWithoutFeedback is here to speed up text typing when screen is clicked
@@ -40,7 +46,7 @@ export default class App extends React.Component {
 							onContentSizeChange={(w, h) => {this.contentHeight = h;  this.scrollToBottom(true);}}
 							onLayout={ev => this.scrollViewHeight = ev.nativeEvent.layout.height}
 							contentContainerStyle={styles.scroll}>
-					<Text>
+					<Text textBreakStrategy='simple' style={{textAlign: textCenter}}>
 						{displayElements}
 					</Text>
 				</ScrollView>
@@ -461,7 +467,7 @@ export default class App extends React.Component {
 	  console.ignoredYellowBox = ['Setting a timer'];
 	  //the state is clean to start, ready to be typed into 
 	  this.state = {displayedText: [], toShowText: [], allowClicks: false};  
-	  //all text displays at the slow rate to start
+	  //all text displays at the slow rate to start, then added to this map to see if it should be displayed faster next time
 	  this.visitedTextMap = {};
 	  //our primary view(s) should adapt to text being added 
 	  this.contentHeight = 0;
@@ -471,16 +477,20 @@ export default class App extends React.Component {
 	  this.didSwipe = this.didSwipe.bind(this);
 	  //a number of file-related work that needs to be done before anything else 
 	  FileManager.onStartUp();
+	  //used to detect when we go into background 
+	  this.appState = AppState.currentState
 	  
   }
   
     componentDidMount() {
 		HomePage.createPage(this).then((value)=>{this.typeAnimation();});
 		setTimeout(() => {this.periodicSave(this)}, 300000);
+		AppState.addEventListener('change', this.handleAppStateChange);
 	}
   
     componentWillUnmount() {
 		this.clearTimeout();
+		AppState.removeEventListener('change', this.handleAppStateChange);
 	}
 	
 	
@@ -501,6 +511,19 @@ export default class App extends React.Component {
 		}
 		
 		setTimeout(() => {that.periodicSave(that)}, 300000);
+	}
+	
+	
+	
+	//save game when app is put into background/closed 
+	handleAppStateChange=(nextAppState)=>{
+		if (this.appState === 'active' && nextAppState.match(/inactive|background/) ) {
+			if(FileManager.canSave()){	
+				FileManager.SaveGame(this, false);
+			}
+		}
+		
+		this.appState = nextAppState;
 	}
   
 
