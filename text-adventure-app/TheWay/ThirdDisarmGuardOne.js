@@ -1,4 +1,4 @@
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 import {BiteGuardOne} from './BiteGuardOne.js';
 import {MakePeaceGuardOne} from './MakePeaceGuardOne.js';
 import {TheWayData} from '../GameData.js';

@@ -1,4 +1,4 @@
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 import {YourWorldData} from '../GameData.js';
 
 ////run from the bear terrible idea

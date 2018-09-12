@@ -1,6 +1,7 @@
 import {SmallFire} from './SmallFire.js';
 import {MediumFire} from './MediumFire.js';
 import {LargeFire} from './LargeFire.js';
+import {YourWorldData} from '../GameData.js';
 
 //the player is trying to make a fire while camping 
 export class Fire {

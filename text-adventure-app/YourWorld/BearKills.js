@@ -1,4 +1,4 @@
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 
 //The bear killed the player 
 export class BearKills {

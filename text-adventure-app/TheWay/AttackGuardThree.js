@@ -20,8 +20,8 @@ export class AttackGuardThree {
 		}
 			
 		//setup sword fight and start
-		TheWayData.SwordFight.Target = TheWayData.GuardThree;
-		TheWayData.SwordFight.After = Node6A;
+		TheWayData.SwordFightTarget = TheWayData.GuardThree;
+		TheWayData.SwordFightAfter = Node6A;
 		that.preparePage("Good luck! ", SwordFightStart);
 		
 	}

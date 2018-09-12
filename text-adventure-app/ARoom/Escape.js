@@ -1,5 +1,5 @@
 import {GlobalData, ARoomData} from '../GameData.js';
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 import {FileManager} from '../FileManager/FileManager.js'
 
 //End the level

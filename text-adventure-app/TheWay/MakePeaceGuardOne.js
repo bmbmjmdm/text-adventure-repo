@@ -1,4 +1,4 @@
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 import {Node1B} from './Node1B.js';
 import {TheWayData} from '../GameData.js';
 

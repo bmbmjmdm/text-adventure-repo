@@ -1,5 +1,5 @@
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 
 //go to sleep after camping, decide if anyone dies in their sleep, then continue 
 export class Sleep {
@@ -134,7 +134,7 @@ export class Sleep {
 			}
 		}
 		
-		YourWorldData.Energy = Math.Max(YourWorldData.Energy, 0);
+		YourWorldData.Energy = Math.max(YourWorldData.Energy, 0);
 		YourWorldData.Energy += 10;
 		
 		that.preparePage("Eventually, the night passes and you awake feeling slightly more rested. You have "+ YourWorldData.Energy+" energy, and a " );

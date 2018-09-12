@@ -1,7 +1,7 @@
 import {Node2C} from './Node2C.js';
 import {SwordFightStart} from './SwordFightStart.js';
 import {TheWayData} from '../GameData.js';
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 
 //the player attacks guard two, arming themselves with a sword if they dont have one and initiating the sword fight sequence
 export class AttackGuardTwo {
@@ -44,8 +44,8 @@ export class AttackGuardTwo {
 				that.preparePage("I'm sure you know how to use that sword already, but just a quick refresher: swordsmanship is all about reading the opponent. It boils down to three basic techniques, each with an advantage and disadvantage over the others. You can parry, strike, or grapple. If your opponent looks defensive, they're probably parrying. Then is a good time to grapple! If they look like they might grab you though, you should try to strike them. And of course, if it looks like they're getting ready to swing their sword, you best parry to be safe. ");
 			}
 			
-			TheWayData.SwordFight.Target = TheWayData.GuardTwo;
-			TheWayData.SwordFight.After = Node2C;
+			TheWayData.SwordFightTarget = TheWayData.GuardTwo;
+			TheWayData.SwordFightAfter = Node2C;
 			that.preparePage("Good luck! ", SwordFightStart);
 		
 		}

@@ -8,8 +8,10 @@ TownRuinsUnlocked:false,
 DesertUnlocked:false,
 CityUnlocked:false,
 ForestUnlocked:false,
+VolcanoUnlocked:false,
 LastARoomData:{},
-LastTheWayData:{}
+LastTheWayData:{},
+LastYourWorldData:{},
 };
 
 
@@ -98,10 +100,10 @@ export function ResetTheWayData(){
 		//neutralized means they were talked down with diplomacy
 		//0 or less health means they were killed
 		//pickpocket indicates if the user attempted to steal their keys or not after neutralizing them
-		GuardOne:{Health:5, Hostility:0, Neutralized:false, Pickpocket:false}, 
-		GuardTwo:{Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
-		GuardThree:{Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
-		GuardFour:{Health:14, Hostility:0, Neutralized:false, Pickpocket:false}, 
+		GuardOne:{Name:"GuardOne", Health:5, Hostility:0, Neutralized:false, Pickpocket:false}, 
+		GuardTwo:{Name:"GuardTwo", Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
+		GuardThree:{Name:"GuardThree", Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
+		GuardFour:{Name:"GuardFour", Health:14, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		//gold is used for bribing guards and the next level
 		Gold:0, 
 		//glass can be used to try and free prisoner at 1b, but will fail and can get stuck inside the lock
@@ -129,7 +131,9 @@ export function ResetTheWayData(){
 		//used to explain sword fight system the first time the user gets in one
 		SwordFightExplained: false,
 		//meta data for sword fighting, target is the guard object (GuardOne, GuardTwo, etc), After is the node they end in (Node2C, etc), LastChoice is the guard's last decision (parry, strike, grapple, see SwordFightCalculator)
-		SwordFight:{Target: {}, After: {}, LastChoice:-1},
+		SwordFightTarget: {}, 
+		SwordFightAfter: {},
+		SwordFightLastChoice: -1,
 		//list of all nodes searched in the form of 'Node2A':true
 		Searched: {},
 		//prisoners escaped at the end
@@ -206,7 +210,7 @@ export function ResetYourWorldData(){
 		BearHealth: 10,
 		SearchedGrassyLedge: false,
 		CaveTorch: false,
-		Safe: [],
+		Safe: []
 	}
 	
 }

@@ -67,7 +67,7 @@ export class LookAroundRoom {
 			that.preparePage("quickly growing, the room is much brighter now! You can see the ");
 			that.preparePage("door ", LookAtDoor);
 			that.preparePage("across from you made of thick wood and strips of iron, as well as the ");
-			that.preparePage("rope  ", LookAtRope);
+			that.preparePage("rope ", LookAtRope);
 			that.preparePage("on the floor near the ");
 			that.preparePage("fire.", LookAtFire);
 			that.preparePage(" That lantern really held a lot of oil and ");

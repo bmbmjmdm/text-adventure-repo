@@ -1,4 +1,5 @@
 import {Camping} from './Camping.js';
+import {YourWorldData} from '../GameData.js';
 
 //the player makes a small fire to restore a little energy
 export class SmallFire {

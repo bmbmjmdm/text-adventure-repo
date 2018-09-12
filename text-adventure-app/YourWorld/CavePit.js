@@ -1,6 +1,6 @@
 import {CaveExit} from './CaveExit.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 
 //if the player has vision, they'll climb into the pit using vines if they have them, the badass woman if she's there, or just jumping 
 //if they jump, they're trapped, game over 
@@ -27,7 +27,7 @@ export class CavePit {
 				that.preparePage("You grab the ledge with your hands and lower yourself as far as your arms will go. You then let go and plop into some shallow water up to your shins. Nice, solid ground. ");
 			}
 			
-			findSupplies(that);
+			this.findSupplies(that);
 			
 			//BA helps them out of hole
 			if(YourWorldData.BadassGal){
@@ -43,7 +43,7 @@ export class CavePit {
 			
 			//user dies in hole
 			else{
-				dieInHole(that);
+				this.dieInHole(that);
 			}
 		}
 		
@@ -62,7 +62,7 @@ export class CavePit {
 			//alive for now
 			else{
 			
-				findSupplies(that);
+				this.findSupplies(that);
 			
 				//BA helps user out
 				if(YourWorldData.BadassGal){
@@ -80,7 +80,7 @@ export class CavePit {
 			
 				//user dies
 				else{
-					dieInHole(that);
+					this.dieInHole(that);
 				}
 				
 			}

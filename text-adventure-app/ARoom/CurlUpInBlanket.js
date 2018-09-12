@@ -1,5 +1,5 @@
 import {LookAroundRoom} from './LookAroundRoom.js';
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 import {ARoomData} from '../GameData.js';
 
 export class CurlUpInBlanket {

@@ -1,6 +1,6 @@
 import {ClimbWall} from './ClimbWall.js';
 import {TurnAroundRocky} from './TurnAroundRocky.js';
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 import {YourWorldData} from '../GameData.js';
 
 //player is trying to cross the ledge by the rock wall but will fail. Will either hurt them or kill a companion

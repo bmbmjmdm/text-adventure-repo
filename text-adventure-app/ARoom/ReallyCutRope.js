@@ -1,4 +1,4 @@
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 
 export class ReallyCutRope {
 

@@ -1,4 +1,5 @@
 import {Camping} from './Camping.js';
+import {YourWorldData} from '../GameData.js';
 
 //the player makes a medium fire to restore some energy. uses flint if they have it or 2x kindling
 export class MediumFire {

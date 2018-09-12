@@ -1,7 +1,7 @@
 import React from 'react';
-import {TouchableWithoutFeedback, View, Text, ScrollView, AppState}  from 'react-native';
+import {TouchableWithoutFeedback, View, Text, ScrollView, AppState, BackHandler}  from 'react-native';
 import {ClickText, DefaultText, styles} from './StylesEtc.js'
-import {HomePage} from './HomePage/HomePage.js'
+import {HomePage} from './Menus/HomePage.js'
 import {FileManager} from './FileManager/FileManager.js'
 
 
@@ -45,7 +45,9 @@ export default class App extends React.Component {
 				<ScrollView ref='scrollView'
 							onContentSizeChange={(w, h) => {this.contentHeight = h;  this.scrollToBottom(true);}}
 							onLayout={ev => this.scrollViewHeight = ev.nativeEvent.layout.height}
-							contentContainerStyle={styles.scroll}>
+							contentContainerStyle={styles.scroll}
+							onScrollBeginDrag={()=>{this.scrolling = true;}}
+							onScrollEndDrag={()=>{this.scrolling = false;}}>
 					<Text textBreakStrategy='simple' style={{textAlign: textCenter}}>
 						{displayElements}
 					</Text>
@@ -257,7 +259,7 @@ export default class App extends React.Component {
 	  
 	  
 	  //Y has changed too much, reset
-	  if(curY > this.startY + 200 || curY < this.startY - 200){
+	  if(curY > this.startY + 75 || curY < this.startY - 75){
 		  this.resetSwipe();
 		  return false;
 	  }
@@ -268,7 +270,7 @@ export default class App extends React.Component {
 		//positive direction, we're swiping right
 		if(this.direction > 0){
 			//we've completed a swipe!
-			if(curX > this.startX + 150){
+			if(curX > this.startX + 100){
 				this.resetSwipe();
 				return true;
 			}
@@ -284,7 +286,7 @@ export default class App extends React.Component {
 		else{
 			
 			//we've completed a swipe!
-			if(curX < this.startX - 150){
+			if(curX < this.startX - 100){
 				this.resetSwipe();
 				return true;
 			}
@@ -310,7 +312,7 @@ export default class App extends React.Component {
   //we're swiping, go back to homescreen and possibly save 
 	handleSwipe(that){
 		if(!that.swipeHandled){
-			this.swipeHandled = true;
+			that.swipeHandled = true;
 			
 			if(FileManager.canSave()){
 				FileManager.SaveGame(that, true);
@@ -400,29 +402,29 @@ export default class App extends React.Component {
 			//the more letters in the starting displayedText list, the more letters it takes off with a single call
 			for(i = 0; i<scale; i++){
 				
-			var index = Math.floor(Math.random() * displayedText2.length);
-			var finished = false;
+				var index = Math.floor(Math.random() * displayedText2.length);
+				var finished = false;
 			
-			while(displayedText2.length > 0 && displayedText2[index].text.length < 1 ){
-				//the randomly selected text already has all its letters removed. remove it from the display list and start a new text
-				displayedText2.splice( index, 1 );
-				index = Math.floor(Math.random() * displayedText2.length);
-			}
+				while(displayedText2.length > 0 && displayedText2[index].text.length < 1 ){
+					//the randomly selected text already has all its letters removed. remove it from the display list and start a new text
+					displayedText2.splice( index, 1 );
+					index = Math.floor(Math.random() * displayedText2.length);
+				}
 			
-			if(displayedText2.length == 0){
-				//no more texts, finish
-				finished = true;
-			}
+				if(displayedText2.length == 0){
+					//no more texts, finish
+					finished = true;
+				}
 			
-			else{
-				//time to start modifying our texts
-				//randomly take a letter from the text
-				var textToMod = displayedText2[index].text;
-				var letterIndex = Math.floor(Math.random() * textToMod.length);
-				textToMod = textToMod.slice(0, letterIndex) + textToMod.slice(letterIndex+1);
-				displayedText2[index].text = textToMod;
+				else{
+					//time to start modifying our texts
+					//randomly take a letter from the text
+					var textToMod = displayedText2[index].text;
+					var letterIndex = Math.floor(Math.random() * textToMod.length);
+					textToMod = textToMod.slice(0, letterIndex) + textToMod.slice(letterIndex+1);
+					displayedText2[index].text = textToMod;
 			
-			}
+				}
 			}
 			
 			that.setState({displayedText: displayedText2});
@@ -486,21 +488,28 @@ export default class App extends React.Component {
 		HomePage.createPage(this).then((value)=>{this.typeAnimation();});
 		setTimeout(() => {this.periodicSave(this)}, 300000);
 		AppState.addEventListener('change', this.handleAppStateChange);
+		BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+		
 	}
   
     componentWillUnmount() {
 		this.clearTimeout();
 		AppState.removeEventListener('change', this.handleAppStateChange);
+		BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
 	}
 	
 	
+	scrolling = false;
+	
 	//utility function for moving the ScrollView down as text is rendered
   scrollToBottom(animated = true) {
-    const scrollHeight = this.contentHeight - this.scrollViewHeight;
-    if (scrollHeight > 0) {
-      const scrollResponder = this.refs.scrollView.getScrollResponder();
-      scrollResponder.scrollResponderScrollTo({x: 0, y: scrollHeight, animated});
-    }
+	if(!this.scrolling){
+		const scrollHeight = this.contentHeight - this.scrollViewHeight;
+		if (scrollHeight > 0) {
+		const scrollResponder = this.refs.scrollView.getScrollResponder();
+		scrollResponder.scrollResponderScrollTo({x: 0, y: scrollHeight, animated});
+		}
+	}
   }
   
   
@@ -525,6 +534,15 @@ export default class App extends React.Component {
 		
 		this.appState = nextAppState;
 	}
+	
+	
+	//swipe back when android back button pressed
+	handleBackButton=()=>{
+		this.handleSwipe(this);
+		return true;
+	}
+	
+	
   
 
 	

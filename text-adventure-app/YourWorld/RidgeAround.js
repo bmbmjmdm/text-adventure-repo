@@ -1,5 +1,5 @@
 import {RidgeNarrow} from './RidgeNarrow.js';
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 import {YourWorldData} from '../GameData.js';
 
 //go around the rocks atop the ridge

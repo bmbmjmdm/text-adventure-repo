@@ -1,4 +1,5 @@
 import {FeedWho} from './FeedWho.js';
+import {FeedSelf} from './FeedSelf.js';
 import {YourWorldData} from '../GameData.js';
 
 //indicates that we're about to eat berries

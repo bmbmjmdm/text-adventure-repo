@@ -236,8 +236,8 @@ export class FileManager {
 			try {
 				await AsyncStorage.multiRemove(savedGames);
 			} catch (error) {
-				// Error saving data
-				alert(error);
+				//alert(error);
+				//dont alert the user because they may have just finished a level super quick 
 			}
 		}
 		
@@ -345,7 +345,7 @@ export class FileManager {
 	static LevelFiles;
 	static TheWayFiles;
 	static YourWorldFiles;
-	static HomePageFiles;
+	static MenuFiles;
 	
 	static requireFolders(){
 		//we have to include all of this here in order to load classes referenced in saved properties
@@ -353,14 +353,14 @@ export class FileManager {
 		const ARoomFilesTemp = requireAll('./ARoom');	
 		const TheWayFilesTemp = requireAll('./TheWay');
 		const YourWorldFilesTemp = requireAll('./YourWorld');
-		const HomePageFilesTemp = requireAll('./HomePage');
+		const MenuFilesTemp = requireAll('./Menus');
 		const LevelFilesTemp = requireAll('./FileManager');
 		
 		this.ARoomFiles = this.formatFiles(ARoomFilesTemp);
 		this.LevelFiles = this.formatFiles(LevelFilesTemp);
 		this.TheWayFiles = this.formatFiles(TheWayFilesTemp);
 		this.YourWorldFiles = this.formatFiles(YourWorldFilesTemp);
-		this.HomePageFiles = this.formatFiles(HomePageFilesTemp);
+		this.MenuFiles = this.formatFiles(MenuFilesTemp);
 	}
 	
 	
@@ -405,15 +405,15 @@ export class FileManager {
 	static jsonParserActual(obj){
 		for (var property in obj) {
 			//a property we set in jsonWriter
-			if(obj[property].isFunction === true){
+			if(obj[property]!=null && obj[property]!=undefined && obj[property].isFunction === true){
 				if (obj.hasOwnProperty(property)) {
 					//obj[property] is the filename and the classname
-					//this.levelFile.nameSpace is the folder the filename is, OR the file could be in the HomePage folder
+					//this.levelFile.nameSpace is the folder the filename is, OR the file could be in the Menus folder
 					//We use "Files" here because that's what the import object name is (see the onStartUp() function)
 					var fileName = obj[property].name;
 					
 					const filePath = 'this.'+this.levelFile.nameSpace+'Files'+'.'+fileName;
-					const secondFilePath = 'this.'+'HomePageFiles'+'.'+fileName;
+					const secondFilePath = 'this.'+'MenuFiles'+'.'+fileName;
 					
 					var nextPageClass = eval(filePath);
 					

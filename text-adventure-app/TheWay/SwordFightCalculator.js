@@ -1,5 +1,5 @@
 import {TheWayData} from '../GameData.js';
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 import {SwordFightParry} from './SwordFightParry.js';
 import {SwordFightStrike} from './SwordFightStrike.js';
 import {SwordFightGrapple} from './SwordFightGrapple.js';
@@ -12,7 +12,7 @@ import {SwordFightGrapple} from './SwordFightGrapple.js';
 //1 is Strike
 //2 is Grapple
 export function processRound(playerAttack, that){
-	var guardAttack = TheWayData.SwordFight.LastChoice;
+	var guardAttack = TheWayData.SwordFightLastChoice;
 	
 	switch(playerAttack) {
 		case 0:
@@ -25,7 +25,7 @@ export function processRound(playerAttack, that){
 					
 				//player parry, guard strike
 				case 1:
-					TheWayData.SwordFight.Target.Health -= 2;
+					TheWayData.SwordFightTarget.Health -= 2;
 					that.preparePage(randomSelect(ParryVStrike, "PvS"));
 					break;
 					
@@ -60,7 +60,7 @@ export function processRound(playerAttack, that){
 					
 				//player strike, guard grapple
 				case 2:
-					TheWayData.SwordFight.Target.Health -= 2;
+					TheWayData.SwordFightTarget.Health -= 2;
 					that.preparePage(randomSelect(StrikeVGrapple, "SvG"));
 					break;
 			} 
@@ -75,7 +75,7 @@ export function processRound(playerAttack, that){
 				
 				//player grapple, guard parry
 				case 0:
-					TheWayData.SwordFight.Target.Health -= 1;
+					TheWayData.SwordFightTarget.Health -= 1;
 					that.preparePage(randomSelect(GrappleVParry, "GvP"));
 					break;
 					
@@ -100,7 +100,7 @@ export function processRound(playerAttack, that){
 export function didDie(that){
 	//player has 0 health, they die and return to the menu
 	if(TheWayData.Health <= 0){
-		that.preparePage(randomSelect(Death));
+		that.preparePage(randomSelect(Death, "Death"));
 		that.preparePage("darkness.", Levels);
 	}
 }
@@ -109,9 +109,13 @@ export function didDie(that){
 
 export function didWin(that){
 	//player has at least 1 health and the guard has 0, they win and proceed back to the node they started in 
-	if(TheWayData.Health > 0 && TheWayData.SwordFight.Target.Health <= 0){
-		that.preparePage(randomSelect(Kill));
-		that.preparePage("room.", TheWayData.SwordFight.After);
+	if(TheWayData.Health > 0 && TheWayData.SwordFightTarget.Health <= 0){
+		//set the original target's object to its new, dead state
+		TheWayData[TheWayData.SwordFightTarget.Name] = TheWayData.SwordFightTarget;
+		
+		that.preparePage(randomSelect(Kill, "Kill"));
+		that.preparePage("room.", TheWayData.SwordFightAfter);
+		
 		//grab the keys too 
 		if(!TheWayData.HasKeys){
 			that.preparePage(" It isn't until you calm down and start thinking again that you realize you're holding something: a set of keys you must have taken from the guard... ");
@@ -124,11 +128,11 @@ export function didWin(that){
 
 export function continueFight(that){
 	//both player and guard have health remaining, set
-	if(TheWayData.Health > 0 && TheWayData.SwordFight.Target.Health > 0){
+	if(TheWayData.Health > 0 && TheWayData.SwordFightTarget.Health > 0){
 		
 		//describe the guard's next attack
 		var newAttack = random3();
-		TheWayData.SwordFight.LastChoice = newAttack;
+		TheWayData.SwordFightLastChoice = newAttack;
 		that.preparePage(randomSelect(GuardAttacks[newAttack], "A-"+newAttack));
 		
 		//provide options
@@ -184,7 +188,7 @@ var GuardAttacks = [
 //Parry
 ["The guard steps a foot back, crouches, and hovers his sword high in front of himself. ",
 "The guard lays a palm on his sword and holds it out flat in front of himself. The face of it is reflective; you can see yourself ragged and armed. ",
-"The guard rises his sword near your own, staring deep into your eyes, silent. ",
+"The guard raises his sword near your own, staring deep into your eyes, silent. ",
 "The guard begins slowly walking around you, pacing his steps, and watching closely. The room watches in turn, as does the universe. ",
 "The guard takes his sword in two hands, tilts it forward, and takes a deep, calm breath. "], 
 

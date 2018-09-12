@@ -1,7 +1,7 @@
 import {CavePit} from './CavePit.js';
 import {CaveExit} from './CaveExit.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 
 //run into the bats without getting any meat, getting attacked 
 export class CaveBlind {

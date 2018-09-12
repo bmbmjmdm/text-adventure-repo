@@ -1,5 +1,5 @@
 import {RidgeEagle} from './RidgeEagle.js';
-import {Levels} from '../HomePage/Levels.js';
+import {Levels} from '../Menus/Levels.js';
 import {YourWorldData} from '../GameData.js';
 
 //Try to balance on the ridge, leading to a minor fall and damage 
