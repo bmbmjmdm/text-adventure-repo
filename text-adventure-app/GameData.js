@@ -4,6 +4,10 @@
 export var GlobalData = 
 {Story2Unlocked:false, 
 Story3Unlocked:false,
+TownRuinsUnlocked:false,
+DesertUnlocked:false,
+CityUnlocked:false,
+ForestUnlocked:false,
 LastARoomData:{},
 LastTheWayData:{}
 };

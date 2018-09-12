@@ -9,12 +9,12 @@ export class RidgeBalance {
 		YourWorldData.Energy -= 10; 
 		YourWorldData.Health --; 
 		
-		that.preparePage("As you look around, surveying for any better options, the clouds around you turn dark. They grumble and cough, turn passive aggressive in their distaste for your stability. You crawl across the narrow ridge as fast as you can, trying to get away from what's to come. As you scramble across the shaky dirt, some of it slides oout beneath you and you begin to fall! ");
+		that.preparePage("As you look around, surveying for any better options, the clouds around you turn dark. They grumble and cough, turn passive aggressive in their distaste for your stability. You crawl across the narrow ridge as fast as you can, trying to get away from what's to come. As you scramble across the shaky gravel, some of it slides out beneath you and you begin to fall! ");
 		
 		
 		//mother helps player stay up 
 		if(YourWorldData.Mother){
-			that.preparePage("As your legs slide down and your arms fly up to catch the top, a hand reaches out and grabs your wrist. The mother, scarlet hair turned maroon by the dark atmosphere, looks into your eyes as she holds you up. Your feet are scrambling against loose, steep dirt to find purchase and your free hand is plunged into sharp, soft dirt. You take 1 damage and have "+YourWorldData.Health+" health. ");
+			that.preparePage("As your legs slide down and your arms fly up to catch the top, a hand reaches out and grabs your wrist. The mother, scarlet hair turned maroon by the dark atmosphere, looks into your eyes as she holds you up. Your feet are scrambling against loose, steep dirt to find purchase and your free hand is plunged into sharp gravel. You take 1 damage and have "+YourWorldData.Health+" health. ");
 			
 			//dead
 			if(YourWorldData.Health <= 0){
@@ -30,7 +30,7 @@ export class RidgeBalance {
 		
 		//player climbs back up on their own 
 		else{
-			that.preparePage("Your legs slide down the side and you flail your arms up towards the top. One catches a corner, the other a side, both in soft yet sharp dirt. You dig your fingers in deep, clutching the earth with brute strength and scrambling your feet below, trying to find purchase in the evasive, crumbling face. You slowly work your way back onto the ridge, fingers cut and body bruised. You take 1 damage and have "+YourWorldData.Health+" health. ");
+			that.preparePage("Your legs slide down the side and you flail your arms up towards the top. One catches a corner, the other a side, both in sharp and crumbling rocks. You dig your fingers in deep, clutching the earth with brute strength and scrambling your feet below, trying to find purchase in the evasive, crumbling face. You slowly work your way back onto the ridge, fingers cut and body bruised. You take 1 damage and have "+YourWorldData.Health+" health. ");
 			
 			//dead
 			if(YourWorldData.Health <= 0){
