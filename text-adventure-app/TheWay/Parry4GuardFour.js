@@ -28,8 +28,8 @@ export class Parry4GuardFour {
 			
 			//guard dies
 			else{
-				that.preparePage("The guards caugh up blood and you can tell their bodies can't take the stress. ");
-				DieGuardFour.createPage(that);
+				that.preparePage("They both cough up blood and you can tell their bodies can't take the stress. ");
+				KillGuardFour.createPage(that);
 			}	
 		}
 	}

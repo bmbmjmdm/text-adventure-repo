@@ -11,6 +11,9 @@ import {FileManager} from './FileManager/FileManager.js'
 export default class App extends React.Component {
 	
 
+  specialSpace = "¤";
+  specialSpaceExpanded = "\n                                           \n";
+  specialSpaceCompressed = "\n\n";
   
   //render works like a typewriter, constructing each Text element based on the state variable displayedText
   render() {
@@ -73,6 +76,7 @@ export default class App extends React.Component {
 		if(this.state.toShowText.length > 0){
 			this.allowClicks = false;
 			
+			
 			this.timeoutId = setTimeout(() => {this.addLetter(this, scale)}, 20);
 		}
 		else{
@@ -124,10 +128,9 @@ export default class App extends React.Component {
 	}
 	
 
-	
 	//move a letter from the toShowText list to displayedText list
 	//any node that is empty in toShowText list will serve as an indicator that that text element is completely displayed, and we can progress to the next
-	addLetter(that, scale){
+	addLetter(that, scale){	
 		//deep clone the arrays
 		var displayedText2 = Object.assign([], that.state.displayedText);
 		var toShowText2 = Object.assign([], that.state.toShowText);
@@ -162,6 +165,11 @@ export default class App extends React.Component {
 	
 				var firstCharacter = toShowText2[index].text.charAt(0);
 				toShowText2[index].text = ''+toShowText2[index].text.slice(1);
+				
+				//SPECIAL SPACE CHARACTER 
+				if(firstCharacter == that.specialSpace){
+					firstCharacter = that.specialSpaceExpanded;
+				}
 				
 				var canClick = toShowText2[index].clickable;
 				var hasPage = toShowText2[index].nextPage;
@@ -311,15 +319,23 @@ export default class App extends React.Component {
   swipeHandled = false;
   //we're swiping, go back to homescreen and possibly save 
 	handleSwipe(that){
-		if(!that.swipeHandled){
-			that.swipeHandled = true;
+		if(that.allowClicks){
+			if(!that.swipeHandled){
+				that.swipeHandled = true;
 			
-			if(FileManager.canSave()){
-				FileManager.SaveGame(that, true);
+				if(FileManager.canSave()){
+					that.allowClicks = false;
+					FileManager.SaveGame(that, true).then((value)=>
+					{
+						that.allowClicks = true;
+						that.handleClick(HomePage, that);
+					});;
+					
+				}
+				else{
+					that.handleClick(HomePage, that);
+				}
 			}
-			
-			that.canClick = true;
-			that.handleClick(HomePage, that);
 		}
 	  
 	}
@@ -343,9 +359,14 @@ export default class App extends React.Component {
 		  //figure out how fast we want to erase the screen based on how much content is on it 
 		  var letters = 0;
 		  for (i=0; i< that.state.displayedText.length; i++){
+			  //remove all special space characters before counting letters + fading letters
+			  if(that.state.displayedText[i].text == that.specialSpaceExpanded){
+				  that.state.displayedText[i].text = that.specialSpaceCompressed;
+			  }
+			  
 			  letters += that.state.displayedText[i].text.length;
 		  }
-		  var scale = Math.ceil(letters/20);
+		  var scale = Math.floor(letters/10);
 		  
 		  //now, erase the screen
 		  that.fadeAnimation(nextPage, scale);
@@ -519,7 +540,7 @@ export default class App extends React.Component {
 			FileManager.SaveGame(that, false);
 		}
 		
-		setTimeout(() => {that.periodicSave(that)}, 300000);
+		setTimeout(() => {that.periodicSave(that)}, 600000);
 	}
 	
 	

@@ -5,7 +5,7 @@ import {YourWorldData} from '../GameData.js';
 export class HornSurvival {
 
 	static createPage(that){
-		that.preparePage("Yeah, you humans are probably just clockwork. Same with any other animal, you're climbing this mountain to get on the other side. ");
+		that.preparePage("Yeah, you humans are probably just clockwork. Same with any other animal, you're climbing this mountain to get to the other side. ");
 		
 		HornSliding.createPage(that);
 	}

@@ -13,6 +13,7 @@ export class RidgeShelter {
 		that.preparePage("brave the storm in search of tinder", RidgeSearch);
 		that.preparePage(" or ");
 		that.preparePage("setup camp now?", Camping);
+		that.preparePage(" You only have "+YourWorldData.Energy+" energy.");
 		
 		//allies huddle for warmth
 		if(YourWorldData.Allies >0) {

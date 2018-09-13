@@ -16,10 +16,10 @@ export class TheWay {
 		
 		that.preparePage("As you dust soot off yourself, the crackling fire behind you illuminates part of the hallway. You're standing at an intersection, a long hallway extends in front of you while two shorter ones are on your right and left. A figure is walking down the long hallway towards you. ");
 		if(TheWayData.RefusedDeal){
-			that.preparePage("An older, bitter man behind bars to your left screams out, \"Down here! Down here! A prisoner's escaping!\" The figure in the distance yells out, \"You there! Wait where you are.\" And continues running towards you. ");
+			that.preparePage("An older, bitter man behind bars to your left screams out, \"Guard! Down here! Down here! A prisoner's escaping!\" The figure in the distance yells out, \"You! Wait where you are.\" And continues running towards you. ");
 		}
 		else{
-			that.preparePage("An older man behind bars to your left whispers out, \"Hey, let me out. Come on, hurry. I can guide us out of here.\" The figure in the distance is walking at a steadfast pace. ");
+			that.preparePage("An older man behind bars to your left whispers out, \"Hey, let me out. Come on, hurry. I can guide us out of here. That guard's gonna be here any second.\" The figure in the distance is walking at a steadfast pace. ");
 		}
 		
 		if(TheWayData.HasWeapon.Glass){

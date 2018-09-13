@@ -5,6 +5,7 @@ import {Levels} from '../Menus/Levels.js';
 export class Sleep {
 
 	static createPage(that){
+		var dead = false;
 		YourWorldData.Campfire = false;
 		
 		that.preparePage("You find some soft earth to rest your head, just about anything will do given how tired you are. The distant howls in the darkness are...concerning, but you manage to slip away into unconciousness like you were born to. ");
@@ -19,7 +20,7 @@ export class Sleep {
 			
 			var chance = Math.random();
 			//death
-			if(Math.abs(Energy)/50 > chance){
+			if(Math.abs(YourWorldData.Energy)/50 > chance){
 				
 				//kill a random ally
 				if(YourWorldData.Allies > 0){
@@ -128,17 +129,20 @@ export class Sleep {
 				
 				//kill player
 				else{
+					dead = true;
 					that.preparePage("You're waken from your sleep by a lump in your throat. You try to cough, wheeze, gasp, anything! Alas, it won't budge. You struggling to stand by your body is tired, bones weak and muscles bruised. You grasp for air, dear life, but soon the night ");
 					that.preparePage("takes you.", Levels);
 				}
 			}
 		}
 		
-		YourWorldData.Energy = Math.max(YourWorldData.Energy, 0);
-		YourWorldData.Energy += 10;
+		if(!dead){
+			YourWorldData.Energy = Math.max(YourWorldData.Energy, 0);
+			YourWorldData.Energy += 10;
 		
-		that.preparePage("Eventually, the night passes and you awake feeling slightly more rested. You have "+ YourWorldData.Energy+" energy, and a " );
-		that.preparePage("new day.", YourWorldData.CampContinue)
+			that.preparePage("Eventually, the night passes and you awake feeling slightly more rested. You have "+ YourWorldData.Energy+" energy, and a " );
+			that.preparePage("new day.", YourWorldData.CampContinue);
+		}
 		
 	}
 

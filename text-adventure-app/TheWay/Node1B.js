@@ -101,7 +101,7 @@ export class Node1B {
 			}
 			
 			//this is where the real room options are
-			that.preparePage("The tattered wooden hallways echo with whimpers and clangs as you look away from your cell, Northways. If you go ");
+			that.preparePage("The tattered wooden hallways echo with whimpers and clangs as you look away from your cell. If you go ");
 			that.preparePage("North"+came2B+",", Node2B);
 			that.preparePage(" you can see the hallway extends pretty far, with a few different turns. Looking down the ");
 			that.preparePage("East"+came2C, Node2C);

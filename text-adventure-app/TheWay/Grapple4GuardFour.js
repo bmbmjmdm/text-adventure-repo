@@ -28,8 +28,8 @@ export class Grapple4GuardFour {
 			
 			//guard dies
 			else{
-				that.preparePage("The guards caugh up blood and you can tell their bodies can't take the stress. ");
-				DieGuardFour.createPage(that);
+				that.preparePage("Just then the two guards begin coughing up blood and you can tell their bodies can't take the stress. ");
+				KillGuardFour.createPage(that);
 			}	
 		}
 	}

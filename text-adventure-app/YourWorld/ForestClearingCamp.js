@@ -18,6 +18,7 @@ export class ForestClearingCamp {
 			that.preparePage("and hands you a flower. That's sweet of him. You go to pat his head but he runs off, trips in the grass, looks around to see if anyone is freaking out so he knows if he should, and then continues on his way to being a kid. ");
 		}
 		
+		that.preparePage("As darkness takes over, night closing in, the moon shines through a hole in the trees. It casts a light in the blackness, a lunar eye watching over you as you empty your bag. ");
 		Camping.createPage(that);
 		
 		

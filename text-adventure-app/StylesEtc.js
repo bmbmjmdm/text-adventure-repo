@@ -78,8 +78,6 @@ export class ClickText extends React.Component {
 	//the user has released their touch, check to see if they're still on the original text they pressed. if not, allow a new position to be written
 	didRetainPress(evt){
 		this.didMove = false;
-			console.log("evt.nativeEvent.locationX ="+ evt.nativeEvent.locationX);
-			console.log("evt.nativeEvent.locationY ="+ evt.nativeEvent.locationY);
 
 		if(evt.nativeEvent.locationY > this.componentY - 10 &&
 			evt.nativeEvent.locationY < this.componentY + 10 &&

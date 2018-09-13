@@ -24,12 +24,12 @@ export class HornFree{
 			}
 		}
 		
-		that.preparePage("After at least a dozen minutes, or a dozen hours, you're not sure, the hole is wide enough for your foot to turn in a new direction. It aches but you twist it further, squeeze it up through the hole and roll onto the snow with a gasp. A tickle runs through your body as you laugh. You stand back up and continue upward, now seeing the top of the horn where the ground curves out. All that's between you and it is a steep bluff of snow. Your hands plunge in, feet grappling the crumbly stone and ice, and you ascend the climbable cliff. You have a pit of doubt though. Is climbing this mountain, everything we do, playing this game even, a ");
+		that.preparePage("After at least a dozen minutes, or a dozen hours, you're not sure, the hole is wide enough for your foot to turn in a new direction. It aches but you twist it further, squeeze it up through the hole and roll onto the snow with a gasp. A tickle runs through your body as you laugh. You stand back up and continue upward, now seeing the top of the horn where the ground curves out. All that's between you and it is a steep bluff of snow. Your hands plunge in, feet grappling the gravel and ice, and you ascend the final cliff. You have a pit of doubt though. Is climbing this mountain, everything you do, life itself, a ");
 		
 		that.preparePage("distraction", HornSummit);
 		that.preparePage(" from the essence of the universe? A pleasant illusion, perhaps? Or is it the ");
 		that.preparePage("substance,", HornSummit);
-		that.preparePage(", the real meat of existance: to be here, now?");
+		that.preparePage(" the real meat of existance: to be here, now?");
 	}
 
 }

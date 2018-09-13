@@ -6,8 +6,7 @@ export class CaveExit {
 
 	static createPage(that){
 		
-		that.preparePage("You turn tail and make your way back through the rough yet slippery cave. The distant drips and cracks and ambient echos fade as you squeeze through the final opening. You're back out on the grassy ledge and take a deep breath of fresh air. ");
-		
+		that.preparePage("You turn tail and make your way back. The distant drips and cracks and ambient echos of the cave soon fade. At last, you squeeze through the final opening into daylight. You're back out on the grassy ledge and take a deep breath of air. Refreshing. ");		
 		if(YourWorldData.BadassGal){
 			that.preparePage("The old lady follows shortly behind, dusting herself off. \"Well that was fun!\" She proceeds to stretch and walk around, happy to be standing again. ");
 		}

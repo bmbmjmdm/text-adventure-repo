@@ -30,6 +30,7 @@ export class WeDefine {
 		if(TheWayData.GuardFour.Hostility > 0){
 			that.preparePage("Well God'll be havin' ye back in 'at cell in no time. Have at ye!\" He raises the blood-stained axe and begins pivoting around you. The other guard follows suit, taking the other side, and soon you're flanked! With two people trying to claim your head, any mistake could be fatal. What do you do? ");
 			if(!TheWayData.HasWeapon.Sword){
+				TheWayData.HasWeapon.Sword = true;
 				that.preparePage("First thing's first, you pick up the sword at your feet as the guards get into position. Luckily they're being cautious so you have time to do so, on the other hand their caution means these guards are well trained. Now let's se... ");
 			}
 			
@@ -50,7 +51,15 @@ export class WeDefine {
 				that.preparePage("Worth a shot, right? ");
 			}
 			
-			that.preparePage("Looking at the large metal archway and gate, gathering a small bag and strap from the various shelves, you can't help but see the round-up prisoners in the far corner. Many are injured, maybe fatally, but some could probably still walk. It would be extremely risky... but maybe you could ");
+			that.preparePage("Looking at the large metal archway and gate, gathering a small bag and strap from the various shelves, ");
+			
+			//pickup sword if dropped
+			if(!TheWayData.HasWeapon.Sword){
+				TheWayData.HasWeapon.Sword = true;
+				that.preparePage("and picking up your sword, ");
+			}
+			
+			that.preparePage("you can't help but see the round-up prisoners in the far corner. Many are injured, maybe fatally, but some could probably still walk. It would be extremely risky... but maybe you could ");
 			that.preparePage("cut some loose ", FreePrisonersEnd);
 			that.preparePage("on your way out. But why care about them? The end is so close in sight. Fuck em, just ");
 			that.preparePage("leave.", Leave);

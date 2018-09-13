@@ -1,5 +1,5 @@
 import {TheWayData} from '../GameData.js';
-import {DieGuardFour} from './DieGuardFour.js';
+import {KillGuardFour} from './KillGuardFour.js';
 import {Parry4GuardFour} from './Parry4GuardFour.js';
 import {Strike4GuardFour} from './Strike4GuardFour.js';
 import {Grapple4GuardFour} from './Grapple4GuardFour.js';

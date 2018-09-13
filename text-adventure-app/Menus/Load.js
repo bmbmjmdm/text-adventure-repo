@@ -10,10 +10,10 @@ export class Load{
 			//whats the filename according to our filesystem
 			var fileName = loadableFiles[fileNumber];
 			
-			var newline = "\n\n";
+			var newline = true;
 			//if this is the last file dont add the newline characters
 			if(parseInt(fileNumber)+1 == loadableFiles.length){
-				newline = "";
+				newline = false;
 			}	
 			
 			//when filename is clicked, load the filename as a game 
@@ -22,7 +22,10 @@ export class Load{
 			}
 			
 			//display filename 
-			that.preparePage(fileName+newline, new LoadMe(fileName, that));
+			that.preparePage(fileName, new LoadMe(fileName, that));
+			if(newline){
+				that.preparePage("¤");
+			}
 		
 			
 		}

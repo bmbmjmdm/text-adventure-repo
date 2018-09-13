@@ -102,7 +102,7 @@ export class Camping {
 			}
 			
 			else if (needsKindling){
-				that.preparePage("The darkness seems dwarfed by the light of stars and moon. Still, as a shivering breath crawls out your lungs, it would be nice to have a fire. Unfortunately you need kindling to start one. ");
+				that.preparePage("A shivering breath crawls out your lungs; it would be nice to have a fire. Unfortunately you need kindling to start one. ");
 			}
 			
 			if(canEat){
@@ -111,7 +111,7 @@ export class Camping {
 				that.preparePage(" something. With what little provisions you have, you begin to wonder if leaving prison was the best idea. You laugh at the thought. Then smile realizing you have the freedom to think such things. Then your stomach growls again. "); 
 			}
 			
-			that.preparePage("It's getting late though, maybe what you need- *yawn* -is a place to ");
+			that.preparePage("Now your eyes can feel it getting late; maybe what you need- *yawn* -is a place to ");
 			that.preparePage("lay your head.", Sleep);
 			
 		}
