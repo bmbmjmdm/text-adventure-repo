@@ -13,10 +13,10 @@ export class ClimbWall {
 			that.preparePage("Luckily the vine you attached is still hanging strong, so you grab hold and try to remember the path you took, the mistakes you made. ");
 			YourWorldData.Energy -= 10;
 		}
-		else if(YourWorldData.Vine > 0){
+		else if(YourWorldData.Vines > 0){
 			that.preparePage("Just as you're about to start climbing, you get the idea to reach into your bag and drag out a cluster of vines. Unraveling them, you form a thick rope with a loop on one end and toss it up. It lands back at your feet. You toss it again, and again, and again and finally it catches something at the top of the wall. You lean back and hold the rope taut as you test it with your weight... seems stable. This will make climbing much easier. ");
 			YourWorldData.Energy -= 10;
-			YourWorldData.Vine --;
+			YourWorldData.Vines --;
 			YourWorldData.ClimbVine = true;
 		}
 		

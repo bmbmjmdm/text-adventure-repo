@@ -18,7 +18,7 @@ export class ClimbFailure {
 		
 		else{
 			YourWorldData.Health -= 4;
-			that.preparePage("You fall back backwards, downwards, and your life flashes before your eyes. As you fall past the wall you try to grab onto something, anything, to slow yourself. You manage to bang your hands up as they scrape against the wall and slow you slightly, but not enough, as you smash into the ground and take 4 damage, leaving you with "+YourWorldData.Health+" health. ");
+			that.preparePage("You fall backwards, downwards, and your life flashes before your eyes. As you fall past the wall you try to grab onto something, anything, to slow yourself. You manage to bang your hands up as they scrape against the wall and slow you slightly, but not enough, as you smash into the ground and take 4 damage, leaving you with "+YourWorldData.Health+" health. ");
 		}
 		
 		//dead
@@ -31,8 +31,11 @@ export class ClimbFailure {
 		else{
 			that.preparePage("At the bottom, you slowly pick yourself up. You ache all over and hope nothing's broken. ");
 			
-			if(YourWorldData.Allies > 0){
+			if(YourWorldData.Allies > 1){
 				that.preparePage("Your friends gather around you and help you up, each giving overlapping remarks and contradictory advice. It's sweet how worked up they are, but unhelpful. You tell them you'll push through it, you'll have to. ");
+			}
+			else if (YourWorldData.Allies > 0){
+				that.preparePage("Your friend gathers near you and helps you up, giving overlapping remarks and contradictory advice. It's sweet how worked up they are, but unhelpful. You tell them you'll push through it, you'll have to. ");
 			}
 			
 			that.preparePage("What comes next is hopefully easier, but somehow you don't expect it to be. You look around and find yourself in the same place you started. There's a wall to ");

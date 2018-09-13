@@ -32,13 +32,13 @@ export class RockyPath {
 		if(!YourWorldData.SearchedRockyPath){
 			that.preparePage("As you do so, there's a sound coming from just beyond a mound of dirt and rock. It sounds like trickling water. You could sure use that. Do you ");
 			that.preparePage("investigate?", RockyPathSearch);
-			that.preparePAge(" You might wanna just ");
+			that.preparePage(" You might wanna just ");
 			that.preparePage("keep going,", RockyFlat);
 			that.preparePage(" the day only has so much light.");
 		}
 		
 		else{
-			that.preparePAge(" Shouldn't rest for long though, better");
+			that.preparePage(" Shouldn't rest for long though, better");
 			that.preparePage("keep going.", RockyFlat);
 		}
 	}

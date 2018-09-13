@@ -10,7 +10,7 @@ export class HornFree{
 		//allies help dig out 
 		if(YourWorldData.Allies > 0){
 			//generic ally using sharp stone 
-			if(YourWorldData.SharpStones > 0){
+			if(YourWorldData.SharpRocks > 0){
 				that.preparePage("Your ally grabs a sharp stone you've been saving and tears into the ice, stabbing and scraping. ");
 			}
 			//generic ally not using sharp stone 

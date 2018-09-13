@@ -16,7 +16,7 @@ export class FeedBadass {
 		}
 		
 		
-		preparePage("She's awesome.", Camping);
+		that.preparePage("She's awesome.", Camping);
 		
 		YourWorldData.Safe.push("BadassGal");
 		

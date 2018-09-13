@@ -23,7 +23,7 @@ export class SearchPrison {
 		that.preparePage("Being the pyromaniac you are, you're already envisioning the glorious fire you'll have tonight. You put everything in your bag and can feel fatigue already setting in. You have "+YourWorldData.Energy+" energy remaining. You should probably start ");
 		that.preparePage("searching for a path.", FindPath);
 		
-		if(YourWorldData.Allies > 0){
+		if(YourWorldData.Allies > 0 && !YourWorldData.TalkedAllies){
 			that.preparePage(" That, or ");
 			that.preparePage("talk with your friends first.", TalkAlliesPrison);
 		}

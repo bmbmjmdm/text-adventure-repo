@@ -9,7 +9,7 @@ export class CaveContinue {
 	static createPage(that){
 		YourWorldData.Energy -= 10;
 		
-		that.preparePage("You crawl forward, squeezing again through the thin opening into the next chamber and coming out onto a slope. The ground is wet but rough, and while it makes your hands and knees pasty, you don't slip. You can hear the distant sound of water dripping from here as you slowly crawl down the stone. Descending deeper, deeper into the cave, the light from the crack behind you becomes more and more distant. You get to a point where you can't see in front of you: total darkness, nothing but the smell of salt guids the way. ");
+		that.preparePage("You crawl forward, squeezing again through the thin opening into the next chamber and coming out onto a slope. The ground is wet but rough, and while it makes your hands and knees pasty, you don't slip. You can hear the distant sound of water dripping as you slowly crawl down the stone. Descending deeper, deeper into the cave, the light from the crack behind you becomes more and more distant. You get to a point where you can't see in front of you: total darkness, nothing but the smell of salt guids the way. ");
 		
 		if(YourWorldData.Kindling > 0){
 			that.preparePage("Do you ");

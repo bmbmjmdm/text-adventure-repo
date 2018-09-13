@@ -34,7 +34,7 @@ export class HornSummit{
 		}
 		
 		if(YourWorldData.BadassGal){
-			that.preparePage("The older lady rests a hand on your shoulder, \"You did this. Don't forget that.\" You turn to her, but her gaze is far past the horizon. \"There's much more to this world than meets the eye. I'd happily see it with you.\" She pulls a scroll from her pants, you don't question her. \"Take this, I already know it by heart.\" You unravel the bent up parchment to find a map inside. Looking for the destination in the landscape, you see what looks like a desert. ");
+			that.preparePage("The older lady rests a hand on your shoulder, \"You did this. Don't forget that.\" You turn to her, but her gaze is far past the horizon. \"There's much more to this world than meets the eye. I'd happily see it with you.\" She pulls a scroll from her pants, you don't question her. \"Take this, I already know it by heart.\" You unravel the bent up parchment to find a map inside. Looking for what's marked as an X in the landscape, you see what looks like a desert. ");
 		}
 		
 		that.preparePage("There's a whole world to ");

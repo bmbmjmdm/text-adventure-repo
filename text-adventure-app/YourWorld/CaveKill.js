@@ -13,15 +13,15 @@ export class CaveKill {
 			weapon = "axe";
 		}
 		
-		that.preparePage("You switch your torch to your other hand and draw your "+weapon+". Quiet as footsteps walk, death approaches. Your weapon is reared as the target comes into sight. Its eyes are closed, or at least you think so; its body is but a silhouette. You take one more step to reach the creature and suddenly a dozen more appear from the shadows, your torch illuminating a colony of stalactites-nesting bats. They're asleep, until the one you took a step towards opens its eyes and meets your own. Without a second for either of you to think, it begins to unravel its wings and you cleave with your "+weapon+", crushing the bat whole, waking the others up, a dozen- no- two dozen- no- more reflective eyes suddenly become visible in the dark. You can hear the widening of wings and sudden commotion fill the air. Leather-bound bones knock into you and small claws begin to scratch, one getting caught in your hair. ");
+		that.preparePage("You switch your torch to your other hand and draw your "+weapon+". Quiet as footsteps walk, death approaches. Your weapon is reared as the target comes into sight. Its eyes are closed, or at least you think so; its body is but a silhouette. You take one more step to reach the creature and suddenly a dozen more appear from the shadows, your torch illuminating a colony of stalactite-nesting bats. They're asleep, until the one you took a step towards opens its eyes and meets your own. Without a second for either of you to think, it begins to unravel its wings and you cleave with your "+weapon+", crushing the bat whole, waking the others up, a dozen- no- two dozen- no- more reflective eyes suddenly become visible in the dark. You can hear the widening of wings and sudden commotion fill the air. Leather-bound bones knock into you and small claws begin to scratch, one getting caught in your hair. ");
 		
 		//if BA is with player, she'll block some or all of the bat damage 
 		if(YourWorldData.BadassGal){
 			that.preparePage("As it does your lady friend lets out a high-pitched screech and you can hear thuds and buffling barrel next to you. ");
 			
 			//need sharp stone to block all 
-			if(YourWorldData.SharpStones > 0){
-				YourWorldData.SharpStones --;
+			if(YourWorldData.SharpRocks > 0){
+				YourWorldData.SharpRocks --;
 				that.preparePage("You feel a rough edge graze the top of your head and the caught claw becomes free, the bat scratching and flailing suddenly gone from your head. The old woman tosses a sharp stone in her hand at the bats as they fly away. ");
 			}
 			else{

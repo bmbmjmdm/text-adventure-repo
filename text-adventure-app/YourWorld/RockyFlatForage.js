@@ -8,10 +8,14 @@ export class RockyFlatForage {
 		YourWorldData.Energy -= 10; 
 		YourWorldData.Berries += 1; 
 		YourWorldData.Kindling += 1; 
-		YourWorldData.Vine += 1; 
+		YourWorldData.Vines += 1; 
 		
 		if(YourWorldData.Allies > 0){
-			that.preparePage("You tell your allies to fan out, try and find any kind of greenery in the nooks and crannies of this place. ");
+			var plural = "ally";
+			if(YourWorldData.Allies > 1){
+				plural = "allies";
+			}
+			that.preparePage("You tell your "+plural+" to fan out, try and find any kind of greenery in the nooks and crannies of this place. ");
 		}
 		else{
 			that.preparePage("You begin searching the edges of the flat, checking in every nook and cranny you can find. ");
@@ -20,7 +24,11 @@ export class RockyFlatForage {
 		that.preparePage("After an hour of searching under every rock, literally, you amass a few twigs and dried up grass, which will actually be useful for kindling. ");
 		
 		if(YourWorldData.Son){
-			that.preparePage("The small boy runs gleefully up to you and, without saying a word, hands you a small shrub. It's filled with berries! You give him a wink and tell him good job before he runs off to his mother. ");
+			that.preparePage("The small boy runs gleefully up to you and, without saying a word, hands you a small shrub. It's filled with berries! You give him a wink and tell him good job before he runs off");
+			if(YourWorldData.Mother){
+				that.preparePage(" to his mother");
+			}
+			that.preparePage(". ");
 		}
 		else{
 			that.preparePage("You even managed to find a small shrub with some berries on it...hopefully they're edible! ");

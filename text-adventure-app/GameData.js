@@ -210,7 +210,8 @@ export function ResetYourWorldData(){
 		BearHealth: 10,
 		SearchedGrassyLedge: false,
 		CaveTorch: false,
-		Safe: []
+		Safe: [],
+		TalkedAllies: false
 	}
 	
 }

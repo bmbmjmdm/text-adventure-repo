@@ -37,6 +37,7 @@ export class ShimmyLedge {
 			that.preparePage("You explain the situation and it quickly becomes clear what you're asking. A hush falls over you and your friends... eventually, one speaks up, ");
 			YourWorldData.Allies--;
 			var pronoun = "";
+			var sonDied = false;
 			
 			if(YourWorldData.SadGal){
 				that.preparePage("\"...Ok...I'll go.\" The young woman says, wiping something from her face and clenching her jaw, trying to not look terrified. You tell her she doesn't have to but the words don't come out right, sounding...dismissive. She shoots you a look. \"I can do this.\" ");
@@ -65,6 +66,7 @@ export class ShimmyLedge {
 				}
 				YourWorldData.Son = false;
 				pronoun="he";
+				sonDied = true;
 			}
 			else if(YourWorldData.Mother){
 				that.preparePage("\"I...can go I guess.\" The mother's look is far away, like she doesn't belong here anymore, like falling wouldn't be so bad. ");
@@ -73,7 +75,7 @@ export class ShimmyLedge {
 			}
 			
 			that.preparePage("As "+pronoun+" approaches the ledge, you hold your breath. The cliff seems to be crumbling at the slightest breeze, yet "+pronoun+" walks steadily up to it. Just before "+pronoun+"'s about to step out, the wind stands still, the sun illuminates the path perfectly and the whole world seems to watch. One step. Two steps. The ledge is actually holding! Three steps, four, five, "+pronoun+"'s just about across! Six, seven, ei-a brittle stone tired of rigid structural conformity snaps and crumbles beneath the weight. The ledge caves in, out, drops the unsuspecting victim down a tumbling rocky slide into a hush of brush below, branches snapping and dirt thumping like the last word in this discussion with fate. You're speechless. ");
-			if(YourWorldData.Son && YourWorldData.Mother){
+			if(sonDied && YourWorldData.Mother){
 				that.preparePage("The mother lets out a chilling scream and dives towards the ledge. You catch her, holding her back from throwing herself off into the unknown. She cries and bangs on your shoulder. She almost tries to push you but her efforts are half-hearted. She slumps to the floor and you spend a few hours with her, waiting for the tears to dry and hollow husk ready to continue the path forward. ");
 			}
 			else{

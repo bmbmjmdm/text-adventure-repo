@@ -22,7 +22,7 @@ export class SpiralCamp {
 			}
 		}
 		
-		that.preparepage("It's time to ");
+		that.preparePage("It's time to ");
 		that.preparePage("camp.", Camping);
 		
 		

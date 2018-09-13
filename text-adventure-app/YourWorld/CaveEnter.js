@@ -24,7 +24,7 @@ export class CaveEnter {
 		}
 		
 		if(YourWorldData.BadassGal){
-			that.preparePage(" \"Noone should spelunk alone.\" Another voice says, and soon you see the older woman squeeze her way through the crack behind you. She gives you a grin and a wink, her arms stable and body attuned as she crawls up to you.");
+			that.preparePage(" \"Noone should spelunk alone.\" Another voice says, and soon you see the older woman squeeze her way through the crack behind you. She gives you a grin and a wink, her arms stable and body attuned as she crawls up to meet you.");
 		}
  
 	}

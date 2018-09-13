@@ -66,7 +66,7 @@ export class CavePit {
 			
 				//BA helps user out
 				if(YourWorldData.BadassGal){
-					that.preparePage("\"You alright down there?\" The old woman yells down at you. Apparently she had been a bit more cautious, or at least aware of the fact that you plummeted before her. You confirm your alive state and ask for some help. Soon, you're jumping and grabbing a much needed hand which pulls you out with a vigor. It seems like this pit was the end of the path, guess it's time to ");
+					that.preparePage("\"You alright down there?\" The old woman yells down at you. Apparently she had been a bit more cautious, or at least aware of the fact that you plummeted before her. You confirm you're alive and ask for some help. Soon, you're jumping and grabbing a much needed hand which pulls you out with a vigor. It seems like this pit was the end of the path, guess it's time to ");
 					that.preparePage("turn around.", CaveExit);
 				}
 			
@@ -94,7 +94,7 @@ export class CavePit {
 		YourWorldData.Gold += 2;
 		YourWorldData.Water ++;
 		YourWorldData.Flint ++;
-		YourWorldData.SharpStones ++;
+		YourWorldData.SharpRocks ++;
 		
 		that.preparePage("You start feeling around at the various surfaces in the water. One thing becomes blindingly apparent: there's a skeleton in here with you. Looks like someone was doing exactly what you're doing when... you try not to think about it. You quickly stop fondling the long-gone corpse and feel around elsewhere. There's a bunch of rocks in here, and the steady drip from above is now dripping on your head. There must be a leak or else this hole would be filled. Hm. Regardless, some of these rocks seem useful. One is definitely flint, another jagged like a cruel blade, and another... oddly smooth. Almost like a... like a gem. Woah. You pocket everything worth while and take out your waterskin, fill it a little bit with the dripping water. You don't exactly want to dip it in the pool steeping with a dead body. ");
 	}
