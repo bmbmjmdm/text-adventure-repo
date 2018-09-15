@@ -22,7 +22,7 @@ export class HomePage{
   //if not returns nothing
   //note if the user finished the last game they played, however has other unfinished games, load will be clickable but continue will not be
   static homepageContinue(that, trueFalse){
-	  //TODO
+	  
 	  if(trueFalse){
 		  that.preparePage("Continue\n\n", Continue);
 	  }
@@ -35,7 +35,6 @@ export class HomePage{
 
   //new will always display, so we put the <br>s in the other 2 functions for the sake of centering the text properly
   static homepageNew(that){
-	  //TODO make click functionality
 	  that.preparePage("\nNew\n", Levels);
   }
   

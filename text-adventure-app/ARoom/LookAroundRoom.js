@@ -30,23 +30,26 @@ export class LookAroundRoom {
 			that.preparePage("door? ", LookAtDoor);
 			that.preparePage("The ");
 			that.preparePage("window", LookAtWindow);
-			that.preparePage(" just above it? The ");
-			that.preparePage("rope", LookAtRope);
-			that.preparePage(" is so close to the ");
-			that.preparePage("flames ", LookAtFire);
-			if(ARoomData.WrappedHandsFeet){
-				that.preparePage("but with your hands wrapped, you'll probably be fine.");
-			}
-			else{
-				that.preparePage("that you don't think it's wise to grab it. You'll probably just burn yourself!");
+			that.preparePage(" just above it? ");
+			if(!ARoomData.ThrewRope){
+				that.preparePage("The ");
+				that.preparePage("rope", LookAtRope);
+				that.preparePage(" is so close to the ");
+				that.preparePage("flames ", LookAtFire);
+				if(ARoomData.WrappedHandsFeet){
+					that.preparePage("but with your hands wrapped, you'll probably be fine.");
+				}
+				else{
+					that.preparePage("that you don't think it's wise to grab it. You'll probably just burn yourself!");
+				}
 			}
 			if(!ARoomData.ThrewGlass){
 				that.preparePage(" The ");
 				that.preparePage("glass", LookAtGlass);
 				that.preparePage(" you used to free yourself is also nearby");
 				if(!(ARoomData.ThrewBlanket || ARoomData.BurntBlanket || ARoomData.WrappedHandsFeet)){
-				that.preparePage(", as well as the ");
-				that.preparePage("blanket.", LookAtBlanket);
+					that.preparePage(", as well as the ");
+					that.preparePage("blanket.", LookAtBlanket);
 				}
 				else{
 					that.preparePage(".");

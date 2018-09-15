@@ -10,10 +10,13 @@ import {FileManager} from './FileManager/FileManager.js'
 //Its initial mounting function assembles the homepage. 
 export default class App extends React.Component {
 	
-
-  specialSpace = "¤";
-  specialSpaceExpanded = "\n                                           \n";
-  specialSpaceCompressed = "\n\n";
+  
+  //holds a reference to the last text element rendered on screen 
+  latestElement = null;
+  latestElementNewText = "";
+  reRender = false;
+  
+  
   
   //render works like a typewriter, constructing each Text element based on the state variable displayedText
   render() {
@@ -23,10 +26,10 @@ export default class App extends React.Component {
 	this.state.displayedText.map((dtNode,i) =>{
 		//clickable text needs to be red and attach a touch listener to its corresponding nextPage function
 		if(dtNode.clickable){
-			displayElements.push((<ClickText key={i} onPress={() => {this.handleClick(dtNode.nextPage, this)}}>{dtNode.text}</ClickText>));
+			displayElements.push((<ClickText key={i} ref={component => this.latestElement = component} onPress={() => {this.handleClick(dtNode.nextPage, this)}}>{dtNode.text}</ClickText>));
 		}
 		else{
-			displayElements.push((<DefaultText key={i} onPress={() => {this.speedUp()}}>{dtNode.text}</DefaultText>));
+			displayElements.push((<DefaultText key={i} ref={component => this.latestElement = component} onPress={() => {this.speedUp()}}>{dtNode.text}</DefaultText>));
 		}
 	});
 	
@@ -120,12 +123,19 @@ export default class App extends React.Component {
 		
 	}
 	
+	
 	//clean up any lingering listeners
 	clearTimeout() {
 		if (this.timeoutId) {
 			clearTimeout(this.timeoutId);
 		}
 	}
+	
+	
+  //Special character constants for use in load screen
+  specialSpace = "¤";
+  specialSpaceExpanded = "\n                                           \n";
+  specialSpaceCompressed = "\n\n";
 	
 
 	//move a letter from the toShowText list to displayedText list
@@ -143,55 +153,60 @@ export default class App extends React.Component {
 			//the higher the scale, the more letters are displayed with a single call 
 			for(i=0;i<Math.max(1, scale);i++){
 				
-			var removeLastText = false;
-			var index = 0;
+				var removeLastText = false;
+				var index = 0;
 			
-			if(toShowText2[index].text.length < 1){
-				//the last text we added a letter to finished that text. remove it from the display list and start a new text
-				removeLastText = true;
-				index++;
+				if(toShowText2[index].text.length < 1){
+					//the last text we added a letter to finished that text. remove it from the display list and start a new text
+					removeLastText = true;
+					index++;
 				
-			}
+				}
 			
-			if(toShowText2.length == index){
-				//the only text in the list is an empty one, don't bother, clean list, get out
-				keepTyping = false;
-			}
+				if(toShowText2.length == index){
+					//the only text in the list is an empty one, don't bother, clean list, get out
+					keepTyping = false;
+				}
 			
-			else{
-				//time to start modifying our texts
-				//we always peel off the first letter of the toShowText, preparing it to append to the displayedText
+				else{
+					//time to start modifying our texts
+					//we always peel off the first letter of the toShowText, preparing it to append to the displayedText
 				
 	
-				var firstCharacter = toShowText2[index].text.charAt(0);
-				toShowText2[index].text = ''+toShowText2[index].text.slice(1);
+					var firstCharacter = toShowText2[index].text.charAt(0);
+					toShowText2[index].text = ''+toShowText2[index].text.slice(1);
 				
-				//SPECIAL SPACE CHARACTER 
-				if(firstCharacter == that.specialSpace){
-					firstCharacter = that.specialSpaceExpanded;
-				}
+					//SPECIAL SPACE CHARACTER 
+					if(firstCharacter == that.specialSpace){
+						firstCharacter = that.specialSpaceExpanded;
+					}
 				
-				var canClick = toShowText2[index].clickable;
-				var hasPage = toShowText2[index].nextPage;
+					var canClick = toShowText2[index].clickable;
+					var hasPage = toShowText2[index].nextPage;
 				
-				if(removeLastText){
-					//start a new text!
-					displayedText2.push({text:firstCharacter, clickable:canClick, nextPage:hasPage});
+					if(removeLastText){
+						//start a new text!
+						displayedText2.push({text:firstCharacter, clickable:canClick, nextPage:hasPage});
 					
-					//get rid of the empty text from the list
-					toShowText2.shift();
-				}
-				else if (displayedText2.length==0){
-					//no text displayed so far, start a new text!
-					displayedText2.push({text:firstCharacter, clickable:canClick, nextPage:hasPage});
+						//get rid of the empty text from the list
+						toShowText2.shift();
 					
-				}
-				else{
-					//append the last text in our list					
-					displayedText2[displayedText2.length-1].text += firstCharacter;
-				}
+						that.reRender = true;
+					}
+					else if (displayedText2.length==0){
+						//no text displayed so far, start a new text!
+						displayedText2.push({text:firstCharacter, clickable:canClick, nextPage:hasPage});
+					
+						that.reRender = true;
+					
+					}
+					else{
+						//append the last text in our list					
+						displayedText2[displayedText2.length-1].text += firstCharacter;
+						that.latestElementNewText = displayedText2[displayedText2.length-1].text;
+					}
 				
-			}
+				}
 			}
 			
 			if(keepTyping){
@@ -217,6 +232,22 @@ export default class App extends React.Component {
   
   
   
+	//when we call setState, we are either totally rerendering the tree or just adjusting the last text on it 
+	shouldComponentUpdate(nextProps, nextState){
+		if(this.reRender){
+			this.reRender = false;
+			return true;
+		}
+		else{
+			if(this.latestElement){
+				this.latestElement.reWrite(this.latestElementNewText);
+			}
+			return false;
+		}
+		
+	}
+
+
   
 	savableCopy = "";
 	//this holds a copy of the screens current text so that we can save it to file if needed
@@ -414,6 +445,8 @@ export default class App extends React.Component {
 	//when there are no letters in a given text, remove it from the list
 	//when there are no texts left, we're done
   	fadeLetter(that, callbackPage, scale){
+		that.reRender = true;
+		
 		//deep clone the array
 		var displayedText2 = Object.assign([], that.state.displayedText);
 		

@@ -33,6 +33,7 @@ export class BiteGuardOne {
 			
 			//guard dies
 			else{
+				TheWayData.GuardOne.Health = 0;
 				TheWayData.HasWeapon.Sword = true;
 				TheWayData.HasKeys = true;
 				that.preparePage("It isn't long before she goes limp and you're left with a pit of macabre realization. You pick up her sword and start to stand up. As you push her away, you feel keys by her waste, and take those with a numb grasp. You wipe the blood off and immediately throw up. You try not to look at the body, staring at ");

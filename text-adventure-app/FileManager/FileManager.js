@@ -353,7 +353,7 @@ export class FileManager {
 	static MenuFiles;
 	
 	static requireFolders(){
-		//we have to include all of this here in order to load classes referenced in saved properties
+		//we have to include all of this here in order to load classes referenced in saved properties (see jsonParser)
 		//trust me there's no better way to do it 
 		const ARoomFilesTemp = requireAll('./ARoom');	
 		const TheWayFilesTemp = requireAll('./TheWay');

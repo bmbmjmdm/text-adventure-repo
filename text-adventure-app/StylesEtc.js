@@ -38,10 +38,34 @@ export const styles = StyleSheet.create({
 //CANNOT HAVE LENGTH 0 TEXT
 export class DefaultText extends React.Component {
 	
-  render() {
-    return (<Text style={styles.defaultText} onPress={this.props.onPress}>{this.props.children}</Text>);
-  }
+	constructor(props){
+		super(props);
+		this.reWrite = this.reWrite.bind(this);
+	}
+	
+	//children are used by default because that will update this text's value when the render() method is called in App.js
+	//alternatively we use this.myText incase reWrite is called by App.js's shouldComponentUpdate, aka when a single letter (or 10 incase of increased scale) is added to this text
+	render() {
+		var displayText = this.props.children;
+		if(this.reWritten){
+			this.reWritten = false;
+			displayText = this.myText;
+		}
+		return (<Text style={styles.defaultText} onPress={this.props.onPress}>{displayText}</Text>);
+	}
   
+  
+	
+	myText;
+	reWritten = false;
+	
+	//when this element just has a letter added onto it, we rerender it rather than everything on screen
+	reWrite(input){
+		this.reWritten = true;
+		this.myText = input;
+		this.forceUpdate();
+	}
+	
 }
 
 
@@ -53,19 +77,28 @@ export class ClickText extends React.Component {
 		super(props);
 		this.didRetainPress = this.didRetainPress.bind(this);
 		this.startPress = this.startPress.bind(this);
+		this.reWrite = this.reWrite.bind(this);
 	}
 
 	
-
+	//children are used by default because that will update this text's value when the render() method is called in App.js
+	//alternatively we use this.myText incase reWrite is called by App.js's shouldComponentUpdate, aka when a single letter (or 10 incase of increased scale) is added to this text
 	render() {
-		return (<Text style={styles.clickText} onPress={()=>{}} onResponderMove={this.startPress} onResponderRelease={this.didRetainPress}>{this.props.children}</Text>);
+		var displayText = this.props.children;
+		if(this.reWritten){
+			this.reWritten = false;
+			displayText = this.myText;
+		}
+		return (<Text style={styles.clickText} onPress={()=>{}} onResponderMove={this.startPress} onResponderRelease={this.didRetainPress}>{displayText}</Text>);
 	}
 
 	
 	componentX;
 	componentY;
 	didMove = false;
-
+	myText;
+	reWritten = false;
+	
 	//the user has pressed on the text, record the x and y position and do not allow the position to be rewritten (for now)
 	startPress(evt){
 		if(!this.didMove){
@@ -86,6 +119,13 @@ export class ClickText extends React.Component {
 
 			this.props.onPress();
 		}
+	}
+	
+	//when this element just has a letter added onto it, we rerender it rather than everything on screen
+	reWrite(input){
+		this.reWritten = true;
+		this.myText = input;
+		this.forceUpdate();
 	}
   
 }

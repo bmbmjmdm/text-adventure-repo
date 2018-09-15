@@ -37,10 +37,10 @@ export class StrikeThighGuardOne {
 		//guard still lives
 		else{
 			//either way the guard knocks them down and stabs for damage
-			that.preparePage("The guard then stabs her sword into your lovely left love handle, and for a second you wish it wasn't so dull and would just cut all the way through. Instead you take 2 damage, now "+TheWayData.Health+" health. As you stumble and grasp your shallow wound, the guard kicks your own foot out from under you, and you fall back ");
+			that.preparePage("The guard then stabs her sword into your lovely left love handle, and for a second you wish it wasn't so dull and would just cut all the way through. Instead you take 2 damage, now with "+TheWayData.Health+" health. As you stumble and grasp your shallow wound, the guard kicks your own foot out from under you, and you fall back ");
 		
 			//player died
-			if(TheWayData.Health){
+			if(TheWayData.Health <= 0){
 				that.preparePage("in a daze. The room is spinning as you see her stand over you, sword in hand. Things are starting to fade as you see her drive it down, and then suddenly, ");
 				that.preparePage("darkness.", Levels);
 			}
