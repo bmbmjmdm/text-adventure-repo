@@ -1,6 +1,6 @@
 import {CaveFindPit} from './CaveFindPit.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 
 //kill a bat, resulting in a bunch of them going crazy and possibly harming the player
 export class CaveKill {
@@ -39,7 +39,7 @@ export class CaveKill {
 		//died
 		if(YourWorldData.Health <= 0){
 			that.preparePage("You feel feint, trickles of blood spilling over the top of your head and slowly obscuring your vision. You try to wipe it away, try to stand up straight, but eventually");
-			that.preparePage("...", Levels);
+			that.preparePage("...", HomePage);
 		}
 		
 		//survived

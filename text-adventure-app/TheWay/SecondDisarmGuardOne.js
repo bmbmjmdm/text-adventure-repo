@@ -1,6 +1,6 @@
 import {GougeGuardOne} from './GougeGuardOne.js';
 import {ThirdDisarmGuardOne} from './ThirdDisarmGuardOne.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 import {TheWayData} from '../GameData.js';
 
 //player tries to disarm guard either a first or second time. either way they fail and take medium damage
@@ -27,7 +27,7 @@ export class SecondDisarmGuardOne {
 		//player has died
 		if(TheWayData.Health <= 0){
 			that.preparePage("As the blood begins to drain, the other wounds around your body ache, gipping you with pain. The guard sees this and strikes true, and before you know it, ");
-			that.preparePage("darkness.", Levels);
+			that.preparePage("darkness.", HomePage);
 		}
 		
 		//player lives

@@ -1,7 +1,7 @@
 import {BearHead} from './BearHead.js';
 import {BearLegs} from './BearLegs.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 
 //block most of attack from bear 
 export class BearBlock {
@@ -20,7 +20,7 @@ export class BearBlock {
 		//dead
 		if(YourWorldData.Health <= 0){
 			that.preparePage("Your eyes blink slowly, the mesh of leaves covering the sky now blur. The light and sounds and world fades slowly, slowly, ");
-			that.preparePage("slowly.", Levels);
+			that.preparePage("slowly.", HomePage);
 		}
 		
 		//alive

@@ -1,5 +1,5 @@
 import {RidgeNarrow} from './RidgeNarrow.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 import {YourWorldData} from '../GameData.js';
 
 //go around the rocks atop the ridge
@@ -15,7 +15,7 @@ export class RidgeAround {
 		//dead
 		if(YourWorldData.Health <= 0){
 			that.preparePage("You feel feint as the blood trickles down your arm, you lose your balance atop the ridge and");
-			that.preparePage("...", Levels);
+			that.preparePage("...", HomePage);
 		}
 		
 		//continue

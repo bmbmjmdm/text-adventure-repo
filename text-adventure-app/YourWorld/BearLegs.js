@@ -3,7 +3,7 @@ import {BearDash} from './BearDash.js';
 import {BearKills} from './BearKills.js';
 import {BearDies} from './BearDies.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 
 //try to strike the bears legs as it bites the player, half success
 export class BearLegs {

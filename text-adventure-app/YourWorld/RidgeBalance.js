@@ -1,5 +1,5 @@
 import {RidgeEagle} from './RidgeEagle.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 import {YourWorldData} from '../GameData.js';
 
 //Try to balance on the ridge, leading to a minor fall and damage 
@@ -19,7 +19,7 @@ export class RidgeBalance {
 			//dead
 			if(YourWorldData.Health <= 0){
 				that.preparePage("You don't feel the strength to hold onto the mother's wrist anymore, and soon your grip goes limp, and you ");
-				that.preparePage("fall", Levels);
+				that.preparePage("fall", HomePage);
 				that.preparePage(" down the slope, over the ledge, into the clouds below.");
 			}
 			//alive
@@ -35,7 +35,7 @@ export class RidgeBalance {
 			//dead
 			if(YourWorldData.Health <= 0){
 				that.preparePage("As you're about to get your leg up to finally rest, the strength gives out in your arms, and you ");
-				that.preparePage("fall", Levels);
+				that.preparePage("fall", HomePage);
 				that.preparePage(" down the slope, over the ledge, into the clouds below.");
 			}
 			

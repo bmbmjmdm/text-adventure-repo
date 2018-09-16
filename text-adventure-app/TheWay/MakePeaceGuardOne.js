@@ -1,4 +1,4 @@
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 import {Node1B} from './Node1B.js';
 import {TheWayData} from '../GameData.js';
 
@@ -31,7 +31,7 @@ export class MakePeaceGuardOne {
 		//player has been killed
 		if(TheWayData.Health <= 0){
 			that.preparePage("The guard drives the blade deeper into the wound, blood gushing and slowly draining the last of your health away. Eventually it's too much, there's nothing left in you, and before you know it, ");
-			that.preparePage("darkness.", Levels);
+			that.preparePage("darkness.", HomePage);
 		}
 		
 		//player lives
@@ -42,7 +42,7 @@ export class MakePeaceGuardOne {
 			//player dies
 			if(TheWayData.Health < TheWayData.GuardOne.Health){
 				that.preparePage("The guard drives the blade deeper into the wound, blood gushing and slowly draining the last of your health away. Eventually it's too much, there's nothing left in you, and before you know it, ");
-				that.preparePage("darkness.", Levels);
+				that.preparePage("darkness.", HomePage);
 			}
 			
 			//guard dies

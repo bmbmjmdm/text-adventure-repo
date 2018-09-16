@@ -1,7 +1,7 @@
 import {BearKills} from './BearKills.js';
 import {BearDies} from './BearDies.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 
 //Drive sword into bear, hopefully killing
 export class BearTorso {

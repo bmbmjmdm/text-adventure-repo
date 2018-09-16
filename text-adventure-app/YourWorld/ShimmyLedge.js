@@ -1,6 +1,6 @@
 import {ClimbWall} from './ClimbWall.js';
 import {TurnAroundRocky} from './TurnAroundRocky.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 import {YourWorldData} from '../GameData.js';
 
 //player is trying to cross the ledge by the rock wall but will fail. Will either hurt them or kill a companion
@@ -20,7 +20,7 @@ export class ShimmyLedge {
 			//dead
 			if(YourWorldData.Health <= 0){
 				that.preparePage("As you pull, the pain sets in from your leg and you wince, letting go of the stone in a brief moment you'll never have time to regret as you plummet down, down, ");
-				that.preparePage("down.", Levels);
+				that.preparePage("down.", HomePage);
 			}
 			//alive
 			else{

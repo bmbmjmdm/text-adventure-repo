@@ -1,6 +1,6 @@
 
 import {Node1B} from './Node1B.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 import {TheWayData} from '../GameData.js';
 
 //successfully bite guard, probably killing her
@@ -28,7 +28,7 @@ export class BiteGuardOne {
 			//player dies
 			if(TheWayData.Health < TheWayData.GuardOne.Health){
 				that.preparePage("The guard kicks and pushes you away, grasping her neck and scurrying back. She's bleeding profusely, just like you. The two of you stare at each other as the blood drains, seconds tick, until eventually the room begins to fade. You don't know what's happening until, soon, ");
-				that.preparePage("darkness.", Levels);
+				that.preparePage("darkness.", HomePage);
 			}
 			
 			//guard dies

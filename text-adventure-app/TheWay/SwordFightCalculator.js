@@ -1,5 +1,5 @@
 import {TheWayData} from '../GameData.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 import {SwordFightParry} from './SwordFightParry.js';
 import {SwordFightStrike} from './SwordFightStrike.js';
 import {SwordFightGrapple} from './SwordFightGrapple.js';
@@ -101,7 +101,7 @@ export function didDie(that){
 	//player has 0 health, they die and return to the menu
 	if(TheWayData.Health <= 0){
 		that.preparePage(randomSelect(Death, "Death"));
-		that.preparePage("darkness.", Levels);
+		that.preparePage("darkness.", HomePage);
 	}
 }
 

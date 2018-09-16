@@ -347,26 +347,22 @@ export default class App extends React.Component {
   }
   
   
-  swipeHandled = false;
   //we're swiping, go back to homescreen and possibly save 
 	handleSwipe(that){
 		if(that.allowClicks){
-			if(!that.swipeHandled){
-				that.swipeHandled = true;
-			
-				if(FileManager.canSave()){
-					that.allowClicks = false;
-					FileManager.SaveGame(that, true).then((value)=>
-					{
-						that.allowClicks = true;
-						that.handleClick(HomePage, that);
-					});;
-					
-				}
-				else{
+			if(FileManager.canSave()){
+				that.allowClicks = false;
+				FileManager.SaveGame(that, true).then((value)=>
+				{
+					that.allowClicks = true;
 					that.handleClick(HomePage, that);
-				}
+				});;
+					
 			}
+			else{
+				that.handleClick(HomePage, that);
+			}
+			
 		}
 	  
 	}
@@ -384,7 +380,6 @@ export default class App extends React.Component {
   handleClick(nextPage, that){
 	  //can we click?
 	  if(that.allowClicks){
-		  
 		  that.allowClicks = false;
 		  
 		  //figure out how fast we want to erase the screen based on how much content is on it 

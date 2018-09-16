@@ -9,7 +9,6 @@ export class FileManager {
 	//it is set either in the LoadGame function or in the ./X/X class (such as ARoom, etc)
 	static levelFile = undefined;
 	static saving = false;
-	static loading = false;
 	static clearLevelFileLater = false;
 	
 	//used so we dont have multiple saves at the same place  
@@ -24,7 +23,7 @@ export class FileManager {
 	
 	//must be checked prior to saving, user cannot save if they are already saving (clearLevelFileLater is related to that in special cases)
 	static canSave(){
-		if(this.clearLevelFileLater || this.saving || this.writing || !this.needsSave || this.loading){
+		if(this.clearLevelFileLater || this.saving || this.writing || !this.needsSave){
 			return false;
 		}
 		
@@ -73,14 +72,15 @@ export class FileManager {
 		//name of file is "levelname month/date hours:minutes"
 		var name = this.levelFile.getName()+" "+ (d.getMonth()+1)+"/"+d.getDate() +" " + d.getHours()+":"+minutes;
 		
+		if(remove || this.clearLevelFileLater){
+			this.levelFile = undefined;
+			this.clearLevelFileLater = false;
+		}
+		
 		//save data using async 
 		_storeData = async () => {
 			try {
 				await AsyncStorage.setItem(name, stringFile);
-				if(remove || this.clearLevelFileLater){
-					this.levelFile = undefined;
-				}
-				this.clearLevelFileLater = false;
 				this.saving = false;
 			} catch (error) {
 				// Error saving data
@@ -97,7 +97,6 @@ export class FileManager {
 	//load a game from file 
 	//this is called on click, so once the data is loaded we don't need to do anymore as the typing animation will take over
 	static LoadGame(that, name){
-		this.loading = true;
 		
 		//load data using async
 		_retrieveData = async () => {
@@ -116,7 +115,6 @@ export class FileManager {
 					
 					//now we replace this.levelFile with a new empty level file
 					this.levelFile = eval('new this.LevelFiles.'+this.levelFile.nameSpace+'File()');
-					this.loading = false;
 				}
 				
 			} catch (error) {

@@ -7,8 +7,6 @@ import {FileManager} from '../FileManager/FileManager.js';
 export class Levels {
 
 	static createPage(that){
-		//this line is to make sure we don't accidentily save the level page if the user dies in a level
-		FileManager.clearLevelFile();
 		
 		if(GlobalData.CityUnlocked){
 			

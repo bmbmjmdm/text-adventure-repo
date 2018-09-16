@@ -30,7 +30,7 @@ export class RidgeAttack {
 				//dead
 				if(YourWorldData.Health <= 0){
 					that.preparePage("Atop this corpse, you suddenly feel dizzy, light headed, your vision blurring. Before you know it you're sliding down the side again, muscles too tired to respond and you fall down, down, ");
-					that.preparePage("down.", Levels);
+					that.preparePage("down.", HomePage);
 				}
 				
 			}
@@ -45,7 +45,7 @@ export class RidgeAttack {
 			//dead
 			if(YourWorldData.Health <= 0){
 				that.preparePage("The murky grey clouds grow darker, closer, darker, closer, until eventually, ");
-				that.preparePage("blackness.", Levels);
+				that.preparePage("blackness.", HomePage);
 			}
 		}
 		

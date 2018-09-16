@@ -2,7 +2,7 @@ import {ClimbWall} from './ClimbWall.js';
 import {ShimmyLedge} from './ShimmyLedge.js';
 import {TurnAroundRocky} from './TurnAroundRocky.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 
 //fail the climbing challenge and fall to the bottom, taking damage and starting over if they choose 
 export class ClimbFailure {
@@ -24,7 +24,7 @@ export class ClimbFailure {
 		//dead
 		if(YourWorldData.Health <= 0){
 			that.preparePage("Guess your life didn't flash for ");
-			that.preparePage("nothing.", Levels);
+			that.preparePage("nothing.", HomePage);
 		}
 		
 		//alive

@@ -1,7 +1,7 @@
 import {Node2C} from './Node2C.js';
 import {SwordFightStart} from './SwordFightStart.js';
 import {TheWayData} from '../GameData.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 
 //the player attacks guard two, arming themselves with a sword if they dont have one and initiating the sword fight sequence
 export class AttackGuardTwo {
@@ -31,7 +31,7 @@ export class AttackGuardTwo {
 		//the player died from getting stabbed
 		if(TheWayData.Health <= 0){
 			that.preparePage("Oh wait, nevermind. The guard cut open a thick, juicy artery, which now pools the clean floor with blood. You hear him say something but can't make it out as your vision goes ");
-			that.preparePage("dark.", Levels);
+			that.preparePage("dark.", HomePage);
 		}
 		
 		//continue as normal

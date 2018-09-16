@@ -1,7 +1,7 @@
 import {CavePit} from './CavePit.js';
 import {CaveExit} from './CaveExit.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 
 //run into the bats without getting any meat, getting attacked 
 export class CaveBlind {
@@ -25,7 +25,7 @@ export class CaveBlind {
 		//died
 		if(YourWorldData.Health <= 0){
 			that.preparePage("You feel feint, trickles of blood spilling over the top of your head and slowly obscuring your vision. You try to wipe it away, try to stand up straight, but eventually");
-			that.preparePage("...", Levels);
+			that.preparePage("...", HomePage);
 		}
 		
 		//survived

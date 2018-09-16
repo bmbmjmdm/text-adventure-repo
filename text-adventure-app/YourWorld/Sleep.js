@@ -1,5 +1,5 @@
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 
 //go to sleep after camping, decide if anyone dies in their sleep, then continue 
 export class Sleep {
@@ -131,7 +131,7 @@ export class Sleep {
 				else{
 					dead = true;
 					that.preparePage("You're waken from your sleep by a lump in your throat. You try to cough, wheeze, gasp, anything! Alas, it won't budge. You struggling to stand by your body is tired, bones weak and muscles bruised. You grasp for air, dear life, but soon the night ");
-					that.preparePage("takes you.", Levels);
+					that.preparePage("takes you.", HomePage);
 				}
 			}
 		}

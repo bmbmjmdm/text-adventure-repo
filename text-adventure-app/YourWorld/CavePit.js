@@ -1,6 +1,6 @@
 import {CaveExit} from './CaveExit.js';
 import {YourWorldData} from '../GameData.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 
 //if the player has vision, they'll climb into the pit using vines if they have them, the badass woman if she's there, or just jumping 
 //if they jump, they're trapped, game over 
@@ -56,7 +56,7 @@ export class CavePit {
 			//dead
 			if(YourWorldData.Health <= 0){
 				that.preparePage("Your back lands on a jagged stone and snaps something vital. You... you can't move. The darkness watches paitiently");
-				that.preparePage("...", Levels);
+				that.preparePage("...", HomePage);
 			}
 			
 			//alive for now
@@ -102,7 +102,7 @@ export class CavePit {
 	
 	static dieInHole(that){
 		that.preparePage("You start feeling around the sides of the pit. Ok, they're pretty solid, and there's no holes, and you jump around but the wall is too high to reach the top of. Fuck. Shit. What do you do? The dripping drops smack your head like clockwork. You slowly grow insane, begging your skeleton friend to tell you a way out. But there is none. ");
-			that.preparePage("There is none.", Levels);
+			that.preparePage("There is none.", HomePage);
 	}
 
 

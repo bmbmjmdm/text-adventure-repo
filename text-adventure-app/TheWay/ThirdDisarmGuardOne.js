@@ -1,4 +1,4 @@
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 import {BiteGuardOne} from './BiteGuardOne.js';
 import {MakePeaceGuardOne} from './MakePeaceGuardOne.js';
 import {TheWayData} from '../GameData.js';
@@ -30,7 +30,7 @@ export class ThirdDisarmGuardOne {
 		//player has been killed
 		if(TheWayData.Health <= 0){
 			that.preparePage("Your wrist starts bleeding out over your arm as the other wounds around your body take their toll. The room slowly fades into ");
-			that.preparePage("darkness.", Levels);
+			that.preparePage("darkness.", HomePage);
 		}
 		
 		//player lives

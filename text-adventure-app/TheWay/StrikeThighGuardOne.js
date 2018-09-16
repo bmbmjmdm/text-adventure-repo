@@ -1,7 +1,7 @@
 import {GougeGuardOne} from './GougeGuardOne.js';
 import {ThirdDisarmGuardOne} from './ThirdDisarmGuardOne.js';
 import {Node1B} from './Node1B.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 import {TheWayData} from '../GameData.js';
 
 //player tries to hit guard's thigh before sweeping, but ends up failing and getting sweeped
@@ -42,7 +42,7 @@ export class StrikeThighGuardOne {
 			//player died
 			if(TheWayData.Health <= 0){
 				that.preparePage("in a daze. The room is spinning as you see her stand over you, sword in hand. Things are starting to fade as you see her drive it down, and then suddenly, ");
-				that.preparePage("darkness.", Levels);
+				that.preparePage("darkness.", HomePage);
 			}
 		
 			//still alive

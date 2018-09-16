@@ -1,6 +1,6 @@
 import {Node1B} from './Node1B';
 import {TheWayData} from '../GameData.js';
-import {Levels} from '../Menus/Levels.js';
+import {HomePage} from '../Menus/HomePage.js';
 
 //fail to pickpocket guard one, 1 damage and cant try again
 export class FailPickPocketGuardOne {
@@ -14,7 +14,7 @@ export class FailPickPocketGuardOne {
 		//player died from that kick
 		if(TheWayData.Health <= 0){
 			that.preparePage("That kick must have jumbled some already loose organs because holy shit you just ");
-			that.preparePage("died.", Levels);
+			that.preparePage("died.", HomePage);
 		}
 		
 		//go back to looking down hallways
