@@ -12,7 +12,7 @@ export class SearchPrison {
 		YourWorldData.Kindling += 1;
 		YourWorldData.Flint += 1;
 		
-		that.preparePage("You begin walking around the prison, watching the ground for...something. The edges of the boards are cracked and rotted, stripped and chipped. You gather some of the not-rotten chips in your bag, along with some sticks and twigs in the surrounding field, they'll be useful for starting a fire later. ");
+		that.preparePage("You begin walking around the prison, watching the ground for...something. The edges of the boards are cracked and rotten, stripped and chipped. You gather some of the not-rotten chips in your bag, along with some sticks and twigs in the surrounding field; they'll be useful for starting a fire later. ");
 		if(YourWorldData.Allies > 0){
 			that.preparePage("When you return to your party, some of them share their findings as well. It seems the rocks and boulders around here are similarly chipped, by what they don't know. Regardless, they found some sharp rocks and what looks like flint. ");
 		}

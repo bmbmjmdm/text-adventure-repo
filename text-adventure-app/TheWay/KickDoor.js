@@ -19,7 +19,7 @@ export class KickDoor {
 			TheWayData.GuardTwo.Health <= 0 ||
 			TheWayData.GuardThree.Health <= 0){
 			
-			that.preparePage(" You do look quite suspicious holding it, blood smeared on your clothing from your recent murder... ");
+			that.preparePage(" You do look quite suspicious holding it, blood smeared on your clothing from your recent murder...");
 		}
 		
 		//the player freed some prisoners, the guards here look scruffed up

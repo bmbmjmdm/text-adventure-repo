@@ -54,9 +54,9 @@ export class LookAtGlass {
 		else{
 			ARoomData.DraggedGlass = true;
 			ARoomData.Health = ARoomData.Health-1;
-			that.preparePage("You feel the ebbing heat of flames as you reach a bare foot towards the glass. You cut yourself trying to handle it, but eventually drag over a sizable chunk. Coughs begin itching up your throat as the smoky ");
+			that.preparePage("You feel the singe of flames as you reach a bare foot towards the glass. You cut yourself trying to handle it, but eventually drag over a sizable chunk. Coughs begin itching up your throat as the smoky ");
 			that.preparePage("room ", LookAroundRoom);
-			that.preparePage("makes you forget about your cut. You take 1 damage, leaving you with " + ARoomData.Health +" health. Now to deal with those ");
+			that.preparePage("makes you forget about your wound. You take 1 damage, leaving you with " + ARoomData.Health +" health. Now to deal with those ");
 			that.preparePage("bindings.", LookAtBindings);
 		}
 

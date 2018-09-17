@@ -34,7 +34,7 @@ export class WeDefine {
 				that.preparePage("First thing's first, you pick up the sword at your feet as the guards get into position. Luckily they're being cautious so you have time to do so, on the other hand their caution means these guards are well trained. Now let's se... ");
 			}
 			
-			that.preparePage("I hope you learned how to swordfight by now, because both these blokes are gonna be coming at you simultaniously. The one with the sword is cautiously waiting, watching you. The axe-barer brings his arm back for a swing. Do you ");
+			that.preparePage("I hope you learned how to swordfight by now, because both these blokes are gonna be coming at you simultaniously. The one with the sword is cautiously waiting, watching you. The axe-barer hoists his blade into the air... Do you ");
 			that.preparePage("parry", Parry1GuardFour);
 			that.preparePage(", ");
 			that.preparePage("grapple", Grapple1GuardFour);
@@ -52,7 +52,8 @@ export class WeDefine {
 			}
 			
 			that.preparePage("Looking at the large metal archway and gate, gathering a small bag and strap from the various shelves, ");
-			
+			TheWayData.HasBag = true;
+				
 			//pickup sword if dropped
 			if(!TheWayData.HasWeapon.Sword){
 				TheWayData.HasWeapon.Sword = true;

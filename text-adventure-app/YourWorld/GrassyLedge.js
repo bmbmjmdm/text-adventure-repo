@@ -18,7 +18,7 @@ export class GrassyLedge {
 		that.preparePage("ascend the grassy path.", SpiralMountain);
 		
 		if(YourWorldData.Son){
-			that.preparePage(" The small boy is sinking his feet into the wet grass and playing with the mud in his toes. He stomps and cackles, eyeing the crack the in rock occasionally.");
+			that.preparePage(" The small boy is sinking his feet into the wet grass and playing with the mud in his toes. He stomps and cackles, eyeing the crack in the rock occasionally.");
 		}
 		
  

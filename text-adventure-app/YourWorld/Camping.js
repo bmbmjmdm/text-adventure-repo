@@ -111,7 +111,7 @@ export class Camping {
 				that.preparePage(" something. With what little provisions you have, you begin to wonder if leaving prison was the best idea. You laugh at the thought. Then smile realizing you have the freedom to think such things. Then your stomach growls again. "); 
 			}
 			
-			that.preparePage("Now your eyes can feel it getting late; maybe what you need- *yawn* -is a place to ");
+			that.preparePage("Anyway, your eyes can feel it getting late; maybe what you need- *yawn* -is a place to ");
 			that.preparePage("lay your head.", Sleep);
 			
 		}

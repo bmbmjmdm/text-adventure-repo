@@ -56,7 +56,7 @@ export class Node2C {
 			//The second guard is there and ready to fight 
 			if(TheWayData.GuardTwo.Health > 0 && !TheWayData.GuardTwo.Neutralized){
 				
-				that.preparePage("As you enter the room, the first thing you notice is the furnishing. There's stone benches facing wooden frames on the walls. The frames are lined with swords of all lengths, reflecting the central lantern hanging from the ceiling. This room looks significantly cleaner than the others, and enjoying this ambience is a guard in the center. The man is wearing half plate armor, thin sheets of metal dispersed amongst leather padding. He turns to see you and draws his sword at once, quick despite his age. With a grim, scraped voice he asks, \"Who goes there?\" Do you want to ");
+				that.preparePage("As you enter the room, the first thing you notice is the furnishing. There're stone benches facing wooden frames on the walls. The frames are lined with swords of all lengths, reflecting the central lantern hanging from the ceiling. This room looks significantly cleaner than the others, and enjoying this ambience is a guard in the center. The man is wearing half plate armor, thin sheets of metal dispersed amongst leather padding. He turns to see you and draws his sword at once, quick despite his age. With a grim, scraped voice he asks, \"Who goes there?\" Do you want to ");
 				that.preparePage("respond", DiplomacyGuardTwo);
 				that.preparePage(" to him? Or ");
 				if(TheWayData.HasWeapon.Sword){
@@ -113,7 +113,7 @@ export class Node2C {
 				that.preparePage("North" +came4C+",", Node4C);
 				that.preparePage(" another to the ");
 				that.preparePage("South" +came1B+",", Node1B);
-				that.preparePage(" and lastly to the ");
+				that.preparePage(" and lastly a door facing ");
 				that.preparePage("West" +came2B+".", Node2B);
 			}
 			

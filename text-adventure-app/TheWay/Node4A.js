@@ -44,7 +44,7 @@ export class Node4A {
 		
 		//coming from searching the room
 		if(TheWayData.LastNode == '4A'){
-			that.preparePage("You try to wipe the blood off as best you can, but those hands will never be clean! The room feels like its closing in, and for all you know it could be. Vertigo tosses you aside to a nearby wall. ");
+			that.preparePage("You try to wipe the blood off as best you can, but those hands will never be clean! The room feels like it's closing in, and for all you know it could be. Vertigo tosses you aside to a nearby surface. ");
 		}
 		
 		//is coming from any other node other than 2A
@@ -66,7 +66,7 @@ export class Node4A {
 			that.preparePage("Along the walls you find two exits, including the one you came through. One to the ");
 			that.preparePage("North"+came5A, Node5A);
 			that.preparePage(" and one to the ");
-			that.preparePage("East."+came4B, Node4B);
+			that.preparePage("East"+came4B+".", Node4B);
 		}
 		
 		

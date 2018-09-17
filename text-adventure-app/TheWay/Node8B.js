@@ -10,7 +10,7 @@ export class Node8B {
 		//coming from outside the room
 		if(TheWayData.LastNode == '7B'){
 			
-			that.preparePage("You reach the door etched into the darkness and try to make out the strange symbols adorning it. They're reminicent of lions, though with hooves and reptilian tails. You can make heads or tails of them, but that's about it. ");
+			that.preparePage("You reach a door etched into the darkness and try to make out the strange symbols adorning it. They're reminicent of lions, though with hooves and reptilian tails. You can make heads or tails of them, but that's about it. ");
 			
 			//enters room
 			if(TheWayData.HasKeys){
@@ -21,7 +21,7 @@ export class Node8B {
 				}
 				//search
 				else{
-					that.preparePage("There's some barrels lining the back wall. Wonder if they ");
+					that.preparePage("There're some barrels lining the back wall. Wonder if they ");
 					that.preparePage("have anything? ", Search8B);
 				}
 			}
@@ -36,7 +36,7 @@ export class Node8B {
 		
 		//coming from searching the room
 		if(TheWayData.LastNode == '8B'){
-			that.preparePage("You place the barrels back as you found them and stand beneath the window, looking up. You can see the sky: bright blue, so close yet so far. ");
+			that.preparePage("You place the barrels back like you found them and stand beneath the window, looking up. You can see the sky: bright blue, so close yet so far. ");
 		}
 		
 		

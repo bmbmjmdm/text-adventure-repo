@@ -11,7 +11,7 @@ export class RidgeAttack {
 		if(YourWorldData.Allies > 0){
 			//ally uses sharp rock, no damage taken
 			if(YourWorldData.SharpRocks > 0){
-				that.preparePage("Just then a dull thump sounds behind your head and a small, sharp stone falls on your back, the bird lets out a short cry and you suddenly feel its full weight fall on you. The bird's limp. ");
+				that.preparePage("Just then a dull thump sounds behind your head and a small, sharp stone falls on your back. The bird lets out a short cry and you suddenly feel its full weight fall on you. The bird of prey is limp. ");
 				if(YourWorldData.Allies>1){
 					that.preparePage("You don't know who to thank but now's not the time for pleasentries anyway, someone just saved you. ");
 				}

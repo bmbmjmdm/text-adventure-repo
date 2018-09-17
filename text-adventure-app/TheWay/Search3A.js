@@ -8,7 +8,7 @@ export class Search3A {
 	static createPage(that){
 		
 		TheWayData.Searched.Node3A = true;
-		that.preparePage("You look around the room, around the small stand holding the lantern and the makeshift wooden bed. There's no sheets or pillows, and no spare items on the stand. Looks like this ");
+		that.preparePage("You look around the room, around the small stand holding the lantern and the makeshift wooden bed. There're no sheets or pillows, and no spare items on the stand. Looks like this ");
 		that.preparePage("room", Node3A);
 		that.preparePage(" is empty without that woman...");
 

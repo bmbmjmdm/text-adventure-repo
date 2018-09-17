@@ -11,7 +11,7 @@ export class RidgeShelterContinue {
 		
 		if(YourWorldData.OldGuy){
 			
-			that.preparePage("\"Aye bes get ta movin. My bum's about ta full off from sleepin on that floor.\" The old man rubs his behind next to you. He gives a smirk and shrug, looks off to the peak ahead and grows wide-eyed. ");
+			that.preparePage("\"Aye bess get ta movin. My bum's about ta full off from sleepin on that floor.\" The old man rubs his behind next to you. He gives a smirk and shrug, looks off to the peak ahead and grows wide-eyed. ");
 			
 			if(YourWorldData.Son){
 				that.preparePage("The young child laughs, presumably about the talk of butts. ");

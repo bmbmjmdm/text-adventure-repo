@@ -18,7 +18,7 @@ export class Scream {
 			that.preparePage("burn I tell ya!\"");
 		}
 		else if(ARoomData.BrokeLantern){
-			that.preparePage("With the fire growing, you scream as loud as you can. Soon, a voice calls out from your left, through the wall as well as the bars in the door, \"Goddamnit I knew I smelled smoke. Your gonna get us all killed! Or maybe...maybe this is my chance! Hey, hey you! I've been workin on a plan to get outa here for a while now. I know these halls inside and out, the only problem is...I can't get outa this room. But once I do! Oh once I do they're gonna regret ever throwin me in here. But if I burn to death none of that matters, I mean, if we burn to death. You gotta find a way to get yourself out, get us both out! I mean, if you help me I'll help you, ya know? So what do ya say? Do we got a ");
+			that.preparePage("With the fire growing, you scream as loud as you can. Soon, a voice calls out from your left, through the wall as well as the bars in the door, \"Goddamnit I knew I smelled smoke. You're gonna get us all killed! Or maybe...maybe this is my chance! Hey, hey you! I've been workin on a plan to get outa here for a while now. I know these halls inside and out, the only problem is...I can't get outa this room. But once I do! Oh once I do they're gonna regret ever throwin me in here. But if I burn to death none of that matters, I mean, if we burn to death. You gotta find a way to get yourself out, get us both out! I mean, if you help me I'll help you, ya know? So what do ya say? Do we got a ");
 			that.preparePage("deal ", Deal);
 			that.preparePage("or ");
 			that.preparePage("no?", NoDeal);

@@ -44,7 +44,7 @@ export class Node4B {
 		that.preparePage("Westward"+came4A, Node4A);
 		that.preparePage(" is pure darkness, a mystery. Looking ");
 		that.preparePage("East"+came4C, Node4C);
-		that.preparePage(" you can see the hallway split two ways up ahead, with a trickling light on both sides. ");
+		that.preparePage(" you can see the hallway split two ways up ahead, with a trickling of light on both sides. ");
 	
 	
 		TheWayData.LastNode = '4B';

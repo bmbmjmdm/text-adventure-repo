@@ -228,7 +228,7 @@ var GrappleVGrapple = [
 
 var ParryVParry = [
 "The guard holds his sword steady, swaying in the air. You hold yours at an angle and wait. Nothing happens for a while, then a shift in his body wakes you up. ",
-"You hold your sword out, ready for an attack. The guard does the same. You stare at each other for a moment, wonder how the other got here and who will make it out. ",
+"You hold your sword out, ready for an attack. The guard does the same. You stare at each other for a moment, wondering how the other got here and who will make it out. ",
 "Your sword waits patiently as you read your opponents' face. He looks not worried, not hateful; he seems to be waiting for death or glory to find him on its own time. Still, a blink brings the two of you back to the present. "];
 
 
@@ -263,7 +263,7 @@ var Death = [
 
 //always ends in the word "room" (though don't include)
 var Kill = [
-"As the guard tries to compose himself, you keep pushing forward. You bang into his armor with heavy blows, knocking him back and down until he falls and gasps on the floor. Pumped with adrenaline you leap forward and land your sword on his chest, ending his struggle once and for all. You stand back up, your hear still racing, and try to keep moving without putting too much thought into what you just did. You look around the ",
+"As the guard tries to compose himself, you keep pushing forward. You bang into his armor with heavy blows, knocking him back and down until he falls and gasps on the floor. Pumped with adrenaline you leap forward and land your sword on his chest, ending his struggle once and for all. You stand back up, your heart still racing, and try to keep moving without putting too much thought into what you just did. You look around the ",
 "You follow up with a heavy kick to the guard's chest, knocking him back and over a stone bench. He falls with feet up in the air, which you quickly make stubs of. As he struggles and screams in a pool of his own making, you close your eyes and try not to listen. When all is silent, you open them back up, and avoiding him completely, look around the ",
 "The guard falls to his knees and tries to keep hold of his sword. His hands are trembling as you stand before him. He looks up to meet your eyes and for a moment you're not sure what to do. As the guard tries to lift his sword again, you see his arm spasm and it drops. He screams in agony, \"D-DO IT! DO IT ALREADY!\" And he caughs up blood on your rags. With a silent, steady incision, you drop the guard limp to the floor. A million thoughts crowd the room silently judging you. You avoid them: guilt an enemy and truth its sword. Instead, you clear your mind and look about the "];
 

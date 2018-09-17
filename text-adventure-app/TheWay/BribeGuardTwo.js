@@ -33,7 +33,7 @@ export class BribeGuardTwo {
 		else{
 			TheWayData.GuardTwo.Neutralized = true; 
 			TheWayData.HasWeapon.Sword = true;
-			that.preparePage("The guard puts your bribe in his own pocket and sits down on the bench. \"Some things never change,\" he says as he stares at the floor, lost for a moment. You try not to disturb him as you quietly walk up to the sword rack, take one, and then look around the ");
+			that.preparePage("The guard puts your bribe in his pocket and sits down on the bench. \"Some things never change,\" he says as he stares at the floor, lost for a moment. You try not to disturb him as you quietly walk up to the sword rack, take one, and then look around the ");
 			that.preparePage("room.", Node2C);
 		}
 		

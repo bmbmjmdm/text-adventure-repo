@@ -19,7 +19,7 @@ export class BearLegs {
 		YourWorldData.BearHealth -= damage;
 		YourWorldData.Health -= 3;
 		
-		that.preparePage("You try to duck out of the way of the bear's jagged jaw and slice at its feet. Your "+weapon+" hits clean and digs in for "+damage+", but there was nowhere for your shoulder to go as the bear dug into it, easily catching you and ripping out vital flesh. You take 3 damage and have "+ health+ " health. ");
+		that.preparePage("You try to duck out of the way of the bear's jagged jaw and slice at its feet. Your "+weapon+" hits clean and digs in for "+damage+", but there was nowhere for your shoulder to go as the bear dug into it, easily catching you and ripping out vital flesh. You take 3 damage and have "+ YourWorldData.Health+ " health. ");
 		
 		//bear kills player
 		if(YourWorldData.Health <= 0){

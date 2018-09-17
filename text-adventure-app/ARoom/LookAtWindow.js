@@ -13,7 +13,7 @@ export class LookAtWindow {
 			that.preparePage("climbed.", ClimbRope);
 			that.preparePage(" You consider your options but the ");
 			that.preparePage("fire", LookAtFire);
-			that.preparePage(" makes ");
+			that.preparePage(" makes");
 			that.preparePage(" waiting ", LookAroundRoom);
 			that.preparePage("sound insufferable.");
 			
@@ -28,7 +28,7 @@ export class LookAtWindow {
 			that.preparePage("something through, though.");
 		}
 		else{
-			that.preparePage("The window is pretty high up, though is totally open. Smoke is being let out by it, but still filling the ");
+			that.preparePage("The window is pretty high up, and totally open. Smoke is being let out by it, but still filling the ");
 			that.preparePage("room. ", LookAroundRoom);
 			that.preparePage("Unfortunately none of this matters with your hands still ");
 			that.preparePage("tied up.", LookAtBindings);

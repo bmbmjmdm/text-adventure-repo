@@ -11,11 +11,11 @@ export class ClimbRope {
 		if(ARoomData.ThrewGlass){
 			if(ARoomData.ThrewBlanket){
 				if(ARoomData.GlassSafe){
-					that.preparePage("landing on a not-so-soft, but helpful blanket. You wheeze and clench your burnt hands, then remember what else you threw out here. You reach under the blanket and pull out a shard of glass no larger than your thumb. It's a good thing you threw the blanket on top of that! ");	
+					that.preparePage("landing on a not-so-soft, but helpful blanket. You wheeze and clench your aching hands, then remember what else you threw out here. You reach under the blanket and pull out a shard of glass no larger than your thumb. It's a good thing you threw the blanket on top of that! ");	
 				}
 				else{
 					ARoomData.Health = ARoomData.Health - 2;
-					that.preparePage("landing on a blanket with a hand-sized piece of glass on it. The fall was definitely cushioned, but nothing stops the glass from digging into your leg, dealing 2 damage. As you wheeze and clench your burnt hands, you feel you have about "+ARoomData.Health+" health remaining. You pick up the glass, at least you have that. ");
+					that.preparePage("landing on a blanket with a hand-sized piece of glass on it. The fall was definitely cushioned, but nothing stops the glass from digging into your leg, dealing 2 damage. As you wheeze and clench your aching hands, you feel you have about "+ARoomData.Health+" health remaining. You pick up the glass, so at least you have that. ");
 				}
 			}
 			else{
@@ -25,11 +25,11 @@ export class ClimbRope {
 		}
 		
 		else if(ARoomData.ThrewBlanket){
-			that.preparePage("landing on a not-so-soft, but helpful blanket. You wheeze and clench your burnt hands, knowing things could've been much worse. ");	
+			that.preparePage("landing on a not-so-soft, but helpful blanket. You wheeze and clench your aching hands, knowing things could've been much worse. ");	
 		}
 		else{
 			ARoomData.Health = ARoomData.Health - 1;
-			that.preparePage("landing on a hard floor that bruises your left leg deep. You take 1 damage and now have "+ARoomData.Health+" health. You wheeze and feel a dull pain through your whole body, but at least your alive. ");
+			that.preparePage("landing on a hard floor that bruises your left leg deep. You take 1 damage and now have "+ARoomData.Health+" health. You wheeze and feel a dull pain through your whole body, but at least you're alive. ");
 		}
 		that.preparePage("It's dark out here, the only visibility is from the room ungulfed with flames behind you, light peering through the bars on the door. It illuminates something in the distance. Someone. Who is that?");
 
@@ -39,7 +39,7 @@ export class ClimbRope {
 		}
 		else if (ARoomData.RefusedDeal){
 			that.preparePage(" A familiar voice begins yelling from the left of you, \"Guards! Guards! Down here! Someone's escaping!\" The other prisoner must not be happy about the deal you refused. The figure in the distance starts running; ");
-			that.preparePage("You don't have much time.", Escape);
+			that.preparePage("you don't have much time.", Escape);
 		}
 		else{
 			that.preparePage(" A voice comes not from them, but from your left. \"Hey! Hey let me out of here! Quick! Come on, you can't just leave me here!\" You see a door next to your own, where the voice is clearly coming from. It must be another prisoner. At the same time, you can see the figure in the distance approaching. ");

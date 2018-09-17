@@ -20,7 +20,7 @@ export class Strike3GuardFour {
 		
 		//guards live
 		else{
-			that.preparePage("A sort of panic rises behind their eyes. Their God has forsaken them. This heathen might escape. That is unacceptable. Without a word to each other, they straighten themselves, clutch their weapons, and run at you again in a rage. Do you ");
+			that.preparePage("A sort of panic rises behind their eyes. Their God has forsaken them. This heathen might escape. That is unacceptable. The guards let out a roar as they hop around you, clutching their weapons and eventually coming down with the force of reckoning thunder.");
 			that.preparePage("strike again?", Strike4GuardFour);
 			that.preparePage(" Or do you ");
 			that.preparePage("parry", Parry4GuardFour);

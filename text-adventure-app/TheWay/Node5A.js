@@ -16,7 +16,7 @@ export class Node5A {
 		//coming from money room 
 		if(TheWayData.LastNode == '4A'){
 			if(TheWayData.HasKeys){
-				that.preparePage("You open the door carefully and slip out into a partially-lit hallway. You walk down a ways carefully before coming to a possible turn. ");
+				that.preparePage("You open the door carefully and slip out into a partially-lit hallway. You walk down a ways carefully, wooden walls watching, before coming to a possible turn. ");
 			}
 			else{
 				that.preparePage("You turn around and head back to the turnoff, then reconsider where to go. ");
@@ -40,11 +40,11 @@ export class Node5A {
 		//setup intersection
 		that.preparePage("To the ");
 		that.preparePage("North"+came6A, Node6A);
-		that.preparePage(" you see a hallway leading up to a door, light coming from overhead and banners at its sides. How fancy. ");
+		that.preparePage(" you see a hallway leading up to a door, light coming from overhead and glorious banners at its sides. How fancy. ");
 		that.preparePage("East"+came5B, Node5B);
-		that.preparePage(" leads to a distant door with light coming out, and another source of light halfway... To the ");
+		that.preparePage(" leads to a distant door with light coming out, and another source of light halfway. Interesting. What a strange place this is where a mere light can be interesting. To the ");
 		that.preparePage("South"+came4A, Node4A);
-		that.preparePage(" lies a darkened hallway with a feintly outlined door. ");
+		that.preparePage(" lies a darkened hallway with the feint outline of... something. ");
 	
 	
 		TheWayData.LastNode = '5A';

@@ -5,7 +5,7 @@ import {YourWorldData} from '../GameData.js';
 export class FeedOld {
 
 	static createPage(that){
-		that.preparePage("You tap the old man on his shoulder and pass him the "+YourWorldData.Eating+". He gives a grin and slaps your back hard, \"Knew you had it in ya!\" You're not quite sure what he means but he's seems happy, so whatever. ");
+		that.preparePage("You tap the old man on his shoulder and pass him the "+YourWorldData.Eating+". He gives a grin and slaps your back hard, \"Knew you had it in ya!\" You're not quite sure what he means but he seems happy, so whatever. ");
 		if(YourWorldData.Eating == "meat" && !YourWorldData.Campfire){
 			that.preparePage("After finishing the meat he holds his stomach and shakes his head. \"Oooh boy. Shoulda cooked that a bit.\" ");
 		}

@@ -76,7 +76,7 @@ export class Node6B {
 			
 			//coming from 6B with a not free prisoner means we release the prisoner
 			if(!TheWayData.Prisoner6BFree){
-				that.preparePage("You unlock the door and swing it open as the woman stands up. \"Yeah, definitely not a guard.\" She walks up to you, her step graceful like the rags she wears might as well be a dress. Her steps lightly tap the ground towards you. \"I can't tell you what I've endured in here... maybe you don't care... maybe you're a hero.\" She laughs. \"Some unexpected hero saves damsel in distress, that'll be the day.\" The lady moves the lantern in her room to the floor, then snaps the stand's leg and takes it up like a club. \"You'll give em what's coming to em, right?\" She feels the club. \"If you're any good with that sword, you'll have better odds than me. Check under the bed.\" With that, the woman pushes past you and waves goodbye. "); 
+				that.preparePage("You unlock the door and swing it open as the woman stands up. \"Yeah, definitely not a guard.\" She walks up to you, her step graceful like the rags she wears might as well be a dress. Her steps lightly tap the ground towards you. \"I can't tell you what I've endured in here... maybe you don't care... maybe you're a hero.\" She laughs. \"Some unexpected hero saves damsel in distress, that'll be the day.\" The lady moves the lantern in her room to the floor, then snaps the table leg and takes it up like a club. \"You'll give em what's coming to em, right?\" She feels the club. \"If you're any good with that sword, you'll have better odds than me. Check under the bed.\" With that, the woman pushes past you and waves goodbye. "); 
 				TheWayData.Prisoner6BFree = true;
 				TheWayData.PrisonersFreed++;
 			}

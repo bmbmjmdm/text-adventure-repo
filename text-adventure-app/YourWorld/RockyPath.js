@@ -26,7 +26,7 @@ export class RockyPath {
 			}
 		}
 		
-		that.preparePage("You set off towards the path. It's steep, enough so to feel like the whole world is dragging you down. Every few steps rocks crumble beneath your feet and send your heart plummeting into your stomach. Luckily it's not vertical, at least. You use hands and feet to stabalize as you slowly make your way across the rough terrain, the sun beating your brow and heating the rocks you cling to. What was once a beautiful landscape is now taking jabs at your lungs, your worn hands, your resolve. Nearly two hours pass and you have "+YourWorldData.Energy+" energy left by the time you reach a good spot to regroup and gather your thoughts. ");
+		that.preparePage("You set off towards the path. It's steep, enough to feel like the whole world is dragging you down. Every few steps rocks crumble beneath your feet and send your heart plummeting into your stomach. Luckily it's not vertical, at least. You use hands and feet to stabalize as you slowly make your way across the rough terrain, the sun beating your brow and heating the rocks you cling to. What was once a beautiful landscape is now taking jabs at your lungs, your worn hands, your resolve. Nearly two hours pass and you have "+YourWorldData.Energy+" energy left by the time you reach a good spot to regroup and gather your thoughts. ");
 		
 		//they may have been on this path before
 		if(!YourWorldData.SearchedRockyPath){

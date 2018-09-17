@@ -20,7 +20,7 @@ export class TurnAroundRocky {
 		
 		that.preparePage("You start back down the mountain, clinging to dirt and rock along the way. The stones are vast and steep, smooth enough to slip on yet rough enough to hurt. Your hands are thoroughly torn and calloused by now and your lungs are just getting used to the exertion. As you pass your old camp, rest overcomes you for just a moment before the dry heat of the sun kicks you out. The mountain is testing your wits, your body, and what little time you have left. Going all the way back takes some hours but feels worth it when you see ");
 		that.preparePage("the trees", ForestPath);
-		that.preparePage("and possibility of shade. You have "+YourWorldData.Energy+" energy after all that.");
+		that.preparePage(" and possibility of shade. You have "+YourWorldData.Energy+" energy after all that.");
 		
 	}
 

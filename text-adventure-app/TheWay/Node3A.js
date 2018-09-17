@@ -87,7 +87,7 @@ export class Node3A {
 		
 		//setup exits
 		if(TheWayData.Prisoner3AFree){
-			that.preparePage("There's only two ways out: a door to the ");
+			that.preparePage("There're only two ways out: a door to the ");
 			that.preparePage("South"+came2A, Node2A);
 			that.preparePage(" and a door to the ");
 			that.preparePage("East"+came2B+".", Node2B);

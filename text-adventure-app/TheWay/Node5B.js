@@ -28,7 +28,7 @@ export class Node5B {
 			}
 			//not free prisoner means they came from 6B before
 			else{
-				that.preparePage("Stinks to be them. You turn around and return to the intersection. ");
+				that.preparePage("Stinks to be her. You turn around and return to the intersection. ");
 			}
 			came6B = " (the way you came)";
 		}
@@ -55,11 +55,17 @@ export class Node5B {
 		//setup intersection
 		that.preparePage("You look around at the paths you can take. To the ");
 		that.preparePage("North"+came6B, Node6B);
-		that.preparePage(" is a door, barred and letting out light into the hallway leading up to it. ");
+		that.preparePage(" is a door, barred and letting out light");
+		if(TheWayData.Prisoner6BFree){
+			that.preparePage(" into the hallway leading up to it. ");
+		}
+		else{
+			that.preparePage(", a feint hum emanating from its contents. ");
+		}
 		that.preparePage("Westward"+came5A, Node5A);
-		that.preparePage(" is an end to the hallway, where it splits into two more paths. The one on the right looks like it has a source of light. Going ");
+		that.preparePage(" leads to a fork in the hallway, where it splits into two more paths. Your head is spinning trying to keep track of all the turns. Going ");
 		that.preparePage("East"+came5C, Node5C);
-		that.preparePage(" leads to another barred door with light, though this one is eminating some foul smell. Finally, ");
+		that.preparePage(" leads to another barred door with light, though this one is wafting some foul smell. Finally, ");
 		that.preparePage("South"+came4B, Node4B);
 		that.preparePage(" is hard to see. It's shrouded in darkness...");
 	

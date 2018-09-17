@@ -14,7 +14,7 @@ export class RidgeBalance {
 		
 		//mother helps player stay up 
 		if(YourWorldData.Mother){
-			that.preparePage("As your legs slide down and your arms fly up to catch the top, a hand reaches out and grabs your wrist. The mother, scarlet hair turned maroon by the dark atmosphere, looks into your eyes as she holds you up. Your feet are scrambling against loose, steep dirt to find purchase and your free hand is plunged into sharp gravel. You take 1 damage and have "+YourWorldData.Health+" health. ");
+			that.preparePage("As your legs slide down and your arms flail up to catch the top, a hand reaches out and grabs your wrist. The mother, scarlet hair turned maroon by the dark atmosphere, looks into your eyes as she holds you up. Your feet are scrambling against loose, steep dirt to find purchase and your free hand is plunged into sharp gravel. You take 1 damage and have "+YourWorldData.Health+" health. ");
 			
 			//dead
 			if(YourWorldData.Health <= 0){

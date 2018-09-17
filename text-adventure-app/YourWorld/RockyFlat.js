@@ -9,7 +9,7 @@ export class RockyFlat {
 	static createPage(that){
 		YourWorldData.Energy -= 10; 
 		
-		that.preparePage("You continue upwards past rock and rubble, dirt sliding beneath your feet every now and then just to keep you off your toes. An hour passes and your fingers start to bleed a little from all the jagged stone. Another hour passes. Your mouth is dry and skin burnt by the time you come to a flat clearing, with "+YourWorldData.Energy+" energy. The ground here is rough from boulders embedded in clay, but at least you won't slide down. The clearing appears to be at the base of a sheer cliff. At least twenty feet high. Much more vertical than anything you've climbed and eerily still. ");
+		that.preparePage("You continue upwards past rock and rubble, dirt sliding beneath your feet every now and then just to keep you off your toes. An hour passes and your fingers start to bleed a little from all the jagged stone. Another hour passes. Your mouth is dry and skin burnt by the time you come to a flat clearing with "+YourWorldData.Energy+" energy. The ground here is rough from boulders embedded in clay, but at least you won't slide down. The clearing appears to be at the base of a sheer cliff. At least twenty feet high. Much more vertical than anything you've climbed and eerily still. ");
 		
 			
 		if(YourWorldData.BadassGal){

@@ -138,7 +138,8 @@ export function ResetTheWayData(){
 		Searched: {},
 		//prisoners escaped at the end
 		PrisonersEscaped: 0,
-		SwordFightRandomness: {}
+		SwordFightRandomness: {},
+		HasBag: false
 		};
 }
 

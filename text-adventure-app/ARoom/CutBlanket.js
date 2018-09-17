@@ -19,7 +19,7 @@ export class CutBlanket {
 			that.preparePage("And the burns on your hands don't hurt as bad. ");
 		}
 		ARoomData.Health = ARoomData.Health + healing;
-		that.preparePage("But man are you gonna have a nasty infection later. Fine, you gain "+ healing + "health temporarily, putting you at "+ARoomData.Health+".");
+		that.preparePage("But man are you gonna have a nasty infection later. Fine, you gain "+ healing + " health temporarily, putting you at "+ARoomData.Health+".");
 		
 		ARoomData.WrappedHandsFeet = true;
 		

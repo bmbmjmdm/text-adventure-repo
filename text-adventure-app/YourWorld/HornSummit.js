@@ -14,7 +14,7 @@ export class HornSummit{
 		that.preparePage("The universe created you and guided you to bring you to this moment, and all moments beyond it. If only for the universe to experience itself. \"Good\" or \"bad\", meaning or none, there is clearly nothing more natural than your very existance and all paths you may take. It is, ultimately, the universe's will, or perhaps a god's. ");
 		
 		if(YourWorldData.Mother){
-			that.preparePage("The scarlet-haired mother rests a hand on your shoulder, \"It's...beautiful. Thank you.\" She squints in the distance, points to a small town. \"That's our home...what's left of it. If you'd like, you're welcome to come join us. The empire's been...occupying it, but that won't last long. I hope.\" ");
+			that.preparePage("The scarlet-haired mother rests a hand on your shoulder, \"It's... beautiful. Thank you.\" She squints in the distance, points to a small town. \"That's our home...what's left of it. If you'd like, you're welcome to come join us. The empire's been... occupying it, but that won't last long. I hope.\" ");
 		}
 		
 		else if (YourWorldData.Son){

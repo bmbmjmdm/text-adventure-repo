@@ -28,7 +28,7 @@ export class Node4C {
 		//coming from prisoner cell
 		else if(TheWayData.LastNode == '5C'){
 			if(TheWayData.Prisoner5CFree){
-				that.preparePage("You exit the biohazard of a cell as quickly as possibly, then head down a short hallway before coming to a possible right turn. ");
+				that.preparePage("You exit the biohazard of a cell as quickly as possible, then head down a short hallway before coming to a possible right turn. ");
 			}
 			else{
 				//they have to be returning if the prisoner isnt free

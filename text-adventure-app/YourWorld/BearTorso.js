@@ -17,7 +17,7 @@ export class BearTorso {
 		YourWorldData.BearHealth -= damage;
 		YourWorldData.Health -= 1;
 		
-		that.preparePage("Your "+weapon+" plunges forward, opposite the bear who tries to lunge past it on top of you. It sinks deep, cuts fat and scrapes bone, rearranges some vital insides as the bear's weight welcomes you to the ground. It takes "+damage+" damage as you take 1. You have "+YourWorldData.Health+" health. ");
+		that.preparePage("Your "+weapon+" plunges forward, into the bear who tries to lunge past it on top of you. The blade sinks deep, cuts fat and scrapes bone, rearranges some vital insides as the bear's weight welcomes you to the ground. It takes "+damage+" damage as you take 1. You have "+YourWorldData.Health+" health. ");
 		
 		//bear kills player
 		if(YourWorldData.Health <= 0){

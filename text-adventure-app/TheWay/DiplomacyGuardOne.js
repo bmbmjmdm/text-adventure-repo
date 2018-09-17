@@ -13,9 +13,9 @@ export class DiplomacyGuardOne {
 			TheWayData.GuardOne.Hostility--;
 		}
 		that.preparePage("Now, what do you say? You can ");
-		that.preparePage("play dumb, ", PlayDumbGuardOne);
+		that.preparePage("play dumb ", PlayDumbGuardOne);
 		that.preparePage("and hope she forgets you for the fire, or perhaps ");
-		that.preparePage("be logical, ", LogicalGuardOne);
+		that.preparePage("be logical ", LogicalGuardOne);
 		that.preparePage("and explain to her that you aren't worth the trouble."); 
 		
 	}

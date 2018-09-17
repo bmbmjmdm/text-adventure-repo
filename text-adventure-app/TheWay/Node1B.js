@@ -64,7 +64,7 @@ export class Node1B {
 					if(!TheWayData.GuardOne.Pickpocket){
 						that.preparePage("She's awfully distracted. You might be able to ");
 						that.preparePage("pickpocket", PickPocketGuardOne);
-						that.preparePage("her. ");
+						that.preparePage(" her. ");
 					}
 				}
 				//guard has been killed

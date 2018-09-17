@@ -12,7 +12,7 @@ export class CaveFindPit {
 		if(YourWorldData.BadassGal){
 			that.preparePage("\"Let's ");
 			that.preparePage("check it out!", CavePit);
-			that.preparePage(" If we work together, one of us can stay up here and help the other in and out. \" The woman says. It sounds like it'll work, assuming nothing...unexpected is waiting in that pit. ");
+			that.preparePage(" If we work together, one of us can stay up here and help the other in and out.\" The woman says. It sounds like it'll work, assuming nothing... unexpected is waiting in that pit. ");
 		}
 		
 		else if(YourWorldData.Vines > 0){

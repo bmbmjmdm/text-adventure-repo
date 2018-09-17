@@ -15,6 +15,7 @@ export default class App extends React.Component {
   latestElement = null;
   latestElementNewText = "";
   reRender = false;
+  typeOne = false;
   
   
   
@@ -204,6 +205,8 @@ export default class App extends React.Component {
 						//append the last text in our list					
 						displayedText2[displayedText2.length-1].text += firstCharacter;
 						that.latestElementNewText = displayedText2[displayedText2.length-1].text;
+						
+						that.typeOne = true;
 					}
 				
 				}
@@ -232,16 +235,23 @@ export default class App extends React.Component {
   
   
   
-	//when we call setState, we are either totally rerendering the tree or just adjusting the last text on it 
+	//when we call setState, we are either totally rerendering the tree or just adjusting the last text on it or neither
 	shouldComponentUpdate(nextProps, nextState){
 		if(this.reRender){
+			//a new element has been added to the display 
 			this.reRender = false;
 			return true;
 		}
-		else{
+		else if (this.typeOne){
+			//a preexisting element has a letter (or 10) appended 
+			this.typeOne = false;
 			if(this.latestElement){
 				this.latestElement.reWrite(this.latestElementNewText);
 			}
+			return false;
+		}
+		else{
+			//no elements need changing
 			return false;
 		}
 		

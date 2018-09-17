@@ -10,7 +10,7 @@ export class RockyPathSearch {
 		YourWorldData.Flint += 1;
 		YourWorldData.Water += 1;
 		
-		that.preparePage("You peer over the mound of dirt and rock, holding onto it carefully and adjusting your weight so it doesn't slide out from under. As trickles of rocks fall and tumble down the mountain side, your hand gives, and in a moment of panic you feel like your falling. ");
+		that.preparePage("You peer over the mound of dirt and rock, holding onto it carefully and adjusting your weight so it doesn't slide out from under. As trickles of rocks fall and tumble down the mountain side, your hand gives, and in a moment of panic you feel like you're falling. ");
 		
 		if(YourWorldData.OldGuy){
 			that.preparePage("The short, balding man lets out a hand to catch your own and the two of you bend steadily. You give a breathless thanks as your heart tries to steady. ");

@@ -24,7 +24,7 @@ export class Node6A {
 			}
 		
 			else if(TheWayData.LastNode == '6B'){
-				that.preparePage("You depart the cell for greener pastures...well, maybe not yet. Right now you follow a well-lit hallway to a large, ornate wooden door. There are banners at its sides you get a creeping feeling someone might be inside... ");
+				that.preparePage("You depart the cell for greener pastures...well, maybe not yet. Right now you follow a well-lit hallway to a large, ornate wooden door. There are banners at its sides and you get a creeping feeling someone might be inside... ");
 				came6B = " (the way you came)";
 			}
 		
@@ -72,7 +72,7 @@ export class Node6A {
 				
 				//player can search the room still
 				if(!TheWayData.Searched.Node6A){
-					that.preparePage("The room appears baren, but there's plenty of nooks and crannies to ");
+					that.preparePage("Between stone benches and sword-adorned shelves, there's plenty of nooks and crannies to ");
 					that.preparePage("explore", Search6A);
 					that.preparePage(" if you'd like. ");
 				}

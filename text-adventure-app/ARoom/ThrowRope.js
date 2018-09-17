@@ -10,7 +10,7 @@ export class ThrowRope {
 	static createPage(that){
 		if(ARoomData.WrappedHandsFeet){
 			ARoomData.ThrewRope = true;
-			that.preparePage("Picking up the non-frayed end, you retrieve the rope without a single burn, the wrapping on your hands dampening the heat. You feel pretty smart right about now! Strong, even. You hold an end of the rope with one hand and toss the other end through the ");
+			that.preparePage("Picking up the non-frayed end, you retrieve the rope without a single burn, the wrapping on your hands dampening the heat. You feel pretty smart right about now! Strong, even. You hold one end of the rope and toss the other end through the ");
 			that.preparePage("window.", LookAtWindow);
 			that.preparePage(" Easy. You reach some fingers through the bars on the");
 			that.preparePage(" door", LookAtDoor);

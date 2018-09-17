@@ -6,7 +6,7 @@ export class RidgeForge {
 
 	static createPage(that){
 		YourWorldData.Energy -= 20; 
-		that.preparePage("You begin throwing rocks against the left slope of the ridge. A clumb of gravel tumbles down the mountain, gathering more and more as it goes. Once the surface has been pelted clean, you begin forging. Slowly, you press the earth at the edge of the ridge. Further and further you flatten it, making a safer path. ");
+		that.preparePage("You begin throwing rocks against the left slope of the ridge. A clump of gravel tumbles down the mountain, gathering more and more as it goes. Once the surface has been pelted clean, you begin forging. Slowly, you press the earth at the edge of the ridge. Further and further you flatten it, making a safer path. ");
 		
 		//allies will help 
 		if(YourWorldData.Allies > 0){
