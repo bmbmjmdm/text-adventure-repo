@@ -100,7 +100,7 @@ export function ResetTheWayData(){
 		//neutralized means they were talked down with diplomacy
 		//0 or less health means they were killed
 		//pickpocket indicates if the user attempted to steal their keys or not after neutralizing them
-		GuardOne:{Name:"GuardOne", Health:5, Hostility:0, Neutralized:false, Pickpocket:false}, 
+		GuardOne:{Name:"GuardOne", Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardTwo:{Name:"GuardTwo", Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardThree:{Name:"GuardThree", Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardFour:{Name:"GuardFour", Health:14, Hostility:0, Neutralized:false, Pickpocket:false}, 
@@ -111,7 +111,7 @@ export function ResetTheWayData(){
 		GlassSnapped:false, 
 		FullGlass:GlobalData.LastARoomData.FullGlass, 
 		//the user gets a sword from killing GuardOne or visiting node 2C
-		HasWeapon:{Glass:GlobalData.LastARoomData.ThrewGlass, Sword: false, Bandages:GlobalData.LastARoomData.CutBindings, Axe: false}, 
+		HasWeapon:{Glass:GlobalData.LastARoomData.ThrewGlass, Sword: false, Bandages:GlobalData.LastARoomData.WrappedHandsFeet, Axe: false}, 
 		//indicates if the prisoner is free at the given cell, changing the options there
 		Prisoner1BFree: false, 
 		Prisoner3AFree: false, 

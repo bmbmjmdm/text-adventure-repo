@@ -100,7 +100,7 @@ export function processRound(playerAttack, that){
 export function didDie(that){
 	//player has 0 health, they die and return to the menu
 	if(TheWayData.Health <= 0){
-		that.preparePage(randomSelect(Death, "Death"));
+		that.preparePage(Death[random3()]);
 		that.preparePage("darkness.", HomePage);
 	}
 }

@@ -220,6 +220,7 @@ export default class App extends React.Component {
 				//the only text in the list is an empty one, don't bother, clean list, get out
 				toShowText2 = [];
 				that.allowClicks = true; 
+				that.reRender = true;
 			}
 			
 			that.setState({toShowText: toShowText2, displayedText: displayedText2});
@@ -240,6 +241,7 @@ export default class App extends React.Component {
 		if(this.reRender){
 			//a new element has been added to the display 
 			this.reRender = false;
+			this.typeOne = false;
 			return true;
 		}
 		else if (this.typeOne){

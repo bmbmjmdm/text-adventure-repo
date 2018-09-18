@@ -14,7 +14,7 @@ export class TheWay {
 		ResetTheWayData();
 		FileManager.setLevelFile(new TheWayFile());
 		
-		that.preparePage("As you dust soot off yourself, the crackling fire behind you illuminates the area. You're standing at an intersection: a long hallway extends in front while two shorter ones are on your right and left. A figure is walking down the long hallway towards you. ");
+		that.preparePage("As you dust soot off yourself, the crackling fire behind you illuminates the way. You're standing at an intersection: a long hallway extends in front while two shorter ones are on your right and left. A figure is walking down the long hallway towards you. ");
 		if(TheWayData.RefusedDeal){
 			that.preparePage("An older, bitter man behind bars to your left screams out, \"Guard! Down here! Down here! A prisoner's escaping!\" The figure in the distance yells out, \"You! Wait where you are.\" And continues running towards you. ");
 		}
