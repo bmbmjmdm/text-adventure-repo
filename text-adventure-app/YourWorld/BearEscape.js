@@ -10,7 +10,7 @@ export class BearEscape {
 			weapon = "axe";
 		}
 		
-		that.preparePage("You continue walking, the ground descending behind you and a stray rock encumbering the path, but your foot lands true and your pace is stable. The bear keeps up with you, its shoulders rocking its massive body forward until eventually you're both clear of the fallen trees and torn earth. The bear begins veering off to one side and soon walks off without a word. Rude. Anyway, the path is clear! ");
+		that.preparePage("You continue walking when the ground suddenly drops behind you, a stray ditch in your path, but your foot lands true and your pace is stable. The bear keeps up with you, its shoulders rocking its massive body forward until eventually you're both clear of the fallen trees and torn earth. The bear begins veering off to one side and soon walks off without a word. Rude. Anyway, the path is clear! ");
 		
 		if(YourWorldData.Allies> 0){
 			var s = "";

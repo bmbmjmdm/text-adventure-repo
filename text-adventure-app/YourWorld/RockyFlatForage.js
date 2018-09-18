@@ -36,7 +36,7 @@ export class RockyFlatForage {
 		
 		that.preparePage("Just as you finish up your search and are heading back to ")
 		that.preparePage("setup camp,", RockyFlatCamp);
-		that.preparePage(" you see a bit of green dangling on a nearby ledge. You lower yourself to the ground, afraid of the dirt giving and dropping you who knows how far, and eventually lie on your stomach for stability. You yank the green up and discover it's some sort of vine. It's thick and course, and very much so alive. That is, until you yank it out of the ground and stuff it in your bag. That all took some time and effort though, you have "+YourWorldData.Energy+" energy now.");
+		that.preparePage(" you see a bit of green dangling on a nearby ledge. You lower yourself to the ground, afraid of the dirt giving and dropping you who knows how far, and eventually lie on your stomach for stability. You yank the green up and discover it's some sort of vine. It's thick and course, and very much alive. That is, until you yank it out of the ground and stuff it in your bag. That all took some time and effort though, you have "+YourWorldData.Energy+" energy now.");
 		
 		
 	}

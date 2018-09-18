@@ -25,7 +25,7 @@ export class BearScareTwo {
 			that.preparePage("behind you, warding off the bear with feverous barks. ");
 		}
 		
-		that.preparePage("The bear's posture shifts and its teeth sprawl out over its gaping maw. It growls and roars back, angry, not scared, and charges forward a few steps before rearing up and swiping at you with teeth and claw. With your "+weapon+" in hand, do you ");
+		that.preparePage("The bear's posture shifts and its teeth sprawl out over its gaping maw. It growls and roars back, angry, not scared, and charges forward a few steps before rearing up and swiping at you with tooth and claw. With your "+weapon+" in hand, do you ");
 		
 		that.preparePage("block", BearBlock);
 		that.preparePage(" its assault or ");

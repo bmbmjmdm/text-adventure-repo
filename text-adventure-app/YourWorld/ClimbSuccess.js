@@ -14,7 +14,7 @@ export class ClimbSuccess {
 			}
 			that.preparePage("You call down to your "+plural+" and instruct them how to climb, where to hold, where not to, and offer a hand for the last jump so they have no trouble surmounting it. ");
 			if(YourWorldData.Mother){
-				that.preparePage("The mother has a sort of smile on like she's enjoying herself, and you can't tell whether it's because this is her first adventure or one of many she left behind. She rests a hand on your shoulder at the top and it feels...strong. ");
+				that.preparePage("The mother has a sort of smile on like she's enjoying herself, and you can't tell whether it's because this is her first adventure or one of many she left behind. She rests a hand on your shoulder at the top and it feels... strong. ");
 			}
 		}
 		
