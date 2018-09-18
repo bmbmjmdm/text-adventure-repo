@@ -32,7 +32,7 @@ export class Node3A {
 		//coming from 2A, might have keys
 		else if(TheWayData.LastNode == '2B'){
 			came2B= " (the way you came)";
-			that.preparePage("Light on your feet, you scurry down the hallway towards the light. You take a left turn and see that it comes from another cell. ");
+			that.preparePage("Light on your feet, you scurry down the corridor towards the light. You take a left turn and see that it comes from another cell. ");
 			
 			//prisoner isn't out yet
 			if(!TheWayData.Prisoner3AFree){

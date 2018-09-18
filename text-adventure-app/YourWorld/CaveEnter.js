@@ -20,7 +20,7 @@ export class CaveEnter {
 			else{
 				that.preparePage("I");
 			}
-			that.preparePage(" stay out here....good luck!\"");
+			that.preparePage(" stay out here... good luck!\"");
 		}
 		
 		if(YourWorldData.BadassGal){

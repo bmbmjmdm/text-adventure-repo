@@ -26,7 +26,7 @@ export class Node4B {
 		
 		//coming from intersection
 		else if(TheWayData.LastNode == '4C'){
-			that.preparePage("You take a turn and head down the dark hallway, unsure of your future. It gets you thinking about what could be beyond these walls... but you're brought back to the present as you pass another hallway. You stop and look around. ");
+			that.preparePage("You take a turn and head down the dark hallway, unsure of your future. It gets you thinking about what could be beyond these walls... but you're brought back to the present as you pass another turn. You stop and look around. ");
 			came4C = " (the way you came)";
 		}
 		
@@ -44,7 +44,7 @@ export class Node4B {
 		that.preparePage("Westward"+came4A, Node4A);
 		that.preparePage(" is pure darkness, a mystery. Looking ");
 		that.preparePage("East"+came4C, Node4C);
-		that.preparePage(" you can see the hallway split two ways up ahead, with a trickling of light on both sides. ");
+		that.preparePage(" you can see the corridor split two ways up ahead, with a trickling of light on both sides. ");
 	
 	
 		TheWayData.LastNode = '4B';

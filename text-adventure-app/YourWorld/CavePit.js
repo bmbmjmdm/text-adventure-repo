@@ -18,7 +18,6 @@ export class CavePit {
 			
 			//user uses vine to get down
 			else if (YourWorldData.Vines > 0){
-				YourWorldData.Vines --;
 				that.preparePage("You tie a vine to a stalagmite and tug on it: seems steardy. You lower yourself over the side, shimmying, scraping feet, inching down the wall slowly. Eventually your feet touch the water, you continue, they're submerged, up to the shin now, and then they touch ground. You can stand here, nice! ");
 			}
 			
@@ -37,7 +36,8 @@ export class CavePit {
 			
 			//user climbs vine out 
 			else if (YourWorldData.Vines > 0){
-				that.preparePage("You thank your lucky stars this pit wasn't filled with more water as you grab the vine, leaning back and starting to climb. Time to ");
+				YourWorldData.Vines --;
+				that.preparePage("You thank your lucky stars this pit wasn't filled with more water as you grab the vine, lean back and start to climb. Time to ");
 				that.preparePage("make your way out.", CaveExit);
 			}
 			

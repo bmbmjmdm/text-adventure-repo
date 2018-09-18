@@ -14,7 +14,7 @@ export class GrassyLedgeSearchRock {
 		
 		YourWorldData.Energy -= 10;
 		YourWorldData.Kindling += 1;
-		YourWorldData.Vine += 1;
+		YourWorldData.Vines += 1;
  
 	}
 

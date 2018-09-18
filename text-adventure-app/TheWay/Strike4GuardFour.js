@@ -14,7 +14,7 @@ export class Strike4GuardFour {
 			
 		//player dies
 		if(TheWayData.GuardFour.Health > TheWayData.Health){
-			that.preparePage("You feel your wounds cringe from the stress and start hemorrhaging. ");
+			that.preparePage("You feel your lesions cringe from the stress and start hemorrhaging. ");
 			DieGuardFour.createPage(that);
 		}
 		

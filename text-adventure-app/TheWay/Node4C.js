@@ -15,7 +15,7 @@ export class Node4C {
 		
 		//coming from intersection
 		if(TheWayData.LastNode == '4B'){
-			that.preparePage("You run down the hallway, paranoid of the echoing footsteps. Are those yours? Someone else's? You make it to the end of this hallway, in the middle of another. ");
+			that.preparePage("You run down the hallway, paranoid of the echoing footsteps. Are those yours? Someone else's? You make it to the end of this corridor, in the middle of another. ");
 			came4B = " (the way you came)";
 		}
 		
@@ -43,9 +43,9 @@ export class Node4C {
 		that.preparePage("North"+came5C, Node5C);
 		that.preparePage(" to see a door at the end of the hallway, emitting light through its bars. To the ");
 		that.preparePage("West"+came4B, Node4B);
-		that.preparePage(" you see a hallway running down into darkness, a possible turn up ahead. Finally, ");
+		that.preparePage(" you see a corridor running down into darkness, a possible turn up ahead. Finally, ");
 		that.preparePage("South"+came2C, Node2C);
-		that.preparePage(" shows a long hallway with a distant door, light pouring out from above it, and some kind of banners on its sides.");
+		that.preparePage(" shows a long passage with a distant door, light pouring out from above it, and some kind of banners on its sides.");
 	
 	
 		TheWayData.LastNode = '4C';

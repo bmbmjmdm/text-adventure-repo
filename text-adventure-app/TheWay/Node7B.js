@@ -37,7 +37,7 @@ export class Node7B {
 		that.preparePage("East", Node7C);
 		that.preparePage(" leads to a room with light flooding out from above it. There's banners on the sides of a grandiose door, silver etchings around its arch. You hear people talking just beyond it... Going ");
 		that.preparePage("West"+came6A, Node6A);
-		that.preparePage(" leads down a dim hallway, towards where you encountered that guard.");
+		that.preparePage(" leads down a dim corridor, towards where you encountered that guard.");
 	
 	
 		TheWayData.LastNode = '7B';

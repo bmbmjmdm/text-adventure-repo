@@ -63,7 +63,7 @@ export class Node5B {
 			that.preparePage(", a feint hum emanating from its contents. ");
 		}
 		that.preparePage("Westward"+came5A, Node5A);
-		that.preparePage(" leads to a fork in the hallway, where it splits into two more paths. Your head is spinning trying to keep track of all the turns. Going ");
+		that.preparePage(" leads to a fork in the corridor, where it splits into two more paths. Your head is spinning trying to keep track of all the turns. Going ");
 		that.preparePage("East"+came5C, Node5C);
 		that.preparePage(" leads to another barred door with light, though this one is wafting some foul smell. Finally, ");
 		that.preparePage("South"+came4B, Node4B);
