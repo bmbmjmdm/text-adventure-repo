@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
   clickText: {
 	fontSize: 25,
 	color: '#f00',
-	font-family: 'Roboto';
+	fontFamily: 'Roboto';
   }
 });
 
