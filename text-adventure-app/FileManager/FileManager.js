@@ -1,10 +1,10 @@
 import {levelFile} from '../GameData.js'
 import {AsyncStorage}  from 'react-native';
 import * as GameData from '../GameData.js';
+import {FileManagerIndex} from './FileManagerIndex.js';
 
 //manages files via saving and loading  
-export class FileManager {
-	
+export class FileManager {	
 	//the level file is an object that extends LevelFile and holds important functions for saving game states 
 	//it is set either in the LoadGame function or in the ./X/X class (such as ARoom, etc)
 	static levelFile = undefined;
@@ -114,7 +114,7 @@ export class FileManager {
 					eval(evalString);
 					
 					//now we replace this.levelFile with a new empty level file
-					this.levelFile = eval('new this.LevelFiles.'+this.levelFile.nameSpace+'File()');
+					this.levelFile = new FileManagerIndex[this.levelFile.nameSpace+"File"]();
 				}
 				
 			} catch (error) {
@@ -253,7 +253,7 @@ export class FileManager {
 	static async getFileNamesForLevel(levelName){
 		//the following 3 lines retrieve the proper filename of the given gameClass, by looking it up in our level files 
 		var loadableFiles = await this.GetFileNames();
-		var ourLevelFile = eval('new this.LevelFiles.'+levelName+"File()");
+		var ourLevelFile = new FileManagerIndex[levelName+"File"]();
 		var fileName = ourLevelFile.getName();
 		
 		var savedGames = [];
@@ -305,8 +305,24 @@ export class FileManager {
 	static async onStartUp(){
 		//for development purposes, clears all data 
 		//await AsyncStorage.multiRemove(await AsyncStorage.getAllKeys());
-		this.requireFolders();
+		this.prepareIndex();
 		await this.initGlobalData();
+	}
+	
+	
+	
+	//make sure the imports are part of the class at runtime
+	static ARoomIndex;
+	static TheWayIndex;
+	static YourWorldIndex;
+	static MenusIndex;
+	
+	static prepareIndex(){
+		//get all of our files used for loading 
+		this.ARoomIndex = require('./ARoomIndex.js').ARoomIndex;
+		this.TheWayIndex = require('./TheWayIndex.js').TheWayIndex;
+		this.YourWorldIndex = require('./YourWorldIndex.js').YourWorldIndex;
+		this.MenusIndex = require('./MenusIndex.js').MenusIndex;
 	}
 	
 	
@@ -343,44 +359,6 @@ export class FileManager {
 	
 	
 	
-	
-	static ARoomFiles;
-	static LevelFiles;
-	static TheWayFiles;
-	static YourWorldFiles;
-	static MenuFiles;
-	
-	static requireFolders(){
-		//we have to include all of this here in order to load classes referenced in saved properties (see jsonParser)
-		//trust me there's no better way to do it 
-		const ARoomFilesTemp = requireAll('./ARoom');	
-		const TheWayFilesTemp = requireAll('./TheWay');
-		const YourWorldFilesTemp = requireAll('./YourWorld');
-		const MenuFilesTemp = requireAll('./Menus');
-		const LevelFilesTemp = requireAll('./FileManager');
-		
-		this.ARoomFiles = this.formatFiles(ARoomFilesTemp);
-		this.LevelFiles = this.formatFiles(LevelFilesTemp);
-		this.TheWayFiles = this.formatFiles(TheWayFilesTemp);
-		this.YourWorldFiles = this.formatFiles(YourWorldFilesTemp);
-		this.MenuFiles = this.formatFiles(MenuFilesTemp);
-	}
-	
-	
-	//the plugin require-all has the files in a really messy format, so we do this to make sure the object contains all the files as properties named that file name
-	static formatFiles(filesTemp){
-		var newObj = {};
-		for(objKey in filesTemp){
-			for(subObjKey in filesTemp[objKey]){
-				newObj[subObjKey] = filesTemp[objKey][subObjKey];
-			}
-		}
-		return newObj;
-	}
-	
-	
-	
-	
 	//helper function for the screen state and GameData json parsing. 
 	//this is needed to evaluate the string versions of the classnames (aka functions) held in the "nextPage" properties or certain GameData properties
 	//this assumes the objectToParse is either an array of objects or single object, containing properties which may contain "property.isFunction === true". Any properties that evaluate to true are looked up as files. See jsonParserActual for implementation
@@ -412,11 +390,11 @@ export class FileManager {
 				if (obj.hasOwnProperty(property)) {
 					//obj[property] is the filename and the classname
 					//this.levelFile.nameSpace is the folder the filename is, OR the file could be in the Menus folder
-					//We use "Files" here because that's what the import object name is (see the onStartUp() function)
+					//We use "Index" here because that's what the import object name is (see the imports at the top of the page)
 					var fileName = obj[property].name;
 					
-					const filePath = 'this.'+this.levelFile.nameSpace+'Files'+'.'+fileName;
-					const secondFilePath = 'this.'+'MenuFiles'+'.'+fileName;
+					const filePath = "this."+this.levelFile.nameSpace+'Index'+'.'+fileName;
+					const secondFilePath = "this."+'MenusIndex'+'.'+fileName;
 					
 					var nextPageClass = eval(filePath);
 					

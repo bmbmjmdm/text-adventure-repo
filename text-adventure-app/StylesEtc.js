@@ -23,14 +23,14 @@ export const styles = StyleSheet.create({
   defaultText: {
 	fontSize: 25,
 	color: '#fff',
-	font-family: 'Roboto';
+	fontFamily: 'Roboto'
   },
   
   //size and color of click text- medium, red
   clickText: {
 	fontSize: 25,
 	color: '#f00',
-	fontFamily: 'Roboto';
+	fontFamily: 'Roboto'
   }
 });
 
