@@ -53,4 +53,8 @@ export class HomePage{
 		  that.preparePage("\n\nLoad");
 	  }
   }
+  
+  static getName(){
+	return "HomePage";
+}
  }
