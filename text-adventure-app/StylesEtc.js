@@ -91,7 +91,7 @@ export class ClickText extends React.Component {
 			this.reWritten = false;
 			displayText = this.myText;
 		}
-		return (<Text style={styles.clickText} onPress={()=>{}} onResponderMove={this.startPress} onResponderRelease={this.didRetainPress}>{displayText}</Text>);
+		return (<Text style={styles.clickText} onPress={this.startPress} onResponderMove={this.startPress} onResponderRelease={this.didRetainPress}>{displayText}</Text>);
 	}
 
 	
@@ -113,12 +113,12 @@ export class ClickText extends React.Component {
 	//the user has released their touch, check to see if they're still on the original text they pressed. if not, allow a new position to be written
 	didRetainPress(evt){
 		this.didMove = false;
-
+		
 		if(evt.nativeEvent.locationY > this.componentY - 10 &&
 			evt.nativeEvent.locationY < this.componentY + 10 &&
 			evt.nativeEvent.locationX > this.componentX - 10 &&
 			evt.nativeEvent.locationX < this.componentX + 10){
-
+				
 			this.props.onPress();
 		}
 	}
