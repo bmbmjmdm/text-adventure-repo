@@ -25,7 +25,7 @@ export class TheWay {
 		if(TheWayData.HasWeapon.Glass){
 			that.preparePage("You look at the shiv of glass in your hand and consider your options. ");
 		}
-		if(TheWayData.Health < 7){
+		if(TheWayData.Health < 12){
 			that.preparePage("The burns and cuts and bruises decorating your body worry you, though at the same time it does make you look pitiful. ");
 		}
 		

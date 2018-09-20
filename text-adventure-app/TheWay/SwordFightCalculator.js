@@ -162,7 +162,12 @@ function randomSelect(array, codeName){
 	
 	//no uses means we start from the beginning of the array
 	if(value == null || value == undefined){
-		value = 0; 
+		if(codeName == "Kill"){
+			value = random3();
+		}
+		else{
+			value = 0; 
+		}
 	}
 	//otherwise move on to the next member of the array
 	else{
@@ -190,14 +195,14 @@ var GuardAttacks = [
 "The guard lays a palm on his sword and holds it out flat in front of himself. The face of it is reflective; you can see yourself ragged and armed. ",
 "The guard raises his sword near your own, staring deep into your eyes, silent. ",
 "The guard begins slowly walking around you, pacing his steps, and watching closely. The room watches in turn, as does the universe. ",
-"The guard takes his sword in two hands, tilts it forward, and takes a deep, calm breath. "], 
+"The guard takes his sword in two hands, tilts it upward, and takes a deep, calm breath. "], 
 
 //Strike
 ["The guard holds his sword steady with two hands, crouches, and twists at the waste. He's so wound up. ",
 "The guard's elbow goes high and he leans into it, holding the sword with that hand and a steady look in his eye. ",
 "The gaurd flurries his sword, becomes excited, and steps to the side. His teeth are chattering like yours. ",
 "The guard turns himself sideways and steps forward, pressing his sword up and starting to lean. He looks thinner now, reminding you how hungry you are. ",
-"The guard sways his sword before himself, slowly bringing it across your field of view. You feel like swallowing, but don't want to distract yourself. "],
+"The guard tilts his sword to the left, then right, shuffling his shoulders to the beat and quickly inching closer. You feel like swallowing, but don't want to distract yourself. "],
 
 //Grapple
 ["The guard slides out a foot to his side, his legs wrapped in conforming leather straps. His top is heavier though with patchwork armor, metal slowing his movement. You watch as he starts to lean forward and lets out a yell that reverbarates in the stone and wood chamber. ",

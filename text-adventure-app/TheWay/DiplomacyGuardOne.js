@@ -8,7 +8,7 @@ export class DiplomacyGuardOne {
 	static createPage(that){
 
 		that.preparePage("You're a prisoner, she's a guard, most people would laugh in your face at this prospect but no, you're confident. With the fire bellowing and your tongue sharp, you got this. "); 
-		if(TheWayData.Health < 7){
+		if(TheWayData.Health < 12){
 			that.preparePage("You caress the wounds around your body and whimper, hoping she takes pity on you. Looking into her eyes, her soul, you don't see sympathy but instead an utter lack of caring. That's good! You appear to be less of a threat to her due to your injuries. ");
 			TheWayData.GuardOne.Hostility--;
 		}

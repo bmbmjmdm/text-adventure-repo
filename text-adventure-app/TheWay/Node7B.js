@@ -14,7 +14,7 @@ export class Node7B {
 		
 		//coming from intersection
 		if(TheWayData.LastNode == '6A'){
-			that.preparePage("You open the large door and wade out into a hallway, the creeking of the closing door warding you off, and you come to a right turn almost immediately. Following it, you can see a distant light. It's...different. As you start to get closer, another turn appears. ");
+			that.preparePage("You open the large door and wade out into a hallway, the creeking of the closing door warding you off, and you come to a right turn almost immediately. Following it, you can see a distant light. It's... different. As you start to get closer, another turn appears. ");
 			came6A = " (the way you came)";
 		}
 		
