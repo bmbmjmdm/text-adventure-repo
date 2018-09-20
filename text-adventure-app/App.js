@@ -46,7 +46,7 @@ export default class App extends React.Component {
 	//ScrollView is fixed to be full-screen (no larger), though understands that its content could be larger than itself. every render it calculates this difference and scrolls to the bottom automatically (the user can then scroll back up if they wish)
 	//Text is here to display our ClickText and DefaultText elements in a Text-style layout rather than a FlexView-style layout (concatting them rather than every text being in its own "box")
 	return (
-		<View style={styles.container} onMoveShouldSetResponder={this.didSwipe} onResponderMove={()=>{this.handleSwipe(this)}}>
+		<View style={styles.container} onMoveShouldSetResponderCapture={this.didSwipe} onResponderMove={()=>{this.handleSwipe(this)}}>
 		<TouchableWithoutFeedback onPress={this.speedUp}  onPressIn={this.speedUp} >
 			<View style={styles.container} onStartShouldSetResponder={() => true} >
 				<ScrollView ref='scrollView'
@@ -275,14 +275,14 @@ export default class App extends React.Component {
   timestamp = 0;
   
   //check to see if user swiped left or right 
-  didSwipe(evt){  	  
-	  var curX = evt.nativeEvent.locationX;
-	  var curY = evt.nativeEvent.locationY;
+  didSwipe(evt){  	 
+	  var curX = evt.nativeEvent.pageX;
+	  var curY = evt.nativeEvent.pageY;
 	  
 	  //too much time has passed since the swipe started, reset 
 	  if(evt.nativeEvent.timestamp > this.timestamp+250){
 		  this.timestamp = evt.nativeEvent.timestamp;
-		  this.resetSwipe()
+		  this.resetSwipe();
 		  return false;
 	  }
 	  
