@@ -5,9 +5,9 @@ import {Load} from './Load';
 export class NewSave {
 
 	//note the name difference, this is NOT meant to be called from the App onClick function
-	static async checkForSaveFile(that, gameClass){
+	static async checkForSaveFile(that, gameName, gameClass){
 		//see if we have any previous saves of this level
-		var savedGames = await FileManager.getFileNamesForLevel(gameClass.name);
+		var savedGames = await FileManager.getFileNamesForLevel(gameName);
 		
 		//we found a save file for this level, ask the user if they want to start a new one 
 		if(savedGames.length > 0){

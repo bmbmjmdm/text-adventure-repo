@@ -1,7 +1,6 @@
 import {levelFile} from '../GameData.js'
 import {AsyncStorage}  from 'react-native';
 import * as GameData from '../GameData.js';
-import {FileManagerIndex} from './FileManagerIndex.js';
 
 //manages files via saving and loading  
 export class FileManager {	
@@ -114,7 +113,7 @@ export class FileManager {
 					eval(evalString);
 					
 					//now we replace this.levelFile with a new empty level file
-					this.levelFile = new FileManagerIndex[this.levelFile.nameSpace+"File"]();
+					this.levelFile = new this.FileManagerIndex[this.levelFile.nameSpace+"File"]();
 				}
 				
 			} catch (error) {
@@ -253,7 +252,8 @@ export class FileManager {
 	static async getFileNamesForLevel(levelName){
 		//the following 3 lines retrieve the proper filename of the given gameClass, by looking it up in our level files 
 		var loadableFiles = await this.GetFileNames();
-		var ourLevelFile = new FileManagerIndex[levelName+"File"]();
+		
+		var ourLevelFile = new this.FileManagerIndex[levelName+"File"]();
 		var fileName = ourLevelFile.getName();
 		
 		var savedGames = [];
@@ -316,6 +316,7 @@ export class FileManager {
 	static TheWayIndex;
 	static YourWorldIndex;
 	static MenusIndex;
+	static FileManagerIndex;
 	
 	static prepareIndex(){
 		//get all of our files used for loading 
@@ -323,6 +324,7 @@ export class FileManager {
 		this.TheWayIndex = require('./TheWayIndex.js').TheWayIndex;
 		this.YourWorldIndex = require('./YourWorldIndex.js').YourWorldIndex;
 		this.MenusIndex = require('./MenusIndex.js').MenusIndex;
+		this.FileManagerIndex = require('./FileManagerIndex.js').FileManagerIndex;
 	}
 	
 	

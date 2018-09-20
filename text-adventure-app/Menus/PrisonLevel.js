@@ -14,17 +14,17 @@ export class PrisonLevel {
 		//if so, ask if the user wants to erase the previous save and start a new one 
 		//if not, just start a new one 
 		
-		that.preparePage("A Room\n\n", { createPage:async(passed)=>{await NewSave.checkForSaveFile(passed, ARoom)}});
+		that.preparePage("A Room\n\n", { createPage:async(passed)=>{await NewSave.checkForSaveFile(passed, "ARoom", ARoom)}});
 		
 		if(GlobalData.Story2Unlocked){
-			that.preparePage("The Way\n\n",  {createPage:async(passed)=>{await NewSave.checkForSaveFile(passed, TheWay)}});
+			that.preparePage("The Way\n\n",  {createPage:async(passed)=>{await NewSave.checkForSaveFile(passed, "TheWay", TheWay)}});
 		}
 		else{
 			that.preparePage("The Way\n\n");
 		}
 		
 		if(GlobalData.Story3Unlocked){
-			that.preparePage("Your World",  { createPage:async(passed)=>{await NewSave.checkForSaveFile(passed, YourWorld)}});
+			that.preparePage("Your World",  { createPage:async(passed)=>{await NewSave.checkForSaveFile(passed, "YourWorld", YourWorld)}});
 		}
 		else{
 			that.preparePage("Your World");
