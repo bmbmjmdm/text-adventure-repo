@@ -12,13 +12,13 @@ export class Levels {
 			
 			that.preparePage("Naeris Prison - The Escape\n\n", PrisonLevel);
 			
-			that.preparePage("City of Xanaphia - Rogue Life\n\n", ComingSoon);
+			that.preparePage("City of Xanaphia - Rogue Rumors\n\n", ComingSoon);
 			
 			if(GlobalData.ForestUnlocked){
-				that.preparePage("Sariel Forest - Firefly Secrets\n\n", ComingSoon);
+				that.preparePage("Sariel Forest - Grove Secrets\n\n", ComingSoon);
 			}
 			else{
-				that.preparePage("Sariel Forest - Firefly Secrets\n\n");
+				that.preparePage("Sariel Forest - Grove Secrets\n\n");
 			}
 			
 			if(GlobalData.TownRuinsUnlocked){
@@ -29,11 +29,11 @@ export class Levels {
 			}
 			
 			if(GlobalData.DesertUnlocked){
-				that.preparePage("Erdan Desert - Draconic Grave\n\n", ComingSoon);
+				that.preparePage("Erdan Desert - Reptilian Grave\n\n", ComingSoon);
 				
 			}
 			else{
-				that.preparePage("Erdan Desert - Draconic Grave\n\n");
+				that.preparePage("Erdan Desert - Reptilian Grave\n\n");
 			}
 			
 			if(GlobalData.VolcanoUnlocked){
