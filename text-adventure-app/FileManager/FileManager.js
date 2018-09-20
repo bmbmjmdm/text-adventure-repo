@@ -423,7 +423,11 @@ export class FileManager {
 		return JSON.stringify(object, 
 		(key, value)=>{
 			if (typeof value === 'function') {	
-				return {"isFunction": true, "name":value.name};
+				var name = "corrupt";
+				if(value.hasOwnProperty("getName")){
+					name = value.getName();
+				}
+				return {"isFunction": true, "name":name};
 			} 
 			else {
 				return value;
