@@ -39,7 +39,6 @@ export class ThrowRope {
 	}
 
 
+
+static getName(){ return "ThrowRope"; }
 }
-
-
-		

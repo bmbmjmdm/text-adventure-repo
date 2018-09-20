@@ -32,6 +32,6 @@ export class HornFree{
 		that.preparePage(" the real meat of existance: to be here, now?");
 	}
 
+
+static getName(){ return "HornFree"; }
 }
-
-

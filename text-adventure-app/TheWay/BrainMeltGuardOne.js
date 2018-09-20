@@ -39,4 +39,6 @@ export class BrainMeltGuardOne {
 	}
 
 
+
+static getName(){ return "BrainMeltGuardOne"; }
 }

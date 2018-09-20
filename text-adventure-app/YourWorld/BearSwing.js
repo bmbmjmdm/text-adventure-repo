@@ -55,4 +55,6 @@ export class BearSwing {
 	}
 		
 	
+
+static getName(){ return "BearSwing"; }
 }

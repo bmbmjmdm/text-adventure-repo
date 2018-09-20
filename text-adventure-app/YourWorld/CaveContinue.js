@@ -32,5 +32,6 @@ export class CaveContinue {
 	}
 
 
-}
 
+static getName(){ return "CaveContinue"; }
+}

@@ -11,5 +11,6 @@ export class RidgeOver {
 		RidgeNarrow.createPage(that);
 	}
 
-}
 
+static getName(){ return "RidgeOver"; }
+}

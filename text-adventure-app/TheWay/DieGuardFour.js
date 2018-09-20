@@ -12,4 +12,6 @@ export class DieGuardFour {
 	}
 
 
+
+static getName(){ return "DieGuardFour"; }
 }

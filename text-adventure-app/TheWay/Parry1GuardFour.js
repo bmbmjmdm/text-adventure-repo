@@ -18,4 +18,6 @@ export class Parry1GuardFour {
 		that.preparePage("grapple?", Grapple2GuardFour);
 	}
 	
+
+static getName(){ return "Parry1GuardFour"; }
 }

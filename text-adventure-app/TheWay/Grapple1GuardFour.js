@@ -31,4 +31,6 @@ export class Grapple1GuardFour {
 		}
 	}
 	
+
+static getName(){ return "Grapple1GuardFour"; }
 }

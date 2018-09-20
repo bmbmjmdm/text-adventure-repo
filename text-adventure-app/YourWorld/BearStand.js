@@ -21,4 +21,6 @@ export class BearStand {
 	}
 		
 	
+
+static getName(){ return "BearStand"; }
 }

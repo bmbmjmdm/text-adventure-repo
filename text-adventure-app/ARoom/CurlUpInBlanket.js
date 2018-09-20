@@ -18,4 +18,6 @@ export class CurlUpInBlanket {
 	}
 
 
+
+static getName(){ return "CurlUpInBlanket"; }
 }

@@ -37,4 +37,6 @@ export class LookAtWindow {
 	}
 
 
+
+static getName(){ return "LookAtWindow"; }
 }

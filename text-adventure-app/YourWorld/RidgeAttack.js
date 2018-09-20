@@ -59,6 +59,6 @@ export class RidgeAttack {
 		}		
 	}
 
+
+static getName(){ return "RidgeAttack"; }
 }
-
-

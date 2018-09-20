@@ -15,4 +15,6 @@ export class FindPath {
 	}
 
 
+
+static getName(){ return "FindPath"; }
 }

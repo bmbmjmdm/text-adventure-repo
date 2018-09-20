@@ -60,4 +60,6 @@ export class Node2B {
 	}
 
 
+
+static getName(){ return "Node2B"; }
 }

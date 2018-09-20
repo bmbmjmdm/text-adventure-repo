@@ -59,4 +59,6 @@ export class TalkPrisoner1B {
 	}
 
 
+
+static getName(){ return "TalkPrisoner1B"; }
 }

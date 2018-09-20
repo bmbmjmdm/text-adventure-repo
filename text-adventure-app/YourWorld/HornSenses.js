@@ -10,6 +10,6 @@ export class HornSenses {
 		HornStuck.createPage(that);
 	}
 
+
+static getName(){ return "HornSenses"; }
 }
-
-

@@ -21,5 +21,6 @@ export class RidgeForge {
 		RidgeEagle.createPage(that);
 	}
 
-}
 
+static getName(){ return "RidgeForge"; }
+}

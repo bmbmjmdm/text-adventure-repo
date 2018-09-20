@@ -284,4 +284,6 @@ function updateTexts(){
 	"You stab your sword forward, which the guard catches in a calculated parry. He swings it out of the way and then carves into your chest, making a squiggle worth 2 damage. Blood seeps out and you have "+TheWayData.Health+" health left. ",
 	"The guard presses his sword against yours and brings his hilt up, carries your sword to the side and then readies his again. He stabs forward with you open, dealing 2 damage and leaving you with "+ TheWayData.Health+" health. ",
 	"Your sword is caught by the guard's waiting stance, then carried out of the way for his rebuttal. He slices into you for 2 damage, and you wonder if you'll make. You have "+TheWayData.Health+" health remaining. "];
+
+
 }

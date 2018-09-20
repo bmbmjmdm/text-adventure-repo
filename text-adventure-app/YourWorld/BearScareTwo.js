@@ -36,4 +36,6 @@ export class BearScareTwo {
 	}
 		
 	
+
+static getName(){ return "BearScareTwo"; }
 }

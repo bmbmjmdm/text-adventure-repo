@@ -16,4 +16,6 @@ export class DiplomacyGuardTwo {
 	}
 
 
+
+static getName(){ return "DiplomacyGuardTwo"; }
 }

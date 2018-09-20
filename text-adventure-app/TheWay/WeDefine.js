@@ -67,4 +67,6 @@ export class WeDefine {
 		}
 	}
 	
+
+static getName(){ return "WeDefine"; }
 }

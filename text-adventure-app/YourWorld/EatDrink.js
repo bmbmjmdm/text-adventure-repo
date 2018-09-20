@@ -32,4 +32,6 @@ export class EatDrink {
 		
 	}
 
+
+static getName(){ return "EatDrink"; }
 }

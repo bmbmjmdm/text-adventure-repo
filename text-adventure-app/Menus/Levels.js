@@ -55,5 +55,9 @@ export class Levels {
 		
 	}
 
+	
+static getName(){
+	return "Levels";
+}
 
 }

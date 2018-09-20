@@ -14,4 +14,6 @@ export class SwordFightStrike {
 	}
 
 
+
+static getName(){ return "SwordFightStrike"; }
 }

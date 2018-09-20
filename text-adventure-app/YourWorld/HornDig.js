@@ -22,6 +22,6 @@ export class HornDig {
 		that.preparePage(" your very nature?");
 	}
 
+
+static getName(){ return "HornDig"; }
 }
-
-

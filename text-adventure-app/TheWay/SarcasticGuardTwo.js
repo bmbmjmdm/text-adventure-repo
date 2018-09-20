@@ -39,4 +39,6 @@ export class SarcasticGuardTwo {
 	}
 
 
+
+static getName(){ return "SarcasticGuardTwo"; }
 }

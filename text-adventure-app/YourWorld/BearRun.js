@@ -17,4 +17,6 @@ export class BearRun {
 	}
 		
 	
+
+static getName(){ return "BearRun"; }
 }

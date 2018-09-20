@@ -40,4 +40,6 @@ export class EscortedGuardTwo {
 	}
 
 
+
+static getName(){ return "EscortedGuardTwo"; }
 }

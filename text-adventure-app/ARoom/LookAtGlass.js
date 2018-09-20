@@ -65,4 +65,6 @@ export class LookAtGlass {
 	}
 
 
+
+static getName(){ return "LookAtGlass"; }
 }

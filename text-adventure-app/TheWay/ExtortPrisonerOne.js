@@ -17,4 +17,6 @@ export class ExtortPrisonerOne {
 	}
 
 
+
+static getName(){ return "ExtortPrisonerOne"; }
 }

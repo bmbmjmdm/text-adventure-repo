@@ -30,4 +30,6 @@ export class SearchPrison {
 	}
 
 
+
+static getName(){ return "SearchPrison"; }
 }

@@ -16,4 +16,6 @@ export class SmallFire {
 	}
 
 
+
+static getName(){ return "SmallFire"; }
 }

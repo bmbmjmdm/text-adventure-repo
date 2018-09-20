@@ -52,4 +52,6 @@ export class Node4C {
 	}
 
 
+
+static getName(){ return "Node4C"; }
 }

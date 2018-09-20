@@ -38,4 +38,6 @@ export class ClingyGuardOne {
 	}
 
 
+
+static getName(){ return "ClingyGuardOne"; }
 }

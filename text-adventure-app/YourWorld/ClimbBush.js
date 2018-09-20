@@ -17,4 +17,6 @@ export class ClimbBush {
 	}
 
 
+
+static getName(){ return "ClimbBush"; }
 }

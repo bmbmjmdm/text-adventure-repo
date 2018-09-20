@@ -39,6 +39,6 @@ export class RidgeShelter {
 		}
 	}
 
+
+static getName(){ return "RidgeShelter"; }
 }
-
-

@@ -27,4 +27,6 @@ export class OpenDoor {
 		
 	}
 	
+
+static getName(){ return "OpenDoor"; }
 }

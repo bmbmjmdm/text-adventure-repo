@@ -55,4 +55,6 @@ export class AttackGuardTwo {
 	}
 
 
+
+static getName(){ return "AttackGuardTwo"; }
 }

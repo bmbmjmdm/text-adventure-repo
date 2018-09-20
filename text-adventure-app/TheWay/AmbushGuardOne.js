@@ -40,4 +40,6 @@ export class AmbushGuardOne {
 	}
 
 
+
+static getName(){ return "AmbushGuardOne"; }
 }

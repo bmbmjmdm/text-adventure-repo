@@ -20,4 +20,6 @@ export class KeepSword {
 		
 	}
 	
+
+static getName(){ return "KeepSword"; }
 }

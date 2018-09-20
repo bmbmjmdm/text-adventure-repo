@@ -14,4 +14,6 @@ export class IsStruggling {
 		that.preparePage("God forgives those who repent?", GodRepent);
 	}
 	
+
+static getName(){ return "IsStruggling"; }
 }

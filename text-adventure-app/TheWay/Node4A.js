@@ -74,4 +74,6 @@ export class Node4A {
 	}
 
 
+
+static getName(){ return "Node4A"; }
 }

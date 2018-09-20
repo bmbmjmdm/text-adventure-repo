@@ -21,4 +21,6 @@ export class FeedFoul {
 		
 	}
 
+
+static getName(){ return "FeedFoul"; }
 }

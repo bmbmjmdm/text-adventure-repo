@@ -106,5 +106,6 @@ export class CavePit {
 	}
 
 
-}
 
+static getName(){ return "CavePit"; }
+}

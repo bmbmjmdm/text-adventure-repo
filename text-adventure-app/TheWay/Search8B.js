@@ -20,4 +20,6 @@ export class Search8B {
 	}
 
 
+
+static getName(){ return "Search8B"; }
 }

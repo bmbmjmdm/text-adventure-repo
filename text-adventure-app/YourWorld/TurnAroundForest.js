@@ -17,4 +17,6 @@ export class TurnAroundForest {
 	
 		
 	
+
+static getName(){ return "TurnAroundForest"; }
 }

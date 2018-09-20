@@ -90,4 +90,6 @@ export class Node2A {
 	}
 
 
+
+static getName(){ return "Node2A"; }
 }

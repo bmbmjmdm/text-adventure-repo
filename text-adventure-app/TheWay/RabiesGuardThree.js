@@ -37,4 +37,6 @@ export class RabiesGuardThree {
 	}
 
 
+
+static getName(){ return "RabiesGuardThree"; }
 }

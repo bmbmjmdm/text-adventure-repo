@@ -38,4 +38,6 @@ export class DemandHelpGuardOne {
 	}
 
 
+
+static getName(){ return "DemandHelpGuardOne"; }
 }

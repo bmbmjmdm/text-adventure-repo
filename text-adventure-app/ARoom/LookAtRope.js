@@ -40,4 +40,6 @@ export class LookAtRope {
 	}
 
 
+
+static getName(){ return "LookAtRope"; }
 }

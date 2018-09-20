@@ -16,4 +16,6 @@ export class Search5C {
 	}
 
 
+
+static getName(){ return "Search5C"; }
 }

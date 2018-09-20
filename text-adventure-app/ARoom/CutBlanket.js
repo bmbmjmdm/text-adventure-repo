@@ -27,4 +27,6 @@ export class CutBlanket {
 	}
 
 
+
+static getName(){ return "CutBlanket"; }
 }

@@ -26,4 +26,6 @@ export class ThrowGlass {
 	}
 
 
+
+static getName(){ return "ThrowGlass"; }
 }

@@ -28,4 +28,6 @@ export class FailPickPocketGuardOne {
 	}
 
 
+
+static getName(){ return "FailPickPocketGuardOne"; }
 }

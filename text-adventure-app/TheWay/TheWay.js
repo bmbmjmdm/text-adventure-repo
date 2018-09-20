@@ -48,4 +48,6 @@ export class TheWay {
 	}
 
 
+
+static getName(){ return "TheWay"; }
 }

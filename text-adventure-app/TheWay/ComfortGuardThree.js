@@ -24,4 +24,6 @@ export class ComfortGuardThree {
 	}
 
 
+
+static getName(){ return "ComfortGuardThree"; }
 }

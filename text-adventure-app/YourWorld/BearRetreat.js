@@ -20,4 +20,6 @@ export class BearRetreat {
 	}
 		
 	
+
+static getName(){ return "BearRetreat"; }
 }

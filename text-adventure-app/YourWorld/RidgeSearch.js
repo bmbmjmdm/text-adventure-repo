@@ -15,6 +15,6 @@ export class RidgeSearch {
 		that.preparePage("camp.", Camping);
 	}
 
+
+static getName(){ return "RidgeSearch"; }
 }
-
-

@@ -103,5 +103,6 @@ export class LookAroundRoom {
 	}
 
 
-}
 
+static getName(){ return "LookAroundRoom"; }
+}

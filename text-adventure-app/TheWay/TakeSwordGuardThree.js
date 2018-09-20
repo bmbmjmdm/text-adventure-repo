@@ -24,4 +24,6 @@ export class TakeSwordGuardThree {
 	}
 
 
+
+static getName(){ return "TakeSwordGuardThree"; }
 }

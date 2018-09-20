@@ -19,5 +19,6 @@ export class RidgeRocks {
 			that.preparePage(" \"Yeah I don't know if I'm keen on this. You go first.\" The pudgy, unbathed man adds as he sits and twirls dirt.");
 		}
 	}
-}
 
+static getName(){ return "RidgeRocks"; }
+}

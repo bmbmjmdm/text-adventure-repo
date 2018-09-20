@@ -38,4 +38,6 @@ export class Search2C {
 	}
 
 
+
+static getName(){ return "Search2C"; }
 }

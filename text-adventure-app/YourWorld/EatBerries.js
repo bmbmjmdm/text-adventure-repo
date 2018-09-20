@@ -20,4 +20,6 @@ export class EatBerries {
 		
 	}
 
+
+static getName(){ return "EatBerries"; }
 }

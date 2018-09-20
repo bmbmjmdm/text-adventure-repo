@@ -35,4 +35,6 @@ export class MediumFire {
 	}
 
 
+
+static getName(){ return "MediumFire"; }
 }

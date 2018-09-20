@@ -44,4 +44,6 @@ export class BearHead {
 	}
 		
 	
+
+static getName(){ return "BearHead"; }
 }

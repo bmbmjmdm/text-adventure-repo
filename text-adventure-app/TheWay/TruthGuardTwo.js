@@ -24,4 +24,6 @@ export class TruthGuardTwo {
 	}
 
 
+
+static getName(){ return "TruthGuardTwo"; }
 }

@@ -24,4 +24,6 @@ export class Explore {
 		Levels.createPage(that);
 	}
 	
+
+static getName(){ return "Explore"; }
 }

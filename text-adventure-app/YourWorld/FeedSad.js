@@ -16,4 +16,6 @@ export class FeedSad {
 		
 	}
 
+
+static getName(){ return "FeedSad"; }
 }

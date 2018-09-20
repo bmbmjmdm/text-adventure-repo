@@ -48,4 +48,6 @@ export class ThirdDisarmGuardOne {
 	}
 
 
+
+static getName(){ return "ThirdDisarmGuardOne"; }
 }

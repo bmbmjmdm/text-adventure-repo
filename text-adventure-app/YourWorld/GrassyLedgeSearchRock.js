@@ -19,5 +19,6 @@ export class GrassyLedgeSearchRock {
 	}
 
 
-}
 
+static getName(){ return "GrassyLedgeSearchRock"; }
+}

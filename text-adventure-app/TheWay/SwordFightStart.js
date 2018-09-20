@@ -8,4 +8,6 @@ export class SwordFightStart {
 	}
 
 
+
+static getName(){ return "SwordFightStart"; }
 }

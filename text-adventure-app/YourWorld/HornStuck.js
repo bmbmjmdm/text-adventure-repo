@@ -13,6 +13,6 @@ export class HornStuck {
 		that.preparePage(" ending?");
 	}
 
+
+static getName(){ return "HornStuck"; }
 }
-
-

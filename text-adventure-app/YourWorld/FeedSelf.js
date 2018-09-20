@@ -15,4 +15,6 @@ export class FeedSelf {
 		
 	}
 
+
+static getName(){ return "FeedSelf"; }
 }

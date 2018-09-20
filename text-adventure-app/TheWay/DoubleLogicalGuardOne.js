@@ -25,4 +25,6 @@ export class DoubleLogicalGuardOne {
 	}
 
 
+
+static getName(){ return "DoubleLogicalGuardOne"; }
 }

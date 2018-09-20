@@ -13,5 +13,6 @@ export class RidgePond {
 		
 		RidgeRocks.createPage(that);
 	}
-}
 
+static getName(){ return "RidgePond"; }
+}

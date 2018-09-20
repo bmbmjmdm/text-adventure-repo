@@ -31,4 +31,6 @@ export class SweepGuardOne {
 	}
 
 
+
+static getName(){ return "SweepGuardOne"; }
 }

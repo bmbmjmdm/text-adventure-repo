@@ -16,4 +16,6 @@ export class GodRepent {
 		
 	}
 	
+
+static getName(){ return "GodRepent"; }
 }

@@ -10,6 +10,6 @@ export class HornImmutable {
 		HornFree.createPage(that);
 	}
 
+
+static getName(){ return "HornImmutable"; }
 }
-
-

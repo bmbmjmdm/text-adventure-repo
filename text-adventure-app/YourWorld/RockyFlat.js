@@ -39,4 +39,6 @@ export class RockyFlat {
 	}
 
 
+
+static getName(){ return "RockyFlat"; }
 }

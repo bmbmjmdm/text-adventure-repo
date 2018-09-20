@@ -13,6 +13,6 @@ export class HornSliding {
 		that.preparePage(" until they feel comfortable enough to live.");
 	}
 
+
+static getName(){ return "HornSliding"; }
 }
-
-

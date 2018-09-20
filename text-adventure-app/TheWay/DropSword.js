@@ -22,4 +22,6 @@ export class DropSword {
 		
 	}
 	
+
+static getName(){ return "DropSword"; }
 }

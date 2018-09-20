@@ -57,4 +57,6 @@ export class StrikeThighGuardOne {
 	}
 
 
+
+static getName(){ return "StrikeThighGuardOne"; }
 }

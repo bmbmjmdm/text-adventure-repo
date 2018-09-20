@@ -43,4 +43,6 @@ export class BearLure {
 	}
 		
 	
+
+static getName(){ return "BearLure"; }
 }

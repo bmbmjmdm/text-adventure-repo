@@ -17,6 +17,6 @@ export class RidgeDoff {
 		RidgeShelter.createPage(that);		
 	}
 
+
+static getName(){ return "RidgeDoff"; }
 }
-
-

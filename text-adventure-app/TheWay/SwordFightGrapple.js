@@ -14,4 +14,6 @@ export class SwordFightGrapple {
 	}
 
 
+
+static getName(){ return "SwordFightGrapple"; }
 }

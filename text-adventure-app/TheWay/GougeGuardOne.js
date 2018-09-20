@@ -31,4 +31,6 @@ export class GougeGuardOne {
 	}
 
 
+
+static getName(){ return "GougeGuardOne"; }
 }

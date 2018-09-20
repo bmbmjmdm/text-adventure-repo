@@ -22,4 +22,6 @@ export class AnnoyGuardOne {
 	}
 
 
+
+static getName(){ return "AnnoyGuardOne"; }
 }

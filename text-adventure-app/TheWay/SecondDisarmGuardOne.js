@@ -44,4 +44,6 @@ export class SecondDisarmGuardOne {
 	}
 
 
+
+static getName(){ return "SecondDisarmGuardOne"; }
 }

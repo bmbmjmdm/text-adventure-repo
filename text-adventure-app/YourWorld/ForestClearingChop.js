@@ -30,4 +30,6 @@ export class ForestClearingChop {
 		
 	}
 	
+
+static getName(){ return "ForestClearingChop"; }
 }

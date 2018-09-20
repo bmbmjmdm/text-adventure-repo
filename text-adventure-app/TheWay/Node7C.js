@@ -34,4 +34,6 @@ export class Node7C {
 		that.preparePage("enter calmly?", OpenDoor);
 	}
 	
+
+static getName(){ return "Node7C"; }
 }

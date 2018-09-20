@@ -25,6 +25,6 @@ export class RidgeShelterContinue {
 		that.preparePage(" Perhaps some kind of meaning beyond such confined terms.");
 	}
 
+
+static getName(){ return "RidgeShelterContinue"; }
 }
-
-

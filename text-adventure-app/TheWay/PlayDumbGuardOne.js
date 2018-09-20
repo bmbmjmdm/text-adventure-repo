@@ -17,4 +17,6 @@ export class PlayDumbGuardOne {
 	}
 
 
+
+static getName(){ return "PlayDumbGuardOne"; }
 }

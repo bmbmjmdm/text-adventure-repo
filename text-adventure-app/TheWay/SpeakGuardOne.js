@@ -14,4 +14,6 @@ export class SpeakGuardOne {
 	}
 
 
+
+static getName(){ return "SpeakGuardOne"; }
 }

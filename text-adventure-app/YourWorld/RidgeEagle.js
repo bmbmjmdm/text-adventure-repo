@@ -13,6 +13,6 @@ export class RidgeEagle {
 		
 	}
 
+
+static getName(){ return "RidgeEagle"; }
 }
-
-

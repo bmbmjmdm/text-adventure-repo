@@ -40,4 +40,6 @@ export class FindThrowables {
 	}
 
 
+
+static getName(){ return "FindThrowables"; }
 }

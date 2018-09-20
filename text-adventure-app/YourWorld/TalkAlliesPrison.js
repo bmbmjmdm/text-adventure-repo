@@ -38,4 +38,6 @@ export class TalkAlliesPrison {
 	}
 
 
+
+static getName(){ return "TalkAlliesPrison"; }
 }

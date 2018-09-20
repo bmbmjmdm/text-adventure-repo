@@ -125,4 +125,6 @@ export class Camping {
 	}
 
 
+
+static getName(){ return "Camping"; }
 }

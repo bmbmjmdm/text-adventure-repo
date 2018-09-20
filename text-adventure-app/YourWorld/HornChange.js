@@ -10,6 +10,6 @@ export class HornChange {
 		HornFree.createPage(that);
 	}
 
+
+static getName(){ return "HornChange"; }
 }
-
-

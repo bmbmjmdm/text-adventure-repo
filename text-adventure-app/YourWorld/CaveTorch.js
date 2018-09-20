@@ -21,5 +21,6 @@ export class CaveTorch {
 	}
 
 
-}
 
+static getName(){ return "CaveTorch"; }
+}

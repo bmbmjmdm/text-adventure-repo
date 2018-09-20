@@ -25,4 +25,6 @@ export class ForestClearingCamp {
 	}
 
 
+
+static getName(){ return "ForestClearingCamp"; }
 }

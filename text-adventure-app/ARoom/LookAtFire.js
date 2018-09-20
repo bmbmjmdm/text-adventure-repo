@@ -26,4 +26,6 @@ export class LookAtFire {
 	}
 
 
+
+static getName(){ return "LookAtFire"; }
 }

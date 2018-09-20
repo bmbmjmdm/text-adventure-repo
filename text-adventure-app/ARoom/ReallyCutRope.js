@@ -10,4 +10,6 @@ export class ReallyCutRope {
 	}
 
 
+
+static getName(){ return "ReallyCutRope"; }
 }

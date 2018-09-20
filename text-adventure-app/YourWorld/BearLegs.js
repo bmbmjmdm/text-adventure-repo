@@ -48,4 +48,6 @@ export class BearLegs {
 	}
 		
 	
+
+static getName(){ return "BearLegs"; }
 }

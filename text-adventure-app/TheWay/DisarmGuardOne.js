@@ -33,4 +33,6 @@ export class DisarmGuardOne {
 	}
 
 
+
+static getName(){ return "DisarmGuardOne"; }
 }

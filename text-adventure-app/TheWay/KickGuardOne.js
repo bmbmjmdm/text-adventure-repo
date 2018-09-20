@@ -17,4 +17,6 @@ export class KickGuardOne {
 	}
 
 
+
+static getName(){ return "KickGuardOne"; }
 }

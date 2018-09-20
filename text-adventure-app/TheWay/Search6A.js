@@ -25,4 +25,6 @@ export class Search6A {
 	}
 
 
+
+static getName(){ return "Search6A"; }
 }

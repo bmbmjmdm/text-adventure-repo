@@ -41,4 +41,6 @@ export class FeedWho {
 		
 	}
 
+
+static getName(){ return "FeedWho"; }
 }

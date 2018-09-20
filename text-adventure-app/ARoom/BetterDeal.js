@@ -13,4 +13,6 @@ export class BetterDeal {
 	}
 
 
+
+static getName(){ return "BetterDeal"; }
 }

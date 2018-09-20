@@ -25,4 +25,6 @@ export class TurnAroundRocky {
 	}
 
 
+
+static getName(){ return "TurnAroundRocky"; }
 }

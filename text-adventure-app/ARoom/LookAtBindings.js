@@ -29,4 +29,6 @@ export class LookAtBindings {
 	}
 
 
+
+static getName(){ return "LookAtBindings"; }
 }

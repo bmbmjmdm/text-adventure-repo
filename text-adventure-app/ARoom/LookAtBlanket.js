@@ -56,4 +56,6 @@ export class LookAtBlanket {
 	}
 
 
+
+static getName(){ return "LookAtBlanket"; }
 }

@@ -93,4 +93,6 @@ export class ShimmyLedge {
 	}
 
 
+
+static getName(){ return "ShimmyLedge"; }
 }

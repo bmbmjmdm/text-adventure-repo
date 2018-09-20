@@ -17,4 +17,6 @@ export class BurnBlanket {
 	}
 
 
+
+static getName(){ return "BurnBlanket"; }
 }

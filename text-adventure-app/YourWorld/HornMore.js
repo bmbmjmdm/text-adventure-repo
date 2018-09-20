@@ -10,6 +10,6 @@ export class HornMore {
 		HornSliding.createPage(that);
 	}
 
+
+static getName(){ return "HornMore"; }
 }
-
-

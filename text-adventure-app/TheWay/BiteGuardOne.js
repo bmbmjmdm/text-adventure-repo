@@ -46,4 +46,6 @@ export class BiteGuardOne {
 	}
 
 
+
+static getName(){ return "BiteGuardOne"; }
 }

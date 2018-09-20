@@ -14,5 +14,6 @@ export class SpiralMountainContinue {
 	}
 
 
-}
 
+static getName(){ return "SpiralMountainContinue"; }
+}

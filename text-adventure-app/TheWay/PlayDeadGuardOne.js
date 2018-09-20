@@ -36,4 +36,6 @@ export class PlayDeadGuardOne {
 	}
 
 
+
+static getName(){ return "PlayDeadGuardOne"; }
 }

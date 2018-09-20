@@ -29,5 +29,6 @@ export class SpiralCamp {
 	}
 
 
-}
 
+static getName(){ return "SpiralCamp"; }
+}

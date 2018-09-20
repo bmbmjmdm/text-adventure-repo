@@ -11,4 +11,6 @@ export class Escape {
 		Levels.createPage(that);
 	}
 	
+
+static getName(){ return "Escape"; }
 }

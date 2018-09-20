@@ -20,4 +20,6 @@ export class DrinkWater {
 		
 	}
 
+
+static getName(){ return "DrinkWater"; }
 }

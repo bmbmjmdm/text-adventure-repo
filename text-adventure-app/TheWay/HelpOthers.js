@@ -16,4 +16,6 @@ export class HelpOthers {
 		
 	}
 	
+
+static getName(){ return "HelpOthers"; }
 }

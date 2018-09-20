@@ -50,4 +50,6 @@ export class ClimbRope {
 	}
 
 
+
+static getName(){ return "ClimbRope"; }
 }

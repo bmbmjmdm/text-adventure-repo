@@ -10,6 +10,6 @@ export class HornBlip {
 		HornDig.createPage(that);
 	}
 
+
+static getName(){ return "HornBlip"; }
 }
-
-

@@ -66,4 +66,6 @@ export class GodDefines {
 		}
 	}
 	
+
+static getName(){ return "GodDefines"; }
 }

@@ -24,4 +24,6 @@ export class RockyPathSearch {
 	}
 
 
+
+static getName(){ return "RockyPathSearch"; }
 }

@@ -29,4 +29,6 @@ export class Strike1GuardFour {
 		}
 	}
 	
+
+static getName(){ return "Strike1GuardFour"; }
 }

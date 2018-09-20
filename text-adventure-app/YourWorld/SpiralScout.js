@@ -16,5 +16,6 @@ export class SpiralScout {
 	}
 
 
-}
 
+static getName(){ return "SpiralScout"; }
+}

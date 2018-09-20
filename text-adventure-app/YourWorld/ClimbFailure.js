@@ -57,5 +57,6 @@ export class ClimbFailure {
 	}
 
 
-}
 
+static getName(){ return "ClimbFailure"; }
+}

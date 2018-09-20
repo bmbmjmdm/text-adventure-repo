@@ -18,4 +18,6 @@ export class ARoom {
 	}
 
 
+
+static getName(){ return "ARoom"; }
 }

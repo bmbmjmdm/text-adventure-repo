@@ -11,4 +11,6 @@ export class Leave {
 		Levels.createPage(that);
 	}
 	
+
+static getName(){ return "Leave"; }
 }

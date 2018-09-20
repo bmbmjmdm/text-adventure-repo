@@ -15,4 +15,6 @@ export class GodForgives {
 		that.preparePage(" which you can't do from inside a cell.");
 	}
 	
+
+static getName(){ return "GodForgives"; }
 }

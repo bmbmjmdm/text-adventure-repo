@@ -15,4 +15,6 @@ export class ClimbOverhang {
 	}
 
 
+
+static getName(){ return "ClimbOverhang"; }
 }

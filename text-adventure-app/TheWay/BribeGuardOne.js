@@ -41,4 +41,6 @@ export class BribeGuardOne {
 	}
 
 
+
+static getName(){ return "BribeGuardOne"; }
 }

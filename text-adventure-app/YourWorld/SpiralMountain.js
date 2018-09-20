@@ -18,5 +18,6 @@ export class SpiralMountain {
 	}
 
 
-}
 
+static getName(){ return "SpiralMountain"; }
+}

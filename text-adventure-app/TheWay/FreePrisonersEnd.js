@@ -31,4 +31,6 @@ export class FreePrisonersEnd {
 		}
 	}
 	
+
+static getName(){ return "FreePrisonersEnd"; }
 }

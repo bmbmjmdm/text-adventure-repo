@@ -146,4 +146,6 @@ export class Sleep {
 		
 	}
 
+
+static getName(){ return "Sleep"; }
 }

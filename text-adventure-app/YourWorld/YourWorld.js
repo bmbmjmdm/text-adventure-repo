@@ -31,4 +31,6 @@ export class YourWorld {
 	}
 
 
+
+static getName(){ return "YourWorld"; }
 }

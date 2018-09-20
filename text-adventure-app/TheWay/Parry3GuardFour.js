@@ -29,4 +29,6 @@ export class Parry3GuardFour {
 		}
 	}
 	
+
+static getName(){ return "Parry3GuardFour"; }
 }

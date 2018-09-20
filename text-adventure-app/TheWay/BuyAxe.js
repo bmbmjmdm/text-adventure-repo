@@ -16,4 +16,6 @@ export class BuyAxe {
 		that.preparePage(" The large metal gate stares at you in silence, possibly judging.");
 	}
 	
+
+static getName(){ return "BuyAxe"; }
 }

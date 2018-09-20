@@ -12,5 +12,6 @@ export class RidgeStraight {
 	}
 
 
-}
 
+static getName(){ return "RidgeStraight"; }
+}

@@ -54,5 +54,6 @@ export class RidgeBalance {
 		}
 	}
 
-}
 
+static getName(){ return "RidgeBalance"; }
+}

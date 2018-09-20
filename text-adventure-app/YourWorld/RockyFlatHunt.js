@@ -27,4 +27,6 @@ export class RockyFlatHunt {
 	}
 
 
+
+static getName(){ return "RockyFlatHunt"; }
 }

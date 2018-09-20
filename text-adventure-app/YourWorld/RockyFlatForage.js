@@ -42,4 +42,6 @@ export class RockyFlatForage {
 	}
 
 
+
+static getName(){ return "RockyFlatForage"; }
 }

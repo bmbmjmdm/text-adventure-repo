@@ -14,4 +14,6 @@ export class LiftGuardThree {
 	}
 
 
+
+static getName(){ return "LiftGuardThree"; }
 }

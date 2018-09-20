@@ -17,4 +17,6 @@ export class LogicalGuardOne {
 	}
 
 
+
+static getName(){ return "LogicalGuardOne"; }
 }

@@ -28,4 +28,6 @@ export class ForestPathSearch {
 	}
 
 
+
+static getName(){ return "ForestPathSearch"; }
 }

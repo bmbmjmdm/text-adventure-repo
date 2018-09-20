@@ -18,4 +18,6 @@ export class ReallyKickTable {
 	}
 
 
+
+static getName(){ return "ReallyKickTable"; }
 }

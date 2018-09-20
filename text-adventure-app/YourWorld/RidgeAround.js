@@ -24,5 +24,6 @@ export class RidgeAround {
 		}
 	}
 
-}
 
+static getName(){ return "RidgeAround"; }
+}

@@ -21,4 +21,6 @@ export class BearReach {
 	}
 		
 	
+
+static getName(){ return "BearReach"; }
 }

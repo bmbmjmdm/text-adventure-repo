@@ -33,4 +33,6 @@ export class BearEscape {
 	}
 		
 	
+
+static getName(){ return "BearEscape"; }
 }

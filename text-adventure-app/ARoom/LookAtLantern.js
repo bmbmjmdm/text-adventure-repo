@@ -10,4 +10,6 @@ export class LookAtLantern {
 	}
 
 
+
+static getName(){ return "LookAtLantern"; }
 }

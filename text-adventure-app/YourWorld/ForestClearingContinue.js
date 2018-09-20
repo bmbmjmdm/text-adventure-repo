@@ -28,4 +28,6 @@ export class ForestClearingContinue {
 	}
 		
 	
+
+static getName(){ return "ForestClearingContinue"; }
 }

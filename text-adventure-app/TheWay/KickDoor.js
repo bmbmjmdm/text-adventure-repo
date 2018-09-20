@@ -29,4 +29,6 @@ export class KickDoor {
 		
 	}
 	
+
+static getName(){ return "KickDoor"; }
 }

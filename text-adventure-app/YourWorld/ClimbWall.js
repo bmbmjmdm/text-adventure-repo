@@ -33,4 +33,6 @@ export class ClimbWall {
 	}
 
 
+
+static getName(){ return "ClimbWall"; }
 }

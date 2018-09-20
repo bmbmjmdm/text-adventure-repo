@@ -20,4 +20,6 @@ export class LargeFire {
 	}
 
 
+
+static getName(){ return "LargeFire"; }
 }

@@ -45,5 +45,6 @@ export class CaveBlind {
 	}
 
 
-}
 
+static getName(){ return "CaveBlind"; }
+}

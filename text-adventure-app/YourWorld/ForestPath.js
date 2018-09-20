@@ -17,4 +17,6 @@ export class ForestPath {
 	}
 
 
+
+static getName(){ return "ForestPath"; }
 }

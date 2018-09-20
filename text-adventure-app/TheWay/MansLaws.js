@@ -15,4 +15,6 @@ export class MansLaws {
 		
 	}
 	
+
+static getName(){ return "MansLaws"; }
 }

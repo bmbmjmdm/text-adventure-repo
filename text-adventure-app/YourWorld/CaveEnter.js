@@ -30,5 +30,6 @@ export class CaveEnter {
 	}
 
 
-}
 
+static getName(){ return "CaveEnter"; }
+}

@@ -18,4 +18,6 @@ export class BearToLedge {
 	}
 		
 	
+
+static getName(){ return "BearToLedge"; }
 }

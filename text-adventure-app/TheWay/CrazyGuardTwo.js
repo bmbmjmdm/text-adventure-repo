@@ -18,4 +18,6 @@ export class CrazyGuardTwo {
 	}
 
 
+
+static getName(){ return "CrazyGuardTwo"; }
 }

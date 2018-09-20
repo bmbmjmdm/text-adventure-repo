@@ -44,4 +44,6 @@ export class HornSummit{
 	}
 		
 
+
+static getName(){ return "HornSummit"; }
 }

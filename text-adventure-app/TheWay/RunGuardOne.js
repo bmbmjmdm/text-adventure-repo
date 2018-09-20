@@ -17,4 +17,6 @@ export class RunGuardOne {
 	}
 
 
+
+static getName(){ return "RunGuardOne"; }
 }

@@ -11,5 +11,6 @@ export class CaveSneak {
 	}
 
 
-}
 
+static getName(){ return "CaveSneak"; }
+}

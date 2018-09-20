@@ -24,4 +24,6 @@ export class BearSurprise {
 	}
 		
 	
+
+static getName(){ return "BearSurprise"; }
 }

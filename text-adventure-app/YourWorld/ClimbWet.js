@@ -12,4 +12,6 @@ export class ClimbWet {
 	}
 
 
+
+static getName(){ return "ClimbWet"; }
 }

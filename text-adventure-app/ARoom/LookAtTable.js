@@ -14,4 +14,6 @@ export class LookAtTable {
 	}
 
 
+
+static getName(){ return "LookAtTable"; }
 }

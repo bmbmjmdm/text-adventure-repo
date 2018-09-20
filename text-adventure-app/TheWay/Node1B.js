@@ -115,4 +115,6 @@ export class Node1B {
 	}
 
 
+
+static getName(){ return "Node1B"; }
 }

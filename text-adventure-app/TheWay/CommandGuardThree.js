@@ -37,4 +37,6 @@ export class CommandGuardThree {
 	}
 
 
+
+static getName(){ return "CommandGuardThree"; }
 }

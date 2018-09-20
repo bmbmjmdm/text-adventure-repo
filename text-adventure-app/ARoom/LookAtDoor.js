@@ -45,4 +45,6 @@ export class LookAtDoor {
 	}
 
 
+
+static getName(){ return "LookAtDoor"; }
 }

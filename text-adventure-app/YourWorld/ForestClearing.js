@@ -41,4 +41,6 @@ export class ForestClearing {
 	}
 
 
+
+static getName(){ return "ForestClearing"; }
 }

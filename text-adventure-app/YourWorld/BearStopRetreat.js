@@ -19,4 +19,6 @@ export class BearStopRetreat {
 	}
 		
 	
+
+static getName(){ return "BearStopRetreat"; }
 }

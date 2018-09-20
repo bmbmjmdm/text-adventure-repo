@@ -17,4 +17,6 @@ export class ScareGuardThree {
 	}
 
 
+
+static getName(){ return "ScareGuardThree"; }
 }

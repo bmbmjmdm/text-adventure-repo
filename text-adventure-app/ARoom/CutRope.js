@@ -15,4 +15,6 @@ export class CutRope {
 	}
 
 
+
+static getName(){ return "CutRope"; }
 }

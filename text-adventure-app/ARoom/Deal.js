@@ -13,4 +13,6 @@ export class Deal {
 	}
 
 
+
+static getName(){ return "Deal"; }
 }

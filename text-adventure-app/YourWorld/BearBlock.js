@@ -53,4 +53,6 @@ export class BearBlock {
 	}
 		
 	
+
+static getName(){ return "BearBlock"; }
 }

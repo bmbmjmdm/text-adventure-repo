@@ -35,4 +35,6 @@ export class HarmSelfGuardOne {
 	}
 
 
+
+static getName(){ return "HarmSelfGuardOne"; }
 }

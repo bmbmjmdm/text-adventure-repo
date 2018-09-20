@@ -25,5 +25,6 @@ export class GrassyLedge {
 	}
 
 
-}
 
+static getName(){ return "GrassyLedge"; }
+}

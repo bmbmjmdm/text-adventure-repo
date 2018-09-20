@@ -57,5 +57,6 @@ export class CaveKill {
 	}
 
 
-}
 
+static getName(){ return "CaveKill"; }
+}

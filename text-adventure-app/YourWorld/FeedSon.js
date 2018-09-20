@@ -27,4 +27,6 @@ export class FeedSon {
 		
 	}
 
+
+static getName(){ return "FeedSon"; }
 }

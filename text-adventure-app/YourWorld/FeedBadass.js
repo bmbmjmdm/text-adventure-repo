@@ -22,4 +22,6 @@ export class FeedBadass {
 		
 	}
 
+
+static getName(){ return "FeedBadass"; }
 }

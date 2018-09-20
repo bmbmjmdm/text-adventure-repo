@@ -44,4 +44,6 @@ export class RockyPath {
 	}
 
 
+
+static getName(){ return "RockyPath"; }
 }

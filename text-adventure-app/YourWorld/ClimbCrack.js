@@ -19,4 +19,6 @@ export class ClimbCrack {
 	}
 
 
+
+static getName(){ return "ClimbCrack"; }
 }

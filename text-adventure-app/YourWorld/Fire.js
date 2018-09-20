@@ -26,4 +26,6 @@ export class Fire {
 	}
 
 
+
+static getName(){ return "Fire"; }
 }

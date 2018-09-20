@@ -17,4 +17,6 @@ export class DecieveGuardThree {
 	}
 
 
+
+static getName(){ return "DecieveGuardThree"; }
 }

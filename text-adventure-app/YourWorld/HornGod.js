@@ -10,6 +10,6 @@ export class HornGod {
 		HornDig.createPage(that);
 	}
 
+
+static getName(){ return "HornGod"; }
 }
-
-

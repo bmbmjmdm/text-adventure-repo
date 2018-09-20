@@ -14,4 +14,6 @@ export class ClimbDry {
 	}
 
 
+
+static getName(){ return "ClimbDry"; }
 }

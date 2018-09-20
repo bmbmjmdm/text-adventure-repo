@@ -23,5 +23,6 @@ export class ClimbFinalStretch {
 	}
 
 
-}
 
+static getName(){ return "ClimbFinalStretch"; }
+}

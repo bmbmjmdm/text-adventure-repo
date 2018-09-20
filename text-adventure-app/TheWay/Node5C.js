@@ -108,4 +108,6 @@ export class Node5C {
 	}
 
 
+
+static getName(){ return "Node5C"; }
 }

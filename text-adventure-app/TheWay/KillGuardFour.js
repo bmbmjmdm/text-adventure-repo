@@ -20,4 +20,6 @@ export class KillGuardFour {
 		that.preparePage("leave.", Leave);
 	}
 	
+
+static getName(){ return "KillGuardFour"; }
 }

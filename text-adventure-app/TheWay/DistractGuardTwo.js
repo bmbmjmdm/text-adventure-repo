@@ -15,4 +15,6 @@ export class DistractGuardTwo {
 	}
 
 
+
+static getName(){ return "DistractGuardTwo"; }
 }

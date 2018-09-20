@@ -33,5 +33,6 @@ export class ClimbSuccess {
 	}
 
 
-}
 
+static getName(){ return "ClimbSuccess"; }
+}

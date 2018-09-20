@@ -17,4 +17,6 @@ export class PickPocketGuardOne {
 	}
 
 
+
+static getName(){ return "PickPocketGuardOne"; }
 }

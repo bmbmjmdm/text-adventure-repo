@@ -14,5 +14,6 @@ export class RidgeNarrow {
 		that.preparePage(" along the slope?");
 	}
 
-}
 
+static getName(){ return "RidgeNarrow"; }
+}

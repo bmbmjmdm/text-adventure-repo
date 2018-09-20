@@ -18,4 +18,6 @@ export class Grapple3GuardFour {
 		
 	}
 	
+
+static getName(){ return "Grapple3GuardFour"; }
 }

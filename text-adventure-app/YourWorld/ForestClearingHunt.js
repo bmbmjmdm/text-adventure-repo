@@ -14,4 +14,6 @@ export class ForestClearingHunt {
 		that.preparePage(" part of you sullen and no longer hungry. You have "+YourWorldData.Energy+" energy.");
 	}
 	
+
+static getName(){ return "ForestClearingHunt"; }
 }

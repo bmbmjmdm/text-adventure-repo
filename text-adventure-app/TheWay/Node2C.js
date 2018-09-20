@@ -127,4 +127,6 @@ export class Node2C {
 	}
 
 
+
+static getName(){ return "Node2C"; }
 }

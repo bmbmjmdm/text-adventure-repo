@@ -35,4 +35,6 @@ export class Scream {
 	}
 
 
+
+static getName(){ return "Scream"; }
 }

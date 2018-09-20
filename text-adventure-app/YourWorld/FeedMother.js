@@ -26,4 +26,6 @@ export class FeedMother {
 		
 	}
 
+
+static getName(){ return "FeedMother"; }
 }

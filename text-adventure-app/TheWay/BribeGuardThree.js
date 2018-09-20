@@ -38,4 +38,6 @@ export class BribeGuardThree {
 	}
 
 
+
+static getName(){ return "BribeGuardThree"; }
 }

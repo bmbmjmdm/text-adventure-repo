@@ -28,4 +28,6 @@ export class BearConfront {
 	}
 		
 	
+
+static getName(){ return "BearConfront"; }
 }

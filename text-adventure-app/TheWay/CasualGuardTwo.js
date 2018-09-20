@@ -18,4 +18,6 @@ export class CasualGuardTwo {
 	}
 
 
+
+static getName(){ return "CasualGuardTwo"; }
 }

@@ -34,4 +34,6 @@ export class Grapple4GuardFour {
 		}
 	}
 	
+
+static getName(){ return "Grapple4GuardFour"; }
 }

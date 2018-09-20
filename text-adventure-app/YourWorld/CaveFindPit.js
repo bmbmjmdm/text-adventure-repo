@@ -34,5 +34,6 @@ export class CaveFindPit {
 	}
 
 
-}
 
+static getName(){ return "CaveFindPit"; }
+}

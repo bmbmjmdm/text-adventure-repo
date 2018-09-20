@@ -21,4 +21,6 @@ export class BearApproach {
 	}
 		
 	
+
+static getName(){ return "BearApproach"; }
 }
