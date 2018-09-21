@@ -30,7 +30,7 @@ export class LookAtDoor {
 			that.preparePage("room.", LookAroundRoom);
 		}
 		else if(ARoomData.BrokeLantern){
-			that.preparePage("With the ");
+			that.preparePage("The door looks to be warped wood with a small, barred opening in its center. With the ");
 			that.preparePage("fire ", LookAtFire);
 			that.preparePage("growing bigger, you really would like to leave the ");
 			that.preparePage("room", LookAroundRoom);

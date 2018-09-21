@@ -2,6 +2,7 @@ import {LookAroundRoom} from './LookAroundRoom.js';
 import {LookAtBindings} from './LookAtBindings.js';
 import {LookAtFire} from './LookAtFire.js';
 import {LookAtDoor} from './LookAtDoor.js';
+import {LookAtWindow} from './LookAtWindow.js';
 import {LookAtGlass} from './LookAtGlass.js';
 import {ThrowRope} from './ThrowRope.js';
 import {CutRope} from './CutRope.js';
@@ -12,9 +13,14 @@ export class LookAtRope {
 	static createPage(that){
 		if(ARoomData.CutBindings){
 			that.preparePage("The rope is slowly burning now, but you can still grab it. Just be careful, and quick. Do you want to ");
-			that.preparePage("throw the rope?", ThrowRope);
-			that.preparePage(" Or ");
-			that.preparePage("wait?", LookAroundRoom);
+			that.preparePage("throw the rope", ThrowRope);
+			that.preparePage(" through the ");
+			that.preparePage("window?", LookAtWindow);
+			that.preparePage("The ");
+			that.preparePage("door", LookAtDoor);
+			that.preparePage(" has some bars that could be helpful. ");
+			that.preparePage(" Or you could just ");
+			that.preparePage("wait.", LookAroundRoom);
 			if(!ARoomData.ThrewGlass){
 				that.preparePage(" You can also use the ");
 				that.preparePage("glass", LookAtGlass);

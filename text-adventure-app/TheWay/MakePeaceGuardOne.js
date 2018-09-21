@@ -50,7 +50,7 @@ export class MakePeaceGuardOne {
 				TheWayData.GuardOne.Health = 0;
 				TheWayData.HasWeapon.Sword = true;
 				TheWayData.HasKeys = true;
-				that.preparePage("You gather the strength to push the guard away and scramble to a wall, sitting up against it. You hold your wound closed as best you can as you watch the guard across from you. She's bleeding too. Worse, in fact. After a few seconds she falls over, limp, and you stand with a lump in your throat, blood on your hands. You kick her to be sure, and hear the jingle of keys. You collect them, along with her sword, in an eerie silence as you kneel over the body. You look away, horrified. Try to ");
+				that.preparePage("You gather the strength to push the guard away and scramble to a wall, sitting up against it. You hold your wound closed as best you can as you watch the guard across from you. She's injured too. Worse, in fact. After a few seconds she falls over, limp, and you stand with a lump in your throat... You kick her to be sure, and hear the jingle of keys. You collect them, along with her sword, in an eerie silence as you kneel over the body. You look away, horrified. Try to ");
 				that.preparePage("take your mind off her.", Node1B);
 			}
 			

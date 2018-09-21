@@ -18,7 +18,7 @@ export class LookAtBlanket {
 			that.preparePage("sleep", CurlUpInBlanket);
 			that.preparePage(" at this time. Hey! Maybe you can ");
 			that.preparePage("throw it on the fire! ", BurnBlanket);
-			that.preparePage("It could quelch the flame, but then again, it's pretty thin. You should be carefull... Actually, it just might be thin enough to fit ");
+			that.preparePage("It could quelch the flame, but then again, it's pretty thin. Too thin. You should be carefull... Actually, it just might be small enough to fit ");
 			that.preparePage("through the window.", ThrowBlanket);
 			that.preparePage(" But how would that help? Looking around the ");
 			that.preparePage("room,", LookAroundRoom);

@@ -31,7 +31,7 @@ export class ClimbRope {
 			ARoomData.Health = ARoomData.Health - 1;
 			that.preparePage("landing on a hard floor that bruises your left leg deep. You take 1 damage and now have "+ARoomData.Health+" health. You wheeze and feel a dull pain through your whole body, but at least you're alive. ");
 		}
-		that.preparePage("It's dark out here, the only visibility is from the room ungulfed with flames behind you, light peering through the bars on the door. It illuminates something in the distance. Someone. Who is that?");
+		that.preparePage("It's dark out here, the only visibility is from the room engulfed with flames behind you, light peering through the bars on the door. It illuminates something in the distance. Someone. Who is that?");
 
 		if(ARoomData.MadeDeal || ARoomData.MadeBetterDeal){
 			that.preparePage(" A voice comes not from them, but from your left. It's the same one you heard before, \"Hey! Hey let me out of here! Quick! We had a deal!\" You see a door next to your own, where the voice is clearly coming from. At the same time, you can see the figure in the distance approaching. ");
