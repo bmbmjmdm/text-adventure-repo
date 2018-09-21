@@ -16,17 +16,17 @@ export class LookAtRope {
 			that.preparePage("throw the rope", ThrowRope);
 			that.preparePage(" through the ");
 			that.preparePage("window?", LookAtWindow);
-			that.preparePage("The ");
+			that.preparePage(" The ");
 			that.preparePage("door", LookAtDoor);
-			that.preparePage(" has some bars that could be helpful. ");
-			that.preparePage(" Or you could just ");
+			that.preparePage(" has some bars that could be helpful.");
+			that.preparePage(" Or you can just ");
 			that.preparePage("wait.", LookAroundRoom);
 			if(!ARoomData.ThrewGlass){
-				that.preparePage(" You can also use the ");
+				that.preparePage(" The ");
 				that.preparePage("glass", LookAtGlass);
-				that.preparePage(" to ");
-				that.preparePage("cut the rope ", CutRope);
-				that.preparePage("if you really want to.");
+				that.preparePage(" could be used to ");
+				that.preparePage("cut the rope...", CutRope);
+				that.preparePage(" if you really want to.");
 			}
 			
 		}

@@ -12,7 +12,6 @@ export class TheWayFile extends LevelFile{
 	
 	saveData(that){
 		this.data = FileManager.jsonWriter(TheWayData);
-		console.log(this.data);
 		this.loadFunction = "setTheWayData";
 		this.nameSpace = "TheWay"
 		this.saveState(that);

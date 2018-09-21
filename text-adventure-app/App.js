@@ -30,7 +30,7 @@ export default class App extends React.Component {
 			displayElements.push((<ClickText key={i} ref={component => this.latestElement = component} onPress={() => {this.handleClick(dtNode.nextPage, this)}}>{dtNode.text}</ClickText>));
 		}
 		else{
-			displayElements.push((<DefaultText key={i} ref={component => this.latestElement = component} onPress={() => {this.speedUp()}}>{dtNode.text}</DefaultText>));
+			displayElements.push((<DefaultText key={i} ref={component => this.latestElement = component} >{dtNode.text}</DefaultText>));
 		}
 	});
 	
@@ -47,8 +47,6 @@ export default class App extends React.Component {
 	//Text is here to display our ClickText and DefaultText elements in a Text-style layout rather than a FlexView-style layout (concatting them rather than every text being in its own "box")
 	return (
 		<View style={styles.container} onMoveShouldSetResponderCapture={this.didSwipe} onResponderMove={()=>{this.handleSwipe(this)}}>
-		<TouchableWithoutFeedback onPress={this.speedUp}  onPressIn={this.speedUp} >
-			<View style={styles.container} onStartShouldSetResponder={() => true} >
 				<ScrollView ref='scrollView'
 							onContentSizeChange={(w, h) => {this.contentHeight = h;  this.scrollToBottom(true);}}
 							onLayout={ev => this.scrollViewHeight = ev.nativeEvent.layout.height}
@@ -59,8 +57,6 @@ export default class App extends React.Component {
 						{displayElements}
 					</Text>
 				</ScrollView>
-			</View>
-		</TouchableWithoutFeedback>
 		</View>
     );
   }
@@ -70,12 +66,8 @@ export default class App extends React.Component {
 	
 	//every 20 milliseconds, add a letter to the children rendered in this view 
 	//if there are no more letters to type, stop 
-	typeAnimationActual(scale = 1){
+	typeAnimationActual(scale){
 		this.clearTimeout();
-		
-		if(globalScaleUp > scale){
-			scale = globalScaleUp
-		}
 		
 		if(this.state.toShowText.length > 0){
 			this.allowClicks = false;
@@ -89,9 +81,6 @@ export default class App extends React.Component {
 		
 	}
 	
-	//allows user to speed up typing by touching screen
-	globalScaleUp = 1;
-	
 	//some setup is done prior to actually calling the typeAnimation function aka typeAnimationActual
 	typeAnimation(){
 		//preserve a copy of all the text we're about to display incase we need to save
@@ -99,23 +88,14 @@ export default class App extends React.Component {
 		
 		FileManager.writing = false; 
 		
-		//by default we assume we've shown this text before and set the speed to 10 letters per display
-		var scale = 10;
-		globalScaleUp = 10;
-		
-		//we check each piece of text to see if we've shown it previously. if ALL text has been displayed before, go fast. if ANY text hasn't, go slow
-		for(nextText in this.state.toShowText){
-			var textHash = JSON.stringify(this.state.toShowText[nextText]);
-			
-			if(this.visitedTextMap[textHash] == true){
-				//so far so good
-			}
-			else{
-				//uh oh we haven't shown this text before. set the speed to 1 letter per display 
-				scale = 1;
-				globalScaleUp = 1;
-				this.visitedTextMap[textHash] = true;
-			}
+		//figure out how fast we want to type the screen based on how much content needs typing 
+		var letters = 0;
+		for (i=0; i< this.state.toShowText.length; i++){			  
+			letters += this.state.toShowText[i].text.length;
+		}
+		var scale = Math.floor(letters/20);
+		if(scale < 1){
+			scale = 1;
 		}
 		
 		
@@ -379,16 +359,6 @@ export default class App extends React.Component {
 	  
 	}
   
-  //speed up animation when user clicks screen while text is typing 
-  speedUp(){
-	if(globalScaleUp < 10){
-		globalScaleUp = 10;	
-	}
-	else{
-		globalScaleUp++;
-	}
-  }
-  
   handleClick(nextPage, that){
 	  //can we click?
 	  if(that.allowClicks){
@@ -405,16 +375,14 @@ export default class App extends React.Component {
 			  letters += that.state.displayedText[i].text.length;
 		  }
 		  var scale = Math.floor(letters/10);
+		  if(scale < 1){
+			  scale = 1;
+		  }
 		  
 		  //now, erase the screen
 		  that.fadeAnimation(nextPage, scale);
 		  //when that finishes, it will continue with handleClickAfterFade(nextPage)
 		  
-	  }
-	  
-	  //we are in the middle of typing. while we cannot allow the user to click a word, we do allow them to speed up typing
-	  else{
-		  this.speedUp();		  
 	  }
   }
   
@@ -530,8 +498,6 @@ export default class App extends React.Component {
 	  console.ignoredYellowBox = ['Setting a timer'];
 	  //the state is clean to start, ready to be typed into 
 	  this.state = {displayedText: [], toShowText: [], allowClicks: false};  
-	  //all text displays at the slow rate to start, then added to this map to see if it should be displayed faster next time
-	  this.visitedTextMap = {};
 	  //our primary view(s) should adapt to text being added 
 	  this.contentHeight = 0;
 	  this.scrollViewHeight= 0;
@@ -564,6 +530,7 @@ export default class App extends React.Component {
 	
 	//utility function for moving the ScrollView down as text is rendered
   scrollToBottom(animated = true) {
+	/*if(!this.allowClicks){
 	if(!this.scrolling){
 		const scrollHeight = this.contentHeight - this.scrollViewHeight;
 		if (scrollHeight > 0) {
@@ -571,6 +538,19 @@ export default class App extends React.Component {
 		scrollResponder.scrollResponderScrollTo({x: 0, y: scrollHeight, animated});
 		}
 	}
+	}
+	else{
+		this.scrollToTop();
+	}*/
+  }
+  
+  	//utility function for moving the ScrollView up when text is finished 
+  scrollToTop(animated = true) {
+	const scrollHeight = this.contentHeight - this.scrollViewHeight;
+	if (scrollHeight > 0) {
+	this.refs.scrollView.scrollTo({x: 0, y: 0, animated});
+	}
+	
   }
   
   
