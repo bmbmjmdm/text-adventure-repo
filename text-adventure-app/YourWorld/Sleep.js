@@ -8,7 +8,7 @@ export class Sleep {
 		var dead = false;
 		YourWorldData.Campfire = false;
 		
-		that.preparePage("You find some soft earth to rest your head, just about anything will do given how tired you are. The distant howls in the darkness are...concerning, but you manage to slip away into unconciousness like you were born to. ");
+		that.preparePage("You find some soft earth to rest your head, just about anything will do given how tired you are. The distant howls in the darkness are... concerning, but you manage to slip away into unconciousness like you were born to. ");
 		
 		//sleeping with negative energy means someone might die 
 		if(YourWorldData.Energy < 0){

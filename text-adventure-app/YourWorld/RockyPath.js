@@ -8,10 +8,10 @@ export class RockyPath {
 	static createPage(that){
 		YourWorldData.Energy -= 20; 
 		
-		that.preparePage("You shield your eyes from the sun as you look towards the mountain top. You'll make it...you have to. ");
+		that.preparePage("You shield your eyes from the sun as you look towards the mountain top. You'll make it... you have to. ");
 		
 		if(YourWorldData.Allies > 0){
-			that.preparePage("As you get ready to set off, the mother traveling with you approaches. \"I...I know I'm not strong. My husband always said I have the physique of a princess,\" she laughs fondly, holding one hand over her wrist and twisting her wounds, \"but I'll do my best. Jim-Tim though... I can't imagine letting him climb that thing on his own. I don't know if I can guide him up either...I...\" Her gaze wonders to the ground. ");
+			that.preparePage("As you get ready to set off, the mother traveling with you approaches. \"I... I know I'm not strong. My husband always said I have the physique of a princess,\" she laughs fondly, holding one hand over her wrist and twisting her wounds, \"but I'll do my best. Jim-Tim though... I can't imagine letting him climb that thing on his own. I don't know if I can guide him up either... I...\" Her gaze wonders to the ground. ");
 			
 			if(YourWorldData.FoulGuy){
 				that.preparePage("The rank-smelling man, with a plump belly and shaggy, short hair, approaches. \"I can look out for the little one.\" He begins reaching forward when the child emits a siren, \"NoooooOOOOOOO!\" The man backs off, his eyes towards the sky and hands in pockets. He whistles and shrugs. ");

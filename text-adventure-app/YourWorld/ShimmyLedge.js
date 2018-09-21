@@ -15,7 +15,7 @@ export class ShimmyLedge {
 			YourWorldData.Flint ++;
 			YourWorldData.SharpRocks ++;
 			
-			that.preparePage("You wait until the breeze settles, then inch a foot out onto the ledge. It's a long way down, not much room on here either... you keep going. Your heart is in your throat by the time you're two steps out, but it seems to hold! Three steps, four, the trees far below beg you to stare at them but you keep your focus forward. The sun on your back, your arms are stretched wide to hug the wall. You take a step- a rock crumbles under your foot drags another one with it, then two, three, your foot drops as you grasp for something, anything to keep you standing. Your legs scrapes part of the ledge and opens a fresh wound as your hands pull you back up with small stones protruding from the wall. ");
+			that.preparePage("You wait until the breeze settles, then inch a foot out onto the ledge. It's a long way down, not much room on here either... you keep going. Your heart is in your throat by the time you're two steps out, but it seems to hold! Three steps, four, the trees far below beg you to stare at them but you keep your focus forward. The sun on your back, your arms are stretched wide to hug the wall. You take a step- a rock crumbles under your foot and drags another one with it, then two, three, your foot drops as you grasp for something, anything to keep you standing. Your legs scrape part of the ledge and opens a fresh wound as your hands pull you back up with small stones protruding from the wall. ");
 			
 			//dead
 			if(YourWorldData.Health <= 0){
