@@ -12,6 +12,14 @@ export class RidgeNarrow {
 		that.preparePage(" or take your time to ");
 		that.preparePage("forge a path", RidgeForge);
 		that.preparePage(" along the slope?");
+		
+		if(YourWorldData.BadassGal){
+			that.preparePage(" \"We shouldn't be taking our time in these clouds.\" The older woman looks around worriedly. \"I don't trust them.\"");
+		}
+		
+		if(YourWorldData.OldGuy){
+			that.preparePage(" \"I don trust that ledge to hold.\" The balding man says, an arrogant glaze on his words. \"Don let those clouds scare ya, kid, fallin'll be worse.\"");
+		}
 	}
 
 

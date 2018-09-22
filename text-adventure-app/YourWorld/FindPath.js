@@ -12,6 +12,10 @@ export class FindPath {
 		that.preparePage(" will require less climbing, for sure, but who knows what lives in those woods? The only other option is a seemingly climbable ");
 		that.preparePage("rocky path", RockyPath);
 		that.preparePage(" up the great face of the mountain, which zigs and zags across the colorful stone. It looks gradual enough... most of the way... you think.");
+		
+		if(YourWorldData.Son){
+			that.preparePage(" The young boy holds his mother's hand and points up to the great horn of the mountain. He tries to speak, \"Oooaaaoow.\"");
+		}
 	}
 
 

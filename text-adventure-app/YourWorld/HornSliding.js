@@ -6,7 +6,13 @@ import {YourWorldData} from '../GameData.js';
 export class HornSliding {
 
 	static createPage(that){
-		that.preparePage("Your fingers and toes dig upward through snow and gravel, clawing and climbing, numbing with time. You step onto a lump of snow which slides out and down the slope, dragging you with it. You fall onto your face and plunge your hands into the icy wet mess. You're stable again, but the Earth smacking your face makes you think, what gives life meaning? If the meaning is just to survive, then it probably comes from your ");
+		that.preparePage("Your fingers and toes dig upward through snow and gravel, clawing and climbing, numbing with time. You step onto a lump of snow which slides out and down the slope, dragging you with it! You fall onto your face and plunge your hands into the icy wet mess. ");
+		
+		if(YourWorldData.FoulGuy){
+			that.preparePage("The dope of a man, who's odor is thinned by the altitude, grabs hold of you as you slide past him. Apparently he was lagging behind the rest of the group, singing some nonsense to the sky. Go figure. ");
+		}
+		
+		that.preparePage("You're stable again, but the Earth smacking your face makes you think, what gives life meaning? If the meaning is just to survive, then it probably comes from your ");
 		that.preparePage("senses,", HornSenses);
 		that.preparePage(" which tell you of the world around you as it is and how to climb mountains in it and such. But if the meaning is unknown, humans can't know its origin either. All they can do is guess and imagine and play with their ");
 		that.preparePage("thoughts", HornThoughts);
