@@ -162,12 +162,7 @@ function randomSelect(array, codeName){
 	
 	//no uses means we start from the beginning of the array
 	if(value == null || value == undefined){
-		if(codeName == "Kill"){
-			value = random3();
-		}
-		else{
-			value = 0; 
-		}
+		value = 0; 
 	}
 	//otherwise move on to the next member of the array
 	else{
@@ -268,9 +263,8 @@ var Death = [
 
 //always ends in the word "room" (though don't include)
 var Kill = [
-"As the guard tries to compose himself, you keep pushing forward. You bang into his armor with heavy blows, knocking him back and down until he falls and gasps on the floor. Pumped with adrenaline you leap forward and land your sword on his chest, ending his struggle once and for all. You stand back up, your heart still racing, and try to keep moving without putting too much thought into what you just did. You look around the ",
-"You follow up with a heavy kick to the guard's chest, knocking him back and over a stone bench. He falls with feet up in the air, which you quickly make stubs of. As he struggles and screams in a pool of his own making, you close your eyes and try not to listen. When all is silent, you open them back up, and avoiding him completely, look around the ",
-"The guard falls to his knees and tries to keep hold of his sword. His hands are trembling as you stand before him. He looks up to meet your eyes and for a moment you're not sure what to do. As the guard tries to lift his sword again, you see his arm spasm and it drops. He screams in agony, \"D-DO IT! DO IT ALREADY!\" And he caughs up blood on your rags. With a silent, steady incision, you drop the guard limp to the floor. A million thoughts crowd the room silently judging you. You avoid them: guilt an enemy and truth its sword. Instead, you clear your mind and look about the "];
+"As the guard tries to compose himself, you keep pushing forward. You bang into his armor with heavy blows, knocking him back and down until he falls to the floor in a gasp. Pumped with adrenaline you leap forward and with a scream land your sword on his chest, ending this. After all is silent you stand back up. Your heart is racing, you try to keep moving without putting too much thought into what you just did. What you just did... Avoiding him completely, you look around the ",
+"The guard falls to his knees and tries to keep hold of his sword. His hands are trembling as you stand before him. He looks up to meet your eyes and for a moment you're not sure what to do. As the guard tries to lift his sword again, you see his arm spasm and it drops. He screams in agony, \"D-DO IT! DO IT ALREADY!\" And he caughs up blood on your rags. Your arms are lead but they function... you drop the guard limp to the floor. A million thoughts crowd the room silently judging you. You avoid them: guilt an enemy and truth its sword. Instead, you clear your mind and look about the "];
 
 
 //this function is called every time the player takes damage to update the health-based texts
