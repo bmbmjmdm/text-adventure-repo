@@ -22,7 +22,7 @@ export class BrainMeltGuardOne {
 		
 		//hostile
 		if(TheWayData.GuardOne.Hostility > 0){
-			that.preparePage("But this doesn't fool her. She lifts you to your feet and is eyeing you heavily. \"Nice try scum.\" The fire hardly concerns her now next to you. Looks like you'll have to ");
+			that.preparePage("But this doesn't fool her. She lifts you to your feet and is eyeing you heavily. \"You bad! Bad!\" The fire hardly concerns her now next to you. Looks like you'll have to ");
 			that.preparePage("fight", AttackGuardOne);
 			that.preparePage(" to get out of this.");
 		}
