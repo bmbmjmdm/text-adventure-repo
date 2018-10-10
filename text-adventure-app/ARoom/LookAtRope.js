@@ -39,7 +39,7 @@ export class LookAtRope {
 		else{
 			that.preparePage("It's probably the same kind that's ");
 			that.preparePage("tying ", LookAtBindings);
-			that.preparePage("you up right now. Why was it left here? Should you be expecting company in this already crampt ");
+			that.preparePage("you up right now. Why was it left here? Should you be expecting company in this already cramped ");
 			that.preparePage("room?", LookAroundRoom);
 		}
 		

@@ -9,7 +9,7 @@ export class SpiralMountain {
 	static createPage(that){
 		YourWorldData.Energy -= 10;
 		
-		that.preparePage("The sun arches across the sky as the day pushes on, as you do, as your feet numb and your back aches. What saves you is the view. You haven't topped the mountain yet but you're higher than the trees, higher than the bushline. You can see into the valley you're in: the prison is now a dwarfed toy castle, the hecticly scattered bush around it peaceful, and the mountains reach up to surround it like hands from the earth, cupping the prison in sure capture. You find yourself escaping that grasp though. With each footsteps the feeling in your toes fill, you straighten your spine and keep your head high, the grass bends to your will and you go higher, higher. As you scramble through dirt and stiff grass, the sun is about to set. Do you want to ");
+		that.preparePage("The sun arches across the sky as the day pushes on, as you do, as your feet numb and your back aches. What saves you is the view. You haven't topped the mountain yet but you're higher than the trees, higher than the bushline. You can see into the valley you're in: the prison is now a dwarfed toy castle, the scattered bush peaceful, and the mountains reach up to surround it like hands from the earth, cupping the prison in sure capture. You find yourself escaping that grasp though. With each footsteps the feeling in your toes fill, you straighten your spine and keep your head high, the grass bends to your will and you go higher, higher. As you scramble through dirt and stiff grass, the sun is about to set. Do you want to ");
 		that.preparePage("setup camp", SpiralCamp);
 		that.preparePage(" here? Or you could ");
 		that.preparePage("scout ahead", SpiralScout);

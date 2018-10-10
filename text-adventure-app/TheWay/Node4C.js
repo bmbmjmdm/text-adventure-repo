@@ -21,7 +21,7 @@ export class Node4C {
 		
 		//coming from barracks
 		else if(TheWayData.LastNode == '2C'){
-			that.preparePage("You exit the crampt room of decadent stone benches, venturing into a dimly lit hallway before coming up to a possible turn. ");
+			that.preparePage("You exit the cramped room of decadent stone benches, venturing into a dimly lit hallway before coming up to a possible turn. ");
 			came2C = " (the way you came)";
 		}
 		

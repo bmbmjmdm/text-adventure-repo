@@ -9,7 +9,7 @@ export class Search6A {
 		
 		TheWayData.Searched.Node6A = true;
 		
-		that.preparePage("You begin lining your hands on the benches, shelves, doorframes. You inspect spects of dirt and interogate ants. ");
+		that.preparePage("You begin lining your hands on the benches, shelves, doorframes. You inspect specks of dirt and interrogate ants. ");
 		//guard's alive, comments 
 		if(TheWayData.GuardThree.Health > 0 ){
 			that.preparePage("The guard peeks over his shoulder every now and then curious as to what you're doing. Maybe an inspection? ");

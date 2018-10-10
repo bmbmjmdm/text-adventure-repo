@@ -1,21 +1,28 @@
 import React from 'react';
-import {TouchableWithoutFeedback, View, Text, ScrollView, AppState, BackHandler}  from 'react-native';
+import {TouchableWithoutFeedback, View, Text, ScrollView, AppState, BackHandler, StatusBar}  from 'react-native';
 import {ClickText, DefaultText, styles} from './StylesEtc.js'
 import {HomePage} from './Menus/HomePage.js'
 import {FileManager} from './FileManager/FileManager.js'
 
 
 //App is the visual display object, in charge of animating the text on screen and allowing the user to click through to change it
-//App does not know what it is displaying. All that logic is elsewhere. The only exception is the initial state:
+//App does not know what it is displaying. All that logic is elsewhere. The only exception is the initial state: HomePage
 //Its initial mounting function assembles the homepage. 
+//App will also monitor swipes to go back and the app state (background or closed) and will try to save whenever these things occur
+
+//Here is an overview of how text is displayed and removed: 
+//when createPage is called on a class (see componentDidMount or handleClickAfterFade), it uses Apps preparePage to add blocks of text to App's state.toShowText. Each block holds text, whether its clickable or not, and what class to use in handleClick if it is clickable
+//when createPage finishes (may be a promise), typeAnimation is called. typeAnimation prepares App to begin typing. First, state.toShowText is copied to a json variable incase we need to save the game. This variable isn't changed as toShowText is manipulated. It then tells the FileManager that App has finished writing to toShowText and createPage has stopped writing to GameData. Next it calculates our typing speed and then calls typeAnimationActual to begin the typing loop
+//as long as state.toShowText is not empty, typeAnimationActual will set a timer to call addLetter every 20 milliseconds, passing the typing speed 
+//addLetter takes letters off of elements in state.toShowText and adds them to elements in a list called state.displayedText. Each call to addLetter will try to add up to the typing speed number of letters (aka scale). It then alerts the system of a state change with setState, causing shouldComponentUpdate to be called.
+//in shouldComponentUpdate, if a new element is added to state.displayedText, render is called. If a new element wasn't added, but instead just letter(s) to an unfinished one, just that piece of text is called to update and render is not called to do redisplay everything. 
+//render then turns the elements in state.displayedText and turns them into ClickText and DefaultText DOM elements, adding them to the inside of a scrollviw with an outer view for catching swipes. Clickable text can be clicked to call handleClick
+//handleClick (can only be called when all text is done being typed) calcultas the fade speed and calls fadeAnimation, which calls fadeLetter every 20 milliseconds until there are no more letters in state.displayedText. After every call render is called to make the text on screen "gobble up" 
+//after this handleClickAfterFade is called, where the program waits for any saving to finish, sets a flag to let the FileManager know we're starting to change stuff and dont try to save again until we're finished, and createPage is called, starting the cycle anew 
 export default class App extends React.Component {
 	
   
-  //holds a reference to the last text element rendered on screen 
-  latestElement = null;
-  latestElementNewText = "";
-  reRender = false;
-  typeOne = false;
+
   
   
   
@@ -41,14 +48,12 @@ export default class App extends React.Component {
 	}
 
 	//the first View is for responding to a swipe to go back
-	//TouchableWithoutFeedback is here to speed up text typing when screen is clicked
-	//the second View is the full-screen, black background container
-	//ScrollView is fixed to be full-screen (no larger), though understands that its content could be larger than itself. every render it calculates this difference and scrolls to the bottom automatically (the user can then scroll back up if they wish)
+	//ScrollView is fixed to be full-screen (no larger), allowing the user to scroll down (generally doesnt conflict with swipe back but could based on scroll height and gesture). commented out is the previous functionality: every render it calculates this difference and scrolls to the bottom automatically (the user can then scroll back up if they wish)
 	//Text is here to display our ClickText and DefaultText elements in a Text-style layout rather than a FlexView-style layout (concatting them rather than every text being in its own "box")
 	return (
 		<View style={styles.container} onMoveShouldSetResponderCapture={this.didSwipe} onResponderMove={()=>{this.handleSwipe(this)}}>
 				<ScrollView ref='scrollView'
-							onContentSizeChange={(w, h) => {this.contentHeight = h;  this.scrollToBottom(true);}}
+							onContentSizeChange={(w, h) => {this.contentHeight = h;  /*this.scrollToBottom(true);*/}}
 							onLayout={ev => this.scrollViewHeight = ev.nativeEvent.layout.height}
 							contentContainerStyle={styles.scroll}
 							onScrollBeginDrag={()=>{this.scrolling = true;}}
@@ -216,7 +221,16 @@ export default class App extends React.Component {
   
   
   
+  //holds a reference to the last text element rendered on screen 
+  latestElement = null;
+  latestElementNewText = "";
+  //used to determine if a full rerender is needed or just a single piece of text
+  reRender = false;
+  typeOne = false;
+  
+  
 	//when we call setState, we are either totally rerendering the tree or just adjusting the last text on it or neither
+	//we do this solely for performance. on screens with many elements, calling rerender for each letter is expensive. The Load text (load save file) needs this performance increase incase there are many load files
 	shouldComponentUpdate(nextProps, nextState){
 		if(this.reRender){
 			//a new element has been added to the display 
@@ -225,7 +239,7 @@ export default class App extends React.Component {
 			return true;
 		}
 		else if (this.typeOne){
-			//a preexisting element has a letter (or 10) appended 
+			//a preexisting element has a letter (or up to "scale" letters) appended 
 			this.typeOne = false;
 			if(this.latestElement){
 				this.latestElement.reWrite(this.latestElementNewText);
@@ -516,7 +530,7 @@ export default class App extends React.Component {
 		setTimeout(() => {this.periodicSave(this)}, 300000);
 		AppState.addEventListener('change', this.handleAppStateChange);
 		BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
-		
+		 StatusBar.setHidden(true);
 	}
   
     componentWillUnmount() {
@@ -529,8 +543,9 @@ export default class App extends React.Component {
 	scrolling = false;
 	
 	//utility function for moving the ScrollView down as text is rendered
+	//currently not used
   scrollToBottom(animated = true) {
-	/*if(!this.allowClicks){
+	if(!this.allowClicks){
 	if(!this.scrolling){
 		const scrollHeight = this.contentHeight - this.scrollViewHeight;
 		if (scrollHeight > 0) {
@@ -541,10 +556,11 @@ export default class App extends React.Component {
 	}
 	else{
 		this.scrollToTop();
-	}*/
+	}
   }
   
   	//utility function for moving the ScrollView up when text is finished 
+	//currently not used
   scrollToTop(animated = true) {
 	const scrollHeight = this.contentHeight - this.scrollViewHeight;
 	if (scrollHeight > 0) {
@@ -554,13 +570,13 @@ export default class App extends React.Component {
   }
   
   
-	//save game every 5 minutes
+	//save game every 8 minutes
 	periodicSave(that){
 		if(FileManager.canSave()){	
 			FileManager.SaveGame(that, false);
 		}
 		
-		setTimeout(() => {that.periodicSave(that)}, 600000);
+		setTimeout(() => {that.periodicSave(that)}, 480000);
 	}
 	
 	

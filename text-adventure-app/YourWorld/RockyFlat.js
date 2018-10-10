@@ -26,7 +26,7 @@ export class RockyFlat {
 			that.preparePage("hunt something. ", RockyFlatHunt);
 		}
 		if(!YourWorldData.ForagedRockyFlat){
-			that.preparePage("The grass here is sparce, practically non-existant. If you fan out just a little bit you might be able to ");
+			that.preparePage("The grass here is sparse, practically non-existant. If you fan out just a little bit you might be able to ");
 			that.preparePage("forage. ", RockyFlatForage);
 		}
 		

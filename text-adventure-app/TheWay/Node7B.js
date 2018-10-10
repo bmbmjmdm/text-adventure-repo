@@ -33,7 +33,7 @@ export class Node7B {
 		//setup intersection
 		that.preparePage("You can go ");
 		that.preparePage("North"+came8B, Node8B);
-		that.preparePage(" down a darkened hallway, some kind of symbol reflecting in the distance but you can't tell what. ");
+		that.preparePage(" down a darkened hallway, some kind of metallic symbol reflecting in the distance. ");
 		that.preparePage("East", Node7C);
 		that.preparePage(" leads to a room with light flooding out from above it. There's banners on the sides of a grandiose door, silver etchings around its arch. You hear people talking just beyond it... Going ");
 		that.preparePage("West"+came6A, Node6A);

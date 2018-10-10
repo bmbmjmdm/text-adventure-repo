@@ -8,7 +8,7 @@ export class AmbushGuardOne {
 		TheWayData.GuardOne.Hostility = 10;
 		var damage;
 		
-		that.preparePage("You take cover behind the wall and intently watch the corner. Your breaths become short as the pumps in your chest quicken and a strange, metalic taste fills your mouth. ");
+		that.preparePage("You take cover behind the wall and intently watch the corner. Your breaths become short as the pumps in your chest quicken and a strange, metallic taste fills your mouth. ");
 	
 		if(TheWayData.HasWeapon.Glass){
 			that.preparePage("You hold the glass shiv close, your fingers digging into its sides with jagged anticipation. You hope you know how to use it. ");

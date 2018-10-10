@@ -189,13 +189,13 @@ var GuardAttacks = [
 ["The guard steps a foot back, crouches, and hovers his sword high in front of himself. ",
 "The guard lays a palm on his sword and holds it out flat in front of himself. The face of it is reflective; you can see yourself ragged and armed. ",
 "The guard raises his sword near your own, staring deep into your eyes, silent. ",
-"The guard begins slowly walking around you, pacing his steps, and watching closely. The room watches in turn, as does the universe. ",
+"The guard begins slowly walking around you, pacing his steps, and watching closely. The room watches in turn, as does the world, the sun and stars and you get the idea. ",
 "The guard takes his sword in two hands, tilts it upward, and takes a deep, calm breath. "], 
 
 //Strike
-["The guard holds his sword steady with two hands, crouches, and twists at the waste. He's so wound up. ",
+["The guard holds his sword steady with two hands, crouches, and twists at the waist. He's so wound up. ",
 "The guard's elbow goes high and he leans into it, holding the sword with that hand and a steady look in his eye. ",
-"The gaurd flurries his sword, becomes excited, and steps to the side. His teeth are chattering like yours. ",
+"The guard flurries his sword, becomes excited, and steps to the side. His teeth are chattering like yours. ",
 "The guard turns himself sideways and steps forward, pressing his sword up and starting to lean. He looks thinner now, reminding you how hungry you are. ",
 "The guard tilts his sword to the left, then right, shuffling his shoulders to the beat and quickly inching closer. You feel like swallowing, but don't want to distract yourself. "],
 
@@ -204,7 +204,7 @@ var GuardAttacks = [
 "The guard leans in close, his eyes on your sword as his own wanders. The room feels smaller all of the sudden. ",
 "The guard ducks and pivots around you, coming in close. You share a breath. ",
 "The guard steps a foot forward between your own, but you don't think he wants to dance. ",
-"The guard tilts his sword downward, towards the floor, and takes a step forward. He looks like a man with nothing to lose, battle chizzling him jaded. "]
+"The guard tilts his sword downward, towards the floor, and takes a step forward. He looks like a man with nothing to lose, battle chiseled him jaded. "]
 ]; 
 
 
@@ -223,7 +223,7 @@ var GrappleVStrike = []; // look down at function updateTexts
 var GrappleVGrapple = [
 "You and the guard launch forward simultaniously, your swords clash at the hilt and your free hands grasp the others'. You lock for a moment and read your foe's face through sweat and grinding teeth. As your arms get tired, you push off hard and the two of you seperate. ",
 "The guard raises a hand to grasp your collar while your sword is off to the side. You grab his wrist as it makes contact and the two of you share a pulling of wills. The guard turns his sword in and you do the same, before each of you let go and step back, unharmed. ",
-"You pivot, the guard follows; you raise a hand to grasb his neck and the guard does the same. You cross your hand with the sword to knock him in the wrist and, as he mimics, the butts of your two swords clash, letting out a sharp, reverberating ring. You both back up in the confusion before slowly re-approaching. "];
+"You pivot, the guard follows; you raise a hand to grasp his neck and the guard does the same. You cross your hand with the sword to knock him in the wrist and, as he mimics, the butts of your two swords clash, letting out a sharp, reverberating ring. You both back up in the confusion before slowly re-approaching. "];
 
 
 var ParryVParry = [
@@ -233,7 +233,7 @@ var ParryVParry = [
 
 
 var ParryVStrike = [
-"As you prepare your sword before you, the guard swings diagnal with a hop in his step. Your blade catches his and curves it aside, coming back in to slice him on the return. He stumbles as blood spills forth, resulting in 2 damage. ",
+"As you prepare your sword before you, the guard swings diagonal with a hop in his step. Your blade catches his and curves it aside, coming back in to slice him on the return. He stumbles as blood spills forth, resulting in 2 damage. ",
 "The guard plunges his sword forward towards your abdomen, but you step to the side and knock his sword back. As he's stunned you take another step and stab forward, cutting deep into his shoulder. He takes 2 damage as blood forms through the gaps in his armor. ",
 "The guard swings his sword up, which you step back to avoid and stab forward to knock it back. As he struggles to hold onto his weapon, you slash downwards, cutting across his thighs for 2 damage. "];
 

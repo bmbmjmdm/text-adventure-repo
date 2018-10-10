@@ -9,7 +9,7 @@ export class SmallFire {
 		YourWorldData.Kindling --;
 		YourWorldData.Campfire = true;
 		
-		that.preparePage("You gather some twigs and brush together and start rubbing. It's not easy, but eventually you get a feint ember. This grows and spreads like, well like fire, until the bundle is engulfed. It won't last long, but it's enough for ");
+		that.preparePage("You gather some twigs and brush together and start rubbing. It's not easy, but eventually you get a faint ember. This grows and spreads like, well like fire, until the bundle is engulfed. It won't last long, but it's enough for ");
 		that.preparePage("tonight.", Camping);
 		
 			

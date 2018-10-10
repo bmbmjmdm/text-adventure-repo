@@ -22,7 +22,7 @@ export class Node2A {
 			if(!TheWayData.Prisoner1BFree){
 				that.preparePage("The man in the cell yells, \"Where are you going?!\" as you pass him. ");
 			}
-			that.preparePage("You make it to a right turn, where this hallway ends and a new one begins. That one has no source of light, however, leaving you and it in the dark. You can see some kind of wall at the end, but that's it. Stammering through the darkness, you use vague blurs to guide you to a vague surface. Eventually your extended hands bump into a door. ");
+			that.preparePage("You make it to a right turn, where this hallway ends and a new one begins. That one has no source of light, however, leaving you and it in the dark. You can see some kind of wall at the end, but that's it. Stumbling through the darkness, you use vague blurs to guide you to a vague surface. Eventually your extended hands bump into a door. ");
 				
 			
 			//enters room

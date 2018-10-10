@@ -10,14 +10,14 @@ export class OpenAppStore {
 
 		//open app store for ios
 		if (Platform.OS === 'ios'){
-			Linking.openURL('itms://itunes.apple.com/us/app/apple-store/myiosappid?mt=8');
+			Linking.openURL('itms://itunes.apple.com/app/id1437961208');
 			
 			//TODO https://stackoverflow.com/questions/35612383/how-to-make-a-rate-this-app-link-in-react-native-app/41021128
 		}
 		
 		//open play store for android
 		else{
-			Linking.openURL('market://details?id=myandroidappid');
+			Linking.openURL('market://details?id=com.LaplanteApps.iAdventure');
 		}
 
 		

@@ -8,7 +8,7 @@ export class LookAtBindings {
 	static createPage(that){
 		if(ARoomData.DraggedGlass){
 			ARoomData.CutBindings = true;
-			that.preparePage("Shifting your body around the sparce glass, you're careful not to get too close to the ");
+			that.preparePage("Shifting your body around the sparse glass, you're careful not to get too close to the ");
 			that.preparePage("fire. ", LookAtFire);
 			that.preparePage("Too bad the flames are closing the gap on their own. You jerk up and down with your wrists, pressing them against the glass until eventually- you're free! Now, quick, get out of this ");
 			that.preparePage("god-forsaken room. ", LookAroundRoom);

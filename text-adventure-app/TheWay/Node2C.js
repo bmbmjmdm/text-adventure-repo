@@ -75,12 +75,12 @@ export class Node2C {
 				
 				//enter the room
 				if(TheWayData.LastNode != '2C'){
-					that.preparePage("You enter the room of stone-carved benches and wooden frames. There's more swords hung up but you don't feel a need for two. ");
+					that.preparePage("You enter the room of stone-carved benches and wooden frames. There are still swords hung up but you don't feel a need for two. ");
 				}
 				
 				//guard killed, describe
 				if(TheWayData.GuardTwo.Health <= 0){
-					that.preparePage("The guard's body is tossed beside the once-clean benches. Now, blood shines in the light. ");
+					that.preparePage("The guard's body is tossed beside the once-clean benches; now blood shines in the light. ");
 				}
 				
 				//guard neutral, describe

@@ -118,7 +118,7 @@ export class Camping {
 		
 		//player has nothing to use
 		else{
-			that.preparePage("Or should I say don't have, because it looks like your fresh out of everything. Better hope tonight's ");
+			that.preparePage("Or should I say don't have, because it looks like you're fresh out of everything. Better hope tonight's ");
 			that.preparePage("rest", Sleep);
 			that.preparePage(" is good at least.");
 		}

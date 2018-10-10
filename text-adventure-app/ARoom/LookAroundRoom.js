@@ -88,9 +88,9 @@ export class LookAroundRoom {
 		else{
 			that.preparePage("It's dark in here, barely lit by a ");
 			that.preparePage("lantern ", LookAtLantern);
-			that.preparePage("sitting on a wooden");
+			that.preparePage("sitting on a");
 			that.preparePage(" table ", LookAtTable);
-			that.preparePage("to your left. The floor is also wood, worn from many years and dull to the touch. There's a loose line of ");
+			that.preparePage("to your left. The floor is wooden, worn from many years and dull to the touch. There's a loose line of ");
 			that.preparePage("rope ", LookAtRope);
 			that.preparePage("on the floor in front of you, and just past that you can faintly see the outline of a");
 			that.preparePage(" door ", LookAtDoor);

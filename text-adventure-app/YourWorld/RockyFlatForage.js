@@ -18,7 +18,7 @@ export class RockyFlatForage {
 			that.preparePage("You tell your "+plural+" to fan out, try and find any kind of greenery in the nooks and crannies of this place. ");
 		}
 		else{
-			that.preparePage("You begin searching the edges of the flat, checking in every nook and cranny you can find. ");
+			that.preparePage("You begin searching the edges of the flat, checking in each nook and cranny you can find. ");
 		}
 		
 		that.preparePage("After an hour of searching under every rock, literally, you amass a few twigs and dried up grass, which will actually be useful for kindling. ");

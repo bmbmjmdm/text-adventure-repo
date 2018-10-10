@@ -7,7 +7,7 @@ import {YourWorldData} from '../GameData.js';
 export class EatDrink {
 
 	static createPage(that){
-		that.preparePage("Your stomach aches as you look things over. It might as well be crumbs, but it'll taste like a feist. What do you want to consume? You have: ");
+		that.preparePage("Your stomach aches as you look things over. It might as well be crumbs, but it'll taste like a feast. What do you want to consume? You have: ");
 		var needsComma = false;
 		if(YourWorldData.Berries>0){
 			that.preparePage("berries", EatBerries);

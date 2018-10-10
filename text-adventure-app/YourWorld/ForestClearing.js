@@ -14,7 +14,7 @@ export class ForestClearing {
 			that.preparePage("The mother you're traveling with speaks softly, \"This reminds me of home... we lived on the edge of such a forest, sunsets were the best part of any day. We...all of us would gather manuka for evening tea, my husband's favorite...\" She chokes back a laugh and tears as she graces her hand upon the leaves. "); 
 		}
 		
-		that.preparePage("You pick up your pace, wanting to setup camp before dark. The bush becomes exceedingly thick for a moment, shrubs snapping between your steps just to push forward. As quickly as it started, though, the thicket disperses into a wide opening of grass and pedels. You decide this would be a good place to ");
+		that.preparePage("You pick up your pace, wanting to setup camp before dark. The bush becomes exceedingly thick for a moment, shrubs snapping between your steps just to push forward. As quickly as it started, though, the thicket disperses into a wide opening of grass and petals. You decide this would be a good place to ");
 		that.preparePage("setup camp for the night,", ForestClearingCamp);
 		if(!YourWorldData.ChoppedForestClearing){
 			that.preparePage(" though it may be worth while to gather supplies first. The trees look thin enough here that you could");

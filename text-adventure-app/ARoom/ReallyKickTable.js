@@ -12,7 +12,7 @@ export class ReallyKickTable {
 		that.preparePage("fire ", LookAtFire);
 		that.preparePage("begins to engulf the table leg you were just kicking. As it grows, the ");
 		that.preparePage("room ", LookAroundRoom);
-		that.preparePage("becomes well lit.");
+		that.preparePage("becomes well lit!");
 		ARoomData.BrokeLantern = true;
 		
 	}

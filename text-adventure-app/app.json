@@ -7,16 +7,17 @@
     "sdkVersion": "27.0.0",
 	"scheme": "iAdventure",
 	"splash": {
-		"backgroundColor": "#000000"
+		"backgroundColor": "#000000",
+		"image":"splash.png"
 	},
     "ios": {
-      "bundleIdentifier": "com.LaplanteApps.iAdventure"
+      "bundleIdentifier": "com.LaplanteApps.iAdventure",
+	  "supportsTablet": true,
+	  
     },
     "android": {
       "package": "com.LaplanteApps.iAdventure",
 	  "permissions": [
-      "READ_EXTERNAL_STORAGE",
-      "WRITE_EXTERNAL_STORAGE"
 	]
     }
    }

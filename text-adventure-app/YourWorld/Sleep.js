@@ -54,6 +54,9 @@ export class Sleep {
 						}
 					}
 					
+					//reset for next time
+					YourWorldData.Safe = [];
+					
 					
 					var killed = false;
 					
@@ -130,7 +133,7 @@ export class Sleep {
 				//kill player
 				else{
 					dead = true;
-					that.preparePage("You're waken from your sleep by a lump in your throat. You try to cough, wheeze, gasp, anything! Alas, it won't budge. You struggling to stand by your body is tired, bones weak and muscles bruised. You grasp for air, dear life, but soon the night ");
+					that.preparePage("You're waken from your sleep by a lump in your throat. You try to cough, wheeze, gasp, anything! Alas, it won't budge. You struggle to stand but your body is tired, bones weak and muscles bruised. You grasp for air, dear life, but soon the night ");
 					that.preparePage("takes you.", HomePage);
 				}
 			}

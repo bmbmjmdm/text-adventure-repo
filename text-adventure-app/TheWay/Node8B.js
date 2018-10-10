@@ -14,7 +14,7 @@ export class Node8B {
 			
 			//enters room
 			if(TheWayData.HasKeys){
-				that.preparePage("The door shakes as you press on it, requiring a key. You satisfy it, and push through carefully. The room is trickling with light from a tiny window high, high on the cieling. In the middle of the room is stained wood, and settled dirt everywhere else. It doesn't look like anyone's been in here in a long time. Why? ");
+				that.preparePage("The door shakes as you press on it, requiring a key. You satisfy it, and push through carefully. The room is trickling with light from a tiny window high, high on the ceiling. In the middle of the room is stained wood, and settled dirt everywhere else. It doesn't look like anyone's been in here in a long time. Why? ");
 			
 				if(TheWayData.Searched.Node8B){
 					//can't search

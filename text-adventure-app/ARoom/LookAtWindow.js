@@ -23,7 +23,7 @@ export class LookAtWindow {
 			that.preparePage("fire", LookAtFire);
 			that.preparePage(") you can easily see a small, glassless window above the door. Too bad it's out of reach and this ");
 			that.preparePage("room ", LookAroundRoom);
-			that.preparePage("has a surprisingly high cieling, so jumping won't work. You might be able to ");
+			that.preparePage("has a surprisingly high ceiling, so jumping won't work. You might be able to ");
 			that.preparePage("throw ", FindThrowables);
 			that.preparePage("something through, though.");
 		}
