@@ -17,6 +17,9 @@ export class FileManager {
 	static writing = false;
 
 	static setLevelFile(file){
+		while(this.saving){
+			//wait to make sure we dont start a new game while saving a previous one 
+		}
 		this.levelFile = file;
 	}
 	
@@ -81,6 +84,10 @@ export class FileManager {
 			try {
 				await AsyncStorage.setItem(name, stringFile);
 				this.saving = false;
+				//incase the level is "cleared" by homepage while in the middle of saving 
+				if(this.clearLevelFileLater){
+					this.levelFile = undefined;
+				}
 			} catch (error) {
 				// Error saving data
 				alert(error);

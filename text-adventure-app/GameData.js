@@ -212,7 +212,8 @@ export function ResetYourWorldData(){
 		SearchedGrassyLedge: false,
 		CaveTorch: false,
 		Safe: [],
-		TalkedAllies: false
+		TalkedAllies: false,
+		CampInstructions: false
 	}
 	
 }

@@ -42,7 +42,7 @@ export class TalkPrisoner1B {
 					that.preparePage("And about what I said before... I'm sorry. Been locked up so long it's hard ta stay sane. Let alone civil. ");
 				}
 				
-				that.preparePage("Now... I know a way outa here. I dunno if it's the best, but it sure is the fastis. Jus always follow the light. And if the light's comin from a room wit banners, go that way! I know it don't make no sense to ya now, but I believe in ya, kid. \" With that, the man creeps away from his cell and disappears to the East. You start to ");
+				that.preparePage("Now... I know a way outa here. I dunno if it's the best, but it sure is the fastis. Jus always follow the light. And if the light's comin from a room wit banners, go that way! Inside them banner rooms, always go North. I know it don't make no sense to ya now, but I believe in ya, kid. \" With that, the man creeps away from his cell and disappears to the East. You start to ");
 				that.preparePage("head back.", Node1B);
 				
 			}

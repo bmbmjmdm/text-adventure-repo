@@ -21,7 +21,7 @@ export class Node4C {
 		
 		//coming from barracks
 		else if(TheWayData.LastNode == '2C'){
-			that.preparePage("You exit the cramped room of decadent stone benches, venturing into a dimly lit hallway before coming up to a possible turn. ");
+			that.preparePage("You exit the cramped room of decadent stone benches, venturing into a dimly lit hallway running on and on and on. There's a symbol on the ground, a star, and some text scratched beside it, \"The North star shall guide you home.\" Whatever. You come up to a possible turn. ");
 			came2C = " (the way you came)";
 		}
 		
@@ -43,7 +43,7 @@ export class Node4C {
 		that.preparePage("North"+came5C, Node5C);
 		that.preparePage(" to see a door at the end of the hallway, emitting light through its bars. To the ");
 		that.preparePage("West"+came4B, Node4B);
-		that.preparePage(" you see a corridor running down into darkness, a possible turn up ahead. Finally, ");
+		that.preparePage(" you see a corridor running down into darkness, another possible turn up ahead. Finally, ");
 		that.preparePage("South"+came2C, Node2C);
 		that.preparePage(" shows a long passage with a distant door, light pouring out from above it, and some kind of banners on its sides.");
 	

@@ -353,6 +353,9 @@ export default class App extends React.Component {
   }
   
   
+  justQuickSaved = false; 
+  showQuickSaveTip = true;
+  showDiedTip = true; 
   //we're swiping, go back to homescreen and possibly save 
 	handleSwipe(that){
 		if(that.allowClicks){
@@ -360,12 +363,18 @@ export default class App extends React.Component {
 				that.allowClicks = false;
 				FileManager.SaveGame(that, true).then((value)=>
 				{
+					//if this is the user's first time swiping back in this session, tell them about how quicksave works 
+					if(that.showQuickSaveTip){
+						that.justQuickSaved = true;
+						that.showQuickSaveTip = false;
+					}
 					that.allowClicks = true;
 					that.handleClick(HomePage, that);
 				});;
 					
 			}
 			else{
+				FileManager.clearLevelFile();
 				that.handleClick(HomePage, that);
 			}
 			

@@ -108,11 +108,21 @@ export class Camping {
 			if(canEat){
 				that.preparePage("Your stomach begins to growl and you consider ");
 				that.preparePage("eating or drinking", EatDrink);
-				that.preparePage(" something. With what little provisions you have, you begin to wonder if leaving prison was the best idea. You laugh at the thought. Then smile realizing you have the freedom to think such things. Then your stomach growls again. "); 
+				that.preparePage(" something. ");
+				
+				var chance = Math.random();
+				if(0.5 > chance){
+					that.preparePage("With what little provisions you have, you begin to wonder if leaving prison was the best idea. You laugh at the thought, then smile realizing you have the freedom to think such things. Then your stomach growls again. "); 
+				}
 			}
 			
 			that.preparePage("Anyway, your eyes can feel it getting late; maybe what you need- *yawn* -is a place to ");
 			that.preparePage("lay your head.", Sleep);
+			
+			if(!YourWorldData.CampInstructions){
+				YourWorldData.CampInstructions = true;
+				that.preparePage(" Just remember, surviving the wild requires as much energy as you can get. The more food, fire, and water you use, the better.");
+			}
 			
 		}
 		
