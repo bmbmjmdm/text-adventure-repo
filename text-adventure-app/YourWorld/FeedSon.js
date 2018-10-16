@@ -22,7 +22,11 @@ export class FeedSon {
 		
 		that.preparePage("The night waits, watches.", Camping);
 		
-		YourWorldData.Safe.push("Son");
+		
+		//safe during the night (see Sleep)
+		if(!YourWorldData.Safe.includes("Son")){
+			YourWorldData.Safe.push("Son");
+		}
 		
 		
 	}

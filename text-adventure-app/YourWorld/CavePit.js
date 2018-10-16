@@ -91,18 +91,18 @@ export class CavePit {
 	
 	
 	static findSupplies(that){
-		YourWorldData.Gold += 2;
+		YourWorldData.Health += 3;
 		YourWorldData.Water ++;
 		YourWorldData.Flint ++;
 		YourWorldData.SharpRocks ++;
 		
-		that.preparePage("You start feeling around at the various surfaces in the water. One thing becomes blindingly apparent: there's a skeleton in here with you. Looks like someone was doing exactly what you're doing when... you try not to think about it. You quickly stop fondling the long-gone corpse and feel around elsewhere. There's a bunch of rocks in here, and the steady drip from above is now dripping on your head. There must be a leak or else this hole would be filled. Hm. Regardless, some of these rocks seem useful. One is definitely flint, another jagged like a cruel blade, and another... oddly smooth. Almost like a... like a gem. Woah. You pocket everything worth while and take out your waterskin, fill it a little bit with the dripping water. You don't exactly want to dip it in the pool steeping with a dead body. ");
+		that.preparePage("You start feeling around at the various surfaces in the water. One thing becomes blindingly apparent: there's a skeleton in here with you. Looks like someone was doing exactly what you're doing when... you try not to think about it. You quickly stop fondling the long-gone corpse and feel around elsewhere. There's a bunch of rocks in here, and the steady drip from above is now dripping on your head. There must be a leak or else this hole would be filled. Hm. Regardless, some of these rocks seem useful. One is definitely flint, another jagged like a cruel blade, and another... oddly smooth. Almost like a... like a gem. Woah. As you press the warmth of your hand against its chilled surface, the gem begins to glow. Feint at first, but soon a blinding radiance flashes before going dark again. The many cuts and bruises around your body dull as you feel refreshed, invigorated, like you could climb a mountain! You gain 3 health and now have "+YourWorldData.Health+". After pocketing everything worth while, you take out your waterskin and fill it a little with the dripping water. You don't exactly want to dip it in the pool steeping with a dead body. ");
 	}
 	
 	
 	static dieInHole(that){
 		that.preparePage("You start feeling around the sides of the pit. Ok, they're pretty solid, and there's no holes, and you jump around but the wall is too high to reach the top of. Fuck. Shit. What do you do? The dripping drops smack your head like clockwork. You slowly grow insane, begging your skeleton friend to tell you a way out. But there is none. ");
-			that.preparePage("There is none.", HomePage);
+		that.preparePage("There is none.", HomePage);
 	}
 
 

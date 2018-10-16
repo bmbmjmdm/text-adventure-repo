@@ -61,7 +61,7 @@ GlobalData.LastTheWayData.HasWeapon.Axe = true
 export function ResetARoomData(){
 	ARoomData = {
 		//When health reaches 0 or less, game over
-		Health: 15, 
+		Health: 20, 
 		//the first step required in ARoom is to break the lantern
 		BrokeLantern: false, 
 		//the second step required in ARoom is to drag a broken piece of lantern glass 
@@ -206,14 +206,24 @@ export function ResetYourWorldData(){
 		TriedLedge: false,
 		//searched forest path area
 		SearchedForestPath: false,
+		//hunted forest clearing area
 		HuntedForestClearing: false,
+		//chopped wood forest clearing area 
 		ChoppedForestClearing: false,
+		//bear's health for fight in forest
 		BearHealth: 10,
+		//searched grassy ledge or around cave 
 		SearchedGrassyLedge: false,
+		//lit a torch in the cave so they can see the bats+pit 
 		CaveTorch: false,
+		//feeding allies makes them "safe" from dying for the night 
 		Safe: [],
+		//talked to allies by the prison
 		TalkedAllies: false,
-		CampInstructions: false
+		//tell user to eat and drink a lot and make fires
+		CampInstructions: false,
+		//when user sleeps with cumulative -50 or more energy over 1+ night(s), an ally will die 
+		AllyDamage: 0,
 	}
 	
 }

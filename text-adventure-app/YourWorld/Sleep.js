@@ -10,7 +10,7 @@ export class Sleep {
 		
 		that.preparePage("You find some soft earth to rest your head, just about anything will do given how tired you are. The distant howls in the darkness are... concerning, but you manage to slip away into unconciousness like you were born to. ");
 		
-		//sleeping with negative energy means someone might die 
+		//sleeping with negative energy means people will take damage and someone might die 
 		if(YourWorldData.Energy < 0){
 			that.preparePage("Your body aches and breaths are shallow, you clearly overexerted yourself during the day. ");
 			if(YourWorldData.Allies > 0){
@@ -18,12 +18,18 @@ export class Sleep {
 			}
 			that.preparePage("It's a deadly thing to do, you know? And now as you struggle to make it through the night, you can only hope your will is enough, or else... ");
 			
-			var chance = Math.random();
-			//death
-			if(Math.abs(YourWorldData.Energy)/50 > chance){
+			
+			//damage during sleep 
+			var damage = Math.round(Math.abs(YourWorldData.Energy)/10);
+			
+			if(YourWorldData.Allies > 0){
+				//allies take damage from exhaustion 
+				YourWorldData.AllyDamage += damage;
 				
-				//kill a random ally
-				if(YourWorldData.Allies > 0){
+				//kill a random ally when allies take 5 damage
+				if(YourWorldData.AllyDamage >= 5){
+					YourWorldData.AllyDamage -= 5;
+					
 					that.preparePage("You're waken from sleep by a violent caughing, a hack and gasp and grasping for some kind of God to make it stop... and then it does. ");
 					
 					var motherSafe = false;
@@ -53,9 +59,10 @@ export class Sleep {
 							badassSafe = true;
 						}
 					}
-					
-					//reset for next time
-					YourWorldData.Safe = [];
+					else{
+						//reset safe list so we can keep track of the most recently fed people 
+						YourWorldData.Safe = [];
+					}
 					
 					
 					var killed = false;
@@ -130,11 +137,27 @@ export class Sleep {
 					YourWorldData.Allies--;
 				}
 				
-				//kill player
+				//allies not dead yet...
 				else{
+					that.preparePage("You're awaken in the night by caughs and stutters, it seems your allies struggle in their sleep... ");
+				}
+			}
+				
+			//hurt player
+			else{
+				YourWorldData.Health -= damage;
+				that.preparePage("You're waken from your sleep by a lump in your throat. You try to cough, wheeze, gasp, anything! You take "+damage+" damage and have "+YourWorldData.Health+" health. ");
+				
+				//player dies 
+				if(YourWorldData.Health <= 0){
 					dead = true;
-					that.preparePage("You're waken from your sleep by a lump in your throat. You try to cough, wheeze, gasp, anything! Alas, it won't budge. You struggle to stand but your body is tired, bones weak and muscles bruised. You grasp for air, dear life, but soon the night ");
+					that.preparePage("Alas, it won't budge. You struggle to stand but your body is tired, bones weak and muscles bruised. You grasp for air, dear life, but soon the night ");
 					that.preparePage("takes you.", HomePage);
+				}
+				
+				//player lives
+				else{
+					that.preparePage("The fit soon gives way, leaving a soreness behind. You fall back asleep... ");
 				}
 			}
 		}
@@ -143,7 +166,7 @@ export class Sleep {
 			YourWorldData.Energy = Math.max(YourWorldData.Energy, 0);
 			YourWorldData.Energy += 10;
 		
-			that.preparePage("Eventually, the night passes and you awake feeling slightly more rested. You have "+ YourWorldData.Energy+" energy, and a " );
+			that.preparePage("Eventually, the night passes and you wake feeling slightly more rested. You have "+ YourWorldData.Energy+" energy, and a " );
 			that.preparePage("new day.", YourWorldData.CampContinue);
 		}
 		

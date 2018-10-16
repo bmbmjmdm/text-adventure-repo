@@ -18,7 +18,11 @@ export class FeedBadass {
 		
 		that.preparePage("She's awesome.", Camping);
 		
-		YourWorldData.Safe.push("BadassGal");
+		
+		//safe during the night (see Sleep)
+		if(!YourWorldData.Safe.includes("BadassGal")){
+			YourWorldData.Safe.push("BadassGal");
+		}
 		
 	}
 

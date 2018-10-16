@@ -10,7 +10,7 @@ export class RidgeRocks {
 		that.preparePage("go over it", RidgeOver);
 		that.preparePage(" or ");
 		that.preparePage("go around.", RidgeAround);
-		that.preparePage(" Walking on top of such stone seems dangerous... it's likely to crumble under your weight. On the other hand, there's not really any room on the sides. You would be on a steep slope and holding the edge of the stone, which could snap and send you falling. It's hard to tell which is more dangerous, either way you're probably a gonner.");
+		that.preparePage(" Walking on top of such stone seems dangerous... it could crumble beneath your weight. On the other hand, there's not really any room on the sides. You would be on a steep slope and holding the edge of the stone, which could snap and send you falling. It's hard to tell which is more dangerous, either way you're probably a gonner. Stretching up a bit you can feintly make out some kind of moss or green-white flora on top of the rocks. Maybe that's a good thing?");
 		
 		if(YourWorldData.SadGal){
 			that.preparePage(" The girl with the long face speaks up, \"Th-th-that's not gonna h-hold. W-we should turn ar-round.\" She's holding her arm for stability, swaying on the ridge like a sapling losing its roots.");

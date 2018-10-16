@@ -22,7 +22,10 @@ export class FeedMother {
 		
 		that.preparePage("What's next...", Camping);
 		
-		YourWorldData.Safe.push("Mother");
+		//safe during the night (see Sleep)
+		if(!YourWorldData.Safe.includes("Mother")){
+			YourWorldData.Safe.push("Mother");
+		}
 		
 	}
 

@@ -1,4 +1,4 @@
-import {SpiralMountainContinue} from './SpiralMountainContinue.js';
+import {SpiralTend} from './SpiralTend.js';
 import {SpiralScout} from './SpiralScout.js';
 import {SpiralCamp} from './SpiralCamp.js';
 import {YourWorldData} from '../GameData.js';
@@ -13,7 +13,14 @@ export class SpiralMountain {
 		that.preparePage("setup camp", SpiralCamp);
 		that.preparePage(" here? Or you could ");
 		that.preparePage("scout ahead", SpiralScout);
-		that.preparePage(" for a better spot. Here you have a dirt cliff to cover you on one side, but nothing else to take shelter under. You're almost up the ridge of the mountain it seems, maybe there's something better up there? You have "+ YourWorldData.Energy + " energy at a time like this.");		
+		that.preparePage(" for a better spot. Here you have a dirt cliff to cover you on one side, not that bad. You're almost up the ridge of the mountain it seems, maybe there's something better up there? ");
+
+		if(YourWorldData.Health < 18){
+			that.preparePage("Alternatively, you could spend these precious minutes ");
+			that.preparePage("tending to your wounds. ", SpiralTend);
+		}
+		
+		that.preparePage("You have "+ YourWorldData.Energy + " energy at a time like this.");
  
 	}
 

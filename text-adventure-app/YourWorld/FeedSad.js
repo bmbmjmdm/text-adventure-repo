@@ -12,7 +12,10 @@ export class FeedSad {
 		
 		that.preparePage("What else...", Camping);
 		
-		YourWorldData.Safe.push("SadGal");
+		//safe during the night (see Sleep)
+		if(!YourWorldData.Safe.includes("SadGal")){
+			YourWorldData.Safe.push("SadGal");
+		}
 		
 	}
 

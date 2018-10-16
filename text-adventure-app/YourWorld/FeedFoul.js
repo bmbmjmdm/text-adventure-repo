@@ -17,7 +17,10 @@ export class FeedFoul {
 		
 		that.preparePage("Time to get away.", Camping);
 		
-		YourWorldData.Safe.push("FoulGuy");
+		//safe during the night (see Sleep)
+		if(!YourWorldData.Safe.includes("FoulGuy")){
+			YourWorldData.Safe.push("FoulGuy");
+		}
 		
 	}
 

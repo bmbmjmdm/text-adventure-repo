@@ -107,7 +107,7 @@ export class Node1B {
 			that.preparePage("East"+came2C, Node2C);
 			that.preparePage(" hallway you can tell it turns left pretty soon. There's a few strips of light on the floor as well. You can also go "); 
 			that.preparePage("West"+came2A, Node2A);
-			that.preparePage(" into a darkened corner which...kinda looks like it turns right.");
+			that.preparePage(" into a darkened corner which... kinda looks like it turns right.");
 		}
 		
 		TheWayData.LastNode = '1B';

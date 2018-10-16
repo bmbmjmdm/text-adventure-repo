@@ -224,6 +224,8 @@ YourWorldIndex["SpiralMountainContinue"] = require('../YourWorld/SpiralMountainC
 
 YourWorldIndex["SpiralScout"] = require('../YourWorld/SpiralScout.js').SpiralScout;
 
+YourWorldIndex["SpiralTend"] = require('../YourWorld/SpiralTend.js').SpiralTend;
+
 YourWorldIndex["TalkAlliesPrison"] = require('../YourWorld/TalkAlliesPrison.js').TalkAlliesPrison;
 
 YourWorldIndex["TurnAroundForest"] = require('../YourWorld/TurnAroundForest.js').TurnAroundForest;
