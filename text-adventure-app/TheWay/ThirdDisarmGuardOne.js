@@ -11,20 +11,14 @@ export class ThirdDisarmGuardOne {
 		
 		//reduce damage if player has glass
 		if(TheWayData.HasWeapon.Glass){
-			if(TheWayData.FullGlass){
-				TheWayData.Health -= 1;
-				that.preparePage("luckily you catch it with your glass just in time. It presses the glass into you a little, dealing 1 damage. You have "+ TheWayData.Health+" health. ");
-			}
-			else{
-				TheWayData.Health -= 2;
-				that.preparePage("goes to press it into your wrist. You maneuver the glass in the way to block her, which works, but ends up pressing the glass into your wrist. You take 2 damage and have "+TheWayData.Health+" health. ");
-				
-			}
+			TheWayData.Health -= 1;
+			that.preparePage("goes to press it into your wrist. You maneuver the glass in the way to block her, which works, but ends up pressing the glass into your wrist. You take 1 damage and have "+TheWayData.Health+" health. ");
+		
 		}
 		
 		else{
-			TheWayData.Health -= 3;
-			that.preparePage("presses your wrist back with it, digging in deep and dealing 3 damage. You're left with "+TheWayData.Health+" health. ");		
+			TheWayData.Health -= 2;
+			that.preparePage("presses your wrist back with it, digging in deep and dealing 2 damage. You're left with "+TheWayData.Health+" health. ");		
 		}
 		
 		//player has been killed

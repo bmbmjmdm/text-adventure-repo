@@ -5,7 +5,6 @@ import {YourWorldData} from '../GameData.js';
 export class RidgeStraight {
 
 	static createPage(that){
-		YourWorldData.Energy -= 10;
 		that.preparePage("You continue walking for some time; slowly, the clouds consume you. By the time you reach the ridge you can barely see anything, only knowing to stop because your spine let out a sigh of relief. ");
 	
 		RidgeRocks.createPage(that);

@@ -5,7 +5,7 @@ import {YourWorldData} from '../GameData.js';
 export class RidgePond {
 
 	static createPage(that){
-		YourWorldData.Energy -= 20;
+		YourWorldData.Energy -= 10;
 		YourWorldData.Berries++;
 		YourWorldData.Water += 2;
 		

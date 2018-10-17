@@ -31,6 +31,11 @@ export class MediumFire {
 		that.preparePage("here.", Camping);
 		that.preparePage(" A warm soul may be just what you need.");
 		
+		if(YourWorldData.FinalCamp){
+			that.preparePage(" After thawing your fingers and toes, the flickering heat gives you an idea. You venture out of the cove for only a moment, coming back with a waterskin full of snow. You balance it above the fire and eventually melt it down, making several portions of potable water!");
+			YourWorldData.Water += 3;
+		}
+		
 			
 	}
 

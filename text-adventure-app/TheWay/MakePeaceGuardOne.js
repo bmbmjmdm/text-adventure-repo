@@ -10,22 +10,15 @@ export class MakePeaceGuardOne {
 		
 		//reduce damage if player has glass
 		if(TheWayData.HasWeapon.Glass){
-			
-			if(TheWayData.FullGlass){
-				TheWayData.Health -= 1;
-				that.preparePage("You swipe her blade away with your glass shiv but it still carves a slice. You take 1 damage and have "+ TheWayData.Health+" health. "); 
-			}
-			
-			else{
-				TheWayData.Health -= 2;
-				that.preparePage("You knock into her blade with your glass shard but it still carves a slice. You take 2 damage and have "+ TheWayData.Health+" health. "); 
+			TheWayData.Health -= 1;
+			that.preparePage("You knock into her blade with your glass shiv but it still carves a slice. You take 1 damage and have "+ TheWayData.Health+" health. "); 
 
-			}
+			
 		}
 		
 		else{
-			TheWayData.Health -= 3;
-			that.preparePage("It buries into your stomach as you grasp her hand, keeping it from going any deeper. You take 3 damage and have "+ TheWayData.Health+" health. "); 
+			TheWayData.Health -= 2;
+			that.preparePage("It buries into your stomach as you grasp her hand, keeping it from going any deeper. You take 2 damage and have "+ TheWayData.Health+" health. "); 
 		}
 		
 		//player has been killed
@@ -37,10 +30,11 @@ export class MakePeaceGuardOne {
 		//player lives
 		else{
 						
-			//whoever has more health wins, tie going to player
+			//whoever has more health wins, tie going to guard
+			//guard gets multiplier to health because player starts with so much 
 			
 			//player dies
-			if(TheWayData.Health < TheWayData.GuardOne.Health){
+			if(TheWayData.Health <= TheWayData.GuardOne.Health*5){
 				that.preparePage("The guard drives the blade deeper into the wound, blood gushing and slowly draining the last of your health away. Eventually it's too much, there's nothing left in you, and before you know it, ");
 				that.preparePage("darkness.", HomePage);
 			}

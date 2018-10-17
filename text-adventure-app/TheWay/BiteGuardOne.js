@@ -7,9 +7,9 @@ import {TheWayData} from '../GameData.js';
 export class BiteGuardOne {
 
 	static createPage(that){
-		TheWayData.GuardOne.Health -= 4;
+		TheWayData.GuardOne.Health -= 3;
 		
-		that.preparePage("You reach a hand out to grab the gaurd's head, then lean in to bite a fleshy, exposed trachea. She isn't ready for that; she hardly knows what's happening before it's too late. You tare open a wound that sperts blood onto your face and addrenaline fills your mouth like vomit. She takes 4 damage. ");
+		that.preparePage("You reach a hand out to grab the gaurd's head, then lean in to bite a fleshy, exposed trachea. She isn't ready for that; she hardly knows what's happening before it's too late. You tare open a wound that sperts blood onto your face and addrenaline fills your mouth like vomit. She takes 3 damage. ");
 		
 		//guard is dead
 		if(TheWayData.GuardOne.Health <= 0){
@@ -23,10 +23,11 @@ export class BiteGuardOne {
 		//guard still alive
 		else{
 			
-			//whoever has more health wins. tie goes to player 
+			//whoever has more health wins. tie goes to guard
+			//guard gets multiplier to health because player starts with so much 
 			
 			//player dies
-			if(TheWayData.Health < TheWayData.GuardOne.Health){
+			if(TheWayData.Health <= TheWayData.GuardOne.Health*5){
 				that.preparePage("The guard kicks and pushes you away, grasping her neck and scurrying back. She's bleeding profusely, just like you. The two of you stare at each other as the blood drains, seconds tick, until eventually the room begins to fade. You don't know what's happening until, soon, ");
 				that.preparePage("darkness.", HomePage);
 			}

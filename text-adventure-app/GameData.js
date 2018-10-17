@@ -100,7 +100,7 @@ export function ResetTheWayData(){
 		//neutralized means they were talked down with diplomacy
 		//0 or less health means they were killed
 		//pickpocket indicates if the user attempted to steal their keys or not after neutralizing them
-		GuardOne:{Name:"GuardOne", Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
+		GuardOne:{Name:"GuardOne", Health:6, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardTwo:{Name:"GuardTwo", Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardThree:{Name:"GuardThree", Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardFour:{Name:"GuardFour", Health:14, Hostility:0, Neutralized:false, Pickpocket:false}, 
@@ -224,6 +224,8 @@ export function ResetYourWorldData(){
 		CampInstructions: false,
 		//when user sleeps with cumulative -50 or more energy over 1+ night(s), an ally will die 
 		AllyDamage: 0,
+		//set to true for the ridge camp 
+		FinalCamp: false,
 	}
 	
 }

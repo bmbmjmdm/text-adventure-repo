@@ -174,6 +174,8 @@ YourWorldIndex["RidgeBalance"] = require('../YourWorld/RidgeBalance.js').RidgeBa
 
 YourWorldIndex["RidgeDoff"] = require('../YourWorld/RidgeDoff.js').RidgeDoff;
 
+YourWorldIndex["RidgeDig"] = require('../YourWorld/RidgeDig.js').RidgeDig;
+
 YourWorldIndex["RidgeEagle"] = require('../YourWorld/RidgeEagle.js').RidgeEagle;
 
 YourWorldIndex["RidgeForge"] = require('../YourWorld/RidgeForge.js').RidgeForge;

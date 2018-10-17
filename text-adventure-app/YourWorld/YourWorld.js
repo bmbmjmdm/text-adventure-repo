@@ -17,6 +17,11 @@ export class YourWorld {
 			that.preparePage("You hear the mottly crew of cellmates make their way out behind you, and watch as people lie down in the grass, frollic in flowers, or stare at the sun. ");
 		}
 		
+		if(YourWorldData.Health  < 6){
+			that.preparePage("The taste of fresh air, the feeling of sun on your skin invigorates you. You have 6 health now as the day washes over you. ");
+			YourWorldData.Health = 6;
+		}
+		
 		that.preparePage("It's a wonderful moment of peace. Soon, however, you realize it won't last. You might feel free, but there's still a ways to go. Nature can be as cruel as a jail and will leave you for dead if you spend too much time enjoying it. You begin looking around for your next move. You see the prison behind you: a wood and stone construct falling apart in this forgotten valley. There might be ");
 		that.preparePage("something to find", SearchPrison);
 		that.preparePage(" around its perimeter, but that'll take time to search. ");

@@ -5,7 +5,7 @@ import {YourWorldData} from '../GameData.js';
 export class HornSummit{
 
 	static createPage(that){
-		that.preparePage("You claw your way to the top of the ice, mounting the precipice in your ascent to the heavens. You're taken aback by the view beyond this valley, the world stretches out to the horizon: rolling dimple hills and forests, a steaming, silent volcano in the distance, shadow-stricken cities (one at the bottom of this mountain you stand on), and towns of wheat and milk. Clouds roll into the ridge below you, crashing upon the earthly spine like waves to shore. Whatever you believe, you are here. ");
+		that.preparePage("You claw your way to the top of the ice, mounting the precipice in your ascent to the heavens. You're taken aback by the view beyond this valley, the world stretches out to the horizon: rolling dimple hills and shaggy forests, a steaming, silent volcano in the distance, shadow-stricken cities (one at the bottom of this mountain you stand atop), and towns of wheat and milk. Clouds roll into the ridge below you, crashing upon the earthly spine like waves to shore. Whatever you believe, you are here. ");
 		
 		if(YourWorldData.Allies>0){
 			that.preparePage("You did help these people, saved them. ");
@@ -26,7 +26,7 @@ export class HornSummit{
 		}
 		
 		if(YourWorldData.SadGal){
-			that.preparePage("The girl with red, stained cheeks speeks up behind you. \"I- I know that forest. Magical stuff, stuff that just might... we should- we should go there!\" Her voice shakes like her thin form in this chill, but her eyes are set, bold, mind made up and nothing's going to stop her. ");
+			that.preparePage("The girl with red, stained cheeks speaks up behind you. \"I- I know that forest. Magical stuff, stuff that just might... we should- we should go there!\" Her voice shakes like her thin form in this chill, but her eyes are set, bold, mind made up and nothing's going to stop her. ");
 		}
 		
 		if(YourWorldData.OldGuy){

@@ -7,8 +7,8 @@ import {TheWayData} from '../GameData.js';
 export class GougeGuardOne {
 
 	static createPage(that){
-		TheWayData.GuardOne.Health -= 3;
-		that.preparePage("You drive your thumbs into the guard's eyes, catching her by surprise as you press through goo. She yells and grabs your wrists and pulls them away eventually, after taking 3 damage. ");
+		TheWayData.GuardOne.Health -= 2;
+		that.preparePage("You drive your thumbs into the guard's eyes, catching her by surprise as you press through goo. She yells and grabs your wrists and pulls them away eventually, after taking 2 damage. ");
 		
 		//guard is dead
 		if(TheWayData.GuardOne.Health <= 0){
