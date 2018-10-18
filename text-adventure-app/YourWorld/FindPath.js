@@ -1,5 +1,6 @@
 import {RockyPath} from './RockyPath.js';
 import {ForestPath} from './ForestPath.js';
+import {CreasePath} from './CreasePath.js';
 import {YourWorldData} from '../GameData.js';
 
 //player is at ground level and choosing which path to take up the mountain
@@ -15,6 +16,12 @@ export class FindPath {
 		
 		if(YourWorldData.Son){
 			that.preparePage(" The young boy holds his mother's hand and points up to the great horn of the mountain. He tries to speak, \"Oooaaaoow.\"");
+		}
+		
+		if(YourWorldData.Health < 10){
+			that.preparePage(" Just then you notice a third path. It doesn't appear to lead up to the horn or ridge, shoulder or saddle of the mountain, but instead dips into a "); 
+			that.preparePage("crease of this valley.", CreasePath);
+			that.preparePage(" It likely won't get you out of here but may be worth exploring anyway.");
 		}
 	}
 

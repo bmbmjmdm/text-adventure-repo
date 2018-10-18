@@ -11,8 +11,8 @@ export class BearStand {
 			weapon = "axe";
 		}
 		
-		that.preparePage("You stand your ground, firm, shaking inside but trying to hide that. You wish you could hide. The bear's charge shakes the ground for a moment as it approaches but then it stops short. The hulk of brown fur stands a few meters away, staring at you. The silence is painful as its nostrils flair and a heavy breath fills the air. Do you ");
-		that.preparePage("scare it away", BearScareTwo);
+		that.preparePage("You stand your ground, firm, shaking inside but trying to hide that. You wish you could hide. The bear's charge shakes the ground for a moment as it approaches but then it stops short. The hulk of brown fur stands a few meters away, staring at you. The silence is painful as its nostrils flair and a heavy breath fills the air. The bear looks somewhat trapped by the terrain, broken trees and cliff blocking its escape. You don't know whether it sees you as a threat or not. Do you ");
+		that.preparePage("scare it", BearScareTwo);
 		that.preparePage(" or ");
 		that.preparePage("reach your hand out?", BearReach);
 		

@@ -194,13 +194,13 @@ var GuardAttacks = [
 
 //Strike
 ["The guard holds his sword steady with two hands, crouches, and twists at the waist in a whirl. He's so wound up. ",
-"The guard's elbow goes high and he leans into it, then forward, a steady look in his eye and rush in his step. ",
+"The guard's sword goes high and he leans into it, then forward, a steady look in his eye and rush in his step. ",
 "The guard flurries his sword, becomes excited, and steps to the side. His teeth are chattering like yours as his body makes its way forward. ",
 "The guard turns himself sideways and steps forward, pressing his sword up and starting to lean. He looks thinner now, reminding you how hungry you are. His back foot is cocked like a spring... ",
 "The guard tilts his sword to the left, then right, shuffling his shoulders to the beat and quickly inching closer. You feel like swallowing, but don't want to distract yourself. Any second he might... "],
 
 //Grapple
-["The guard slides out a foot to his side, his legs wrapped in hide straps. His top is heavier though with patchwork armor, metal slowing his movement. You watch as he starts to lean forward and lets out a yell that reverbarates in the stone and wood chamber. One hand holds his sword while the other sprawls its fingers. ",
+["The guard slides out a foot to his side, his legs wrapped in hide straps. His top is heavier though with patchwork armor, metal slowing his movement. You watch as he starts to lean forward and lets out a yell that reverbarates in the stone and wood chamber. One hand holds his sword awkwardly while the other sprawls its fingers, preparing. ",
 "The guard leans in close, his eyes on yours as his sword drifts out of place. The room feels smaller all of the sudden. ",
 "The guard ducks and pivots around you, coming in close. You share a breath. His sword is pointed downward you think... ",
 "The guard steps a foot forward between your own, but you don't think he wants to dance. Then again... ",

@@ -91,12 +91,14 @@ export class CavePit {
 	
 	
 	static findSupplies(that){
-		YourWorldData.Health += 3;
+		var healing = 20 - YourWorldData.Health;
+		healing = Math.min(healing, 5);
+		YourWorldData.Health += healing;
 		YourWorldData.Water ++;
 		YourWorldData.Flint ++;
 		YourWorldData.SharpRocks ++;
 		
-		that.preparePage("You start feeling around at the various surfaces in the water. One thing becomes blindingly apparent: there's a skeleton in here with you. Looks like someone was doing exactly what you're doing when... you try not to think about it. You quickly stop fondling the long-gone corpse and feel around elsewhere. There's a bunch of rocks in here, and the steady drip from above is now dripping on your head. There must be a leak or else this hole would be filled. Hm. Regardless, some of these rocks seem useful. One is definitely flint, another jagged like a cruel blade, and another... oddly smooth. Almost like a... like a gem. Woah. As you press the warmth of your hand against its chilled surface, the gem begins to glow. Feint at first, but soon a blinding radiance flashes before going dark again. The many cuts and bruises around your body dull as you feel refreshed, invigorated, like you could climb a mountain! You gain 3 health and now have "+YourWorldData.Health+". After pocketing everything worth while, you take out your waterskin and fill it a little with the dripping water. You don't exactly want to dip it in the pool steeping with a dead body. ");
+		that.preparePage("You start feeling around at the various surfaces in the water. One thing becomes blindingly apparent: there's a skeleton in here with you. Looks like someone was doing exactly what you're doing when... you try not to think about it. You quickly stop fondling the long-gone corpse and feel around elsewhere. There's a bunch of rocks in here, and the steady drip from above is now dripping on your head. There must be a leak or else this hole would be filled. Hm. Regardless, some of these rocks seem useful. One is definitely flint, another jagged like a cruel blade, and another... oddly smooth. Almost like a... like a gem. Woah. As you press the warmth of your hand against its chilled surface, the gem begins to glow. Feint at first, but soon a blinding radiance flashes before going dark again. The many cuts and bruises around your body dull as you feel refreshed, invigorated, like you could climb a mountain! You gain "+healing+" health and now have "+YourWorldData.Health+". After pocketing everything worth while, you take out your waterskin and fill it a little with the dripping water. You don't exactly want to dip it in the pool steeping with a dead body. ");
 	}
 	
 	

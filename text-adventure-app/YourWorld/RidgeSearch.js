@@ -12,11 +12,11 @@ export class RidgeSearch {
 			YourWorldData.Kindling ++;
 		}
 		
-		that.preparePage("You leave the slight warmth of your cove and press into the piercing haze. It buffles your body and stiffens your skin, you feel around the wall as quick as you can and pull out dead roots and fiber. There's not much out here, but you manage to gather a ball of (slightly moist) tinder. You'll need some flint to light this stuff you realize, and can't tell whether you should return to your shelter to setup ");
+		that.preparePage("You leave the slight warmth of your cove and press into the piercing haze. It buffles your body and stiffens your skin, you feel around the wall as quick as you can and pull out dead roots and fiber. There's not much out here, but you manage to gather a ball of (slightly moist) tinder. You'll need some flint to light this you realize, and can't tell whether you should return to your shelter to setup ");
 		that.preparePage("camp", Camping);
 		that.preparePage(" or ");
-		that.preparePage("go digging", RidgeDig);
-		that.preparePage(" for some.");
+		that.preparePage("go searching", RidgeDig);
+		that.preparePage(" for stones.");
 	}
 
 

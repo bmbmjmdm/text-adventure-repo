@@ -86,6 +86,8 @@ YourWorldIndex["ClimbWall"] = require('../YourWorld/ClimbWall.js').ClimbWall;
 
 YourWorldIndex["ClimbWet"] = require('../YourWorld/ClimbWet.js').ClimbWet;
 
+YourWorldIndex["CreasePath"] = require('../YourWorld/CreasePath.js').CreasePath;
+
 YourWorldIndex["DrinkWater"] = require('../YourWorld/DrinkWater.js').DrinkWater;
 
 YourWorldIndex["EatBerries"] = require('../YourWorld/EatBerries.js').EatBerries;
