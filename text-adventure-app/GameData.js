@@ -178,9 +178,10 @@ export function ResetYourWorldData(){
 		//vines found which will help with tasks like climbing 
 		Vines: 0,
 		//energy which is required/depletes for tasks and regenerates with fire or food or water (base 10 restored when resting) 
-		//tasks can be done at 0 energy but run a % chance of killing a party member, hurting player, or losing supplies 
-		Energy: 50 + 10*(GlobalData.LastTheWayData.PrisonersEscaped-2),
-		//Almost every section can be searched, keep track of all of them here
+		//tasks can be done at 0 energy but run a chance of killing a party member or hurting player
+		Energy: 40,
+		//Almost every section can be searched
+		//search first area 
 		SearchedPrison: false,
 		//Searched the RockyPath area
 		SearchedRockyPath: false,
