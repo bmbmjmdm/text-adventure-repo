@@ -187,24 +187,24 @@ var GuardAttacks = [
 
 //Parry
 ["The guard steps a foot back, crouches, and hovers his sword high in front of himself, waiting. ",
-"The guard lays a palm on his sword and holds it out flat in front of himself, calm. The face of it is reflective; you can see yourself ragged and armed. ",
-"The guard raises his sword near your own, staring deep into your eyes, silent. It pushes and pulls, wavering steadily. ",
-"The guard begins slowly walking around you, pacing his steps, and watching closely. The room watches in turn, as does the world, the sun, the stars, you get the idea. All of them wait for their time to shine, patient. ",
+"The guard lays a palm on his sword and holds it out flat in front of himself, calm, patient. The face of it is reflective; you can see yourself ragged and armed. ",
+"The guard raises his sword near your own, staring deep into your eyes, silent. It pushes and pulls in wait, wavering steadily. ",
+"The guard begins slowly walking around you, pacing his steps, and watching closely. The room watches in turn, as does the world, the sun, the stars, you get the idea. All of them wait for their time to shine patiently. ",
 "The guard takes his sword in two hands, tilts it upward, and takes a deep, calm breath. Then another. Another. "], 
 
 //Strike
 ["The guard holds his sword steady with two hands, crouches, and twists at the waist in a whirl. He's so wound up. ",
-"The guard's sword goes high and he leans into it, then forward, a steady look in his eye and rush in his step. ",
-"The guard flurries his sword, becomes excited, and steps to the side. His teeth are chattering like yours as his body makes its way forward. ",
+"The guard's sword sways right, then left, then forward as he leans into it, a steady look in his eye and rush in his step. ",
+"The guard flurries his sword, becomes excited, and steps side to side. His teeth are chattering like yours as his body makes its way forward, his sword tipping. ",
 "The guard turns himself sideways and steps forward, pressing his sword up and starting to lean. He looks thinner now, reminding you how hungry you are. His back foot is cocked like a spring... ",
 "The guard tilts his sword to the left, then right, shuffling his shoulders to the beat and quickly inching closer. You feel like swallowing, but don't want to distract yourself. Any second he might... "],
 
 //Grapple
-["The guard slides out a foot to his side, his legs wrapped in hide straps. His top is heavier though with patchwork armor, metal slowing his movement. You watch as he starts to lean forward and lets out a yell that reverbarates in the stone and wood chamber. One hand holds his sword awkwardly while the other sprawls its fingers, preparing. ",
+["The guard slides out a foot to his side, his legs wrapped in hide straps. His top is heavier with patchwork armor, metal slowing his movement. You watch as he starts to lean forward and lets out a yell that reverbarates in the stone and wood chamber. One hand holds his sword awkwardly while the other sprawls its fingers, preparing. ",
 "The guard leans in close, his eyes on yours as his sword drifts out of place. The room feels smaller all of the sudden. ",
 "The guard ducks and pivots around you, coming in close. You share a breath. His sword is pointed downward you think... ",
 "The guard steps a foot forward between your own, but you don't think he wants to dance. Then again... ",
-"The guard tilts his sword towards the floor and takes a step forward. He looks like a man with nothing to lose; battle chiseled him jaded. "]
+"The guard tilts his sword towards the floor and takes a step forward, torso open. He looks like a man with nothing to lose; battle chiseled him jaded. "]
 ]; 
 
 

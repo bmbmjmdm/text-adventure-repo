@@ -21,7 +21,7 @@ export class FindPath {
 		if(YourWorldData.Health < 10){
 			that.preparePage(" Just then you notice a third path. It doesn't appear to lead up to the horn or ridge, shoulder or saddle of the mountain, but instead dips into a "); 
 			that.preparePage("crease of this valley.", CreasePath);
-			that.preparePage(" It likely won't get you out of here but may be worth exploring anyway.");
+			that.preparePage(" It likely won't get you out of here but may be worth exploring, if only for a minute.");
 		}
 	}
 
