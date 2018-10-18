@@ -10,7 +10,7 @@ export class OpenAppStore {
 
 		//open app store for ios
 		if (Platform.OS === 'ios'){
-			Linking.openURL('itms://itunes.apple.com/app/id1437961208');
+			Linking.openURL('itms-apps://itunes.apple.com/app/id1437961208');
 			
 			//TODO https://stackoverflow.com/questions/35612383/how-to-make-a-rate-this-app-link-in-react-native-app/41021128
 		}
