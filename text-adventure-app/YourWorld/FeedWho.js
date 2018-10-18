@@ -12,7 +12,7 @@ export class FeedWho {
 
 	static createPage(that){
 		
-		that.preparePage("Ok, " + YourWorldData.Eating + ", sounds good! Now...who gets to "+YourWorldData.EatDrink+"? ");
+		that.preparePage("Ok, " + YourWorldData.Eating + ", sounds good! Now... who gets to "+YourWorldData.EatDrink+"? ");
 		that.preparePage("You?", FeedSelf);
 		if(YourWorldData.SadGal){
 			that.preparePage(" The ");

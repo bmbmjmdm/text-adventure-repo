@@ -15,7 +15,7 @@ export class DropSword {
 		that.preparePage("Commit ");
 		that.preparePage("blasphemy? ", IsSinner);
 		that.preparePage("Are you an ");
-		that.preparePage("escaped slave ", IsStruggling); 
+		that.preparePage("escaped slave", IsStruggling); 
 		that.preparePage(" or perhaps ");
 		that.preparePage("an adulterer?", IsSinner);
 		

@@ -355,6 +355,8 @@ export default class App extends React.Component {
   
   justQuickSaved = false; 
   showQuickSaveTip = true;
+  justBacked = false; 
+  showBackTip = true;
   showDiedTip = true; 
   //we're swiping, go back to homescreen and possibly save 
 	handleSwipe(that){
@@ -375,6 +377,11 @@ export default class App extends React.Component {
 			}
 			else{
 				FileManager.clearLevelFile();
+				//if this is the user hasnt seen the quicksave tip yet, give them half of one 
+				if(that.showBackTip){
+					that.justBacked = true;
+					that.showBackTip = false;
+				}
 				that.handleClick(HomePage, that);
 			}
 			

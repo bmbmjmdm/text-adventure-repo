@@ -5,7 +5,7 @@ import {YourWorldData} from '../GameData.js';
 export class ClimbBush {
 
 	static createPage(that){
-		YourWorldData.ClimbCorrect--;
+		YourWorldData.Energy -= 10; 
 		YourWorldData.SearchedClimb = true;
 		YourWorldData.Berries ++;
 		YourWorldData.Kindling ++;

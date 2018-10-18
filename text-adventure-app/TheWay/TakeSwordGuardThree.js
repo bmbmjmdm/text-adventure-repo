@@ -12,7 +12,7 @@ export class TakeSwordGuardThree {
 		that.preparePage("You take a cautious step forward and reach out for the guard's sword. You assure him he'll live if he hands it over. The guard recoils and takes a defensive stance. \"W-what do you mean? No!\" That didn't go so well. He's on the verge of freaking out, do you ");
 		that.preparePage("tell him you have rabies", RabiesGuardThree);
 		that.preparePage(" or ");
-		that.preparePage(" command him to return to his post?", CommandGuardThree);
+		that.preparePage("command him to return to his post?", CommandGuardThree);
 		
 		
 		if(TheWayData.Gold > 0){

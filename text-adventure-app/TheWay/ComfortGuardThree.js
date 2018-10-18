@@ -12,7 +12,7 @@ export class ComfortGuardThree {
 		that.preparePage("You try to console the guard and tell him everything's fine. He looks at you confused, though takes a deep breath and steadies his hands. \"I-I don't know.\" The young man is looking around the room, hoping for an answer on the walls. You're the voice in his ear: do you want to try and get him to run away by ");
 		that.preparePage("telling him you have rabies", RabiesGuardThree);
 		that.preparePage(" or ");
-		that.preparePage(" command him to return to his post?", CommandGuardThree);
+		that.preparePage("command him to return to his post?", CommandGuardThree);
 		
 		
 		if(TheWayData.Gold > 0){

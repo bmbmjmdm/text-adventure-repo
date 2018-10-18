@@ -8,10 +8,10 @@ export class FeedFoul {
 		that.preparePage("You give the rank man your "+YourWorldData.Eating+". He flashes a devlish grin, winks and laughs, then begins "+YourWorldData.EatDrink+"ing. ");
 
 		if(YourWorldData.Eating == "meat" && !YourWorldData.Campfire){
-			that.preparePage("After he finishes, he lets out a burp more foul than you could've imagined. You can't imagine that's normal for him, maybe it was the uncooked meat? ");
+			that.preparePage("After he finishes, he lets out a burp more foul than you knew possible. You can't imagine that's normal for him, maybe it was the uncooked meat? ");
 		}
 		if(YourWorldData.Eating == "berries"){
-			that.preparePage("He licks his fingers as he speaks, \"Hank oo tho mutsch! Beh-eeths awe mah hayve-it! ");
+			that.preparePage("He licks his fingers as he speaks, \"Hank oo tho mutsch! Beh-eeths awe mah hayve-it!\" ");
 			YourWorldData.Energy += 10;
 		}
 		

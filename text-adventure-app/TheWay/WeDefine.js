@@ -28,7 +28,7 @@ export class WeDefine {
 		
 		//hostile
 		if(TheWayData.GuardFour.Hostility > 0){
-			that.preparePage("Well God'll be havin' ye back in 'at cell in no time. Have at ye!\" He raises the blood-stained axe and begins pivoting around you. The other guard follows suit, taking the other side, and soon you're flanked! With two people trying to claim your head, any mistake could be fatal. What do you do? ");
+			that.preparePage(" Well God'll be havin' ye back in 'at cell in no time. Have at ye!\" He raises the blood-stained axe and begins pivoting around you. The other guard follows suit, taking the other side, and soon you're flanked! With two people trying to claim your head, any mistake could be fatal. What do you do? ");
 			if(!TheWayData.HasWeapon.Sword){
 				TheWayData.HasWeapon.Sword = true;
 				that.preparePage("First thing's first, you pick up the sword at your feet as the guards get into position. Luckily they're being cautious so you have time to do so, on the other hand their caution means these guards are well trained. Now let's se... ");

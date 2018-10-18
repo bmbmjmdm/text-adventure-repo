@@ -8,7 +8,7 @@ export class ForestClearingCamp {
 	static createPage(that){
 		YourWorldData.CampContinue = ForestClearingContinue;
 		
-		that.preparePage("You find a nice patch of grass and settle in. There's a rustling in the bushes...hope it's nothing serious. ");
+		that.preparePage("You find a nice patch of grass and settle in. There's a rustling in the bushes... hope it's nothing serious. ");
 		
 		if(YourWorldData.Son){
 			that.preparePage("The small boy wanders over ");

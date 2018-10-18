@@ -103,7 +103,7 @@ export function ResetTheWayData(){
 		GuardOne:{Name:"GuardOne", Health:6, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardTwo:{Name:"GuardTwo", Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		GuardThree:{Name:"GuardThree", Health:8, Hostility:0, Neutralized:false, Pickpocket:false}, 
-		GuardFour:{Name:"GuardFour", Health:14, Hostility:0, Neutralized:false, Pickpocket:false}, 
+		GuardFour:{Name:"GuardFour", Health:12, Hostility:0, Neutralized:false, Pickpocket:false}, 
 		//gold is used for bribing guards and the next level
 		Gold:0, 
 		//glass can be used to try and free prisoner at 1b, but will fail and can get stuck inside the lock

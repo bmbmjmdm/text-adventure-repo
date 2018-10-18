@@ -13,7 +13,7 @@ export class FeedMother {
 			that.perparePage("She looks to the sky and begins to tear up before devouring the "+YourWorldData.Eating+". ");
 		}
 		if(YourWorldData.Eating == "meat" && !YourWorldData.Campfire){
-			that.preparePage("She sits down and presses her sides inward \"N-not to sound ungrateful, but next time, maybe we should build a fire first. That was a bit-hn- raw. ");
+			that.preparePage("She sits down and presses her sides inward \"N-not to sound ungrateful, but next time, maybe we should build a fire first. That was a bit- hn- raw.\" ");
 		}
 		if(YourWorldData.Eating == "water"){
 			that.preparePage("\"I can't thank you enough, I haven't had anything to drink since... well, yeah.\" It's not clear what she's referring to but her eyes have wandered. ");

@@ -24,7 +24,7 @@ export class Node6A {
 			}
 		
 			else if(TheWayData.LastNode == '6B'){
-				that.preparePage("You depart the cell for greener pastures...well, maybe not yet. Right now you follow a well-lit corridor to a large, ornate wooden door. There are banners at its sides and you get a creeping feeling someone might be inside... ");
+				that.preparePage("You depart the cell for greener pastures... well, maybe not yet. Right now you follow a well-lit corridor to a large, ornate wooden door. There are banners at its sides and you get a creeping feeling someone might be inside... ");
 				came6B = " (the way you came)";
 			}
 		

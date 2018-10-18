@@ -8,7 +8,7 @@ export class EscortedGuardTwo {
 	static createPage(that){
 		
 		TheWayData.GuardTwo.Hostility += 2;
-		that.preparePage("As you tell a story of friendship, perhaps romance, and the kindness of a guard that let you roam the damp underground, the guard you're speaking to rolls his eyes. \"And where is that guard now?\" He asks. You fumble over a few words as he asks further, \"And that still doesn't explain how you came past here without me seeing you.\" ");
+		that.preparePage("As you tell a story of friendship, perhaps romance, and the kindness of a guard that let you roam the damp underground, the guard you're speaking to rolls his eyes. \"And where is that guard now?\" You fumble over a few words as he asks further, \"And that still doesn't explain how you came past here without me seeing you.\" ");
 		
 		//deal with neutral hostility by randomly adding positive or negative one to it 
 		if(TheWayData.GuardTwo.Hostility == 0){

@@ -12,13 +12,13 @@ export class Levels {
 			
 			that.preparePage("Naeris Prison - The Escape\n\n", PrisonLevel);
 			
-			that.preparePage("City of Xanaphia - Rogue Rumors\n\n", ComingSoon);
+			that.preparePage("City of Xanaph - Rogue Rumors\n\n", ComingSoon);
 			
 			if(GlobalData.ForestUnlocked){
-				that.preparePage("Sariel Forest - Grove Secrets\n\n", ComingSoon);
+				that.preparePage("Sariel Forest - Ancient Grove\n\n", ComingSoon);
 			}
 			else{
-				that.preparePage("Sariel Forest - Grove Secrets\n\n");
+				that.preparePage("Sariel Forest - Ancient Grove\n\n");
 			}
 			
 			if(GlobalData.TownRuinsUnlocked){

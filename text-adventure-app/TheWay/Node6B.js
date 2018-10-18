@@ -89,7 +89,7 @@ export class Node6B {
 		
 		//can search
 		if(TheWayData.Prisoner6BFree && !TheWayData.Searched.Node6B){
-			that.preparePage("With the kind lady's advice, you consider ");
+			that.preparePage("Given the kind lady's advice, you consider ");
 			that.preparePage("searching", Search6B);
 			that.preparePage(" the room. ");
 			

@@ -95,7 +95,7 @@ export class Node1B {
 			
 			//optional free prisoner choice
 			if(!TheWayData.Prisoner1BFree){
-				that.preparePage("The prisoner in the cell next to yours then whispers out, \"Hey kid! ");
+				that.preparePage("The prisoner in the cell next to yours whispers out, \"Hey kid! ");
 				that.preparePage("Help", TalkPrisoner1B);
 				that.preparePage(" me, please,\" as you look around. ");
 			}
@@ -103,10 +103,10 @@ export class Node1B {
 			//this is where the real room options are
 			that.preparePage("The tattered wooden hallways echo with whimpers and clangs as you look away from your cell. If you go ");
 			that.preparePage("North"+came2B+",", Node2B);
-			that.preparePage(" you can see a long, cracking corridor with a few different turns. Looking down the ");
+			that.preparePage(" you can see a long, cracking corridor with a few different turns letting out light. Looking down the ");
 			that.preparePage("East"+came2C, Node2C);
 			that.preparePage(" hallway you can tell it turns left pretty soon. There's a few strips of light on the floor as well. You can also go "); 
-			that.preparePage("West"+came2A, Node2A);
+			that.preparePage("West"+came2A, Node2A);  
 			that.preparePage(" into a darkened corner which... kinda looks like it turns right.");
 		}
 		

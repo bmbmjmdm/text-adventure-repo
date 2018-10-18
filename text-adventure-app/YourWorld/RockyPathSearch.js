@@ -13,7 +13,7 @@ export class RockyPathSearch {
 		that.preparePage("You peer over the mound of dirt and rock, holding onto it carefully and adjusting your weight so it doesn't slide out from under. As trickles of rocks fall and tumble down the mountain side, your hand gives, and in a moment of panic you feel like you're falling. ");
 		
 		if(YourWorldData.OldGuy){
-			that.preparePage("The short, balding man lets out a hand to catch your own and the two of you bend steadily. You give a breathless thanks as your heart tries to steady. ");
+			that.preparePage("The short, balding man lets out a hand to catch your own and the two of you bend steadily. You give a breathless thanks as your heart tries to relax. ");
 		}
 		else{
 			that.preparePage("Your feet slide as you tumble slightly, grasping again and again at rock. Eventually the sliding stops and you bring yourself back up to your feet, climb back to where you were, and assess the damage. ");

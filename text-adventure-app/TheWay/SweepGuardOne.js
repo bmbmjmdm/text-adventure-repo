@@ -21,7 +21,7 @@ export class SweepGuardOne {
 		else{
 			that.preparePage("You lie on top of the guard now, your hands trembling from addrenaline. You could try to ");
 			that.preparePage("take her sword", ThirdDisarmGuardOne);
-			that.preparePage(" while you have the chance, or leave yourself open and go on the offensive, maybe ");
+			that.preparePage(" while you have the chance, or go a bit more aggressive, maybe ");
 			that.preparePage("gouge her eyes", GougeGuardOne);
 			that.preparePage(" or something crazy like that.");
 			

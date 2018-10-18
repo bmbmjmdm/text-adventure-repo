@@ -18,7 +18,7 @@ export class HomePage{
 	  }
 	  var loadableFiles = await FileManager.GetFileNames();
 	  
-	  //show a tip if this is the first time the user swipes back
+	  //show a tip if this is the first time the user swipes back and saves
 	  if(that.justQuickSaved){
 		  that.justQuickSaved = false;
 		  this.homepageTip(that);
@@ -28,6 +28,12 @@ export class HomePage{
 	  if(justDied && that.showDiedTip){
 		  that.showDiedTip = false;
 		  this.homepageDied(that);
+	  }
+	  
+	  //show a tip if this is the first time the user swipes back and doesnt save 
+	  if(that.justBacked){
+		  that.justBacked = false;
+		  this.homepageHalfTip(that);
 	  }
 	  
 	  this.homepageContinue(that, loadableFiles.length > 0);
@@ -74,10 +80,18 @@ export class HomePage{
   }
   
   
-  //shows a tip about quicksaves the first time the user goes "back" in a session 
+  //shows a tip about quicksaves the first time the user goes "back" in a session and saves
   static homepageTip(that){
 	  that.preparePage("Quicksave successful! Load earlier saves to remake decisions and change your story!");
 	  that.preparePage("¤");
+	  that.preparePage("\n");
+  } 
+  
+  //shows a tip about backs the first time the user goes "back" in a session and doesnt save
+  static homepageHalfTip(that){
+	  that.preparePage("Swipe back to quicksave in game and return to the main menu!");
+	  that.preparePage("¤");
+	  that.preparePage("\n");
   } 
 
   
@@ -85,6 +99,7 @@ export class HomePage{
   static homepageDied(that){
 	  that.preparePage("You died! Either continue from your last save, start the level anew, or load an earlier save to remake decisions!");
 	  that.preparePage("¤");
+	  that.preparePage("\n");
   }
   
   
