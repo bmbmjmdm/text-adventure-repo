@@ -28,7 +28,7 @@ export class Node7C {
 		TheWayData.GuardFour.Hostility += total;
 		
 		
-		that.preparePage("You walk towards the large, oak door, etched with some kind of prayer around its sides and a silver casting curled around it. The light is strong enough to illuminate the banners, which appear as a sword against red cloth for one and an olive branch against green for the other. As you clutch the worn sword in your hands and take a deep breath, the can hear the voices on the other side of the door, \"What d'ya think the cause a' this is?\" \"Dunno, but ya smell the smoke, eh?\" \"Aye... somethin's- what was that?\" The tip of your sword dings the floor and the voices go silent. It's about time to show them what they're looking for. Do you ");
+		that.preparePage("You walk towards the large, oak door, etched with some kind of prayer around its sides and a silver casting curled around it. The light is strong enough to illuminate the banners, which appear as a strange cross against red cloth for one and three circles against green for the other. As you clutch the worn sword in your hands and take a deep breath, the can hear the voices on the other side of the door, \"What d'ya think the cause a' this is?\" \"Dunno, but ya smell the smoke, eh?\" \"Aye... somethin's- what was that?\" The tip of your sword dings the floor and the voices go silent. It's about time to show them what they're looking for. Do you ");
 		that.preparePage("kick the door open", KickDoor);
 		that.preparePage(" or ");
 		that.preparePage("enter calmly?", OpenDoor);

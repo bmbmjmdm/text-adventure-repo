@@ -4,6 +4,7 @@
 export var GlobalData = 
 {Story2Unlocked:false, 
 Story3Unlocked:false,
+Story4Unlocked:false,
 TownRuinsUnlocked:false,
 DesertUnlocked:false,
 CityUnlocked:false,
@@ -12,12 +13,14 @@ VolcanoUnlocked:false,
 LastARoomData:{},
 LastTheWayData:{},
 LastYourWorldData:{},
+LastSettlingInData:{},
 };
 
 
 export var ARoomData;
 export var TheWayData;
 export var YourWorldData;
+export var SettlingInData;
 
 export function setARoomData(data){
 	ARoomData = data;
@@ -31,6 +34,10 @@ export function setYourWorldData(data){
 
 export function setGlobalData(data){
 	GlobalData = data;
+}
+
+export function setSettlingInData(data){
+	SettlingInData = data;
 }
 
 
@@ -154,12 +161,19 @@ export function ResetYourWorldData(){
 		//number of allies with the player, can die off 
 		Allies: GlobalData.LastTheWayData.PrisonersEscaped,
 		//the individual allies the player has
+		//the "beginning" part is so we can see if the character died for later level stuff 
 		Mother: GlobalData.LastTheWayData.PrisonersEscaped>0,
+		MotherBeginning: GlobalData.LastTheWayData.PrisonersEscaped>0,
 		Son: GlobalData.LastTheWayData.PrisonersEscaped>0,
+		SonBeginning: GlobalData.LastTheWayData.PrisonersEscaped>0,
 		OldGuy: GlobalData.LastTheWayData.Prisoner1BFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
+		OldGuyBeginning: GlobalData.LastTheWayData.Prisoner1BFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
 		SadGal: GlobalData.LastTheWayData.Prisoner3AFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
+		SadGalBeginning: GlobalData.LastTheWayData.Prisoner3AFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
 		FoulGuy: GlobalData.LastTheWayData.Prisoner5CFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
+		FoulGuyBeginning: GlobalData.LastTheWayData.Prisoner5CFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
 		BadassGal: GlobalData.LastTheWayData.Prisoner6BFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
+		BadassGalBeginning: GlobalData.LastTheWayData.Prisoner6BFree && GlobalData.LastTheWayData.PrisonersEscaped>0,
 		//kindling found which will make fire. 10 energy on its own, 20 with flint, 50 with wood 
 		Kindling: 0,
 		//berries found which can be eaten at camp for 10 energy each
@@ -229,4 +243,51 @@ export function ResetYourWorldData(){
 		FinalCamp: false,
 	}
 	
+}
+
+
+
+export function ResetSettlingInData(){
+	SettlingInData = {
+		//health carries over
+		Health: GlobalData.LastYourWorldData.Health, 
+		//axe as weapon
+		Axe: GlobalData.LastYourWorldData.HasAxe,
+		//gold is used for buying
+		Gold: GlobalData.LastYourWorldData.Gold,
+		//number of allies with the player, can die off 
+		Allies: GlobalData.LastYourWorldData.Allies,
+		//the individual allies the player has
+		Mother: GlobalData.LastYourWorldData.Mother,
+		Son: GlobalData.LastYourWorldData.Son,
+		OldGuy: GlobalData.LastYourWorldData.OldGuy,
+		SadGal: GlobalData.LastYourWorldData.SadGal,
+		FoulGuy: GlobalData.LastYourWorldData.FoulGuy,
+		BadassGal: GlobalData.LastYourWorldData.BadassGal,
+		//things that can be bought at in level 1
+		Shield: false,
+		Bow: false,
+		Cloak: false,
+		Makeup: false,
+		Poison: false,
+		Blessing: false,
+		Bribe: false,
+		//stealth determines if the player gets jumped in a few scenarios 
+		Stealth: 0,
+		//took son into city if hes there
+		TookSon: false,
+		//things done in level 1
+		Bar: false,
+		Stable: false,
+		Blacksmith: false,
+		Market: false,
+		Apothecary: false,
+		Church: false,
+		//how many places we went in the city. at 4 we stop exploring 
+		CityExplored: 0,
+		//how many times player visited the outskirts or center 
+		Outskirts: 0,
+		Center: 0,
+		
+	}
 }
