@@ -5,6 +5,8 @@ import {Blacksmith} from './Blacksmith.js';
 import {Church} from './Church.js';
 import {Apothecary} from './Apothecary.js';
 import {Market} from './Market.js';
+import {RRContact} from './RRContact.js';
+import {HHContact} from './HHContact.js';
 
 //all the options to do in the city, all of which are either making or spending money 
 export class ExploreCity {
@@ -12,7 +14,15 @@ export class ExploreCity {
 	static createPage(that){
 		//if we reached 4 choices, decide where to go next 
 		if(SettlingInData.CityExplored == 4){
+			//the user has mainly spent time in the outskirts, have the Riffraff contact them
+			if(SettlingInData.Outskirts>= 3){
+				RRContact.createPage(that);
+			}
 			
+			//mainly spent time in the city center, have the Helping Hand contact them 
+			else{
+				HHContact.createPage(that);
+			}
 		}
 		
 		//make a choice 
@@ -59,7 +69,7 @@ export class ExploreCity {
 			that.preparePage("In the outskirts there's odd folk selling suspicious brews, ");
 			that.preparePage("apothecaries", Apothecary);
 			that.preparePage(" they're called, as well as the ");
-			that.preparePage("wares market", Market);
+			that.preparePage("handmade market", Market);
 			that.preparePage(" in a maze of tents. ");
 		}
 		else if (!SettlingInData.Apothecary){
@@ -70,7 +80,7 @@ export class ExploreCity {
 		}
 		else if (!SettlingInData.Market){
 			that.preparePage("In the outskirts there's a smoky ");
-			that.preparePage("wares market", Market);
+			that.preparePage("handmade market", Market);
 			that.preparePage(" in a maze of tents. ");
 		}
 		that.preparePage("And that's about it! Now, what to do in the great city of Xanaph?");

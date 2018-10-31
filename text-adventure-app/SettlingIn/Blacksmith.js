@@ -17,13 +17,13 @@ export class Blacksmith {
 		that.preparePage("bow.", BlacksmithBow);
 		
 		if(SettlingInData.Gold > 1){
-			that.preparePage("Alternatively you could buy ");
+			that.preparePage(" Alternatively you could buy ");
 			that.preparePage("both", BlacksmithBoth);
 			that.preparePage(" or ");
 			that.preparePage("neither.", ExploreCity);
 		}
 		else{
-			that.preparePage("Or you could ");
+			that.preparePage(" Or you could ");
 			that.preparePage("leave.", ExploreCity);
 		}
 	}

@@ -4,7 +4,7 @@
 export var GlobalData = 
 {Story2Unlocked:false, 
 Story3Unlocked:false,
-Story4Unlocked:false,
+Story5Unlocked:false,
 TownRuinsUnlocked:false,
 DesertUnlocked:false,
 CityUnlocked:false,
@@ -267,8 +267,7 @@ export function ResetSettlingInData(){
 		//things that can be bought at in level 1
 		Shield: false,
 		Bow: false,
-		Cloak: false,
-		Makeup: false,
+		Disguise: false,
 		Poison: false,
 		Blessing: false,
 		Bribe: false,
@@ -288,6 +287,10 @@ export function ResetSettlingInData(){
 		//how many times player visited the outskirts or center 
 		Outskirts: 0,
 		Center: 0,
+		//determines if Riffraff is an ally or not 
+		RRAlly: false,
+		//determines ending node after ambush
+		AfterAmbush: {},
 		
 	}
 }
