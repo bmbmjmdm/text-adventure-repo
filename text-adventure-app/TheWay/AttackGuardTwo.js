@@ -30,7 +30,7 @@ export class AttackGuardTwo {
 		
 		//the player died from getting stabbed
 		if(TheWayData.Health <= 0){
-			that.preparePage("Oh wait, nevermind. The guard cut open a thick, juicy artery, which now pools the clean floor with blood. You hear him say something but can't make it out as your vision goes ");
+			that.preparePage("Oh wait, never mind. The guard cut open a thick, juicy artery, which now pools the clean floor with blood. You hear him say something but can't make it out as your vision goes ");
 			that.preparePage("dark.", HomePage);
 		}
 		

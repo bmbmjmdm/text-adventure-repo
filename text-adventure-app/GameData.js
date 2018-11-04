@@ -5,6 +5,7 @@ export var GlobalData =
 {Story2Unlocked:false, 
 Story3Unlocked:false,
 Story5Unlocked:false,
+Story6Unlocked:false,
 TownRuinsUnlocked:false,
 DesertUnlocked:false,
 CityUnlocked:false,
@@ -27,7 +28,7 @@ export function setARoomData(data){
 }
 export function setTheWayData(data){
 	TheWayData = data;
-}
+}  
 export function setYourWorldData(data){
 	YourWorldData = data;
 }
@@ -291,6 +292,10 @@ export function ResetSettlingInData(){
 		RRAlly: false,
 		//determines ending node after ambush
 		AfterAmbush: {},
+		AmbushHealth: 18,
+		AmbushFoes: 3,
+		AmbushLastChoices: [0,0,0],
+		AmbushRandomness: {},
 		
 	}
 }

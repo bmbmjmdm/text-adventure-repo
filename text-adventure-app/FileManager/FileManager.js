@@ -322,6 +322,7 @@ export class FileManager {
 	static ARoomIndex;
 	static TheWayIndex;
 	static YourWorldIndex;
+	static SettlingInIndex;
 	static MenusIndex;
 	static FileManagerIndex;
 	
@@ -330,6 +331,7 @@ export class FileManager {
 		this.ARoomIndex = require('./ARoomIndex.js').ARoomIndex;
 		this.TheWayIndex = require('./TheWayIndex.js').TheWayIndex;
 		this.YourWorldIndex = require('./YourWorldIndex.js').YourWorldIndex;
+		this.SettlingInIndex = require('./SettlingInIndex.js').SettlingInIndex;
 		this.MenusIndex = require('./MenusIndex.js').MenusIndex;
 		this.FileManagerIndex = require('./FileManagerIndex.js').FileManagerIndex;
 	}

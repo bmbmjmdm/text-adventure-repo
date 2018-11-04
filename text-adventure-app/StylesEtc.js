@@ -53,7 +53,7 @@ export class DefaultText extends React.Component {
 			this.reWritten = false;
 			displayText = this.myText;
 		}
-		return (<Text style={styles.defaultText} onPress={this.props.onPress}>{displayText}</Text>);
+		return (<Text style={styles.defaultText} accessible={false}>{displayText}</Text>);
 	}
   
   
@@ -91,7 +91,7 @@ export class ClickText extends React.Component {
 			this.reWritten = false;
 			displayText = this.myText;
 		}
-		return (<Text style={styles.clickText} onPress={this.startPress} onResponderMove={this.startPress} onResponderRelease={this.didRetainPress}>{displayText}</Text>);
+		return (<Text accessible={true} style={styles.clickText} onPress={this.startPress} onResponderMove={this.startPress} onResponderRelease={this.didRetainPress}>{displayText}</Text>);
 	}
 
 	

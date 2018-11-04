@@ -200,7 +200,7 @@ var GuardAttacks = [
 "The guard tilts his sword to the left, then right, shuffling his shoulders to the beat and quickly inching closer. You feel like swallowing, but don't want to distract yourself. Any second he might... "],
 
 //Grapple
-["The guard slides out a foot to his side, his legs wrapped in hide straps. His top is heavier with patchwork armor, metal slowing his movement. You watch as he starts to lean forward and lets out a yell that reverbarates in the stone and wood chamber. One hand holds his sword awkwardly while the other sprawls its fingers, preparing. ",
+["The guard slides out a foot to his side, his legs wrapped in hide straps. His top is heavier with patchwork armor, metal slowing his movement. You watch as he starts to lean forward and lets out a yell that reverberates in the stone and wood chamber. One hand holds his sword awkwardly while the other sprawls its fingers, preparing. ",
 "The guard leans in close, his eyes on yours as his sword drifts out of place. The room feels smaller all of the sudden. ",
 "The guard ducks and pivots around you, coming in close. You share a breath. His sword is pointed downward you think... ",
 "The guard steps a foot forward between your own, but you don't think he wants to dance. Then again... ",
@@ -215,13 +215,13 @@ var GuardAttacks = [
 var GrappleVParry = [
 "You slide your foot forward and lock wrists with the guard. You press his back and avert his sword, then bring around a right hook to knock his chin off balance. It works and he takes 1 damage. ",
 "You press your sword against the guard's and lean in, grab his head, and keep pushing forward into a wall behind him. The thud reverberates through his skull and down your hand; he takes 1 damage. ",
-"As the guard steadies his sword, you feint left, and he takes the bait. His other side is exposed and you grab the front of his chestplate, pulling him towards you and headbutting him. He takes 1 damage and stumble back. "];
+"As the guard steadies his sword, you feint left, and he takes the bait. His other side is exposed and you grab the front of his chest plate, pulling him towards you and head-butting him. He takes 1 damage and stumble back. "];
 
 
 var GrappleVStrike = []; // look down at function updateTexts
 
 var GrappleVGrapple = [
-"You and the guard launch forward simultaniously, your swords clash at the hilt and your free hands grasp the others'. You lock for a moment and read your foe's face through sweat and grinding teeth. As your arms get tired, you push off hard and the two of you seperate. ",
+"You and the guard launch forward simultaneously, your swords clash at the hilt and your free hands grasp the others'. You lock for a moment and read your foe's face through sweat and grinding teeth. As your arms get tired, you push off hard and the two of you separate. ",
 "The guard raises a hand to grasp your collar while your sword is off to the side. You grab his wrist as it makes contact and the two of you share a pulling of wills. The guard turns his sword in and you do the same, before each of you let go and step back, unharmed. ",
 "You pivot, the guard follows; you raise a hand to grasp his neck and the guard does the same. You cross your hand with the sword to knock him in the wrist and, as he mimics, the butts of your two swords clash, letting out a sharp, reverberating ring. You both back up in the confusion before slowly re-approaching. "];
 
@@ -249,8 +249,8 @@ var StrikeVStrike = [
 
 
 var StrikeVGrapple = [
-"As the guard leans in to grab you, your sword comes up in-between. It knicks a gap in his patch-work armor and blood starts leaking out, dealing 2 damage. ",
-"The guard grabs your shoulder and starts pushing you towards a wall. You slide a foot back to stabalize yourself as your sword comes around his open side. It digs in deep past leather and misplaced metal, drawing blood as it's pulled back out. He takes 2 damage and releases you, cluching his wound. ",
+"As the guard leans in to grab you, your sword comes up in-between. It nicks a gap in his patch-work armor and blood starts leaking out, dealing 2 damage. ",
+"The guard grabs your shoulder and starts pushing you towards a wall. You slide a foot back to stabilize yourself as your sword comes around his open side. It digs in deep past leather and misplaced metal, drawing blood as it's pulled back out. He takes 2 damage and releases you, clutching his wound. ",
 "Your sword glides through the guard's reach as he attempts to grab you. It slices open his hand and he pulls back in pain and self-preservation. Dripping blood, he takes 2 damage, then attempts to steady himself. Wooden walls and stone-cut decorations are silent, uncaring. "];
 
 
@@ -264,7 +264,7 @@ var Death = [
 //always ends in the word "room" (though don't include)
 var Kill = [
 "As the guard tries to compose himself, you keep pushing forward. You bang into his armor with heavy blows, knocking him back and down until he falls to the floor in a gasp. Pumped with adrenaline you leap forward and with a scream land your sword on his chest, ending this. After all is silent you stand back up. Your heart is racing, you try to keep moving without putting too much thought into what you just did. What you just did... Avoiding him completely, you look around the ",
-"The guard falls to his knees and tries to keep hold of his sword. His hands are trembling as you stand before him. He looks up to meet your eyes and for a moment you're not sure what to do. As the guard tries to lift his sword again, you see his arm spasm and it drops. He whimpers in agony, \"D-do it... do... do iT ALREADY!\" And he caughs up blood on your rags. Your arms are lead but they function... you drop the guard limp to the floor. A million thoughts crowd the room silently judging you. You avoid them: guilt an enemy and truth its sword. Instead, you clear your mind and look about the "];
+"The guard falls to his knees and tries to keep hold of his sword. His hands are trembling as you stand before him. He looks up to meet your eyes and for a moment you're not sure what to do. As the guard tries to lift his sword again, you see his arm spasm and it drops. He whimpers in agony, \"D-do it... do... do iT ALREADY!\" And he coughs up blood on your rags. Your arms are lead but they function... you drop the guard limp to the floor. A million thoughts crowd the room silently judging you. You avoid them: guilt an enemy and truth its sword. Instead, you clear your mind and look about the "];
 
 
 //this function is called every time the player takes damage to update the health-based texts

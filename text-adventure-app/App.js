@@ -51,14 +51,14 @@ export default class App extends React.Component {
 	//ScrollView is fixed to be full-screen (no larger), allowing the user to scroll down (generally doesnt conflict with swipe back but could based on scroll height and gesture). commented out is the previous functionality: every render it calculates this difference and scrolls to the bottom automatically (the user can then scroll back up if they wish)
 	//Text is here to display our ClickText and DefaultText elements in a Text-style layout rather than a FlexView-style layout (concatting them rather than every text being in its own "box")
 	return (
-		<View style={styles.container} onMoveShouldSetResponderCapture={this.didSwipe} onResponderMove={()=>{this.handleSwipe(this)}}>
-				<ScrollView ref='scrollView'
+		<View accessible={false} style={styles.container} onMoveShouldSetResponderCapture={this.didSwipe} onResponderMove={()=>{this.handleSwipe(this)}}>
+				<ScrollView accessible={false} ref='scrollView'
 							onContentSizeChange={(w, h) => {this.contentHeight = h;  /*this.scrollToBottom(true);*/}}
 							onLayout={ev => this.scrollViewHeight = ev.nativeEvent.layout.height}
 							contentContainerStyle={styles.scroll}
 							onScrollBeginDrag={()=>{this.scrolling = true;}}
 							onScrollEndDrag={()=>{this.scrolling = false;}}>
-					<Text textBreakStrategy='simple' style={{textAlign: textCenter}}>
+					<Text accessible={false} textBreakStrategy='simple' style={{textAlign: textCenter}}>
 						{displayElements}
 					</Text>
 				</ScrollView>

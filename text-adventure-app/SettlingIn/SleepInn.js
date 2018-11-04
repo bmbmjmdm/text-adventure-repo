@@ -11,7 +11,7 @@ export class SleepInn {
 		
 		//at the outskirt inn, people are friendly
 		if(SettlingInData.Outskirts > 0){
-			that.preparePage("She often makes fun of the guests to their face, offering accurate critiques in a playful manner. Some resent her, some lover her, but everyone respects maiden Eira, including you. She makes your time there homey. ");
+			that.preparePage("She often makes fun of the guests to their faces, offering accurate critiques in a playful manner. Some resent her, some lover her, but everyone respects maiden Eira, including you. She makes your time there homey. ");
 		}
 		//at the city center inn, people are not 
 		else{

@@ -35,7 +35,7 @@ export class ExploreCity {
 		}
 		else{
 			that.preparePage("You don't have any gold though! You should probably do some work or else you'll end up window shopping. ");
-		
+		}
 		
 		if(!SettlingInData.Bar){
 			that.preparePage("You could get a job at a ");

@@ -7,3 +7,5 @@ FileManagerIndex["LevelFile"] = require('../FileManager/LevelFile.js').LevelFile
 FileManagerIndex["TheWayFile"] = require('../FileManager/TheWayFile.js').TheWayFile;
 
 FileManagerIndex["YourWorldFile"] = require('../FileManager/YourWorldFile.js').YourWorldFile;
+
+FileManagerIndex["SettlingInFile"] = require('../FileManager/SettlingInFile.js').SettlingInFile;

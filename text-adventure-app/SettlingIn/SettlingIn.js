@@ -33,14 +33,14 @@ export class SettlingIn {
 			
 			//mother leaves
 			if(SettlingInData.Mother){
-				that.preparePage("\"I need to get back home,\" the mother says, \"I can't risk going into the city. If the empire catches me there I'll never be able to help Hatae... You should meet me there. I'll try to stay out of trouble until then.\" ");
+				that.preparePage("\"I need to get back home,\" the mother says, \"I can't risk going into the city. If the empire catches me I'll never be able to help Hatae... You should meet me there. I'll try to stay out of trouble until then.\" ");
 				
 				//with her son
 				if(SettlingInData.Son){
-					that.preparePage("She then smiles briefly, takes her son by the arm and runs off, not waiting for a reply. ");
+					that.preparePage("She smiles briefly, then takes her son by the arm and runs off, not waiting for a reply. ");
 				}
 				else{
-					that.preparePage("She then smiles briefly, turns, and runs off before you have time to reply. ");
+					that.preparePage("She smiles briefly, then turns, and runs off before you have time to reply. ");
 				}
 				
 				that.preparePage("The rosy-haired woman dashes awkwardly, terrified and excited to run home. ")
@@ -62,7 +62,7 @@ export class SettlingIn {
 			}
 			
 			if(SettlingInData.OldGuy){
-				that.preparePage("\"I should be headin' me own way now.\" The old man nods and gives a half-smile, grunts, \"Gotta prepare, preparin's the only way to survive out in the sand, y'know.\" He gives a heavy pat on your back, \"Meet me where the sunset looks like a sickle. \" He then turns and walks off, confident you'll find it. As he ?, he spits in its general direction. ");
+				that.preparePage("\"I should be headin' me own way now.\" The old man nods and gives a half-smile, grunts, \"Gotta prepare, preparin's the only way to survive out in the sand, y'know.\" He gives a heavy pat on your back, \"Meet me where the sunset looks like a sickle. \" He then turns and walks off, confident you'll find wherever that is. As he goes around the city, he spits in its general direction. ");
 			}
 			
 			//son is on his own 

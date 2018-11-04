@@ -1,5 +1,6 @@
 import {GlobalData} from '../GameData.js';
 import {PrisonLevel} from './PrisonLevel.js';
+import {CityLevel} from './CityLevel.js';
 import {ComingSoon} from './ComingSoon.js';
 import {FileManager} from '../FileManager/FileManager.js';
 
@@ -12,7 +13,7 @@ export class Levels {
 			
 			that.preparePage("Naeris Prison - The Escape\n\n", PrisonLevel);
 			
-			that.preparePage("City of Xanaph - Rogue Rumors\n\n", ComingSoon);
+			that.preparePage("City of Xanaph - Rogue Rumors\n\n", CityLevel);
 			
 			if(GlobalData.ForestUnlocked){
 				that.preparePage("Sariel Forest - Ancient Grove\n\n", ComingSoon);
