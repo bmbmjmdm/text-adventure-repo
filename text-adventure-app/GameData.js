@@ -295,7 +295,6 @@ export function ResetSettlingInData(){
 		AmbushHealth: 18,
 		AmbushFoes: 3,
 		AmbushLastChoices: [0,0,0],
-		AmbushRandomness: {},
-		
+		AmbushRandomness: {}
 	}
 }
