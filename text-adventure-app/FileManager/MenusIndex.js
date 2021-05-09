@@ -6,6 +6,8 @@ MenusIndex["Continue"] = require('../Menus/Continue.js').Continue;
 
 MenusIndex["HomePage"] = require('../Menus/HomePage.js').HomePage;
 
+MenusIndex["PrivacyPolicy"] = require('../Menus/PrivacyPolicy.js').PrivacyPolicy;
+
 MenusIndex["Levels"] = require('../Menus/Levels.js').Levels;
 
 MenusIndex["Load"] = require('../Menus/Load.js').Load;

@@ -40,7 +40,7 @@ export class Church {
 			that.preparePage(" without the grace of god.");
 			
 		}
-		if(SettlingInData.Gold > 1){
+		else if(SettlingInData.Gold > 1){
 			that.preparePage("Alternatively you could do ");
 			that.preparePage("both", ChurchBoth);
 			that.preparePage(" or ");

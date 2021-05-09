@@ -38,7 +38,7 @@ export class Blacksmith {
 			
 		}
 		//can buy 2 things
-		if(SettlingInData.Gold > 1){
+		else if(SettlingInData.Gold > 1){
 			that.preparePage(" Alternatively you could buy ");
 			that.preparePage("both", BlacksmithBoth);
 			that.preparePage(" or ");

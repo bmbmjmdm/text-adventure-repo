@@ -57,7 +57,8 @@ export default class App extends React.Component {
 							onLayout={ev => this.scrollViewHeight = ev.nativeEvent.layout.height}
 							contentContainerStyle={styles.scroll}
 							onScrollBeginDrag={()=>{this.scrolling = true;}}
-							onScrollEndDrag={()=>{this.scrolling = false;}}>
+							onScrollEndDrag={()=>{this.scrolling = false;}}
+							style={{width: "100%"}}>
 					<Text accessible={false} textBreakStrategy='simple' style={{textAlign: textCenter}}>
 						{displayElements}
 					</Text>

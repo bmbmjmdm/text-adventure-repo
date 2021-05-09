@@ -42,7 +42,7 @@ export class Apothecary {
 			
 		}
 		//can buy 2 things
-		if(SettlingInData.Gold > 1){
+		else if(SettlingInData.Gold > 1){
 			that.preparePage("You could buy ");
 			that.preparePage("both", ApothecaryBoth);
 			that.preparePage(" even, or ");

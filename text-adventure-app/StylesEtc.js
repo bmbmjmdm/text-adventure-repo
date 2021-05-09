@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
   //black, centered container. the default for the whole app
   container: {
 	flex: 1,
+	flexGrow: 1,
 	flexDirection: 'column',
     backgroundColor: '#000',
 	flexWrap: 'wrap',
@@ -15,8 +16,10 @@ export const styles = StyleSheet.create({
   
   scroll: {
 	flexGrow: 1,
+	flex: 1,
+	flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+	justifyContent: 'center',
   },
   
   //default size and color of text- medium, white

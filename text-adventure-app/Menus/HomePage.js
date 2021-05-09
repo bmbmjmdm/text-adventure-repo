@@ -1,6 +1,7 @@
 import {Levels} from './Levels.js';
 import {Load} from './Load.js';
 import {Continue} from './Continue.js';
+import {PrivacyPolicy} from './PrivacyPolicy.js';
 import {FileManager} from '../FileManager/FileManager.js';
 
 export class HomePage{
@@ -39,6 +40,7 @@ export class HomePage{
 	  this.homepageContinue(that, loadableFiles.length > 0);
 	  this.homepageNew(that);
 	  this.homepageLoad(that, loadableFiles.length > 0);
+	  //this.homepagePP(that);
   }
   
   //determines if there is a game to continue- ie an unfinished game in the user's save files which was the last one the user played
@@ -76,6 +78,18 @@ export class HomePage{
 	  
 	  else{
 		  that.preparePage("Load");
+	  }
+  }
+  
+  
+  //stupid android requires this
+  static homepagePP(that){
+	  that.preparePage("¤");
+	  if(PrivacyPolicy) {
+	  that.preparePage("\nPrivacy Policy", PrivacyPolicy);
+	  }
+	  else {
+		that.preparePage("WTF")
 	  }
   }
   

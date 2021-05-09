@@ -15,17 +15,17 @@ export class CityLevel {
 		that.preparePage("Settling In\n\n", { createPage:async(passed)=>{await NewSave.checkForSaveFile(passed, "SettlingIn", SettlingIn)}});
 		
 		if(GlobalData.Story5Unlocked){
-			that.preparePage("Settling In\n\n",  {createPage:async(passed)=>{await NewSave.checkForSaveFile(passed, "SettlingIn", SettlingIn)}});
+			that.preparePage("Hunter and Hunted\n\n", ComingSoon);
 		}
 		else{
-			that.preparePage("Settling In\n\n");
+			that.preparePage("Hunter and Hunted\n\n");
 		}
 		
 		if(GlobalData.Story6Unlocked){
-			that.preparePage("Settling In",  { createPage:async(passed)=>{await NewSave.checkForSaveFile(passed, "SettlingIn", SettlingIn)}});
+			that.preparePage("Friends and Foes\n\n", ComingSoon);
 		}
 		else{
-			that.preparePage("Settling In");
+			that.preparePage("Friends and Foes");
 		}
 		
 	}
