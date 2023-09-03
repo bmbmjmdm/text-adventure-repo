@@ -1,0 +1,4 @@
+#Sun Sep 03 10:50:34 CEST 2023
+base.0=C\:\\Users\\Dale 2.0\\Documents\\GitHub\\text-adventure-repo\\text-adventure-app\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+renamed.0=classes.dex
+path.0=classes.dex
