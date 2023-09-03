@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Sep 03 00:04:18 CEST 2023
+#Sun Sep 03 10:47:10 CEST 2023
 33.base=C\:\\Users\\Dale 2.0\\Documents\\GitHub\\text-adventure-repo\\text-adventure-app\\android\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 47.base=C\:\\Users\\Dale 2.0\\Documents\\GitHub\\text-adventure-repo\\text-adventure-app\\android\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 50.base=C\:\\Users\\Dale 2.0\\Documents\\GitHub\\text-adventure-repo\\text-adventure-app\\android\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0

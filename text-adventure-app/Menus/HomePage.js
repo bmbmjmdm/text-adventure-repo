@@ -86,7 +86,7 @@ export class HomePage{
   static homepagePP(that){
 	  that.preparePage("¤");
 	  if(PrivacyPolicy) {
-	  that.preparePage("\nPrivacy Policy", PrivacyPolicy);
+	  that.preparePage("\nPrivacy Policy", PrivacyPolicy, true);
 	  }
 	  else {
 		that.preparePage("WTF")
