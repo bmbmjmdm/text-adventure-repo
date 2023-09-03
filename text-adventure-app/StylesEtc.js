@@ -34,7 +34,11 @@ export const styles = StyleSheet.create({
 	fontSize: 25,
 	color: '#f00',
 	fontFamily: 'Roboto'
-  }
+  },
+
+	privacyPolicy: {
+		fontSize: 10,
+	}
 });
 
 
@@ -90,11 +94,12 @@ export class ClickText extends React.Component {
 	//alternatively we use this.myText incase reWrite is called by App.js's shouldComponentUpdate, aka when a single letter (or 10 incase of increased scale) is added to this text
 	render() {
 		var displayText = this.props.children;
+		var privacyPolicy = this.props.privacyPolicy;
 		if(this.reWritten){
 			this.reWritten = false;
 			displayText = this.myText;
 		}
-		return (<Text accessible={true} style={styles.clickText} onPress={this.startPress} onResponderMove={this.startPress} onResponderRelease={this.didRetainPress}>{displayText}</Text>);
+		return (<Text accessible={true} style={privacyPolicy ? [styles.defaultText, styles.privacyPolicy] : styles.clickText} onPress={this.startPress} onResponderMove={this.startPress} onResponderRelease={this.didRetainPress}>{displayText}</Text>);
 	}
 
 	

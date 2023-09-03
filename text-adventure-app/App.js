@@ -34,10 +34,10 @@ export default class App extends React.Component {
 	this.state.displayedText.map((dtNode,i) =>{
 		//clickable text needs to be red and attach a touch listener to its corresponding nextPage function
 		if(dtNode.clickable){
-			displayElements.push((<ClickText key={i} ref={component => this.latestElement = component} onPress={() => {this.handleClick(dtNode.nextPage, this)}}>{dtNode.text}</ClickText>));
+			displayElements.push((<ClickText key={i} ref={component => this.latestElement = component} privacyPolicy={dtNode.privacyPolicy} onPress={() => {this.handleClick(dtNode.nextPage, this)}}>{dtNode.text}</ClickText>));
 		}
 		else{
-			displayElements.push((<DefaultText key={i} ref={component => this.latestElement = component} >{dtNode.text}</DefaultText>));
+			displayElements.push((<DefaultText key={i} ref={component => this.latestElement = component} privacyPolicy={dtNode.privacyPolicy}>{dtNode.text}</DefaultText>));
 		}
 	});
 	
@@ -170,10 +170,11 @@ export default class App extends React.Component {
 				
 					var canClick = toShowText2[index].clickable;
 					var hasPage = toShowText2[index].nextPage;
+					var privacyPolicy = toShowText2[index].privacyPolicy;
 				
 					if(removeLastText){
 						//start a new text!
-						displayedText2.push({text:firstCharacter, clickable:canClick, nextPage:hasPage});
+						displayedText2.push({text:firstCharacter, clickable:canClick, nextPage:hasPage, privacyPolicy});
 					
 						//get rid of the empty text from the list
 						toShowText2.shift();
@@ -182,7 +183,7 @@ export default class App extends React.Component {
 					}
 					else if (displayedText2.length==0){
 						//no text displayed so far, start a new text!
-						displayedText2.push({text:firstCharacter, clickable:canClick, nextPage:hasPage});
+						displayedText2.push({text:firstCharacter, clickable:canClick, nextPage:hasPage, privacyPolicy});
 					
 						that.reRender = true;
 					
@@ -506,13 +507,13 @@ export default class App extends React.Component {
   
   
   //used by Pages to add text objects to the state 
-  preparePage(textSegment, pageChangeOnClick=null){
+  preparePage(textSegment, pageChangeOnClick=null, privacyPolicy=false){
 	  if(pageChangeOnClick == null){
-		  this.state.toShowText.push({text:textSegment, clickable:false});
+		  this.state.toShowText.push({text:textSegment, clickable:false, privacyPolicy});
 	  }
 	  
 	  else{
-		  this.state.toShowText.push({text:textSegment, clickable:true, nextPage:pageChangeOnClick});		  
+		  this.state.toShowText.push({text:textSegment, clickable:true, nextPage:pageChangeOnClick, privacyPolicy});		  
 	  }
   }
   
