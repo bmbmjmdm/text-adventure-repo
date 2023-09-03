@@ -20,7 +20,11 @@
       android:icon="@mipmap/ic_launcher"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
-	  
+
+	    <meta-data android:name="google_analytics_adid_collection_enabled" android:value="false" />
+      <meta-data android:name="google_analytics_automatic_screen_reporting_enabled" android:value="false" />
+      <meta-data android:name="google_analytics_enable_auto_activity_reports" android:value="false" />
+      
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"

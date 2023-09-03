@@ -1,6 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    configurations {
+        all*.exclude group: 'com.google.firebase', module: 'firebase-core'
+        all*.exclude group: 'com.google.firebase', module: 'firebase-iid'
+    }
+
     repositories {
         google()
         jcenter()
