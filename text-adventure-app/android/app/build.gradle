@@ -99,7 +99,7 @@ android {
         config {
             keyAlias 'QGJtYm1qbWRtL2lBZHZlbnR1cmU='
             keyPassword 'a23b9723ebca4dcc3442d8ec5fd3d302'
-            storeFile file('my-release-key.keystore')
+            storeFile file('my-release-key.jks')
             storePassword 'e78fe0eba17b3e6b5b373a3a306a33ae'
         }
     }
@@ -108,8 +108,8 @@ android {
         applicationId "com.LaplanteApps.iAdventure"
         minSdkVersion 16
         targetSdkVersion 33
-        versionCode 19
-        versionName "1.3"
+        versionCode 20
+        versionName "1.4"
         ndk {
             abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
         }
@@ -126,6 +126,7 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.config
         }
     }
     // applicationVariants are e.g. debug, release
