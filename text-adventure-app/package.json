@@ -13,5 +13,8 @@
     "create-react-class": "^15.6.3",
     "react": "^16.9.0",
     "react-native": "^0.60.5"
+  },
+  "rnpm":{
+    "assets": ["./assets/fonts/"]
   }
 }
