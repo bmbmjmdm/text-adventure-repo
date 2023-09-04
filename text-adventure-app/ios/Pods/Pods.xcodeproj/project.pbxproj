@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08F905282D36A0F55D46E8BB89B5190D /* Pods-textadventureappTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 129CBEB9437A8F02F68B2A526C879AED /* Pods-textadventureappTests-dummy.m */; };
+		32DDBCC9928A47A5103DD581909C27D1 /* Pods-textadventureapp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FF012FD3FD7A45488EB4C678D90FCDF3 /* Pods-textadventureapp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88298525BC91AA44EA90164C1BFCC400 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		9B38C09D0926681AA1F416AA38F09537 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		9F706A3D96E5FB237020250822FDC4D2 /* Pods-textadventureapp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B914296AFEEAA1CB96F6EAECCBE32E /* Pods-textadventureapp-dummy.m */; };
+		D74D04A9C7B06A732850F3BE87197E39 /* Pods-textadventureappTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D93F727F6086A7F9C412F9D3C5D57BD6 /* Pods-textadventureappTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE6D7AB15D0EDE1610A4AB6494DC1795 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD774DCE796CB25AB95F5A01B4AF10C9;
+			remoteInfo = "Pods-textadventureapp";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AD3C1CB1375D81E6D878C2B2A8B13E2 /* Pods-textadventureappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-textadventureappTests.release.xcconfig"; sourceTree = "<group>"; };
+		1296812C5ADFC5EF979E92952D77C4ED /* Pods-textadventureappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-textadventureappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		129CBEB9437A8F02F68B2A526C879AED /* Pods-textadventureappTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-textadventureappTests-dummy.m"; sourceTree = "<group>"; };
+		15174F4C0CCCD358C71EB4CEEDF9E44F /* Pods-textadventureapp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-textadventureapp.modulemap"; sourceTree = "<group>"; };
+		283E87748C35023D0F77CF202884011E /* Pods-textadventureapp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-textadventureapp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2A7C70931DA9DD5EBC59B8B9ABC24C5D /* Pods-textadventureappTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-textadventureappTests.modulemap"; sourceTree = "<group>"; };
+		2F6C44F898176A1C38926C1AE94570ED /* Pods-textadventureapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-textadventureapp.release.xcconfig"; sourceTree = "<group>"; };
+		3B5278CF096DAA8098A1EA0E83E43E7B /* Pods-textadventureappTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-textadventureappTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		59B914296AFEEAA1CB96F6EAECCBE32E /* Pods-textadventureapp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-textadventureapp-dummy.m"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7A4B0827A0BDF3419A6061D41CF7CD97 /* Pods-textadventureappTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-textadventureappTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A5B76AFDF23A252A0A41A24AC29EAD58 /* Pods-textadventureappTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-textadventureappTests"; path = Pods_textadventureappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B19F27396A9934DD447541CF95C308B5 /* Pods-textadventureapp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-textadventureapp-acknowledgements.plist"; sourceTree = "<group>"; };
+		B43192182959DAF5BD1DB6594F9D1A50 /* Pods-textadventureappTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-textadventureappTests-Info.plist"; sourceTree = "<group>"; };
+		CAAAE4E9CE614F829CD280C8A9D07122 /* Pods-textadventureapp */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-textadventureapp"; path = Pods_textadventureapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D45BD78770F7EB6AB1C3893FCF1038A3 /* Pods-textadventureapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-textadventureapp.debug.xcconfig"; sourceTree = "<group>"; };
+		D93F727F6086A7F9C412F9D3C5D57BD6 /* Pods-textadventureappTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-textadventureappTests-umbrella.h"; sourceTree = "<group>"; };
+		DE118AAC17B29AC16E0B4A487216ED36 /* Pods-textadventureapp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-textadventureapp-Info.plist"; sourceTree = "<group>"; };
+		FF012FD3FD7A45488EB4C678D90FCDF3 /* Pods-textadventureapp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-textadventureapp-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F901231F0A5949CB1FE038F8EEE6333 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88298525BC91AA44EA90164C1BFCC400 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7B79DB924CD00A459DCAEF756712F04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B38C09D0926681AA1F416AA38F09537 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		8B201ED128614B827870EE6995709BF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CAAAE4E9CE614F829CD280C8A9D07122 /* Pods-textadventureapp */,
+				A5B76AFDF23A252A0A41A24AC29EAD58 /* Pods-textadventureappTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA354C0F8877BBE3DDA26C43D49F7ECF /* Pods-textadventureapp */ = {
+			isa = PBXGroup;
+			children = (
+				15174F4C0CCCD358C71EB4CEEDF9E44F /* Pods-textadventureapp.modulemap */,
+				283E87748C35023D0F77CF202884011E /* Pods-textadventureapp-acknowledgements.markdown */,
+				B19F27396A9934DD447541CF95C308B5 /* Pods-textadventureapp-acknowledgements.plist */,
+				59B914296AFEEAA1CB96F6EAECCBE32E /* Pods-textadventureapp-dummy.m */,
+				DE118AAC17B29AC16E0B4A487216ED36 /* Pods-textadventureapp-Info.plist */,
+				FF012FD3FD7A45488EB4C678D90FCDF3 /* Pods-textadventureapp-umbrella.h */,
+				D45BD78770F7EB6AB1C3893FCF1038A3 /* Pods-textadventureapp.debug.xcconfig */,
+				2F6C44F898176A1C38926C1AE94570ED /* Pods-textadventureapp.release.xcconfig */,
+			);
+			name = "Pods-textadventureapp";
+			path = "Target Support Files/Pods-textadventureapp";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				8B201ED128614B827870EE6995709BF0 /* Products */,
+				DDC0F95AF655ADE55EA174AF467DB781 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDC0F95AF655ADE55EA174AF467DB781 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA354C0F8877BBE3DDA26C43D49F7ECF /* Pods-textadventureapp */,
+				F562CD3DEA62FFDAA0FB83854EBA1A01 /* Pods-textadventureappTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F562CD3DEA62FFDAA0FB83854EBA1A01 /* Pods-textadventureappTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A7C70931DA9DD5EBC59B8B9ABC24C5D /* Pods-textadventureappTests.modulemap */,
+				7A4B0827A0BDF3419A6061D41CF7CD97 /* Pods-textadventureappTests-acknowledgements.markdown */,
+				3B5278CF096DAA8098A1EA0E83E43E7B /* Pods-textadventureappTests-acknowledgements.plist */,
+				129CBEB9437A8F02F68B2A526C879AED /* Pods-textadventureappTests-dummy.m */,
+				B43192182959DAF5BD1DB6594F9D1A50 /* Pods-textadventureappTests-Info.plist */,
+				D93F727F6086A7F9C412F9D3C5D57BD6 /* Pods-textadventureappTests-umbrella.h */,
+				1296812C5ADFC5EF979E92952D77C4ED /* Pods-textadventureappTests.debug.xcconfig */,
+				0AD3C1CB1375D81E6D878C2B2A8B13E2 /* Pods-textadventureappTests.release.xcconfig */,
+			);
+			name = "Pods-textadventureappTests";
+			path = "Target Support Files/Pods-textadventureappTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8170E8FCBE2836450CB505B81DFB9E3D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D74D04A9C7B06A732850F3BE87197E39 /* Pods-textadventureappTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B89948E2A8FBF2E70813F6B26405DDB8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DDBCC9928A47A5103DD581909C27D1 /* Pods-textadventureapp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9D843974EBD054AC6DE910094ED0ADC3 /* Pods-textadventureappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2A71EC7CFE660A0E5541977AF05D72E /* Build configuration list for PBXNativeTarget "Pods-textadventureappTests" */;
+			buildPhases = (
+				8170E8FCBE2836450CB505B81DFB9E3D /* Headers */,
+				2406F33D28BCE6179999C4B3A62BDD00 /* Sources */,
+				D7B79DB924CD00A459DCAEF756712F04 /* Frameworks */,
+				FC66797968FD4BE1D06254CEAED246A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				003F35B8DE08DBC3D02CF64B933EB1B8 /* PBXTargetDependency */,
+			);
+			name = "Pods-textadventureappTests";
+			productName = Pods_textadventureappTests;
+			productReference = A5B76AFDF23A252A0A41A24AC29EAD58 /* Pods-textadventureappTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		BD774DCE796CB25AB95F5A01B4AF10C9 /* Pods-textadventureapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ADE262827F54B107C389748B5D7CCE5 /* Build configuration list for PBXNativeTarget "Pods-textadventureapp" */;
+			buildPhases = (
+				B89948E2A8FBF2E70813F6B26405DDB8 /* Headers */,
+				4B781C2E8568AF9B133FA9D684ED86FD /* Sources */,
+				5F901231F0A5949CB1FE038F8EEE6333 /* Frameworks */,
+				79380BC8EBD798C5D5837966B0A9EE57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-textadventureapp";
+			productName = Pods_textadventureapp;
+			productReference = CAAAE4E9CE614F829CD280C8A9D07122 /* Pods-textadventureapp */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 8B201ED128614B827870EE6995709BF0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD774DCE796CB25AB95F5A01B4AF10C9 /* Pods-textadventureapp */,
+				9D843974EBD054AC6DE910094ED0ADC3 /* Pods-textadventureappTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79380BC8EBD798C5D5837966B0A9EE57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC66797968FD4BE1D06254CEAED246A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2406F33D28BCE6179999C4B3A62BDD00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08F905282D36A0F55D46E8BB89B5190D /* Pods-textadventureappTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B781C2E8568AF9B133FA9D684ED86FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F706A3D96E5FB237020250822FDC4D2 /* Pods-textadventureapp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		003F35B8DE08DBC3D02CF64B933EB1B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-textadventureapp";
+			target = BD774DCE796CB25AB95F5A01B4AF10C9 /* Pods-textadventureapp */;
+			targetProxy = FE6D7AB15D0EDE1610A4AB6494DC1795 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		45BD9E7324872406686A08C1233F6B65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1296812C5ADFC5EF979E92952D77C4ED /* Pods-textadventureappTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-textadventureappTests/Pods-textadventureappTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-textadventureappTests/Pods-textadventureappTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6D42DC62C4F2E194221DF89C48496C98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BD084EFDE0ACE6C176F3C69141B8B0F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F6C44F898176A1C38926C1AE94570ED /* Pods-textadventureapp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-textadventureapp/Pods-textadventureapp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-textadventureapp/Pods-textadventureapp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE3A28BFEC8DF4E43C7F062FCDB191A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AD3C1CB1375D81E6D878C2B2A8B13E2 /* Pods-textadventureappTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-textadventureappTests/Pods-textadventureappTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-textadventureappTests/Pods-textadventureappTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DCD3557AE6C07735AE8E1B29F7A1DB02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D45BD78770F7EB6AB1C3893FCF1038A3 /* Pods-textadventureapp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-textadventureapp/Pods-textadventureapp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-textadventureapp/Pods-textadventureapp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E4D0D44B090D4284607EBBC4E71A96C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4D0D44B090D4284607EBBC4E71A96C1 /* Debug */,
+				6D42DC62C4F2E194221DF89C48496C98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ADE262827F54B107C389748B5D7CCE5 /* Build configuration list for PBXNativeTarget "Pods-textadventureapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD3557AE6C07735AE8E1B29F7A1DB02 /* Debug */,
+				BD084EFDE0ACE6C176F3C69141B8B0F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2A71EC7CFE660A0E5541977AF05D72E /* Build configuration list for PBXNativeTarget "Pods-textadventureappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45BD9E7324872406686A08C1233F6B65 /* Debug */,
+				BE3A28BFEC8DF4E43C7F062FCDB191A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_textadventureapp {
+  umbrella header "Pods-textadventureapp-umbrella.h"
+
+  export *
+  module * { export * }
+}
